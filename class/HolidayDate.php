@@ -75,7 +75,7 @@ class EndHolidayDate extends HolidayDate {
 
         # fixup the end time (move to previous day)
         if (!$this->isHalfDay()) {
-            if ((int)$this->day < 10) {
+            if ((int)$this->day <= 10) {
                 $this->day = sprintf("0%s", $this->day-1);
             } else {
                 $this->day -= 1;
