@@ -75,11 +75,10 @@ class EndHolidayDate extends HolidayDate {
 
         # fixup the end time (move to previous day)
         if (!$this->isHalfDay()) {
-            if ((int)$this->day <= 10) {
-                $this->day = sprintf("0%s", $this->day-1);
-            } else {
-                $this->day -= 1;
-            }
+            $new = explode("-", date("Y-m-d", strtotime("-1 day", strtotime($this->toDbDate()))));
+            $this->year = $new[0];
+            $this->month = $new[1];
+            $this->day = $new[2];
         }
     }
 
