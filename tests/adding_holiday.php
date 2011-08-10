@@ -1,156 +1,89 @@
 <?php
+/**
+ * Take a string such as 2011-06-21 00:00:00 and split into appropriate parts
+ *
+ * User: radek
+ * Date: 20/06/11
+ * Time: 16:58
+ */
+ 
+class HolidayDate {
 
-# simpletest
-require_once('simpletest/autorun.php');
+    /** @var original object */
+    private $original;
 
-# mock absence object
-require_once('AbsenceMock.php');
+    /** @var hour, day, month, year */
+    public $hour;
+    public $day;
+    public $month;
+    public $year;
 
-# testing this
-require_once('../class/AddEditHoliday.php');
+    # TODO throw an exception on malformed string
+    function __construct($string) {
+        $this->original = $string;
 
-class TestOfAdding extends UnitTestCase {
+        # convert into numbers
+        $day = explode(" ", $string);
+        $day[0] = explode("-", $day[0]);
+        $day[1] = explode(":", $day[1]);
 
-    private function __adder($db, $start, $stop, $startNoon, $stopNoon) {
-        # create new holiday
-        $holiday = new AddEditHoliday($start, $stop, $startNoon, $stopNoon, 'Test', 'V', 666);
-
-        # absence for the worker
-        $holiday->workerAbsence = Absence::getWorkerAbsence($db);
-
-        # add the holiday
-        $holiday->add();
-
-        return $holiday->savedHoliday;
+        $this->hour = $day[1][0];
+        $this->day = $day[0][2];
+        $this->month = $day[0][1];
+        $this->year = $day[0][0];
     }
 
-    function atestAddNewHoliday1() {
-        $this->assertTrue($this->__adder(array(), "2011-01-01", "2011-01-02", 0, 0) == array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 0)
-        ));
+    /**
+     * Is this a half day?
+     * @return bool
+     */
+    function isHalfDay() {
+        return ($this->hour == 12);
     }
 
-    function atestAddNewHoliday2() {
-        $this->assertTrue($this->__adder(array(), "2011-08-09", "2011-08-09", 0, 0) == array(
-            array('start' => '2011-08-09', 'startnoon' => 0, 'stop' => '2011-08-09', 'stopnoon' => 0)
-        ));
+    /**
+     * Integer representation of half day
+     * @return int
+     */
+    function getHalfDay() {
+        return (int)$this->isHalfDay();
     }
 
-    function atestAddNewHoliday3() {
-        $this->assertTrue($this->__adder(array(), "2011-08-31", "2011-08-31", 0, 0) == array(
-            array('start' => '2011-08-31', 'startnoon' => 0, 'stop' => '2011-08-31', 'stopnoon' => 0)
-        ));
+    /**
+     * Turn into a date for the database
+     * @return void
+     */
+    function toDbDate() {
+        return implode("-", array($this->year, $this->month, $this->day));
     }
 
-    function atestAddHolidayOverlap1() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 0)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-02", 0, 0) == array(
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 0)
-        ));
+}
+
+class StartHolidayDate extends HolidayDate {
+
+    function __toString() {
+        return sprintf("%s %s", $this->toDbDate(), $this->isHalfDay() ? 'lunch time' : 'morning');
     }
 
-    function atestAddHolidayOverlap2() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 0)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-03", 0, 0) == array(
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 0)
-        ));
+}
+
+class EndHolidayDate extends HolidayDate {
+
+    function __construct($string) {
+        # call daddy
+        parent::__construct($string);
+
+        # fixup the end time (move to previous day)
+        if (!$this->isHalfDay()) {
+            $new = explode("-", date("Y-m-d", strtotime("-1 day", strtotime($this->toDbDate()))));
+            $this->year = $new[0];
+            $this->month = $new[1];
+            $this->day = $new[2];
+        }
     }
 
-    function atestAddHolidayOverlap3() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-01', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-03", 0, 0) == array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 1),
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 1, 'stop' => '2011-01-03', 'stopnoon' => 0)
-        ));
-    }
-
-    function atestAddHolidayOverlap4() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-01', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1),
-            array('start' => '2011-01-04', 'startnoon' => 0, 'stop' => '2011-01-07', 'stopnoon' => 0)
-        );
-        $this->assertTrue($this->__adder($taken, "2010-12-30", "2011-01-08", 1, 0) == array(
-            array('start' => '2010-12-30', 'startnoon' => 1, 'stop' => '2011-01-01', 'stopnoon' => 1),
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 1, 'stop' => '2011-01-03', 'stopnoon' => 0),
-            array('start' => '2011-01-08', 'startnoon' => 0, 'stop' => '2011-01-08', 'stopnoon' => 0)
-        ));
-    }
-
-    function atestAddHolidayOverlap5() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-01', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-03", 0, 1) == array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 1),
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 0)
-        ));
-    }
-    
-    function atestAddHolidayOverlap6() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 1),
-            array('start' => '2011-01-02', 'startnoon' => 1, 'stop' => '2011-01-02', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-03", 1, 1) == array(
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-02', 'stopnoon' => 1)
-        ));
-    }
-    
-    function atestAddHolidayOverlap7() {
-        $taken = array(
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 1),
-            array('start' => '2011-01-02', 'startnoon' => 1, 'stop' => '2011-01-02', 'stopnoon' => 0),
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-03", 1, 0) == array(
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-02', 'stopnoon' => 1),
-            array('start' => '2011-01-03', 'startnoon' => 1, 'stop' => '2011-01-03', 'stopnoon' => 0)
-        ));
-    }
-    
-    function atestAddHolidayOverlap8() {
-        $taken = array(
-            array('start' => '2011-01-05', 'startnoon' => 0, 'stop' => '2011-01-05', 'stopnoon' => 1),
-            array('start' => '2011-01-02', 'startnoon' => 1, 'stop' => '2011-01-02', 'stopnoon' => 0),
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 1),
-            array('start' => '2011-01-04', 'startnoon' => 0, 'stop' => '2011-01-04', 'stopnoon' => 1),
-            array('start' => '2011-01-03', 'startnoon' => 1, 'stop' => '2011-01-03', 'stopnoon' => 0),
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-01', 'stopnoon' => 0)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-05", 1, 0) == array(
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1),
-            array('start' => '2011-01-04', 'startnoon' => 1, 'stop' => '2011-01-04', 'stopnoon' => 0),
-            array('start' => '2011-01-05', 'startnoon' => 1, 'stop' => '2011-01-05', 'stopnoon' => 0)
-        ));
-    }
-
-    function testAddHolidayOverlap9() {
-        $taken = array(
-            array('start' => '2010-12-31', 'startnoon' => 0, 'stop' => '2010-12-31', 'stopnoon' => 0),
-            array('start' => '2011-01-01', 'startnoon' => 0, 'stop' => '2011-01-01', 'stopnoon' => 0),
-            array('start' => '2011-01-02', 'startnoon' => 1, 'stop' => '2011-01-02', 'stopnoon' => 0),
-            array('start' => '2011-01-02', 'startnoon' => 0, 'stop' => '2011-01-02', 'stopnoon' => 1),
-            array('start' => '2011-01-04', 'startnoon' => 0, 'stop' => '2011-01-04', 'stopnoon' => 1),
-            array('start' => '2011-01-03', 'startnoon' => 1, 'stop' => '2011-01-03', 'stopnoon' => 0),
-            array('start' => '2011-01-01', 'startnoon' => 1, 'stop' => '2011-01-01', 'stopnoon' => 0)
-        );
-        $this->assertTrue($this->__adder($taken, "2011-01-01", "2011-01-05", 1, 0) == array(
-            array('start' => '2011-01-03', 'startnoon' => 0, 'stop' => '2011-01-03', 'stopnoon' => 1),
-            array('start' => '2011-01-04', 'startnoon' => 1, 'stop' => '2011-01-05', 'stopnoon' => 0)
-        ));
+    function __toString() {
+        return sprintf("%s %s", $this->toDbDate(), $this->isHalfDay() ? 'lunch time' : 'evening');
     }
 
 }
