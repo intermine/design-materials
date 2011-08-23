@@ -1,11 +1,13 @@
-body { color:#111; margin:0; padding:0 }
+html { background:#FFF url('../img/html-bg.png') repeat-x top left; }
+body { color:#666; margin:0 auto; width:1000px; padding:0; position:relative; }
 body,
 th,
-td { font:normal 14px Helvetica, trebuchet ms,verdana,arial,'Bitstream Vera Sans',helvetica,sans-serif }
+td,
+tr { font-size:17px; font-family:arial,sans-serif !important }
 
-h1,h2,h3,h4 { border-color:#ddd; border-style:dotted; border-width:0 0 1px; color:#83A501; font-family:Helvetica, trebuchet ms,arial,verdana,'Bitstream Vera Sans',helvetica,sans-serif; font-weight:400; letter-spacing:-.018em }
+h1,h2,h3,h4 { border-color:#ddd; border-style:dotted; border-width:0 0 1px; color:#83A501; letter-spacing:-.018em; font-weight:normal; }
 
-h1 { border-style:none; font-size:21px; margin:3px 0 10px; padding-bottom:8px; text-align:center }
+h1 { border-style:none; font-size:21px; margin:3px 0 10px; padding-bottom:8px; }
 h2 { font-size:18px }
 h3 { font-size:15px }
 hr { border:none; border-top:1px solid #ccb; margin:2em 0 }
@@ -20,9 +22,9 @@ ol.lowerroman { list-style-type:lower-roman }
 ol.upperroman { list-style-type:upper-roman }
 ol.arabic { list-style-type:decimal }
 
-:link,:visited { border-bottom:1px dotted #bbb; color:#517489; text-decoration:none }
+:link,:visited { border-bottom:0; color:#007dcc; text-decoration:none }
 :link:hover,
-:visited:hover { background-color:#d5e2ff; color:#555 }
+:visited:hover { border-bottom:1px dotted #d7d7d7; background-color:inherit; }
 h1 :link,
 h1 :visited,
 h2 :link,
@@ -90,29 +92,29 @@ input[type=submit] { background-color:#517489 }
 #topsearch input[type=submit],
 #topsearch input[type=reset],
 #topsearch input[type=text],
-#topsearch input.textwidget { background-color:#333; border:1px solid #222; color:#fff; font-size:10px }
+#topsearch input.textwidget { background-color:#333; border:1px solid #222; color:#333; font-size:12px; padding:2px; }
 #topsearch input[type=text] { background-color:#222 }
 #search input,
 #search input[type=button],
 #search input[type=submit],
 #search input[type=reset],
 #search input[type=text],
-#search input.textwidget { background-color:#383838; border:1px solid #333; color:#fff; font-size:10px }
+#search input.textwidget { background:#F4F4F4 url('../img/magnify-glass.png') no-repeat 10px 5px; border:1px solid #797979; color:#333; font-size:14px; padding:3px; padding-left:30px; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; width:240px; font-family:arial,sans-serif; box-shadow:inset 1px 2px 3px #CDCDCD; -moz-box-shadow:inset 1px 2px 3px #CDCDCD; -webkit-box-shadow:inset 1px 2px 3px #CDCDCD; }
 
-.nav ul { font-size:10px; list-style:none; margin:0; text-align:right }
-.nav li { border-right:1px solid #d7d7d7; display:inline; margin:0; padding:0 .75em; white-space:nowrap }
+.nav ul { list-style:none; margin:0; text-align:left; padding:0; }
+.nav li { display:inline; margin:0; padding:0 .75em; white-space:nowrap }
 
-#mainnav { background:#f7f7f7 url('../img/menu_grad.png') 0 0; border-bottom:1px solid #111; border-left:none; border-right:none; border-top:1px solid #111; font:normal 10px trebuchet ms,verdana,'Bitstream Vera Sans',helvetica,arial,sans-serif; margin:0; padding:.3em 50px .3em 0 }
-#mainnav li { border-right:none; padding:.25em 0 }
+#mainnav { background:#C0C0C0; border:0; font-family:arial,sans-serif; padding:13px 0; position:absolute; top:80px; left:0; width:100%; }
+#mainnav li { border:none; margin-right:10px; }
 #mainnav :link,
-#mainnav :visited { background:url('../img/dots.gif') 0 0 no-repeat; border-bottom:none; border-left:1px solid #555; border-right:1px solid #fff; color:#fff; padding:.3em 20px }
+#mainnav :visited { border:none; font-size:14px; font-weight:bold; color:#333; }
 * html #mainnav :link,
 * html #mainnav :visited { background-position:1px 0 }
 #mainnav :link:hover,
-#mainnav :visited:hover { background-color:#444; border-right:1px solid #ddd }
+#mainnav :visited:hover { background:#676767; border-right:0; border-top:none; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
 #mainnav .active :link,
-#mainnav .active :visited { background:#444 0 0 repeat-x; border-right:1px solid #111; border-top:none; color:#eee; font-weight:700 }
-#ctxtnav { height:20px; padding:5px 61px 0 0 }
+#mainnav .active :visited { background:#444; border-top:none; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; box-shadow:inset 2px 3px 4px #292929; -moz-box-shadow:inset 2px 3px 4px #292929; -webkit-box-shadow:inset 2px 3px 4px #292929; }
+#ctxtnav { height:20px; margin-top:20px; }
 #ctxtnav li ul { background:#f7f7f7; border:1px solid; color:#ccc; display:inline; margin:0; padding:0 }
 #ctxtnav li li { padding:0 }
 #ctxtnav li li :link,
@@ -142,7 +144,7 @@ p.left2 { float:left; margin-left:1em; padding:0 1em }
 #footer p.left2 { color:#666 }
 #footer p.right { float:right; text-align:right }
 
-#content { padding:25px 50px 0; position:relative }
+#content { position:static }
 
 #help { clear:both; color:#999; font-size:90%; margin:1em; text-align:right }
 #help :link,
@@ -163,10 +165,10 @@ p.left2 { float:left; margin-left:1em; padding:0 1em }
 #info td.message { width:100% }
 #info .message ul { margin:0 2em; padding:0 }
 
-.wikipage { margin:0; padding-left:18px }
+.wikipage { margin:0; padding-left:0 }
 .wikipage h1,
 .wikipage h2,
-.wikipage h3 { margin-left:-18px }
+.wikipage h3 { margin-left:0; }
 
 a.missing:link,
 a.missing:visited,
@@ -241,11 +243,12 @@ div.system-message pre { margin-left:1em; overflow:auto }
 
 #siteheader { background:#111; display:none; height:40px; margin:0; padding:0 }
 
-#banner { background-color:#fdfdfd; height:80px; margin:0; padding:0 }
+#banner { height:80px; margin:0; padding:0; position:relative; }
 
-#header { float:left; height:150px; margin:0; padding:0 }
+#header { float:left; height:53px; width:469px; background:url('../img/logo.png') no-repeat top left; margin-top:10px }
+#header a { display:none }
 
-#metanav { height:28px; padding:2px }
+#metanav { height:28px; padding:2px; position:absolute; top:0; right:0; }
 #metanav :link,#metanav :visited { color:#83A501 }
 #metanav ul li.first { color:#ccc }
 
@@ -269,22 +272,15 @@ fieldset.iefix p,
 #footer p,
 div.system-message p { margin:0 }
 
-#header hr,
-#search,
-#topsearch label,
-.nav h2,
-.nav hr,
-#footer hr,
-#help hr { display:none }
 #header h1 :link:hover,
 #header h1 :visited:hover,
 a.missing:hover { color:#111 }
 .nav li.last,
-#altlinks li.last { border-right:none }
+#altlinks li.last { border-right:none; padding-right:0; }
 #footer :link,
 #footer :visited,
 #metanav :link:hover,
-#metanav :visited:hover { color:#bbb }
+#metanav :visited:hover { color:inherit }
 #info .message p,
 dl.compact dd { margin:0; padding:0 }
 dl.wiki dt,
@@ -295,7 +291,15 @@ table.listing thead th :visited:hover,
 table.listing tbody td a:hover,
 table.listing tbody th a:hover { background-color:transparent }
 
-@media screen  { 
+#main { position:relative; margin-top:68px; }
+div.trac-modifiedby { position:absolute; top:-4px; right:0; font-size:10px; font-style:normal; }
+
+#search { position:absolute; bottom:-48px; right:0; z-index:2; }
+#search input[type="submit"] { display:none; }
+
+#wikipage { margin-top:16px; }
+
+@media screen  {
   a.ext-link .icon { padding-left:16px }
   * html a.ext-link .icon { display:inline-block }
   .searchword0 { background:#ff9 }
@@ -304,7 +308,7 @@ table.listing tbody th a:hover { background-color:transparent }
   .searchword3 { background:#ccf }
   .searchword4 { background:#fcf }
 }
-@media print  { 
+@media print  {
   form.printableform { display:block }
   #header,#altlinks,#footer,#help,.nav,form,.buttons form,form .buttons { display:none }
 }
