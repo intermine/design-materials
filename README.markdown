@@ -14,7 +14,8 @@ A Trac 0.12.2 theme for InterMine homepage
 	[components]
 	themeengine.* = enabled
 	interminetheme.* = enabled
-
+	</code>
+	<code>
 	[theme]
 	theme = InterMine
 	</code>
