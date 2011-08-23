@@ -1,0 +1,21 @@
+A Trac 0.12.2 theme for InterMine homepage
+
+== Requirements ==
+
+* ThemeEnginePlugin
+
+== Installation ==
+
+1. eggify the theme by running <code>python setup.py bdist_egg</code>
+2. copy the resulting .egg file into myproject/plugins
+3. edit trac.ini as follows:
+<code>
+[components]
+themeengine.* = enabled
+interminetheme.* = enabled
+
+[theme]
+theme = InterMine
+</code>
+
+4. restart the webapp
