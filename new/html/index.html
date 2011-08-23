@@ -1,0 +1,1419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <title>
+      InterMine 2.0
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/trac.css" type="text/css">
+        <link rel="stylesheet" href="css/wiki.css" type="text/css">
+        <link rel="stylesheet" href="css/intermine.css" type="text/css">
+        <link rel="shortcut icon" href="img/trac.ico" type="image/x-icon">
+        <link rel="icon" href="img/trac.ico" type="image/x-icon">
+  </head>
+  <body>
+      <!-- Header -->
+      <header id="header" class="wrap">
+          <!-- Trac login -->
+          <div id="metanav" class="nav">
+    <ul>
+      <li class="first"><a href="http://localhost:8000/myproject/login">Login</a></li><li><a href="http://localhost:8000/myproject/prefs">Preferences</a></li><li><a href="http://localhost:8000/myproject/wiki/TracGuide">Help/Guide</a></li><li class="last"><a href="http://localhost:8000/myproject/about">About Trac</a></li>
+    </ul>
+  </div>
+          <!-- Logo -->
+          <div id="logo">
+            <p>My Project</p>
+          </div>
+          <!-- Quick contacts -->
+          <div class="contacts vcard">
+            <bold>T</bold>:<span class="tel">+44 (0)1223 760 262</span>
+            <bold>E</bold>:<a class="email" href="mailto:info@intermine.org">info@intermine.org</a>
+          </div>
+      </header>
+      <!-- Main menu (tabs, search) -->
+      <div id="nav">
+        <nav id="main" class="wrap">
+          <!-- Search -->
+          <div id="theme-search" class="noprint">
+              <form action="/myproject/search" method="get">
+                  <fieldset><legend>Search</legend>
+                      <label>
+                          <span id="search-input-out">
+                              <input name="q" id="search-input" size="30" type="text">
+                          </span>
+                      </label>
+                      <input name="wiki" value="on" type="hidden">
+                      <input name="changeset" value="on" type="hidden">
+                      <input name="ticket" value="on" type="hidden">
+                  </fieldset>
+              </form>
+          </div>
+          <!-- Navigation tabs -->
+          <ul class="box">
+              <li class="first active">
+                    <a href="http://localhost:8000/myproject/wiki">Wiki<span class="tab-l"></span><span class="tab-r"></span></a>
+              </li><li>
+                    <a href="http://localhost:8000/myproject/timeline">Timeline<span class="tab-l"></span><span class="tab-r"></span></a>
+              </li><li>
+                    <a href="http://localhost:8000/myproject/roadmap">Roadmap<span class="tab-l"></span><span class="tab-r"></span></a>
+              </li><li>
+                    <a href="http://localhost:8000/myproject/report">View Tickets<span class="tab-l"></span><span class="tab-r"></span></a>
+              </li><li class="last">
+                    <a href="http://localhost:8000/myproject/search">Search<span class="tab-l"></span><span class="tab-r"></span></a>
+              </li>
+          </ul>
+        </nav>
+       </div>
+       <!-- Page -->
+       <div id="page" class="wrap">
+         <article>
+           <nav id="strip">
+             <!-- Contextual navigation -->
+             <div id="ctxtnav" class="nav">
+                 <ul>
+                   <li class="first "><a href="http://localhost:8000/myproject/wiki/WikiStart">Start Page</a></li><li><a href="http://localhost:8000/myproject/wiki/TitleIndex">Index</a></li><li class="last"><a href="http://localhost:8000/myproject/wiki/test?action=history">History</a></li>
+                 </ul>
+             </div>
+          </nav>
+          <!-- Main content -->
+          <section>
+    <div id="content" class="wiki">
+      <div class="wikipage searchable">
+        
+          
+          <div class="trac-modifiedby"><a href="http://localhost:8000/myproject/wiki/test?action=diff&amp;version=2" title="Version 2 by radek">Last modified</a> <a class="timeline" href="http://localhost:8000/myproject/timeline?from=2011-08-23T17%3A01%3A00%2B01%3A00&amp;precision=second" title="2011-08-23T17:01:00+01:00 in Timeline">36 seconds</a> ago</div>
+          <div id="wikipage"><p>
+</p><div class="wiki-toc">
+<ol>
+  <li>
+    <a href="#a1WhatisInterMine">1 What is InterMine??</a>
+  </li>
+  <li>
+    <a href="#a2GettingStartedwithInterMine">2 Getting Started with InterMine?</a>
+  </li>
+  <li>
+    <a href="#a3BeforeYouStart">3 Before You Start</a>
+  </li>
+  <li>
+    <a href="#a4DownloadingInterMine">4 Downloading InterMine?</a>
+  </li>
+  <li>
+    <a href="#a5Gettingdata">5 Getting data</a>
+  </li>
+  <li>
+    <a href="#a6MineManager-TheInterMineProjectEditor">6 MineManager? - The InterMine Project Editor</a>
+    <ol>
+      <li>
+        <a href="#a6.1TheInterMinedirectorystructure">6.1 The InterMine? directory structure</a>
+      </li>
+      <li>
+        <a href="#a6.2OverviewoftheMineManagerInterface">6.2 Overview of the MineManager? Interface</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a7CreateMalariaMine">7 Create MalariaMine</a>
+    <ol>
+      <li>
+        <a href="#a7.1EditingYourMinesSettings">7.1 Editing Your Mine's Settings</a>
+      </li>
+      <li>
+        <a href="#a7.2CreatingYourMine">7.2 Creating Your Mine</a>
+      </li>
+      <li>
+        <a href="#a7.3SourceSettings">7.3 Source Settings</a>
+      </li>
+      <li>
+        <a href="#a7.3.1TheStructureoftheProjectDirectory">7.3.1 The Structure of the Project Directory</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a8LoadingData">8 Loading Data</a>
+    <ol>
+      <li>
+        <a href="#a8.1AddingaSource">8.1 Adding a Source</a>
+      </li>
+      <li>
+        <a href="#a9Runningabuild">9 Running a build</a>
+      </li>
+      <li>
+        <a href="#a9.1ResolvingBuildProblems">9.1 Resolving Build Problems</a>
+      </li>
+      <li>
+        <a href="#a9.2VerifyingtheBuild">9.2 Verifying the Build</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a10UpdatingOrganismandPublicationInformation">10 Updating Organism and Publication Information</a>
+    <ol>
+      <li>
+        <a href="#a10.1Organismdetails-entrez-organism">10.1 Organism details - <tt>entrez-organism</tt></a>
+      </li>
+      <li>
+        <a href="#a10.2Publicationdetails-update-publications">10.2 Publication details - <tt>update-publications</tt></a>
+        <ol>
+          <li>
+            <a href="#a10.3Re-buildandchecktheresults">10.3 Re-build and check the results</a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a11Deployingthewebapplication">11 Deploying the web application</a>
+    <ol>
+      <li>
+        <a href="#a11.1Configure">11.1 Configure</a>
+      </li>
+      <li>
+        <a href="#a11.2UserProfile">11.2 UserProfile</a>
+      </li>
+      <li>
+        <a href="#a11.3Deployingthewebapp">11.3 Deploying the webapp</a>
+      </li>
+      <li>
+        <a href="#a11.4Usingthewebapp">11.4 Using the webapp</a>
+        <ol>
+          <li>
+            <a href="#a11.4.1Runningaquery">11.4.1 Running a query</a>
+          </li>
+          <li>
+            <a href="#a11.4.2Queryresults">11.4.2 Query results</a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a12Objectrelationalmapping">12 Object relational mapping</a>
+  </li>
+  <li>
+    <a href="#a13LoadingGenomeDatafromGFF3andFASTA">13 Loading Genome Data from GFF3 and FASTA</a>
+    <ol>
+      <li>
+        <a href="#a13.1Dataintegration">13.1 Data integration</a>
+      </li>
+      <li>
+        <a href="#a13.2GFF3files">13.2 GFF3 files</a>
+      </li>
+      <li>
+        <a href="#a13.3TheGFF3source">13.3 The GFF3 source</a>
+      </li>
+      <li>
+        <a href="#a13.4FASTAfiles">13.4 FASTA files</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a14DataIntegration">14 Data Integration</a>
+    <ol>
+      <li>
+        <a href="#a14.1DataintegrationinMalariaMine">14.1 Data integration in MalariaMine</a>
+      </li>
+      <li>
+        <a href="#a14.2Howdataintegrationworks">14.2 How data integration works</a>
+      </li>
+      <li>
+        <a href="#a14.3PrimarykeysinMalariaMine">14.3 Primary keys in MalariaMine</a>
+      </li>
+      <li>
+        <a href="#a14.4Dealingwithconflicts">14.4 Dealing with conflicts</a>
+      </li>
+      <li>
+        <a href="#a14.5Thetrackertable">14.5 The <tt>tracker</tt> table</a>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a15AddGOandGO-annotationsources">15 Add GO and GO-annotation sources</a>
+  </li>
+  <li>
+    <a href="#a16PostProcessing">16 Post Processing</a>
+    <ol>
+      <li>
+        <a href="#a16.1MalariaMinePostProcessing">16.1 MalariaMine Post Processing</a>
+        <ol>
+          <li>
+            <a href="#a16.1.1create-references">16.1.1 <tt>create-references</tt></a>
+          </li>
+          <li>
+            <a href="#a16.1.2transfer-sequences">16.1.2 <tt>transfer-sequences</tt></a>
+          </li>
+          <li>
+            <a href="#a16.1.3do-sources">16.1.3 <tt>do-sources</tt></a>
+          </li>
+          <li>
+            <a href="#a16.1.4summarise-objectstorecreate-search-indexcreate-autocomplete-index">16.1.4 <tt>summarise-objectstore</tt>, <tt>create-search-index</tt> &amp; …</a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <a href="#a17ConfiguringYourWebapp">17 Configuring Your Webapp</a>
+  </li>
+  <li>
+    <a href="#a18Creatingyourownsource">18 Creating your own source</a>
+    <ol>
+      <li>
+        <a href="#a18.1ExampleDatasource-KEGG">18.1 Example Data source - KEGG</a>
+      </li>
+      <li>
+        <a href="#a18.2AdditionsFiles">18.2 Additions Files</a>
+      </li>
+      <li>
+        <a href="#a18.3IntegrationKeys">18.3 Integration Keys</a>
+      </li>
+      <li>
+        <a href="#a18.4Parsers">18.4 Parsers</a>
+      </li>
+    </ol>
+  </li>
+</ol>
+</div><p>
+</p>
+<h1 id="a1WhatisInterMine">1 What is <a class="missing wiki">InterMine?</a>?<a title="Link to this section" href="#a1WhatisInterMine" class="anchor"> ¶</a></h1>
+<p>
+InterMine is a powerful open source data warehouse system. Using 
+InterMine, you can create databases of biological data accessed by 
+sophisticated web query tools. InterMine can be used to create databases
+ from a single data set or can integrate multiple sources of data. 
+Support is provided for several common biological formats and there is a
+ framework for adding your own data. InterMine includes an attractive, 
+user-friendly web interface that works 'out of the box' and can be 
+easily customised for your specific needs. 
+</p>
+<p>
+Find out more - <a class="missing wiki">What is InterMine??</a>
+</p>
+<p>
+InterMine was developed to enable FlyMine and is now used in other projects.  See <a class="ext-link" href="http://www.flymine.org/"><span class="icon">&nbsp;</span>FlyMine</a> for a working example, click 'Take a tour' to explore features.
+</p><div style="clear: left"></div><p>
+</p>
+<h1 id="a2GettingStartedwithInterMine">2 Getting Started with <a class="missing wiki">InterMine?</a><a title="Link to this section" href="#a2GettingStartedwithInterMine" class="anchor"> ¶</a></h1>
+<p>
+Following the steps on this page you will set up an example InterMine.  You will:
+</p>
+<ul><li>Load some real data sets for Malaria (<em>P. falciparum</em>)
+</li><li>Learn about post-processing after data is loaded
+</li><li>Deploy a webapp to query the data
+</li></ul><h1 id="a3BeforeYouStart">3 Before You Start<a title="Link to this section" href="#a3BeforeYouStart" class="anchor"> ¶</a></h1>
+<p>
+This guide is designed for beginners who have never installed <a class="missing wiki">InterMine?</a> before. However, you need to have the following prerequisites installed:
+</p>
+<ul><li>Subversion
+</li><li>Java SDK
+</li><li>Ant
+</li><li>Tomcat
+</li><li>PostgreSQL
+</li><li>Perl
+</li></ul><p>
+More information on installation and versions can be found here: <a class="missing wiki">Installation intructions?</a>.
+</p>
+<h1 id="a4DownloadingInterMine">4 Downloading <a class="missing wiki">InterMine?</a><a title="Link to this section" href="#a4DownloadingInterMine" class="anchor"> ¶</a></h1>
+<p>
+We use <a class="ext-link" href="http://subversion.tigris.org/"><span class="icon">&nbsp;</span>subversion</a>
+ to manage and distribute source code.  Usually you can check out the 
+latest InterMine branch, for the workshop we will check-out a branch 
+created for this workshop. 
+</p>
+<p>
+Create a directory called <tt>svn</tt> and check out the InterMine code into a subdirectory called <tt>dev</tt>
+</p>
+<pre class="wiki">&gt; mkdir svn
+&gt; cd svn
+&gt; svn co svn://subversion.flymine.org/branches/workshop-nov10 dev
+</pre><p>
+You can check out the software from the trunk, but this isn't 
+recommended as the trunk code is under constant development and may not 
+be stable or thoroughly tested.
+</p>
+<p>
+All InterMine code is freely available under the LGPL license.  
+</p>
+<h1 id="a5Gettingdata">5 Getting data<a title="Link to this section" href="#a5Gettingdata" class="anchor"> ¶</a></h1>
+<p>
+The InterMine checkout includes a tar file with data to load into MalariaMine.  These are real, complete data sets for <em>P. falciparum</em>.  We will load genome annotation from PlasmoDB, protein data from UniProt and GO annotation also from PlasmoDB.
+</p>
+<p>
+Copy this to some local directory (your home directory is fine for this workshop) and extract the archive:
+</p>
+<pre class="wiki">&gt; cd
+&gt; cp svn/dev/bio/tutorial/malariamine/malaria-data.tar.gz .
+&gt; tar -zxvf malaria-data.tar.gz
+</pre><h1 id="a6MineManager-TheInterMineProjectEditor">6 <a class="missing wiki">MineManager?</a> - The InterMine Project Editor<a title="Link to this section" href="#a6MineManager-TheInterMineProjectEditor" class="anchor"> ¶</a></h1>
+<p>
+We are going to use the InterMine <a class="missing wiki">MineManager?</a>
+ to create and build a small example Mine.  The Installer is a desktop 
+application to help configure and build an InterMine database. It's 
+currently still in beta; we plan on adding more features to the 
+Installer soon, including the ability to deploy the web application.
+</p>
+<p>
+During this tutorial we will make references to tasks outlined in the <a class="missing wiki">MineManager instructions?</a>. Please refer to this page for detailed breakdowns of how to achieve each task.
+</p>
+<h2 id="a6.1TheInterMinedirectorystructure">6.1 The <a class="missing wiki">InterMine?</a> directory structure<a title="Link to this section" href="#a6.1TheInterMinedirectorystructure" class="anchor"> ¶</a></h2>
+<p>
+There are several parts to the <a class="missing wiki">InterMine?</a> system. Let's have a look at these now.
+</p>
+<p>
+Change into the directory you checked out the InterMine source code to and look at the sub-directories:
+</p>
+<pre class="wiki">&gt; cd dev
+&gt; ls
+</pre><p>
+The directories include:
+</p>
+<ul><li><tt>intermine</tt> - the core InterMine code, this is generic code to work with any data model.
+</li><li><tt>bio</tt> - code to deal specifically with biological data, it includes <strong>sources</strong> to load data from standard biological formats.
+</li><li><tt>flymine</tt> - the configuration used to create FlyMine, a useful reference when building your own Mine.
+</li><li><tt>testmodel</tt> - a non-biological test data model used for testing the core InterMine system.
+</li><li><tt>imbuild</tt> - InterMine's ant-based build system, you shouldn't need to edit anyting here.
+</li></ul><p>
+All configuration to create a new Mine is held in a directory in <tt>dev</tt>, your Mine will depend on code in <tt>intermine</tt>, <tt>bio</tt> and <tt>imbuild</tt>.  Any Mine needs to be a top level directory in your InterMine checkout.
+</p>
+<h2 id="a6.2OverviewoftheMineManagerInterface">6.2 Overview of the <a class="missing wiki">MineManager?</a> Interface<a title="Link to this section" href="#a6.2OverviewoftheMineManagerInterface" class="anchor"> ¶</a></h2>
+<p>
+Open the <a class="missing wiki">MineManager?</a> by running this command:
+</p>
+<pre class="wiki">cd ~/svn/dev/intermine/MineManager
+./run
+</pre><p>
+You will be presented with a welcome screen.
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-welcome.png"><img src="img/attachment.png" alt="No image &quot;MineManager-welcome.png&quot; attached to test" title="No image &quot;MineManager-welcome.png&quot; attached to test"></a>
+</p>
+<p>
+Along the top there is a menu bar, immediately below which there is a 
+large text box (indicated by the arrow) for you to enter your mine's 
+name. Along the bottom of the window there is a row of buttons that 
+indicate your progress through the installation procedure. When first 
+started all of these buttons are disabled. On the right there is a box 
+that will contain the names of any mines found on your system, so they 
+can be easily loaded.
+</p>
+<p>
+The installer has five menus on the top menu bar:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-menus.png"><img src="img/attachment.png" alt="No image &quot;MineManager-menus.png&quot; attached to test" title="No image &quot;MineManager-menus.png&quot; attached to test"></a>
+</p>
+<ol><li>Mine - manage your Mine(start a new mine, load an existing one, edit the mine's properties)
+</li><li>Sources - manage data sources for your Mine (add, remove and save sources and post-processors)
+</li><li>Model - explore a visualisation of the data model, and refresh it.
+</li><li>Appearance - update the look of the installer program
+</li><li>Help - Open the <a class="missing wiki">online help page?</a> in a browser window.
+</li></ol><h1 id="a7CreateMalariaMine">7 Create MalariaMine<a title="Link to this section" href="#a7CreateMalariaMine" class="anchor"> ¶</a></h1>
+<p>
+<a class="missing wiki">Making a new mine?</a> is as simple as entering its name in the text box:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-newname.png"><img src="img/attachment.png" alt="No image &quot;MineManager-newname.png&quot; attached to test" title="No image &quot;MineManager-newname.png&quot; attached to test"></a>
+</p>
+<p>
+Press enter or click the save icon and the welcome screen will change to show you that your mine now exists and can be edited:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-loaded.png"><img src="img/attachment.png" alt="No image &quot;MineManager-loaded.png&quot; attached to test" title="No image &quot;MineManager-loaded.png&quot; attached to test"></a>
+</p>
+<p>
+Note that now the the first stage of the installation procedure, editing
+ the Mine's settings, is available and is marked as green, with an arrow
+ indicating that this is the next step. Click on "Mine Settings" to 
+proceed.
+</p>
+<h2 id="a7.1EditingYourMinesSettings">7.1 Editing Your Mine's Settings<a title="Link to this section" href="#a7.1EditingYourMinesSettings" class="anchor"> ¶</a></h2>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-minesettings-info.png"><img src="img/attachment.png" alt="No image &quot;MineManager-minesettings-info.png&quot; attached to test" title="No image &quot;MineManager-minesettings-info.png&quot; attached to test"></a>
+</p>
+<p>
+Here we are going to edit some of the <a class="missing wiki">general preferences?</a> for your mine. As you can see from the screen shot, these are divided into three sections: 
+</p>
+<ul><li>Mine Information
+</li><li>Database
+</li><li>Web
+</li></ul><p>
+Most of the settings already have sensible defaults, but use this time 
+to look through the three sections and see what the settings are and 
+what they do (hold your mouse over the name, and a tool-tip will appear 
+to explain them for you). Don't forget to refer to the <a class="missing wiki">MineManager?</a> page for explanations of all the fields.
+</p>
+<p>
+At the moment, what is stopping us from proceeding is not knowing where 
+to put the new mine's project directory (as indicated by the section in 
+red below the "Mine Configuration" heading. To enable the <strong>Create Mine</strong> button, locate the root of the <a class="missing wiki">InterMine?</a> directory (in our case '[HOME]/svn/dev') and click <strong>Apply Changes</strong>. The apply changes button will only be enabled if the directory is a valid <a class="missing wiki">InterMine?</a> directory structure.
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-readytocreate.png"><img src="img/attachment.png" alt="No image &quot;MineManager-readytocreate.png&quot; attached to test" title="No image &quot;MineManager-readytocreate.png&quot; attached to test"></a>
+</p>
+<h2 id="a7.2CreatingYourMine">7.2 Creating Your Mine<a title="Link to this section" href="#a7.2CreatingYourMine" class="anchor"> ¶</a></h2>
+<p>
+When you have enabled the <strong>Create Mine</strong> button, click it. This will:
+</p>
+<ul><li>Create the directory structure for your project in the root directory you specified. 
+</li><li>Load the project. 
+</li><li>Load the model
+</li></ul><p>
+Of these, loading the model can take about a minute or so on the first 
+load, as it needs to generate the sequence ontology model from Gene 
+Ontology Consortium OBO flat files. The <a class="missing wiki">MineManager?</a> only needs to do this once, and you can see when it is done by watching the progress bar in the bottom right.
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-loading.png"><img src="img/attachment.png" alt="No image &quot;MineManager-loading.png&quot; attached to test" title="No image &quot;MineManager-loading.png&quot; attached to test"></a>
+</p>
+<p>
+You will see that the <strong>Source Settings</strong> button has become
+ enabled. Even if the model has not finished loading, feel free to click
+ on it and start exploring the sources - when the model is loaded the 
+functions it enables will become available.
+</p>
+<h2 id="a7.3SourceSettings">7.3 Source Settings<a title="Link to this section" href="#a7.3SourceSettings" class="anchor"> ¶</a></h2>
+<p>
+Clicking on <strong>Source Settings</strong> will show you the source settings editor:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-sourcesettings-empty.png"><img src="img/attachment.png" alt="No image &quot;MineManager-sourcesettings-empty.png&quot; attached to test" title="No image &quot;MineManager-sourcesettings-empty.png&quot; attached to test"></a>
+</p>
+<p>
+Also, if you click on the <strong>Sources</strong> menu, you will see that this has also been enabled:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-sourcemenu-active.png"><img src="img/attachment.png" alt="No image &quot;MineManager-sourcemenu-active.png&quot; attached to test" title="No image &quot;MineManager-sourcemenu-active.png&quot; attached to test"></a>
+</p>
+<p>
+And when the model is loaded, you will see that the <strong>Model</strong> menu is also enabled:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-modelmenu-active.png"><img src="img/attachment.png" alt="No image &quot;MineManager-modelmenu-active.png&quot; attached to test" title="No image &quot;MineManager-modelmenu-active.png&quot; attached to test"></a>
+</p>
+<p>
+We can edit our sources because we now have a place to store our 
+information about them: a project directory. Let's take a brief look at 
+the structure of this.
+</p>
+<h2 id="a7.3.1TheStructureoftheProjectDirectory">7.3.1 The Structure of the Project Directory<a title="Link to this section" href="#a7.3.1TheStructureoftheProjectDirectory" class="anchor"> ¶</a></h2>
+<p>
+Open a new terminal window and run this command:
+</p>
+<pre class="wiki">&gt; cd ~/svn/dev/malariamine
+&gt; ls
+</pre><p>
+We will look at each of the sub-directories in much more detail later, they are:
+</p>
+<ul><li><tt>dbmodel</tt> - contains information about the data model to be used and ant targets relating to the data model and database creation.
+</li><li><tt>integrate</tt> - provides ant targets for loading data into the Mine.
+</li><li><tt>postprocess</tt> - ant targets to run post-processing operations on the data in the Mine once it is integrated.
+</li><li><tt>webapp</tt> - basic configuration and commands for building and deploying the web application
+</li></ul><p>
+In addition there are two <tt>default.intermine.xxx.properties</tt> files which we won't need to edit and a <tt>project.xml</tt> file.
+</p>
+<p>
+Note: most generated directories have a <tt>project.properties</tt> file and a short <tt>build.xml</tt> file, these are used by the InterMine build system.
+</p>
+<h1 id="a8LoadingData">8 Loading Data<a title="Link to this section" href="#a8LoadingData" class="anchor"> ¶</a></h1>
+<p>
+We're now ready to load some data into our Mine, we'll start with 
+protein and gene information from UniProt.  This source loads data from 
+XML files that UniProt make available to download.  You can take a look 
+at the files we're loading here:
+</p>
+<pre class="wiki">&gt; less ~/malaria/uniprot/36329_uniprot_sprot.xml
+</pre><h2 id="a8.1AddingaSource">8.1 Adding a Source<a title="Link to this section" href="#a8.1AddingaSource" class="anchor"> ¶</a></h2>
+<p>
+Note the pink message telling you to add sources to your project: click on the <strong>Add Source</strong> button and select "uniprot":
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/Screenshot-Add%20Source%20to%20Mine-uniprot.png"><img src="img/attachment.png" alt="No image &quot;Screenshot-Add Source to Mine-uniprot.png&quot; attached to test" title="No image &quot;Screenshot-Add Source to Mine-uniprot.png&quot; attached to test"></a>
+</p>
+<p>
+For an explanation of the differences between source "names" and source "types" see <a class="missing wiki">here?</a>.
+</p>
+<p>
+Click add and you will now have a source to edit: (notice that <strong>Build Mine</strong> is now available, now that we have some data to build into the database).
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-sourcesettings-uniprot.png"><img src="img/attachment.png" alt="No image &quot;MineManager-sourcesettings-uniprot.png&quot; attached to test" title="No image &quot;MineManager-sourcesettings-uniprot.png&quot; attached to test"></a>
+</p>
+<p>
+Notice that two of the fields for Uniprot sources have red stars next to
+ them ("List of Organisms" and "Location of Data Directory"). This 
+indicates that they are required. Each field also has a green <em>help</em> button. Press it to get some contextual information for how to complete the fields:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/sourcesettings-help.png"><img src="img/attachment.png" alt="No image &quot;sourcesettings-help.png&quot; attached to test" title="No image &quot;sourcesettings-help.png&quot; attached to test"></a>
+</p>
+<p>
+Put these values in the fields:
+</p>
+<ul><li>List of Organisms: The taxon id of <em>Plasmodium falciparum</em> (36329)
+</li><li>Create protein domains? ticked
+</li><li>Create GO terms? unticked
+</li><li>Location of data directory: The "uniprot" directory within the "malaria" data directory you unzipped.
+</li></ul><p>
+eg:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/Screenshot-uniprotsettings.png"><img src="img/attachment.png" alt="No image &quot;Screenshot-uniprotsettings.png&quot; attached to test" title="No image &quot;Screenshot-uniprotsettings.png&quot; attached to test"></a>
+</p>
+<p>
+When you have done this, click <strong>Save Sources</strong> in the bottom right, or choose <strong>Save Sources</strong> from the <strong>Sources</strong> menu.
+</p>
+<p>
+The information referred to as "Source Settings" refers to the contents of a file called <a class="missing wiki">project.xml?</a>.
+ This file is the configuration file that determines which data sources 
+are loaded when you build your database, and what their settings are. By
+ clicking the <strong>Save Sources</strong> button, this file has now been updated with our values. Feel free to check it if you wish:
+</p>
+<pre class="wiki">&gt; less ~/svn/dev/malariamine/project.xml 
+</pre><h2 id="a9Runningabuild">9 Running a build<a title="Link to this section" href="#a9Runningabuild" class="anchor"> ¶</a></h2>
+<p>
+Now that we have configured a data source for our Mine, we can build a database. To reflect this, the <strong>Build Mine</strong> button along the bottom has now been enabled. Click on this button now.
+</p>
+<p>
+If you forgot to save your source settings, you will see this screen now:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-forgottosave.png"><img src="img/attachment.png" alt="No image &quot;MineManager-forgottosave.png&quot; attached to test" title="No image &quot;MineManager-forgottosave.png&quot; attached to test"></a>
+</p>
+<p>
+Otherwise we will move forward to the build screen:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-buildscreen.png"><img src="img/attachment.png" alt="No image &quot;MineManager-buildscreen.png&quot; attached to test" title="No image &quot;MineManager-buildscreen.png&quot; attached to test"></a>
+</p>
+<p>
+Obviously enough, to start a build, click on <strong>Build Mine</strong>.
+</p>
+<h2 id="a9.1ResolvingBuildProblems">9.1 Resolving Build Problems<a title="Link to this section" href="#a9.1ResolvingBuildProblems" class="anchor"> ¶</a></h2>
+<p>
+You should see the following screen:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-cannotbuild.png"><img src="img/attachment.png" alt="No image &quot;MineManager-cannotbuild.png&quot; attached to test" title="No image &quot;MineManager-cannotbuild.png&quot; attached to test"></a>
+</p>
+<p>
+Before the build can happen, the <a class="missing wiki">MineManager?</a> checks to see if certain conditions are met:
+</p>
+<ul><li>That all the configuration files exist
+</li><li>That we can connect to the databases, and that we know the encoding to use for the dump
+</li><li>That all required fields on all sources have values.
+</li><li>That all locations (data files or directories) for sources have values that refer to real, existing files.
+</li></ul><p>
+If not, you will be told to go an fix the errors. This one refers to the
+ fact that so far, we haven't set up our databases. So click on <strong>Mine Settings</strong> and choose <strong>Databases</strong> from the panel on the left:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-databases.png"><img src="img/attachment.png" alt="No image &quot;MineManager-databases.png&quot; attached to test" title="No image &quot;MineManager-databases.png&quot; attached to test"></a>
+</p>
+<p>
+The three databases listed here need to exist and be accessible with 
+your password and username. To check that these settings are ok, click <strong>Apply Changes</strong>.
+ If the settings are invalid, you will see an error message and need to 
+correct these settings. It may be that these databases do not exist. In 
+which case, you need to click on <strong>Create Databases</strong>, which will try to do so for you.
+</p>
+<p>
+When you have successfully applied your changes you can return to the build screen, and click <strong>Build Mine</strong> again. This time you should see the following:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-building.png"><img src="img/attachment.png" alt="No image &quot;MineManager-building.png&quot; attached to test" title="No image &quot;MineManager-building.png&quot; attached to test"></a>
+</p>
+<p>
+You will notice that the buttons along the bottom row have all been 
+disabled. This is to prevent any changes to the configuration during the
+ build. The output from the build script is visible in the text area on 
+the right. You can cancel the build by pressing the <strong>Cancel</strong> button below the build output, or the <strong>Exit</strong> button in the bottom right. Eventually you should see this:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-built.png"><img src="img/attachment.png" alt="No image &quot;MineManager-built.png&quot; attached to test" title="No image &quot;MineManager-built.png&quot; attached to test"></a>
+</p>
+<p>
+The script has finished, all the buttons are enabled again, and the exit button now reads <strong> Done! </strong> - Congratulations, you have successfully built an <a class="missing wiki">InterMine?</a> data warehouse!
+</p>
+<h2 id="a9.2VerifyingtheBuild">9.2 Verifying the Build<a title="Link to this section" href="#a9.2VerifyingtheBuild" class="anchor"> ¶</a></h2>
+<p>
+After the data has loaded, log into the database and view the contents of the protein table:
+</p>
+<pre class="wiki">&gt; psql malariamine
+malariamine#  select count(*) from protein;
+</pre><p>
+And see the first few rows of data:
+</p>
+<pre class="wiki">malariamine#  select * from protein limit 5;
+</pre><h1 id="a10UpdatingOrganismandPublicationInformation">10 Updating Organism and Publication Information<a title="Link to this section" href="#a10UpdatingOrganismandPublicationInformation" class="anchor"> ¶</a></h1>
+<p>
+Organisms and publications in InterMine are loaded by their taxon id and PubMed id respectively.  The <tt>entrez-organism</tt> and <tt>update-publications</tt>
+ sources can be run at the end of the build to examine the ids loaded, 
+fetch details via the NCBI Entrez web service and add those details to 
+the Mine.
+</p>
+<p>
+We will now look at adding these two sources to your mine:
+</p>
+<ul><li>entrez-organism
+</li><li>update-publications
+</li></ul><h2 id="a10.1Organismdetails-entrez-organism">10.1 Organism details - <tt>entrez-organism</tt><a title="Link to this section" href="#a10.1Organismdetails-entrez-organism" class="anchor"> ¶</a></h2>
+<p>
+You will have noticed that in previous sources and in <tt>project.xml</tt> we have referred to organisms by their <a class="ext-link" href="http://www.ncbi.nlm.nih.gov/Taxonomy/"><span class="icon">&nbsp;</span>NCBI Taxonomy</a>
+ id.  These are numerical ids assigned to each species and strain.  We 
+use these for convenience in integrating data, the taxon id is a good 
+unique identifier for organisms whereas names can come in many different
+ formats: for example in fly data sources we see: <em>Drosophila melanogaster</em>, <em>D. melanogaster</em>, Dmel, DM, etc.
+</p>
+<ul><li>Looking at the <tt>organism</tt> table in the database you will see that the only column filled in is <tt>taxonid</tt>:
+<pre class="wiki">&gt; psql malariamine
+malariamine#  select * from organism;
+</pre></li><li>In the MineManager click <strong>Source Settings</strong> then <strong>Add Source</strong> and add the entrez-organism source to MalariaMine.
+</li></ul><p>
+<strong>NOTE: </strong> As this source depends on organism data 
+previously loaded it should be one of the last sources run and should 
+appear at the end of the sources list. To achieve this, simply drag it 
+to the desired location.
+</p>
+<h2 id="a10.2Publicationdetails-update-publications">10.2 Publication details - <tt>update-publications</tt><a title="Link to this section" href="#a10.2Publicationdetails-update-publications" class="anchor"> ¶</a></h2>
+<p>
+Publications are even more likely to be cited in different formats and 
+are prone to errors in their description.  We will often load data 
+referring to the same publication from multiple sources and need to 
+ensure those publications are integrated correctly.  Hence we load only 
+the PubMed id and fetch the details from the NCBI Entrez web service as 
+above.
+</p>
+<ul><li>Several sources InterMine sources load publications:
+<pre class="wiki">malariamine#  select count(*) from publication;
+malariamine#  select * from publication limit 5;
+</pre></li><li>In the MineManager click <strong>Source Settings</strong> then <strong>Add Source</strong> and add the update-publications source to MalariaMine.
+</li></ul><p>
+<strong>NOTE: </strong> Sometimes, especially with very large numbers of
+ publications, this source will fail to fetch details correctly.  
+Usually running it again will work correctly.
+</p>
+<p>
+Occasionally erroneous PubMed ids are included from some sources and 
+their details will not be updated, there is no good way to deal with 
+this situation.
+</p>
+<h3 id="a10.3Re-buildandchecktheresults">10.3 Re-build and check the results<a title="Link to this section" href="#a10.3Re-buildandchecktheresults" class="anchor"> ¶</a></h3>
+<p>
+With the two new sources added now click <strong>Build Mine</strong> and re-build MalariaMine.
+</p>
+<ul><li>Once the build is finished you can check the database for the new information in the <tt>organism</tt> table:
+<pre class="wiki">&gt; psql malariamine
+  malariamine#  select * from organism;
+</pre></li><li>And the <tt>publication</tt> table:
+<pre class="wiki">malariamine#  select * from publication where title is not null limit 5;
+</pre></li></ul><hr>
+<h1 id="a11Deployingthewebapplication">11 Deploying the web application<a title="Link to this section" href="#a11Deployingthewebapplication" class="anchor"> ¶</a></h1>
+<p>
+Once you have read access to a production database, you can build and release a web application against it.  
+</p>
+<h2 id="a11.1Configure">11.1 Configure<a title="Link to this section" href="#a11.1Configure" class="anchor"> ¶</a></h2>
+<p>
+If you haven't already, use the <a class="missing wiki">MineManager?</a> to configure:
+</p>
+<ul><li>tomcat username and password
+</li><li>superuser username and password
+</li></ul><h2 id="a11.2UserProfile">11.2 UserProfile<a title="Link to this section" href="#a11.2UserProfile" class="anchor"> ¶</a></h2>
+<p>
+The <a class="missing wiki">userprofile database?</a> stores all user-related information such as username and password, tags, queries, lists and templates.  
+</p>
+<p>
+To build the database:
+</p>
+<pre class="wiki"># in malariamine/webapp
+&gt; ant build-db-userprofile
+</pre><ul><li>NOTE: This command will delete any data in the userprofile database.  
+</li><li>This command creates the <a class="missing wiki">SuperUser?</a> account and loads the <a class="source" href="http://localhost:8000/myproject/browser/trunk/bio/tutorial/malariamine/webapp/resources/default-template-queries.xml">default-template-queries.xml</a> file
+</li><li>You only need to build the userprofile database once for every production database.  
+</li><li>See <a class="missing wiki">UserProfile?</a> for more information.
+</li></ul><h2 id="a11.3Deployingthewebapp">11.3 Deploying the webapp<a title="Link to this section" href="#a11.3Deployingthewebapp" class="anchor"> ¶</a></h2>
+<p>
+<strong>Tomcat</strong>
+</p>
+<p>
+Tomcat is the webserver we use to launch <a class="missing wiki">InterMine?</a> webapps.  Start Tomcat with this command:
+</p>
+<pre class="wiki"># from the directory where tomcat is installed.  
+&gt; bin/startup.sh
+</pre><p>
+Visit the Tomcat manager at <a class="ext-link" href="http://localhost:8080/"><span class="icon">&nbsp;</span>http://localhost:8080/</a>.  The username and password required to access the manager are <tt>webapp.manager</tt> and <tt>webapp.password</tt> as specified in the <a class="missing wiki">MineManager?</a>.
+</p>
+<p>
+See:  <a class="missing wiki">Tomcat?</a>
+</p>
+<p>
+<strong>Webapp</strong>
+</p>
+<p>
+Run the following command to release your webapp: 
+</p>
+<pre class="wiki"># in malariamine/webapp
+&gt; ant default remove-webapp release-webapp
+</pre><p>
+This will fetch the model from the database and generate the model java code, remove and release the webapp.  The <tt>default</tt> target forces a rebuild of the .war file.  If you've made updates, you may want to add <tt>clean</tt>, which removes temporary directories.
+</p>
+<p>
+See: <a class="missing wiki">AntTargets?</a>
+</p>
+<h2 id="a11.4Usingthewebapp">11.4 Using the webapp<a title="Link to this section" href="#a11.4Usingthewebapp" class="anchor"> ¶</a></h2>
+<p>
+Navigate to <a class="ext-link" href="http://localhost:8080/malariamine"><span class="icon">&nbsp;</span>http://localhost:8080/malariamine</a>
+ to view your webapp.  The path to your webapp is the "deployment URL" 
+and "deployment path" attributes on the Web Settings page in the <a class="missing wiki">MineManager?</a>. 
+</p>
+<h3 id="a11.4.1Runningaquery">11.4.1 Running a query<a title="Link to this section" href="#a11.4.1Runningaquery" class="anchor"> ¶</a></h3>
+<p>
+Run a template query:
+</p>
+<ul><li>Click on one of the links in the "Templates" box on the homepage:
+<ul><li>Organism --&gt; All proteins.
+</li><li>Gene --&gt; Proteins.
+</li><li>All proteins in organism --&gt; Publications.
+</li></ul></li><li>Click on the "Show Results" button to run the query.
+</li></ul><h3 id="a11.4.2Queryresults">11.4.2 Query results<a title="Link to this section" href="#a11.4.2Queryresults" class="anchor"> ¶</a></h3>
+<ul><li>Click on a link in a results page to view a report page.
+</li><li>Using the grey toolbar above the results table:
+<ul><li>Export your results.
+</li><li>Add a column to results.
+</li></ul></li></ul><p>
+We will go into greater detail regarding the webapp later today.
+</p>
+<hr>
+<h1 id="a12Objectrelationalmapping">12 Object relational mapping<a title="Link to this section" href="#a12Objectrelationalmapping" class="anchor"> ¶</a></h1>
+<p>
+ 
+InterMine works with objects, objects are loaded into the production 
+system and queries return lists of objects.  These objects are persisted
+ to a relational database.  Internal InterMine code (the ObjectStore) 
+handles the storage and retrieval of objects from the database 
+automatically.  By using an object model InterMine queries benefit from 
+inheritance, for example the <tt>Gene</tt> and <tt>Exon</tt> classes are both subclasses of <tt>SequenceFeature</tt>.  When querying for SequenceFeatures (representing any genome feature) both Genes and Exons will be returned automatically.  
+</p>
+<p>
+We can see how see how inheritance is represented in the database:
+</p>
+<ul><li>One table is created for each class in the data model.
+</li><li>Where one class inherits from another, entries are written to both tables.  For example:
+<pre class="wiki">malariamine#  select * from gene limit 5;
+</pre>The same rows appear in the <tt>sequencefeature</tt> table:
+<pre class="wiki">malariamine#  select * from sequencefeature limit 5;
+</pre></li><li>All classes in the object model inherit from <tt>InterMineObject</tt>.  Querying the <tt>intermineobject</tt> table in the database is a useful way to find the total number of objects in a Mine:
+<pre class="wiki"> malariamine#  select count(*) from intermineobject;
+</pre></li><li>All tables include an <tt>id</tt> column for unique ids and a <tt>class</tt> column with the actual class of that object.  Querying the <tt>class</tt> column of <tt>intermineobject</tt> you can find the counts of different objects in a Mine:
+<pre class="wiki"> malariamine#  select class, count(*) from intermineobject group by class;
+</pre></li><li>A technical detail: for speed when retrieving objects and to deal with inheritance correctly (e.g. to ensure a <tt>Gene</tt> object with all of its fields is returned even if the query was on the <tt>SequenceFeature</tt> class) a serialised copy of each object is stored in the <tt>intermineobject</tt>
+ table.  When queries are run by the ObjectStore they actually return 
+the ids of objects - these objects are may already be in a cache, if not
+ the are retrieved from the <tt>intermineobject</tt> table.
+</li></ul><h1 id="a13LoadingGenomeDatafromGFF3andFASTA">13 Loading Genome Data from GFF3 and FASTA<a title="Link to this section" href="#a13LoadingGenomeDatafromGFF3andFASTA" class="anchor"> ¶</a></h1>
+<p>
+We will load genome annotation data for <em>P. falciparum</em> from <a class="ext-link" href="http://plasmodb.org/plasmo/"><span class="icon">&nbsp;</span>PlasmoDB</a>:
+</p>
+<ul><li>genes, mRNAs, exons and their chromosome locations - in GFF3 format
+</li><li>chromosome sequences - in FASTA format
+</li></ul><h2 id="a13.1Dataintegration">13.1 Data integration<a title="Link to this section" href="#a13.1Dataintegration" class="anchor"> ¶</a></h2>
+<p>
+Note that genes from the gff3 file will have the same <tt>primaryIdentifier</tt>
+ as those already loaded from UniProt.  These will  merge in the 
+database such that there is only one copy of each gene with information 
+from both data sources. We will load the genome data then look at how 
+data integration in InterMine works.
+</p>
+<p>
+First, look at the information currently loaded for gene <tt>PFL1385c</tt> from UniProt:
+</p>
+<pre class="wiki">malariamine=#  select * from gene where primaryIdentifier = 'PFL1385c';
+</pre><h2 id="a13.2GFF3files">13.2 GFF3 files<a title="Link to this section" href="#a13.2GFF3files" class="anchor"> ¶</a></h2>
+<p>
+GFF3 is a standard format use to represent genome features and their 
+locations.  It is flexible and expressive and defined by a clear 
+standard - <a class="ext-link" href="http://www.sequenceontology.org/gff3.shtml"><span class="icon">&nbsp;</span>more details here</a>.
+  An example of the file will load can be used to explain the format, 
+each line represents one feature and has nine tab-delimited columns:
+</p>
+<pre class="wiki">MAL1    ApiDB   gene    183057  184457  .       -       .       ID=gene.46311;description=hypothetical%20protein;Name=PFA0210c
+MAL1    ApiDB   mRNA    183057  184457  .       +       .       ID=mRNA.46312;Parent=gene.46311
+MAL1    ApiDB   exon    183057  184457  .       -       0       ID=exon.46313;Parent=mRNA.46312
+</pre><ul><li>col 1: "seqid"
+<ul><li>an identifier for a 'landmark' on which the current feature is locatated, in this case 'MAL1', a <em>P. falciparum</em> chromosome.
+</li></ul></li><li>col 2: "source"
+<ul><li>the database or algorithm that provided the feature
+</li></ul></li><li>col 3: "type"
+<ul><li>a valid SO term defining the feature type - here <tt>gene</tt> or <tt>mRNA</tt>
+</li></ul></li><li>col 4 &amp; 5: "start" and "end"
+<ul><li>coordinates of the feature on the landmark in col 1
+</li></ul></li><li>col 6: "score"
+<ul><li>an optional score, used if the feature has been generated by an algorithm
+</li></ul></li><li>col 7: "strand"
+<ul><li>'+' or '-' to indicate the strand the feature is on
+</li></ul></li><li>col 8: "phase" 
+<ul><li>for <tt>CDS</tt> features to show where the feature begins with reference to the reading frame
+</li></ul></li><li>col 9: "attributes" 
+<ul><li>custom attributes to describe the feature, these are name/value 
+pairs separated by ';'.  Some attributes have predefined meanings, 
+relevant here:
+<ul><li><tt>ID</tt> - identifier of feature, unique in scope of the GFF3 file
+</li><li><tt>Name</tt> - a display name for the feature
+</li><li><tt>Parent</tt> - the <tt>ID</tt> of another feature in the file that is a parent of this one.  In our example the <tt>gene</tt> is a <tt>Parent</tt> of the <tt>mRNA</tt>.
+</li></ul></li></ul></li></ul><p>
+A dot means there is no value provided for the column.
+</p>
+<p>
+The files we are loading are from PlasmoDB and contain <tt>gene</tt>, <tt>exon</tt> and <tt>mRNA</tt> features, there is one file per chromosome.  Look at an example:
+</p>
+<pre class="wiki">&gt; less ~/malaria/genome/gff/MAL1.gff3
+</pre><h2 id="a13.3TheGFF3source">13.3 The GFF3 source<a title="Link to this section" href="#a13.3TheGFF3source" class="anchor"> ¶</a></h2>
+<p>
+InterMine includes a parser to load valid GFF3 files.  The creation of 
+features, sequence features (usually chromosomes), locations and 
+standard attributes is taken care of automatically. 
+</p>
+<p>
+To add the GFF3 source to your Mine:
+ 
+</p>
+<ol><li>Select the "Add source" option on the Sources menu.
+</li><li>Choose "malaria-gff"
+</li></ol><p>
+ 
+</p>
+<ul><li>The properties set for <tt>malaria-gff</tt> are:
+<ul><li><tt>gff3.seqClsName = Chromosome</tt>
+<ul><li>the ids in the first column represent <tt>Chromosome</tt> objects, e.g. MAL1
+</li></ul></li><li><tt>gff3.taxonId = 36329</tt>
+<ul><li>taxon id of malaria
+</li></ul></li><li><tt>gff3.dataSourceName = PlasmoDB</tt>
+<ul><li>the data source for features and their identifiers, this is used for the DataSet (evidence) and synonyms.
+</li></ul></li><li><tt>gff3.seqDataSourceName = PlasmoDB</tt>
+<ul><li>the source of the seqids (chromosomes) is sometimes different to the features described
+</li></ul></li><li><tt>gff3.dataSetTitle = PlasmoDB P. falciparum genome</tt> 
+<ul><li>a DataSet object is created as evidence for the features, it is linked to a DataSource (PlasmoDB)
+</li></ul></li></ul></li></ul><p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-sourcegff.png"><img src="img/attachment.png" alt="No image &quot;MineManager-sourcegff.png&quot; attached to test" title="No image &quot;MineManager-sourcegff.png&quot; attached to test"></a>
+</p>
+<ul><li>In some cases specific code is required to deal with attributes in the gff file and any special cases.  A specific <tt>source</tt>
+ can be created to contain the code to do this and any additions to the 
+data model necessary.  For malaria gff we need a handler to switch which
+ fields from the file are set as <tt>primaryIdentifier</tt> and <tt>symbol</tt>/<tt>secondaryIdentifier</tt>
+ in the features created.  This is to match the identifiers from 
+UniProt, it is quite a common issue when integrating from multiple data 
+sources.
+<ul><li>From the example above, by default: <tt>ID=gene.46311;description=hypothetical%20protein;Name=PFA0210c</tt> would make <tt>Gene.primaryIdentifier</tt> be <tt>gene.46311</tt> and <tt>Gene.symbol</tt> be <tt>PFA0210c</tt>.  We need <tt>PFA0210c</tt> to be the <tt>primaryIdentifier</tt>.
+</li></ul></li><li>The <tt>malaria-gff</tt> source is held in the <tt>bio/sources/malaria-gff</tt> directory.  Look at the <tt>project.properties</tt> file in this directory, there are two properties of interest:
+<pre class="wiki"># set the source type to be gff
+have.file.gff=true
+
+# specify a Java class to be called on each row of the gff file to cope with attributes
+gff3.handlerClassName = org.intermine.bio.dataconversion.MalariaGFF3RecordHandler
+</pre></li><li>Look at the <tt>MalariaGFF3RecordHandler</tt> class in <tt>bio/sources/malaria-gff/main/src/org/intermine/bio/dataconversion</tt>.  This code changes which fields the <tt>ID</tt> and <tt>Name</tt> attributes from the GFF file have been assigned to.
+<pre class="wiki">&gt; less ~/dev/bio/sources/malaria-gff/main/src/org/intermine/bio/dataconversion/MalariaGFF3RecordHandler.java
+</pre></li></ul><h2 id="a13.4FASTAfiles">13.4 FASTA files<a title="Link to this section" href="#a13.4FASTAfiles" class="anchor"> ¶</a></h2>
+<p>
+FASTA is a minimal format for representing sequence data.  Files 
+comprise a header with some identifier information preceded by '&gt;' 
+and a sequence.  At present the InterMine FASTA parser loads just the 
+first entry in header after <tt>&gt;</tt> and assigns it to be an 
+attribute of the feature created.  Here we will load one FASTA file for 
+each malaria chromosome.  Look at an example of the files we will load:
+</p>
+<pre class="wiki">&gt; less ~/malaria/genome/fasta/MAL1.fasta
+</pre><p>
+Add a fasta source to your Mine by following these steps:
+</p>
+<ol><li>Select "Add source" option from the Sources menu
+</li><li>Select the "fasta" type and name your source "malaria-chromosome-fasta". <strong>Note: </strong>
+ you must use this name as there is an integration keys set of this name
+ predefined for you. We will deal with keys in more detail in the custom
+ source section.
+</li><li>Click the "Add" button and save your changes.
+</li></ol><p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-sourcesettings-fasta.png"><img src="img/attachment.png" alt="No image &quot;MineManager-sourcesettings-fasta.png&quot; attached to test" title="No image &quot;MineManager-sourcesettings-fasta.png&quot; attached to test"></a>
+</p>
+<p>
+The following properties are defined for <tt>malaria-chromosome-fasta</tt>:
+</p>
+<ul><li> FASTA Class Name = <tt>org.intermine.model.bio.Chromosome</tt>
+<ul><li>the type of feature that each sequence is for
+</li></ul></li><li>fasta.dataSourceName = <tt>PlasmoDB</tt>
+<ul><li>the source of identifiers to be created
+</li></ul></li><li>Dataset Name = <tt>PlasmoDB chromosome sequence</tt>
+<ul><li>a DataSet object is created as evidence
+</li></ul></li><li>Taxon ID = <tt>36329</tt>
+<ul><li>the organism id for <em>Plasmodium falciparum</em>
+</li></ul></li></ul><blockquote>
+<blockquote>
+<p>
+This will create features of the class <tt>Chromosome</tt> with <tt>primaryIdentifier</tt> set and the <tt>Chromosome.sequence</tt> reference set to a <tt>Sequence</tt> object.  Also created is <tt>DataSet</tt> and <tt>DataSource</tt> as evidence.
+</p>
+</blockquote>
+</blockquote>
+<h1 id="a14DataIntegration">14 Data Integration<a title="Link to this section" href="#a14DataIntegration" class="anchor"> ¶</a></h1>
+<p>
+For an introduction to data integration in InterMine please read: <a class="missing wiki">DataIntegration?</a>
+</p>
+<p>
+Click on the "Build Mine" button at the bottom of the page to build all 
+three sources:  UniProt, gff, and fasta.  This should take about 5 
+minutes.  
+</p>
+<h2 id="a14.1DataintegrationinMalariaMine">14.1 Data integration in MalariaMine<a title="Link to this section" href="#a14.1DataintegrationinMalariaMine" class="anchor"> ¶</a></h2>
+<p>
+The sources <tt>uniprot</tt> and <tt>malaria-gff</tt> have both loaded 
+information about the same genes.  Before loading genome data we ran a 
+query to look at the information UniProt provided about the gene <tt>PFL1385c</tt>:
+</p>
+<pre class="wiki">malariamine=# select id, primaryidentifier, secondaryidentifier, symbol, length , chromosomeid, chromosomelocationid, organismid from gene where primaryIdentifier = 'PFL1385c';
+    id    | primaryidentifier | secondaryidentifier | symbol | length | chromosomeid | chromosomelocationid | organismid 
+----------+-------------------+---------------------+--------+--------+--------------+----------------------+------------
+ 83000626 | PFL1385c          |                     | ABRA   |        |              |                      |   83000003
+(1 row)
+</pre><p>
+Which showed that UniProt provided <tt>primaryIdentifier</tt> and <tt>symbol</tt> attributes and set the <tt>organism</tt> reference.  The <tt>id</tt> was set automatically by the ObjectStore and will be different each time you build your Mine.
+</p>
+<p>
+Running the same query after <tt>malaria-gff</tt> is added shows that more fields have been filled in for same gene and that it has kept the same id:
+</p>
+<pre class="wiki">malariamine=# select id, primaryidentifier, secondaryidentifier, symbol, length , chromosomeid, chromosomelocationid, organismid from gene where primaryIdentifier = 'PFL1385c';
+    id    | primaryidentifier | secondaryidentifier | symbol | length | chromosomeid | chromosomelocationid | organismid 
+----------+-------------------+---------------------+--------+--------+--------------+----------------------+------------
+ 83000626 | PFL1385c          | gene.33449          | ABRA   |   2232 |     84017653 |             84018828 |   83000003
+(1 row)
+
+</pre><p>
+This means that when the second source was loaded the integration code 
+was able to identify that an equivalent gene already existed and merged 
+the values for each source, the equivalence was based on <tt>primaryIdentifier</tt> as this was the field that the two sources had in common.
+</p>
+<p>
+Note that <tt>malaria-gff</tt> does not include a value for <tt>symbol</tt> but it did not write over the <tt>symbol</tt> provided by UniProt, actual values always take precedence over null values (unless configured otherwise).
+</p>
+<p>
+Now look at the organism table:
+</p>
+<pre class="wiki">malariamine=# select * from organism;
+ genus | taxonid | species | abbreviation |    id    | shortname | name |               class                
+-------+---------+---------+--------------+----------+-----------+------+------------------------------------
+       |   36329 |         |              | 83000003 |           |      | org.flymine.model.genomic.Organism
+(1 row)
+</pre><p>
+Three sources have been loaded so far that all included the organism with <tt>taxonId</tt>
+ 36329, and more importantly they included objects that reference the 
+organism.  There is still only one row in the organism table so the data
+ from three sources has merged, in this case <tt>taxonId</tt> was the field used to define equivalence.
+</p>
+<h2 id="a14.2Howdataintegrationworks">14.2 How data integration works<a title="Link to this section" href="#a14.2Howdataintegrationworks" class="anchor"> ¶</a></h2>
+<p>
+Data integration works by defining keys for each class of object to 
+describe fields that can be used to define equivalence for objects of 
+that class.  For the examples above:
+</p>
+<ul><li><tt>primaryIdentifier</tt> was used as a key for <tt>Gene</tt>
+</li><li><tt>taxonId </tt> was used as a key for <tt>Organism</tt>
+</li></ul><p>
+For each <tt>Gene</tt> object loaded by <tt>malaria-gff</tt> a query was performed in the <tt>malariamine</tt> database to find any existing <tt>Gene</tt> objects with the same <tt>primaryIdentifier</tt>.  If any were found fields from both objects were merged and the resulting object stored.
+</p>
+<ul><li>Note that many performance optimisation steps are applied to 
+this process.  We don't actually run a query for each object loaded, 
+requests are batched and queries can be avoided completely if the system
+ can work out no integration will be needed.
+</li></ul><p>
+We may also load data from some other source that provides information 
+about genes but doesn't use the identifier scheme we have chosen for <tt>primaryIdentifier</tt> (in our example <tt>PFL1385c</tt>).  Instead it only knows about the <tt>symbol</tt> (<tt>ABRA</tt>), in that case we would want that source to use the <tt>symbol</tt> to define equivalence for <tt>Gene</tt>.
+</p>
+<p>
+Important points:
+</p>
+<ul><li>A <strong>primary key</strong> defines a field or fields of a class that can be used to search for equivalent objects
+</li><li>Multiple primary keys can be defined for a class, sources can 
+use different keys for a class if they provide different identifiers
+</li><li>One source can use multiple primary keys for a class if the 
+objects of that class don't consistently have the same identifier type
+</li><li><tt>null</tt> - if a source has no value for a field that is 
+defined as a primary key then the key is not used and the data is loaded
+ without being integrated.
+</li></ul><h2 id="a14.3PrimarykeysinMalariaMine">14.3 Primary keys in MalariaMine<a title="Link to this section" href="#a14.3PrimarykeysinMalariaMine" class="anchor"> ¶</a></h2>
+<p>
+The keys used by each source are configured in the corresponding <tt>bio/sources/</tt> directory.
+</p>
+<p>
+For <tt>uniprot</tt>:
+</p>
+<pre class="wiki">&gt; less ../bio/sources/uniprot/resources/uniprot_keys.properties
+</pre><p>
+And <tt>malaria-gff</tt>:
+</p>
+<pre class="wiki">&gt; less ../bio/sources/malaria-gff/resources/malaria-gff_keys.properties
+</pre><p>
+<strong>NOTE</strong> - the key on <tt>Gene.primaryIdentifier</tt> is 
+defined in both sources, that means that the same final result would 
+have been achieved regardless of the order in the two sources were 
+loaded.  
+</p>
+<p>
+These <tt>_keys.properties</tt> files define keys in the format:
+</p>
+<pre class="wiki">Class.name_of_key = field1, field2
+</pre><p>
+The <tt>name_of_key</tt> can be any string but you must use different names if defining more than one key for the same class, for example in <tt>uniprot_keys.properties</tt> there are two different keys defined for <tt>Gene</tt>:
+</p>
+<pre class="wiki">Gene.key_primaryidentifier = primaryIdentifier
+Gene.key_secondaryidentifier = secondaryIdentifier
+</pre><p>
+It is better to use common names for identical keys between sources as this will help avoid duplicating database indexes.
+</p>
+<p>
+Each key should list one or more fields that can be a combination of <strong>attributes</strong> of the class specified or <strong>references</strong> to other classes, in this cases there should usually be a key defined for the referenced class as well.
+</p>
+<p>
+<strong>Note</strong> - it is still possible to use a legacy method of configuring keys, where keys are defined centrally in <tt>dbmodel/resources/genomic_keyDefs.properties</tt> and referenced in source <tt>_keys.properties</tt> files.
+</p>
+<h2 id="a14.4Dealingwithconflicts">14.4 Dealing with conflicts<a title="Link to this section" href="#a14.4Dealingwithconflicts" class="anchor"> ¶</a></h2>
+<p>
+It is possible that two different sources could have a value for the 
+same field, in this case we need to define which source should take 
+precedence.
+</p>
+<p>
+Try loading data from the <tt>interpro</tt> source which will cause a conflict with <tt>uniprot</tt>.
+  UniProt loads a list of protein domains for each protein but doesn't 
+include the full names and descriptions of ProteinDomain objects, the <tt>interpro</tt> source adds this information.
+</p>
+<p>
+You will see a message that includes the text:
+</p>
+<pre class="wiki">Conflicting values for field ProteinDomain.shortName between uniprot (value "CO_DHase_flav_C", in database with ID 10008203) and interpro (value "CO_DH_flav_C", being stored). This field needs configuring in the genomic_priorities.properties file
+</pre><p>
+Slightly different values have been provided for the <tt>shortName</tt> of a particular <tt>ProteinDomain</tt>.  In this case we want to take the value from <tt>interpro</tt>.  Edit <tt>dbmodel/resources/genomic_priorities.properties</tt> and add the line:
+</p>
+<pre class="wiki">ProteinDomain.shortName = interpro, uniprot
+</pre><p>
+Now run try to load <tt>interpro</tt> again.
+</p>
+<p>
+See here for a full description of configuring priorities:  <a class="missing wiki">PriorityConfig?</a>
+</p>
+<h2 id="a14.5Thetrackertable">14.5 The <tt>tracker</tt> table<a title="Link to this section" href="#a14.5Thetrackertable" class="anchor"> ¶</a></h2>
+<p>
+A special <tt>tracker</tt> table is created in the target database by 
+the data integration system.  This tracks which sources have loaded data
+ for each field of each object.  The data is used along with priorities 
+configuration when merging objects but is also useful to view where 
+objects have come from.
+</p>
+<ul><li>Look at the columns in the tracker table, <tt>objectid</tt> references an object from some other table
+</li></ul><ul><li>Query tracker information for the objects in the examples above:
+<pre class="wiki">select distinct sourcename from tracker, gene where objectid = id and primaryidentifier = 'PFL1385c';
+
+select objectid, sourcename, fieldname, version from tracker, gene where objectid = id and primaryidentifier = 'PFL1385c';
+
+select distinct sourcename from tracker, organism where objectid = id;
+</pre></li></ul><h1 id="a15AddGOandGO-annotationsources">15 Add GO and GO-annotation sources<a title="Link to this section" href="#a15AddGOandGO-annotationsources" class="anchor"> ¶</a></h1>
+<p>
+Gene Ontology (GO) provides a controlled vocabulary of terms for 
+describing gene product characteristics and gene product annotation data
+ in any organism.  See <a class="ext-link" href="http://geneontology.org/"><span class="icon">&nbsp;</span>http://geneontology.org</a> for more information.
+</p>
+<p>
+Add the go and go-annotation sources to your Mine.
+</p>
+<ul><li>OBO file for GO is in `malaria/go/' directory
+</li><li>go-annotation data is in <tt>malaria/go-annotation</tt>
+</li></ul><h1 id="a16PostProcessing">16 Post Processing<a title="Link to this section" href="#a16PostProcessing" class="anchor"> ¶</a></h1>
+<p>
+Post-processing steps are run after all data is loaded, they are accessed via the "Post-processes" option on the "Sources" menu.
+</p>
+<ul><li>Some of these can only be run after data from multiple sources 
+are loaded.  For example, for the Malaria genome information we load 
+features and their locations on chromosomes from <tt>malaria-gff</tt> but the sequences of chromosomes from <tt>malaria-chromosome-fasta</tt>.  These are loaded independently and the <tt>Chromosome</tt> objects from each are integrated, neither of these on their own could set the sequence of each <tt>Exon</tt>.  However, now they are both loaded the <tt>transfer-sequences</tt> post-process can calculate and set the sequences for all features located on a <tt>Chromosome</tt> for which the sequence is known.
+</li></ul><ul><li>Some post-process steps are used to homogenize data 
+from different sources or fill in shortcuts in the data model to improve
+ usability - e.g. <tt>create-references</tt>.
+</li></ul><ul><li>Finally, there are post-process operations that create summary information to be used by the web application: <tt>summarise-objectstore</tt>, <tt>create-search-index</tt> and <tt>create-autocomplete-indexes</tt>.
+</li></ul><p>
+A list of common post-process targets with some indication whether you will need to use them is give here: <a class="missing wiki">PostProcessing?</a>.
+</p>
+<h2 id="a16.1MalariaMinePostProcessing">16.1 MalariaMine Post Processing<a title="Link to this section" href="#a16.1MalariaMinePostProcessing" class="anchor"> ¶</a></h2>
+<p>
+To set the post processing steps for <a class="missing wiki">MalariaMine?</a>, click on the <strong>Sources</strong> menu, and then select <strong>Post-Processes</strong>. You will see this screen:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/Screenshot-Post-Processes.png"><img src="img/attachment.png" alt="No image &quot;Screenshot-Post-Processes.png&quot; attached to test" title="No image &quot;Screenshot-Post-Processes.png&quot; attached to test"></a>
+</p>
+<p>
+Change your selections to they match the ones in the screen-shot. If you
+ want to know more about any of the post-processes, click on the green <em>help</em> icon to get a description of what that process does.
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/Screenshot-Post-Processes-1.png"><img src="img/attachment.png" alt="No image &quot;Screenshot-Post-Processes-1.png&quot; attached to test" title="No image &quot;Screenshot-Post-Processes-1.png&quot; attached to test"></a>
+</p>
+<h3 id="a16.1.1create-references">16.1.1 <tt>create-references</tt><a title="Link to this section" href="#a16.1.1create-references" class="anchor"> ¶</a></h3>
+<p>
+This fills in some shortcut references in the data model to make querying easier.  For example, <tt>Gene</tt> has a collection of <tt>transcripts</tt> and <tt>Transcript</tt> has a collection of <tt>exons</tt>.  <tt>create-references</tt> will follow these collections and create a <tt>gene</tt> reference in <tt>Exon</tt> and the corresponding <tt>exons</tt> collection in <tt>Gene</tt>.
+</p>
+<pre class="wiki">malariamine#  select * from exon limit 5;
+</pre><p>
+The empty <tt>geneid</tt> column will be filled in representing the reference to gene.
+</p>
+<h3 id="a16.1.2transfer-sequences">16.1.2 <tt>transfer-sequences</tt><a title="Link to this section" href="#a16.1.2transfer-sequences" class="anchor"> ¶</a></h3>
+<p>
+The sequence for chromosomes is loaded by <tt>malaria-chromosome-fasta</tt>
+ but no sequence is set for the features located on them.  This step 
+reads the locations of features, calculates and stores their sequence 
+and sets the <tt>sequenceid</tt> column.  The <tt>sequenceid</tt> column for this exon is empty:
+</p>
+<pre class="wiki">malariamine# select * from exon where primaryidentifier = 'exon.32017';
+</pre><p>
+After running <tt>transfer-sequences</tt> the <tt>sequenceid</tt> column is filled in and we can see the sequence of this exon:
+</p>
+<pre class="wiki">malariamine# select primaryidentifier, exon.length, residues from exon, intermine_sequence where sequenceid = intermine_sequence.id and exon.primaryidentifier = 'exon.32017';
+</pre><h3 id="a16.1.3do-sources">16.1.3 <tt>do-sources</tt><a title="Link to this section" href="#a16.1.3do-sources" class="anchor"> ¶</a></h3>
+<p>
+Each source can also provide code to execute post-process steps if 
+required.  This command loops through all of the sources and checks 
+whether there are any post-processing steps configured.  There aren't 
+any for the sources we are using for MalariaMine but you should always 
+include the <tt>do-sources</tt> element.
+</p>
+<h3 id="a16.1.4summarise-objectstorecreate-search-indexcreate-autocomplete-index">16.1.4 <tt>summarise-objectstore</tt>, <tt>create-search-index</tt> &amp; <tt>create-autocomplete-index</tt><a title="Link to this section" href="#a16.1.4summarise-objectstorecreate-search-indexcreate-autocomplete-index" class="anchor"> ¶</a></h3>
+<p>
+These generate summary data and indexes used by the web application, see <a class="missing wiki">WebappConfig?</a>.
+</p>
+<p>
+Save your changes and click on the "Build Mine" button to build your database.
+</p>
+<h1 id="a17ConfiguringYourWebapp">17 Configuring Your Webapp<a title="Link to this section" href="#a17ConfiguringYourWebapp" class="anchor"> ¶</a></h1>
+<p>
+See <a class="missing wiki">WorkshopWeb?</a> for information on how to configure your webapp.
+</p>
+<hr>
+<h1 id="a18Creatingyourownsource">18 Creating your own source<a title="Link to this section" href="#a18Creatingyourownsource" class="anchor"> ¶</a></h1>
+<p>
+As well as the standard <a class="missing wiki">InterMine?</a> sources, 
+you are encouraged to write your own custom sources. We provide two APIs
+ for this, one in Java, and one in Perl, and their respective source 
+types <strong>custom-file</strong> and <strong>intermine-items=xml-file</strong>:
+</p>
+<ul><li>The <strong>Java</strong> API requires you to write a parser 
+with a pre-defined name in the source's directory. This is run at the 
+same time and in the same way as standard <a class="missing wiki">InterMine?</a> sources, so all parsing and loading of data occurs <em>during</em>
+ the build process. The parser reads from your data source, and writes 
+the information it parses out of it into the items database specified in
+ the database section, before being loaded into the production database 
+using the ObjectStore API. To add a source using the Java API choose <strong>custom-file</strong> as your source type.
+</li><li>The <strong>Perl</strong> API requires you write a parser (in 
+any location or way that you choose, although a stub can be provided for
+ you) to translate your data into our custom <a class="missing wiki">InterMine Items XML format?</a>.
+ This is an XML representation of the data records in the form they are 
+stored in using our Object Relational Mapping. We provide a standard <a class="missing wiki">InterMine?</a> parser for reading this XML directly into the database. The parsing in this case takes place <em>before</em> the build process, and the loading occurs <em>during</em> the build. To add a source using this API, choose <strong>intermine-items-xml-file</strong>.
+</li></ul><p>
+Both of these approaches are used by existing mines, and the choice of 
+which to use very much depends on your individual needs and expertise. 
+For very large datasets, however, the Java API can be faster.
+</p>
+<p>
+When you are adding a custom source to the mine, we need to bear in mind two things:
+</p>
+<ul><li>The new data types we are adding in.
+</li><li>Possible conflicts between our data and existing data in the database.
+</li></ul><p>
+The first problem is dealt with by using additions files, the second by using key definition files. 
+</p>
+<h2 id="a18.1ExampleDatasource-KEGG">18.1 Example Data source - KEGG<a title="Link to this section" href="#a18.1ExampleDatasource-KEGG" class="anchor"> ¶</a></h2>
+<p>
+First let's look at the data we will be adding to the database. In this tutorial we will use data from the <a class="ext-link" href="http://www.genome.jp/kegg/pathway.html"><span class="icon">&nbsp;</span>KEGG pathway database</a>. In their words:
+</p>
+<blockquote class="citation">
+<p>
+KEGG PATHWAY mapping is the process to map molecular datasets, 
+especially large-scale datasets in genomics, transcriptomics, 
+proteomics, and metabolomics, to the KEGG pathway maps for biological 
+interpretaion of higher-level systemic functions.
+</p>
+</blockquote>
+<p>
+Specifically, the data we have will provide mappings between genes and KEGG pathways. It takes the form of two files in <tt>DATA_DIR/malaria/kegg</tt>, look at these now.
+</p>
+<ul><li><tt>pfa_gene_map.tab</tt> - this has two tab delimited columns:
+<ul><li>the first is the identifier of a malaria gene, note these are the same ids we have used for <tt>Gene.primaryIdentifier</tt> in other sources.
+</li><li>the second is a space separated list of KEGG pathway ids that the gene is involved in
+</li></ul></li><li><tt>map_title.tab</tt> - also has two tab delimited columns:
+<ul><li>the first is a KEGG pathway identifier
+</li><li>the second the descriptive name of the pathway
+</li></ul></li></ul><h2 id="a18.2AdditionsFiles">18.2 Additions Files<a title="Link to this section" href="#a18.2AdditionsFiles" class="anchor"> ¶</a></h2>
+<p>
+First let's look at a source we have already successfully loaded. In the <strong>Source Settings</strong> section of the <strong><a class="missing wiki">MineManager?</a></strong>, select <em>uniprot</em> from the source list on the left. In the panel on the right, click on the <strong>Source Model Additions</strong> tab. You should see this screen:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-uniprot-additions.png"><img src="img/attachment.png" alt="No image &quot;MineManager-uniprot-additions.png&quot; attached to test" title="No image &quot;MineManager-uniprot-additions.png&quot; attached to test"></a>
+</p>
+<p>
+These are the parts of the model that are specific to uniprot. You can see the XML representation of these additions <a class="source" href="http://localhost:8000/myproject/browser/trunk/bio/sources/uniprot/uniprot_additions.xml">here</a>. Scroll down to the bottom and look at the classes "ProteinDomain" and "UniprotFeature":
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-uniprot-additions2.png"><img src="img/attachment.png" alt="No image &quot;MineManager-uniprot-additions2.png&quot; attached to test" title="No image &quot;MineManager-uniprot-additions2.png&quot; attached to test"></a>
+</p>
+<p>
+These two classes were added into the model by the uniprot source. To see this in action, open the <a class="missing wiki">ModelViewer?</a>, choose "UniprotFeature" from the list on the left and hold your mouse over the class name:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/uniprot-additions.png"><img src="img/attachment.png" alt="No image &quot;uniprot-additions.png&quot; attached to test" title="No image &quot;uniprot-additions.png&quot; attached to test"></a>
+</p>
+<p>
+As you can see, this class originates in the <tt>uniprot_additions.xml</tt>
+ file. If you expand the diagram by double clicking on the references 
+(the fields with arrows pointing off them), you can see how this class 
+fits in with the existing model classes:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/uniprot-additions-refs.png"><img src="img/attachment.png" alt="No image &quot;uniprot-additions-refs.png&quot; attached to test" title="No image &quot;uniprot-additions-refs.png&quot; attached to test"></a>
+</p>
+<p>
+Here the <tt>OntologyTerm</tt> class is a core class which the <tt>UniprotFeature</tt>
+ class references. We need to do the same kind of thing for our data 
+source, Kegg. As we saw above, the two types of data involved here are <em>genes</em> and <em>pathways</em>, so both of these will need to be represented in the model. Obviously we already have a <tt>Gene</tt> class, but now we will need a <tt>Pathway</tt> class as well. As you can see from the data files, we have three pieces of information about the pathway:
+</p>
+<ol><li>its identifier
+</li><li>its descriptive name
+</li><li>the genes it is associated with 
+</li></ol><p>
+Additionally we now have extra information about <tt>Gene</tt>s, specifically:
+</p>
+<ul><li>pathways they are associated with. 
+</li></ul><p>
+So we need to add a whole new class to the model, and add a new field to the <tt>Gene</tt> class. To do this, add a source of your preferred type to your model (<strong>custom-file</strong> for the Java API, <strong>intermine-items-xml-file</strong> for the Perl API), and give it a suitable name. Unlike standard <a class="missing wiki">InterMine?</a> sources, the name should not be the same as the source type. When you have done that, open the new source's additions tab:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-kegg-additions.png"><img src="img/attachment.png" alt="No image &quot;MineManager-kegg-additions.png&quot; attached to test" title="No image &quot;MineManager-kegg-additions.png&quot; attached to test"></a>
+</p>
+<p>
+There are a couple of things to note here. At the top you can see that 
+where other sources have a single type, this one has a compound one, 
+showing that it is a user defined source derived from a standard type. 
+In the additions tab you can see that this source does not have any 
+additions. Click <strong>Add New Class</strong> in the upper right of the tab to add a new one:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/MineManager-kegg-additions-pathway.png"><img src="img/attachment.png" alt="No image &quot;MineManager-kegg-additions-pathway.png&quot; attached to test" title="No image &quot;MineManager-kegg-additions-pathway.png&quot; attached to test"></a>
+</p>
+<p>
+Name it <tt>Pathway</tt>, and click on the <em>save</em> button on the right. Before we continue, let's check that this worked. Click on <strong>Reload Model</strong> in the top right, and when the model is loaded (it will say "Model Loaded" in the bottom left, in the status bar), open the <a class="missing wiki">ModelViewer?</a>
+ again and this time you should find a new class in the list on the 
+left: "Pathway". It won't be very interesting just yet, just a class. 
+But you should be able to see that this is defined in your source's 
+additions file:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/ModelViewer-kegg-pathway.png"><img src="img/attachment.png" alt="No image &quot;ModelViewer-kegg-pathway.png&quot; attached to test" title="No image &quot;ModelViewer-kegg-pathway.png&quot; attached to test"></a>
+</p>
+<p>
+Now add the following fields to the <tt>Pathway</tt> class (refer to <a class="missing wiki">editing additions?</a> for details):
+</p>
+<ul><li>Attribute: <tt>identifier</tt> (String)
+</li><li>Attribute: <tt>name</tt> (String)
+</li><li>Collection: <tt>genes</tt> (Gene.pathways)
+</li></ul><p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/kegg-pathway-beingfilledin.png"><img src="img/attachment.png" alt="No image &quot;kegg-pathway-beingfilledin.png&quot; attached to test" title="No image &quot;kegg-pathway-beingfilledin.png&quot; attached to test"></a>
+</p>
+<p>
+When you click <em>save</em> for the <tt>genes</tt> collection, you should see this dialogue:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/Screenshot-Reverse%20Reference%20Missing.png"><img src="img/attachment.png" alt="No image &quot;Screenshot-Reverse Reference Missing.png&quot; attached to test" title="No image &quot;Screenshot-Reverse Reference Missing.png&quot; attached to test"></a>
+</p>
+<p>
+Click yes, and the rest of your work will be done for you, automatically creating the reference in <tt>Gene</tt> to the <tt>Pathway</tt> class:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/kegg-additions-complete.png"><img src="img/attachment.png" alt="No image &quot;kegg-additions-complete.png&quot; attached to test" title="No image &quot;kegg-additions-complete.png&quot; attached to test"></a>
+</p>
+<p>
+Now click <strong>Reload Model</strong>, and review the effects of your additions:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/kegg-additions-graph.png"><img src="img/attachment.png" alt="No image &quot;kegg-additions-graph.png&quot; attached to test" title="No image &quot;kegg-additions-graph.png&quot; attached to test"></a>
+</p>
+<h2 id="a18.3IntegrationKeys">18.3 Integration Keys<a title="Link to this section" href="#a18.3IntegrationKeys" class="anchor"> ¶</a></h2>
+<p>
+When we add data to the database, we need to let the database know where
+ our data should go; In our case we are adding pathway information about
+ genes, so we need to tell the database how to identify which gene to 
+add our pathway information to. We term this process <tt>integration</tt>.
+ To do this, for each object we need to define fields, or combinations 
+of fields, that can identify the objects uniquely. For example, for 
+Organism objects, the taxon ID is the obvious unique key, so if you 
+examine <a class="source" href="http://localhost:8000/myproject/browser/trunk/bio/sources/uniprot/resources/uniprot_keys.properties">trunk/bio/sources/uniprot/resources/uniprot_keys.properties</a> you will see the line:
+</p>
+<pre class="wiki">Organism.key_taxonid = taxonId
+</pre><p>
+Which tells us that the unique key is called <tt>taxonid</tt> and holds the value of <tt>taxonId</tt>. In the same file you can see the key for <tt>Protein</tt>, which is more complex, as it is a combination of multiple fields:
+</p>
+<pre class="wiki">Protein.key_md5 = md5checksum, organism
+</pre><p>
+When we parse the information from the KEGG pathways data, we will need to integrate:
+</p>
+<ul><li>The organism
+</li><li>The data source
+</li><li>The genes
+</li></ul><p>
+As all of these can be, and are, defined by other sources. We do not 
+need to provide integration keys for pathways, as they are unique to 
+this source, and we won't be treading on anyone else's toes. 
+</p>
+<p>
+To open the integration keys file, click on the properties tab of your 
+source. There you will see two buttons: one to open the parser for 
+editing, the other to open the keys file:
+</p>
+<p>
+<a style="padding: 0pt; border: medium none;" href="http://localhost:8000/myproject/attachment/wiki/test/ModelViewer-kegg-properties.png"><img src="img/attachment.png" alt="No image &quot;ModelViewer-kegg-properties.png&quot; attached to test" title="No image &quot;ModelViewer-kegg-properties.png&quot; attached to test"></a>
+</p>
+<p>
+Click on the button to open the keys file, and define a suitable key for
+ each class. There are suitable keys for all these classes in <a class="source" href="http://localhost:8000/myproject/browser/trunk/bio/sources/uniprot/resources/uniprot_keys.properties">trunk/bio/sources/uniprot/resources/uniprot_keys.properties</a>.
+</p>
+<h2 id="a18.4Parsers">18.4 Parsers<a title="Link to this section" href="#a18.4Parsers" class="anchor"> ¶</a></h2>
+<p>
+The final step is to write your parser. On the <strong>Source Properties</strong> panel there is a button labelled <strong>Open parser to edit</strong>. Click this and you can write the appropriate parser for your chosen API. Please follow one of the two guides below:
+</p>
+<ul><li><a class="missing wiki">WorkshopCreateSourcePerl?</a>
+</li><li><a class="missing wiki">WorkshopCreateSourceJava?</a>
+</li></ul></div>
+        
+        
+      </div>
+      
+
+    </div>
+    <div id="altlinks">
+      <h3>Download in other formats:</h3>
+      <ul>
+        <li class="last first">
+          <a rel="nofollow" href="http://localhost:8000/myproject/wiki/test?format=txt">Plain Text</a>
+        </li>
+      </ul>
+    </div>
+          </section>
+        </article>
+      </div>
+      <!-- Footer -->
+      <div id="footer" class="wrap" xml:lang="en" lang="en">
+        <a id="tracpowered" href="http://trac.edgewall.org/"><img src="img/trac_logo_mini.png" alt="Trac Powered" height="30" width="107"></a>
+        <p class="left">
+          Powered by <a href="http://localhost:8000/myproject/about"><strong>Trac 0.12.2</strong></a><br>
+          By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+        </p>
+        <footer class="vcard">
+            <span class="org">InterMine, Systems Biology Centre</span>,
+            <div class="adr">
+                <span class="street-address">Tennis Court Road</span>,
+                <span class="locality">Cambridge</span>
+                <span class="postal-code">CB2 1QR</span>,
+                <span class="country-name">UK</span>
+            </div>
+        </footer>
+        <p class="right">Visit the Trac open source project at<br><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a></p>
+      </div>
+  
+</body></html>
