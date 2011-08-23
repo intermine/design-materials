@@ -1,5 +1,5 @@
 html { background:#FFF url('../img/html-bg.png') repeat-x top left; }
-body { color:#666; margin:0 auto; width:1000px; padding:0; position:relative; }
+body { color:#666; margin:0 auto; width:1072px; padding:0; position:relative; }
 body,
 th,
 td,
@@ -245,7 +245,7 @@ div.system-message pre { margin-left:1em; overflow:auto }
 
 #banner { height:80px; margin:0; padding:0; position:relative; }
 
-#header { float:left; height:53px; width:469px; background:url('../img/logo.png') no-repeat top left; margin-top:10px }
+#header { float:left; height:53px; width:1072px; background:url('../img/logo.png') no-repeat top left; margin-top:10px }
 #header a { display:none }
 
 #metanav { height:28px; padding:2px; position:absolute; top:0; right:0; }
