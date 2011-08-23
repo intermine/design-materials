@@ -1,6 +1,4 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:xi="http://www.w3.org/2001/XInclude"
       xmlns:py="http://genshi.edgewall.org/"
@@ -19,56 +17,50 @@
       <!--! Header -->
       <div id="header">
 
+          <!--! Trac login -->
+          ${navigation('metanav')}
+
           <!--! Logotyp -->
           <div id="logo" py:choose="">
-            <a py:when="chrome.logo.src" href="${chrome.logo.link}"><img
-              src="${chrome.logo.src}" alt="${chrome.logo.alt}" /></a>
-            <h1 py:otherwise=""><a href="${chrome.logo.link}">${project.name}</a></h1>
+            <p>${project.name}</p>
           </div>
-          <hr class="noscreen" />          
 
-          <!--! Quick links -->
-          <div class="noscreen noprint">
-              <p><em>Quick links: <a href="#main">content</a>, <a href="#mainnav">navigation</a>, <a href="#theme-search">search</a>.</em></p>
-              <hr />
-          </div>
+      </div> <!--! /header -->
+      
+      <!--! Main menu (tabs, search) -->
+       <div id="theme-mainnav" class="noprint" py:with="category = 'mainnav'">
 
           <!--! Search -->
           <div id="theme-search" class="noprint" py:if="'SEARCH_VIEW' in perm">
               <form action="${href.search()}" method="get">
                   <fieldset><legend>Search</legend>
-                      <label><span class="noscreen">Find:</span>
-                      <span id="search-input-out"><input type="text" name="q" id="search-input" size="30" accesskey="f" /></span></label>
+                      <label>
+                          <span id="search-input-out">
+                              <input type="text" name="q" id="search-input" size="30" accesskey="f" />
+                          </span>
+                      </label>
                       <input type="hidden" name="wiki" value="on" />
                       <input type="hidden" name="changeset" value="on" />
                       <input type="hidden" name="ticket" value="on" />
-                      <input type="image" src="${href.chrome('theme', 'img', 'search_submit.gif')}" id="search-submit" value="OK" />
                   </fieldset>
               </form>
           </div> <!--! /search -->
 
-      </div> <!--! /header -->
-      
-      <!--! Main menu (tabs) -->
-       <div id="theme-mainnav" class="noprint" py:with="category = 'mainnav'">
+          <ul class="box" py:if="chrome.nav[category]">
+              <li py:for="idx, item in  enumerate(chrome.nav[category])"
+                  class="${classes(first_last(idx, chrome.nav[category]), active=item.active)}">
+                <py:choose test="">
+                  <py:when test="item.label.__class__.__name__ == 'Element' and item.label.tag.localname == 'a'">
+                    ${item.label(tag.span('', class_='tab-l'), tag.span('', class_='tab-r'))}
+                  </py:when>
+                  <py:otherwise>
+                    ${item.label}
+                  </py:otherwise>
+                </py:choose>
+              </li>
+          </ul>
 
-              <h3 class="noscreen">Navigation</h3>
-              <ul class="box" py:if="chrome.nav[category]">
-                  <li py:for="idx, item in  enumerate(chrome.nav[category])"
-                      class="${classes(first_last(idx, chrome.nav[category]), active=item.active)}">
-                    <py:choose test="">
-                      <py:when test="item.label.__class__.__name__ == 'Element' and item.label.tag.localname == 'a'">
-                        ${item.label(tag.span('', class_='tab-l'), tag.span('', class_='tab-r'))}
-                      </py:when>
-                      <py:otherwise>
-                        ${item.label}
-                      </py:otherwise>
-                    </py:choose>
-                  </li>
-              </ul>
-
-          <hr class="noscreen" />
-       </div> <!--! /tabs -->
+       </div> <!--! /tabs, search -->
        
        <!-- Page (2 columns) -->
        <div id="page" class="box">
@@ -80,7 +72,6 @@
                    <li py:for="i, elm in enumerate(chrome.ctxtnav)" class="${i == 0 and 'first ' or None}${i+1 == len(chrome.ctxtnav) and 'last' or None}">$elm</li>
                  </ul>
              </div>
-            ${navigation('metanav')}
 
             <div id="warning" py:if="req and req.warnings" class="system-message">
               <py:choose test="len(req.warnings)">
@@ -103,8 +94,6 @@
       </div> <!--! /page -->
 
       <div id="footer" xml:lang="en">
-        <div id="top" class="noprint"><p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p></div>
-        <hr class="noscreen" />
         <a id="tracpowered" href="http://trac.edgewall.org/"><img
           src="${href.chrome('common/trac_logo_mini.png')}" height="30"
           width="107" alt="Trac Powered"/></a>
@@ -112,9 +101,7 @@
           Powered by <a href="${href.about()}"><strong>Trac ${trac.version}</strong></a><br />
           By <a href="http://www.edgewall.org/">Edgewall Software</a>.
         </p>
-        <p id="createdby">
-          Original theme created<br />by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON´T REMOVE, PLEASE! -->
-        </p>
+        <p id="createdby">&copy; InterMine, Systems Biology Centre, Tennis Court Road, CAMBRIDGE CB2 1QR, United Kingdom</p>
         <p class="right">${chrome.footer}</p>
       </div>
     </div>
