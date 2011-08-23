@@ -19,36 +19,30 @@
       <li class="first"><a href="http://localhost:8000/myproject/login">Login</a></li><li><a href="http://localhost:8000/myproject/prefs">Preferences</a></li><li><a href="http://localhost:8000/myproject/wiki/TracGuide">Help/Guide</a></li><li class="last"><a href="http://localhost:8000/myproject/about">About Trac</a></li>
     </ul>
   </div>
+          <!-- Quick contacts -->
+          <div id="contacts" class="vcard">
+            <b>T</b>:<span class="tel">+44 (0)1223 760 262</span>
+            <b>E</b>:<a class="email" href="mailto:info@intermine.org">info@intermine.org</a>
+          </div>
           <!-- Logo -->
           <div id="logo">
             <p>My Project</p>
-          </div>
-          <!-- Quick contacts -->
-          <div class="contacts vcard">
-            <bold>T</bold>:<span class="tel">+44 (0)1223 760 262</span>
-            <bold>E</bold>:<a class="email" href="mailto:info@intermine.org">info@intermine.org</a>
           </div>
       </header>
       <!-- Main menu (tabs, search) -->
       <div id="nav">
         <nav id="main" class="wrap">
           <!-- Search -->
-          <div id="theme-search" class="noprint">
+          <div id="search-form">
               <form action="/myproject/search" method="get">
-                  <fieldset><legend>Search</legend>
-                      <label>
-                          <span id="search-input-out">
-                              <input name="q" id="search-input" size="30" type="text">
-                          </span>
-                      </label>
-                      <input name="wiki" value="on" type="hidden">
-                      <input name="changeset" value="on" type="hidden">
-                      <input name="ticket" value="on" type="hidden">
-                  </fieldset>
+                <input name="q" size="30" type="text">
+                <input name="wiki" value="on" type="hidden">
+                <input name="changeset" value="on" type="hidden">
+                <input name="ticket" value="on" type="hidden">
               </form>
           </div>
           <!-- Navigation tabs -->
-          <ul class="box">
+          <ul>
               <li class="first active">
                     <a href="http://localhost:8000/myproject/wiki">Wiki<span class="tab-l"></span><span class="tab-r"></span></a>
               </li><li>
