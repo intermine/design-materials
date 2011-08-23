@@ -1,6 +1,6 @@
 A Trac 0.12.2 theme for InterMine homepage
 
-## Requirements ==
+## Requirements
 
 * [http://trac-hacks.org/wiki/ThemeEnginePlugin](ThemeEnginePlugin)
 
