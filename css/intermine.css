@@ -5,9 +5,10 @@ th,
 td,
 tr { font-size:17px; font-family:arial,sans-serif !important }
 
-h1,h2,h3,h4 { border-color:#ddd; border-style:dotted; border-width:0 0 1px; color:#83A501; letter-spacing:-.018em; font-weight:normal; }
+h1,h2,h3,h4 { border-color:#ddd; border-style:dotted; border-width:0 0 1px; color:#83A501; letter-spacing:-.018em; font-weight:normal;
+width:830px; }
 
-h1 { border-style:none; font-size:30px; margin:3px 0 20px 0; padding-bottom:8px; }
+h1 { border-bottom:1px solid #DDD; font-size:30px; margin:3px 0 30px 0; padding-bottom:8px; }
 h2 { font-size:24px; margin:24px 0; }
 h3 { font-size:18px }
 p { line-height:25px; }
@@ -129,11 +130,11 @@ input[type=submit] { background-color:#517489 }
 #ctxtnav :visited:hover { color:#999 }
 
 #altlinks { clear:both; text-align:center }
-#altlinks h3 { font-size:12px; letter-spacing:normal; margin:0 }
-#altlinks ul { list-style:none; margin:0; padding:0 0 1em }
+#altlinks h3 { font-size:12px; letter-spacing:normal; margin:0; border:0; display:inline; }
+#altlinks ul { list-style:none; margin:0; padding:0 0 1em; display:inline; }
 #altlinks li { border-right:1px solid #d7d7d7; display:inline; font-size:11px; line-height:16px; padding:0 1em; white-space:nowrap }
 #altlinks li :link,
-#altlinks li :visited { background-position:0 -1px; background-repeat:no-repeat; border:none }
+#altlinks li :visited { background-position:0 -1px; background-repeat:no-repeat; border:none; text-decoration:none; }
 #altlinks li a.ics { background-image:url('../img/ics.png'); padding-left:22px }
 #altlinks li a.rss { background-image:url('../img/xml.png'); padding-left:42px }
 
@@ -141,7 +142,7 @@ input[type=submit] { background-color:#517489 }
 #ctxtnav a,
 div.trac-modifiedby a { text-decoration:none; }
 
-#footer { border-top:0 solid; clear:both; color:#bbb; font-size:10px; height:110px; padding:50px 50px 0 }
+#footer { border-top:0 solid; clear:both; color:#bbb; font-size:10px; padding:50px 50px 0 }
 #footer #tracpowered { border:0; float:left }
 #footer #tracpowered:hover { background:transparent }
 #footer p.left,
@@ -305,6 +306,13 @@ div.trac-modifiedby { position:absolute; top:-4px; right:0; font-size:10px; font
 #search input[type="submit"] { display:none; }
 
 #wikipage { margin-top:16px; }
+
+div.wiki-toc { background:#FFF; border:0; padding:0; margin-left:96px; }
+div.wiki-toc li { line-height:30px; }
+div.wiki-toc h4 { display:none; }
+div.wiki-toc a { font-size:16px; color:#333; text-decoration:none; border-bottom:1px solid #BBB; padding:2px; }
+div.wiki-toc a:hover { color:#000; }
+div.wiki-toc .active { background:inherit; font-weight:bold; }
 
 @media screen  {
   a.ext-link .icon { padding-left:16px }
