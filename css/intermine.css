@@ -7,9 +7,10 @@ tr { font-size:17px; font-family:arial,sans-serif !important }
 
 h1,h2,h3,h4 { border-color:#ddd; border-style:dotted; border-width:0 0 1px; color:#83A501; letter-spacing:-.018em; font-weight:normal; }
 
-h1 { border-style:none; font-size:21px; margin:3px 0 10px; padding-bottom:8px; }
-h2 { font-size:18px }
-h3 { font-size:15px }
+h1 { border-style:none; font-size:30px; margin:3px 0 20px 0; padding-bottom:8px; }
+h2 { font-size:24px; margin:24px 0; }
+h3 { font-size:18px }
+p { line-height:25px; }
 hr { border:none; border-top:1px solid #ccb; margin:2em 0 }
 address { font-style:normal }
 img { border:none }
@@ -21,10 +22,11 @@ ol.upperalpha { list-style-type:upper-alpha }
 ol.lowerroman { list-style-type:lower-roman }
 ol.upperroman { list-style-type:upper-roman }
 ol.arabic { list-style-type:decimal }
+ul li { line-height:25px; }
 
-:link,:visited { border-bottom:0; color:#007dcc; text-decoration:none }
+:link,:visited { border-bottom:0; color:#007dcc; text-decoration:underline; }
 :link:hover,
-:visited:hover { border-bottom:1px dotted #d7d7d7; background-color:inherit; }
+:visited:hover { border-bottom:1px dotted #d7d7d7; background-color:inherit; text-decoration:none; }
 h1 :link,
 h1 :visited,
 h2 :link,
@@ -102,18 +104,18 @@ input[type=submit] { background-color:#517489 }
 #search input.textwidget { background:#F4F4F4 url('../img/magnify-glass.png') no-repeat 10px 5px; border:1px solid #797979; color:#333; font-size:14px; padding:3px; padding-left:30px; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; width:240px; font-family:arial,sans-serif; box-shadow:inset 1px 2px 3px #CDCDCD; -moz-box-shadow:inset 1px 2px 3px #CDCDCD; -webkit-box-shadow:inset 1px 2px 3px #CDCDCD; }
 
 .nav ul { list-style:none; margin:0; text-align:left; padding:0; }
-.nav li { display:inline; margin:0; padding:0 .75em; white-space:nowrap }
+.nav li { display:inline; margin:0; padding:0 .75em; white-space:nowrap; line-height:13.5px; }
 
 #mainnav { background:#C0C0C0; border:0; font-family:arial,sans-serif; padding:13px 0; position:absolute; top:80px; left:0; width:100%; }
-#mainnav li { border:none; margin-right:10px; }
+#mainnav li { border:none; margin-right:10px; line-height:15px; height:20px; }
 #mainnav :link,
-#mainnav :visited { border:none; font-size:14px; font-weight:bold; color:#333; }
+#mainnav :visited { border:none; font-size:14px; font-weight:bold; color:#333; text-decoration:none; }
 * html #mainnav :link,
 * html #mainnav :visited { background-position:1px 0 }
 #mainnav :link:hover,
 #mainnav :visited:hover { background:#676767; border-right:0; border-top:none; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; }
 #mainnav .active :link,
-#mainnav .active :visited { background:#444; border-top:none; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; box-shadow:inset 2px 3px 4px #292929; -moz-box-shadow:inset 2px 3px 4px #292929; -webkit-box-shadow:inset 2px 3px 4px #292929; }
+#mainnav .active :visited { background:#444; border-top:none; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; box-shadow:inset 2px 3px 4px #292929; -moz-box-shadow:inset 2px 3px 4px #292929; -webkit-box-shadow:inset 2px 3px 4px #292929; text-decoration:none; }
 #ctxtnav { height:20px; margin-top:20px; }
 #ctxtnav li ul { background:#f7f7f7; border:1px solid; color:#ccc; display:inline; margin:0; padding:0 }
 #ctxtnav li li { padding:0 }
@@ -134,6 +136,10 @@ input[type=submit] { background-color:#517489 }
 #altlinks li :visited { background-position:0 -1px; background-repeat:no-repeat; border:none }
 #altlinks li a.ics { background-image:url('../img/ics.png'); padding-left:22px }
 #altlinks li a.rss { background-image:url('../img/xml.png'); padding-left:42px }
+
+#pagepath a,
+#ctxtnav a,
+div.trac-modifiedby a { text-decoration:none; }
 
 #footer { border-top:0 solid; clear:both; color:#bbb; font-size:10px; height:110px; padding:50px 50px 0 }
 #footer #tracpowered { border:0; float:left }
@@ -219,7 +225,7 @@ table.listing { border-bottom:1px solid #d7d7d7; border-collapse:collapse; borde
 table.listing th { font-size:12px; padding:0 1em .1em 0; text-align:left }
 table.listing thead { background:#f7f7f0 }
 table.listing thead th { border:1px solid #d7d7d7; border-bottom-color:#999; font-size:11px; font-weight:700; padding:2px .5em; vertical-align:bottom }
-table.listing thead th a { border:none; padding-right:12px }
+table.listing thead th a { border:none; padding-right:12px; }
 table.listing th.asc a,
 table.listing th.desc a { background-position:100% 50%; background-repeat:no-repeat; font-weight:700 }
 table.listing th.asc a { background-image:url('../img/asc.png') }
@@ -249,7 +255,8 @@ div.system-message pre { margin-left:1em; overflow:auto }
 #header a { display:none }
 
 #metanav { height:28px; padding:2px; position:absolute; top:0; right:0; }
-#metanav :link,#metanav :visited { color:#83A501 }
+#metanav :link,
+#metanav :visited { color:#83A501; text-decoration:none; }
 #metanav ul li.first { color:#ccc }
 
 #side_bar { background-color:#fff; float:right; padding:0 0 0 15px }
