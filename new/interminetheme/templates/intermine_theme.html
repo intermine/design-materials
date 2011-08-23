@@ -13,29 +13,31 @@
   </div>
 
   <body py:match="body">
-    <div id="center-content" class="box">
-      <!--! Header -->
-      <div id="header">
+  
+      <!-- Header -->
+      <header id="header" class="wrap">
 
-          <!--! Trac login -->
+          <!-- Trac login -->
           ${navigation('metanav')}
 
-          <!--! Logotyp -->
+          <!-- Logo -->
           <div id="logo" py:choose="">
             <p>${project.name}</p>
           </div>
 
+          <!-- Quick contacts -->
           <div class="contacts vcard">
-            T:<span class="tel">+44 (0)1223 760 262</span>
-            E:<a class="email" href="mailto:info@intermine.org">info@intermine.org</a>
+            <bold>T</bold>:<span class="tel">+44 (0)1223 760 262</span>
+            <bold>E</bold>:<a class="email" href="mailto:info@intermine.org">info@intermine.org</a>
           </div>
 
-      </div> <!--! /header -->
+      </header>
       
-      <!--! Main menu (tabs, search) -->
-       <div id="theme-mainnav" class="noprint" py:with="category = 'mainnav'">
+      <!-- Main menu (tabs, search) -->
+      <div id="nav">
+        <nav id="main" class="wrap" py:with="category = 'mainnav'">
 
-          <!--! Search -->
+          <!-- Search -->
           <div id="theme-search" class="noprint" py:if="'SEARCH_VIEW' in perm">
               <form action="${href.search()}" method="get">
                   <fieldset><legend>Search</legend>
@@ -49,10 +51,11 @@
                       <input type="hidden" name="ticket" value="on" />
                   </fieldset>
               </form>
-          </div> <!--! /search -->
+          </div>
 
+          <!-- Navigation tabs -->
           <ul class="box" py:if="chrome.nav[category]">
-              <li py:for="idx, item in  enumerate(chrome.nav[category])"
+              <li py:for="idx, item in enumerate(chrome.nav[category])"
                   class="${classes(first_last(idx, chrome.nav[category]), active=item.active)}">
                 <py:choose test="">
                   <py:when test="item.label.__class__.__name__ == 'Element' and item.label.tag.localname == 'a'">
@@ -65,13 +68,16 @@
               </li>
           </ul>
 
-       </div> <!--! /tabs, search -->
+        </nav>
+       </div>
        
-       <!-- Page (2 columns) -->
-       <div id="page" class="box">
-         <div id="page-in" class="box">
-           <div id="strip" class="box noprint">
+       <!-- Page -->
+       <div id="page" class="wrap">
+         <article>
+         
+           <nav id="strip">
              
+             <!-- Contextual navigation -->
              <div id="ctxtnav" class="nav">
                  <ul>
                    <li py:for="i, elm in enumerate(chrome.ctxtnav)" class="${i == 0 and 'first ' or None}${i+1 == len(chrome.ctxtnav) and 'last' or None}">$elm</li>
@@ -90,15 +96,17 @@
               </py:choose>
             </div>
             
-          </div> <!--! /strip -->
+          </nav>
 
-          <div id="main">
+          <!-- Main content -->
+          <section>
             ${select('*[@id!="ctxtnav"]|text()')}
-          </div> <!--! /main -->
-        </div> <!--! /page-in -->
-      </div> <!--! /page -->
+          </section>
+        </article>
+      </div>
 
-      <div id="footer" xml:lang="en">
+      <!-- Footer -->
+      <div id="footer" class="wrap" xml:lang="en">
         <a id="tracpowered" href="http://trac.edgewall.org/"><img
           src="${href.chrome('common/trac_logo_mini.png')}" height="30"
           width="107" alt="Trac Powered"/></a>
@@ -117,7 +125,7 @@
         </footer>
         <p class="right">${chrome.footer}</p>
       </div>
-    </div>
+      
   </body>
 
   <xi:include href="site.html"><xi:fallback /></xi:include>
