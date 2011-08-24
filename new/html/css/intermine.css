@@ -1,14 +1,30 @@
 /* core */
-body { font-family:arial,sans-serif !important; font-size:17px; margin:0; margin-top:2px; }
-.wrap { margin:0 auto; width:1072px; }
+body { font-family:arial,sans-serif !important; font-size:17px; margin:0; margin-top:2px; color:#666; }
+.wrap { margin:0 auto; width:1072px; display:block; }
 
 /* generic */
 a,
 :link,
-*:visited { border:0; color:#007DCC; text-decoration:underline; }
+*:visited { border:0; color:#007DCC; transition:background 0.3s; -moz-transition:background 0.3s;
+	-webkit-transition:background 0.3s; -o-transition:background 0.3s; }
+h1, h2, h3, h4 { color:#83A501; font-weight:normal; letter-spacing:-0.5px; margin-left:0 !important;
+	display:inline-block; border-bottom:1px solid #DDD; text-shadow:1px 1px 1px #EFEFEF;
+	font-family:arial,sans-serif !important; }
+h1 { font-size:30px; margin:3px 0 20px; padding-bottom:8px; }
+h2 { font-size:24px; margin:24px 0; }
+h3 { font-size:20px; margin:20px 0; }
+h4 { font-size:18px; margin:16px 0; }
+p,
+ul li { line-height:25px; }
+pre { box-shadow:0 0 4px #D8D8D8; -moz-box-shadow:0 0 4px #D8D8D8; -webkit-box-shadow:0 0 4px #D8D8D8;
+	-o-box-shadow:0 0 4px #D8D8D8; background:#FAFAFA; color:#222; font-size:12px; line-height:18px;
+	padding:10px !important; margin:17px 0 !important; overflow-x:auto; overflow-y:hidden;
+	border:0 !important; border-left:3px solid #EEE !important; }
+tt { color:#222; font-size:15px; padding:1px 2px; }
 
 /* clearing */
-header #metanav:after { content:" "; display:block; height:0; clear:both; }
+header #metanav:after,
+#nav nav:after { content:" "; display:block; height:0; clear:both; }
 
 /* meta nav */
 header #metanav a,
@@ -19,10 +35,10 @@ header #metanav ul li.last { padding-right:0; }
 
 /* logo */
 header #logo { background:url('../img/logo.png') no-repeat top left; display:inline-block; margin-top:-6px; }
-header #logo p { height:0; overflow:hidden; padding-top:53px; width:469px; }
+header #logo p { height:0; padding:0; margin:0; overflow:hidden; padding-top:54px; width:469px; }
 
 /* contacts */
-header #contacts { float:right; font-size:13px; color:#8F8F8F; letter-spacing:0.5px; margin-top:20px; }
+header #contacts { float:right; font-size:12px; color:#8F8F8F; margin-top:20px; }
 header #contacts b { color:#232020; font-weight:normal; }
 header #contacts a { color:#8F8F8F !important; text-decoration:none; }
 header #contacts span { margin-right:12px; }
@@ -30,14 +46,71 @@ header #contacts a,
 header #contacts span { margin-left:4px; }
 
 /* navigation */
-#nav { background:#C0C0C0; }
-#nav nav { clear:both; line-height:32px; }
-#nav ul li { display:inline-block; }
+#nav { background:#C0C0C0; margin-top:14px; padding:6px 0; }
+#nav nav { clear:both; }
+#nav ul { margin:0; padding:0; float:left; margin-top:3px; }
+#nav ul li { display:inline-block; height:20px; line-height:15px; margin-right:10px; }
+#nav ul li a { font-weight:bold; padding:3px 20px; font-size:14px; color:#333; text-decoration:none; }
+#nav ul li a:hover { background:#676767; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
+	-o-border-radius:2px; }
+#nav ul li.active a { border-radius:2px 2px 2px 2px; -moz-border-radius:2px 2px 2px 2px; -webkit-border-radius:2px 2px 2px 2px;
+	-o-border-radius:2px 2px 2px 2px; box-shadow:2px 3px 4px #292929 inset; -moz-box-shadow:2px 3px 4px #292929 inset;
+	-webkit-box-shadow:2px 3px 4px #292929 inset; -o-box-shadow:2px 3px 4px #292929 inset; background:#444; color:#BED73B; }
 
 /* search form */
 #nav form { float:right; }
 #nav form input[type="text"] { width:240px; padding:3px; padding-left:30px; font-size:14px; font-family:arial,sans-serif;
-	background:url("../img/magnify-glass.png") no-repeat 10px 5px #F4F4F4; border:1px solid #797979; border-radius:2px 2px 2px 2px;
-    -moz-border-radius:2px 2px 2px 2px; -webkit-border-radius:2px 2px 2px 2px; -o-border-radius:2px 2px 2px 2px;
-    box-shadow:1px 2px 3px #CDCDCD inset; -moz-box-shadow:1px 2px 3px #CDCDCD inset; -webkit-box-shadow:1px 2px 3px #CDCDCD inset;
-    -o-box-shadow:1px 2px 3px #CDCDCD inset; color:#333; }
+	background:url("../img/magnify-glass.png") no-repeat 10px 5px #F4F4F4; border:1px solid #797979;
+	border-radius:3px 3px 3px 3px; -moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px;
+	-o-border-radius:3px 3px 3px 3px; box-shadow:1px 2px 3px #CDCDCD inset; -moz-box-shadow:1px 2px 3px #CDCDCD inset;
+	-webkit-box-shadow:1px 2px 3px #CDCDCD inset; -o-box-shadow:1px 2px 3px #CDCDCD inset; color:#333; }
+
+/* main body */
+article { margin-top:20px; display:block; position:relative; }
+#content { position:static; }
+
+/* context navigation */
+#ctxtnav { text-align:left; min-height:0; line-height:10px; }
+#ctxtnav ul { padding:0; display:inline; }
+#ctxtnav ul a { color:#555; text-decoration:none; }
+#ctxtnav ul li.first { padding-left:0; }
+
+/* wiki modification */
+div.trac-modifiedby { margin:0; font-style:normal; font-size:10px; color:#888; position:absolute; top:0; right:0; }
+div.trac-modifiedby a { text-decoration:none; }
+
+/* main content */
+section { margin:30px 0 20px 0; display:block; }
+
+a.anchor { color:#333 !important; text-decoration:none !important; margin-left:2px; vertical-align:bottom !important; }
+a.anchor:hover { color:#FFF !important; background:#333; }
+h1 a.wiki.missing,
+h2 a.wiki.missing,
+h3 a.wiki.missing,
+h4 a.wiki.missing { color:#83A501; text-decoration:none; }
+
+a.ext-link { display:inline-block; padding-right:2px; }
+a.ext-link span.icon { float:right; background:url('../img/external-link.png') no-repeat top right; margin-top:8px;
+	margin-bottom:-8px; padding-left:8px; }
+a.ext-link:hover span.icon { background-image:url('../img/external-link-grey.png'); }
+
+div.wikipage { padding:0; }
+
+/* toc, sidebar */
+div.wiki-toc { border:0; background:#FFF; width:300px; padding-left:80px; }
+div.wiki-toc li { line-height:30px; }
+div.wiki-toc li.active { background:#F5F5F5; border:1px 0 solid #DDD; margin:0 -20px 14px -20px;
+	padding:10px 20px 8px 20px; text-shadow:0 1px 0 #FFF; }
+div.wiki-toc li.active>a { font-weight:bold; }
+div.wiki-toc a { border-bottom:1px solid #BBB; color:#333; font-size:16px; padding:2px; text-decoration:none; }
+div.wiki-toc a:hover { color:#000; }
+
+/* other formats */
+#altlinks h3 { color:#888; text-shadow:none; border:0; display:inline; }
+#altlinks ul { display:inline; }
+
+/* footer */
+#footer { padding:20px 0; }
+#footer p { border:0 !important; line-height:13px; }
+#footer footer.vcard { margin-left:50px; color:#8F8F8F; font-size:12px; display:inline-block; min-height:30px;
+	background:url('../img/cam-logo.gif') no-repeat top right; padding-right:160px; }
