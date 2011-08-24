@@ -1,15 +1,16 @@
 /* core */
-body { font-family:arial,sans-serif !important; font-size:17px; margin:0; margin-top:2px; color:#666; }
+body { font-family:'Helvetica Neue',Arial,Helvetica,sans-serif !important; font-size:17px; margin:0; margin-top:2px;
+	color:#666; }
 .wrap { margin:0 auto; width:1072px; display:block; }
 
 /* generic */
 a,
 :link,
-*:visited { border:0; color:#007DCC; transition:background 0.3s; -moz-transition:background 0.3s;
+*:visited { border:0; color:#007DCC; text-decoration:underline; transition:background 0.3s; -moz-transition:background 0.3s;
 	-webkit-transition:background 0.3s; -o-transition:background 0.3s; }
 h1, h2, h3, h4 { color:#83A501; font-weight:normal; letter-spacing:-0.5px; margin-left:0 !important;
 	display:inline-block; border-bottom:1px solid #DDD; text-shadow:1px 1px 1px #EFEFEF;
-	font-family:arial,sans-serif !important; }
+	font-family:'Helvetica Neue',Arial,Helvetica,sans-serif !important; }
 h1 { font-size:30px; margin:3px 0 20px; padding-bottom:8px; }
 h2 { font-size:24px; margin:24px 0; }
 h3 { font-size:20px; margin:20px 0; }
@@ -62,7 +63,7 @@ header #contacts span.email { background:url('../img/emilio.png') no-repeat top 
 
 /* search form */
 #nav form { float:right; }
-#nav form input[type="text"] { width:240px; padding:3px; padding-left:30px; font-size:14px; font-family:arial,sans-serif;
+#nav form input[type="text"] { width:240px; padding:3px; padding-left:30px; font-size:14px; font-family:'Helvetica Neue',Arial,Helvetica,sans-serif;
 	background:url("../img/magnify-glass.png") no-repeat 10px 5px #F4F4F4; border:1px solid #797979;
 	border-radius:3px 3px 3px 3px; -moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px;
 	-o-border-radius:3px 3px 3px 3px; box-shadow:1px 2px 3px #CDCDCD inset; -moz-box-shadow:1px 2px 3px #CDCDCD inset;
@@ -92,10 +93,9 @@ h2 a.wiki.missing,
 h3 a.wiki.missing,
 h4 a.wiki.missing { color:#83A501; text-decoration:none; }
 
-a.ext-link { display:inline-block; padding-right:2px; }
-a.ext-link span.icon { float:right; background:url('../img/external-link.png') no-repeat top right; margin-top:8px;
-	margin-bottom:-8px; padding-left:8px; }
-a.ext-link:hover span.icon { background-image:url('../img/external-link-grey.png'); }
+a.ext-link span.icon { display:none; }
+a.ext-link { background:url('../img/external-link.png') no-repeat right 4px; padding-right:12px; }
+a.ext-link:hover { background-image:url('../img/external-link-grey.png'); }
 
 div.wikipage { padding:0; }
 
