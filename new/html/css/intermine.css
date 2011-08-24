@@ -21,6 +21,7 @@ pre { box-shadow:0 0 4px #D8D8D8; -moz-box-shadow:0 0 4px #D8D8D8; -webkit-box-s
 	padding:10px !important; margin:17px 0 !important; overflow-x:auto; overflow-y:hidden;
 	border:0 !important; border-left:3px solid #EEE !important; }
 tt { color:#222; font-size:15px; padding:1px 2px; }
+blockquote { border-left:3px solid #EEE !important; font-style:italic; padding-left:25px !important; }
 
 /* clearing */
 header #metanav:after,
@@ -110,6 +111,7 @@ div.wiki-toc a:hover { color:#000; }
 /* other formats */
 #altlinks h3 { color:#888; text-shadow:none; border:0; display:inline; }
 #altlinks ul { display:inline; }
+#altlinks ul li.first { padding-left:0; }
 
 /* footer */
 #footer { padding:20px 0; }
