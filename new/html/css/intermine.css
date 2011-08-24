@@ -99,8 +99,8 @@ div.wikipage { padding:0; }
 /* toc, sidebar */
 div.wiki-toc { border:0; background:#FFF; width:300px; padding-left:80px; }
 div.wiki-toc li { line-height:30px; }
-div.wiki-toc li.active { background:#F5F5F5; border:1px 0 solid #DDD; margin:0 -20px 14px -20px;
-	padding:10px 20px 8px 20px; text-shadow:0 1px 0 #FFF; }
+div.wiki-toc li.active { background:#F5F5F5; border-width:1px 0; border-style:solid; border-color:#DDD;
+	margin:14px -20px; padding:10px 20px 8px 20px; text-shadow:0 1px 0 #FFF; }
 div.wiki-toc li.active>a { font-weight:bold; }
 div.wiki-toc a { border-bottom:1px solid #BBB; color:#333; font-size:16px; padding:2px; text-decoration:none; }
 div.wiki-toc a:hover { color:#000; }
