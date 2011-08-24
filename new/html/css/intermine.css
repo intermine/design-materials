@@ -44,6 +44,8 @@ header #contacts a { color:#8F8F8F !important; text-decoration:none; }
 header #contacts span { margin-right:12px; }
 header #contacts a,
 header #contacts span { margin-left:4px; }
+header #contacts span.email { background:url('../img/emilio.png') no-repeat top left; display:inline-block;
+	width:105px; height:13px; vertical-align:bottom; }
 
 /* navigation */
 #nav { background:#C0C0C0; margin-top:14px; padding:6px 0; }
