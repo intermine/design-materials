@@ -16,16 +16,36 @@
   
     <script type="text/javascript">
       $(function() {
-        var toc = jQuery('div.wiki-toc');
-        if (toc.length > 0) {
-          var position = parseInt(toc.css('top').replace('px',''));
+        // the container and the fixed/floating element
+        var container = jQuery('#wikipage'),
+            toc       = jQuery('div.wiki-toc');
+
+        // if toc exists and the screen is big enough
+        if (toc.length > 0 && $(window).height() > toc.height()) {
+          // set its position relative to the 'containing' element and set fixed positioning
+          toc.css('top', container.offset().top).css('position', 'fixed');
+
+          // container make room for toc
+          container.css('padding-right', (v(toc.width()) + v(toc.css('padding-left')) + v(toc.css('padding-right'))) + 'px');
+          // toc position at the right edge of container
+          toc.css('right', v($(document).width()) - v(container.css('padding-right')) - v(container.offset().left) -
+            v(container.width()));
+
+          // update toc top on scroll
+          var position = v(toc.css('top')),
+              options  = { duration: 0, queue: false };
           $(window).scroll(function () {
             if ($(document).scrollTop() < position) {
-              toc.animate({ top: position - $(document).scrollTop() + 'px' }, { duration: 0, queue: false });
+              // back to where we were
+              toc.animate({ top: position - $(document).scrollTop() + 'px' }, options);
             } else {
-              toc.animate({ top: 0 },{ duration: 0, queue: false });
+              // fix to top
+              toc.animate({ top: 0 }, options);
             }
           });
+        }
+        function v(x) {
+            return parseInt(x.toString().replace('px', ''));
         }
       });
     </script>
