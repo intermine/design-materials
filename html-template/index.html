@@ -30,6 +30,9 @@
           toc.css('right', v($(document).width()) - v(container.css('padding-right')) - v(container.offset().left) -
             v(container.width()));
 
+          // switch off left padding from toc for good measure
+          toc.css('padding-left', 0);
+
           // update toc top on scroll
           var position = v(toc.css('top')),
               options  = { duration: 0, queue: false };
