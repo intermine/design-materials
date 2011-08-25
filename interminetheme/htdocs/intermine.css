@@ -123,3 +123,13 @@ div.wiki-toc a:hover { color:#000; }
 div.wikitoolbar a { cursor:pointer; } /* pointer cursor on toolbar buttons */
 div.buttons input[type="submit"] { cursor:pointer; } /* pointer cursor on bottom toolbar buttons */
 div.wiki-toc>h4 { display:none; } /* hide the toc title */
+
+/* trac admin fixes */
+#content.admin #tabs { border:0; background:#FFF; margin:0; }
+#content.admin #tabs li { line-height:30px; }
+#content.admin #tabs li.active { background:#F5F5F5; border-width:0; }
+#content.admin #tabs>ul>li.active { margin:14px -20px; padding:10px 20px 8px 20px; text-shadow:0 1px 0 #FFF;
+	border-width:1px 0; border-style:solid; border-color:#DDD; }
+#content.admin #tabs li.active>a { font-weight:bold; }
+#content.admin #tabs a { border-bottom:1px solid #BBB; color:#333; font-size:16px; padding:2px; text-decoration:none; }
+#content.admin #tabs a:hover { color:#000; }
