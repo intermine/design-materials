@@ -118,3 +118,6 @@ div.wiki-toc a:hover { color:#000; }
 #footer p { border:0 !important; line-height:13px; }
 #footer footer.vcard { margin-left:50px; color:#8F8F8F; font-size:12px; display:inline-block; min-height:30px;
 	background:url('img/cam-logo.gif') no-repeat top right; padding-right:160px; }
+
+/* trac fixes */
+div.wikitoolbar a { cursor:pointer; }

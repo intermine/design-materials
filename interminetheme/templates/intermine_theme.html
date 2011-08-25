@@ -38,10 +38,10 @@
           $(window).scroll(function () {
             if ($(document).scrollTop() < position) {
               // back to where we were
-              toc.animate({ top: position - $(document).scrollTop() + 'px' }, options);
+              toc.css('top', position - $(document).scrollTop() + 'px');
             } else {
               // fix to top
-              toc.animate({ top: 0 }, options);
+              toc.css('top', 0);
             }
           });
         }
