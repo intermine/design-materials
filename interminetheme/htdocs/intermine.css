@@ -120,9 +120,12 @@ div.wiki-toc a:hover { color:#000; }
 #footer footer.vcard { margin-left:50px; color:#8F8F8F; font-size:12px; display:inline-block; min-height:30px;
 	background:url('img/cam-logo.gif') no-repeat top right; padding-right:160px; }
 
-/* trac fixes */
+
+/* ======================== trac fixes ======================== */
+
+
 div.wikitoolbar a { cursor:pointer; } /* pointer cursor on toolbar buttons */
-div.buttons input[type="submit"] { cursor:pointer; } /* pointer cursor on bottom toolbar buttons */
+input[type="submit"] { cursor:pointer; } /* pointer cursor submit buttons */
 div.wiki-toc>h4 { display:none; } /* hide the toc title */
 
 /* trac timeline */
@@ -130,6 +133,7 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.timeline h2,
 #content.timeline h3,
 #content.timeline h4 { display:block; }
+#content.timeline h2 { padding-left:10px; }
 #content.timeline form#prefs { float:none; margin:0; padding:4px; display:inline-block; width:100%; border:0;
 	background:#FFF; text-align:center; }
 #content.timeline form#prefs div,
@@ -145,7 +149,20 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.timeline dd { margin:0 0 8px 62px; }
 #content.timeline dt em { color:#007DCC; }
 
-/* trac admin fixes */
+/* trac roadmap */
+#content.roadmap h2 { width:100%; padding-left:10px; }
+#content.roadmap h2 a,
+#content.roadmap h2 *:link,
+#content.roadmap h2 *:visited { text-decoration:none; }
+#content.roadmap h2 a em { color:#007DCC; }
+#content.roadmap p.date { padding-left:10px; font-style:normal; }
+
+/* trac tickets */
+#content.report a,
+#content.report *:link,
+#content.report *:visited { text-decoration:none; }
+
+/* trac admin */
 #content.admin #tabs { border:0; background:#FFF; margin:0; }
 #content.admin #tabs li { line-height:30px; }
 #content.admin #tabs li.active { background:#F5F5F5; border-width:0; }
