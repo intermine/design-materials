@@ -9,7 +9,7 @@ a,
 *:visited { border:0; color:#007DCC; text-decoration:underline; transition:background 0.3s; -moz-transition:background 0.3s;
 	-webkit-transition:background 0.3s; -o-transition:background 0.3s; }
 h1, h2, h3, h4 { color:#83A501; font-weight:normal; letter-spacing:-0.5px; margin-left:0 !important;
-	display:inline-block; border-bottom:1px solid #DDD; text-shadow:1px 1px 1px #EFEFEF;
+	display:inline-block; border-bottom:1px solid #DDD; text-shadow:1px 1px 1px #F7F7F7;
 	font-family:'Helvetica Neue',Arial,Helvetica,sans-serif !important; }
 h1 { font-size:30px; margin:3px 0 20px; padding-bottom:8px; }
 h2 { font-size:24px; margin:24px 0; }
@@ -36,7 +36,7 @@ header #metanav ul { display:inline; padding:0; float:right; }
 header #metanav ul li.last { padding-right:0; }
 
 /* logo */
-header #logo { background:url('../img/logo.png') no-repeat top left; display:inline-block; margin-top:-6px; }
+header #logo { background:url('img/logo.png') no-repeat top left; display:inline-block; margin-top:-6px; }
 header #logo p { height:0; padding:0; margin:0; overflow:hidden; padding-top:54px; width:469px; }
 
 /* contacts */
@@ -46,7 +46,7 @@ header #contacts a { color:#8F8F8F !important; text-decoration:none; }
 header #contacts span { margin-right:12px; }
 header #contacts a,
 header #contacts span { margin-left:4px; }
-header #contacts span.email { background:url('../img/emilio.png') no-repeat top left; display:inline-block;
+header #contacts span.email { background:url('img/emilio.png') no-repeat top left; display:inline-block;
 	width:105px; height:13px; vertical-align:bottom; }
 
 /* navigation */
@@ -64,7 +64,7 @@ header #contacts span.email { background:url('../img/emilio.png') no-repeat top 
 /* search form */
 #nav form { float:right; }
 #nav form input[type="text"] { width:240px; padding:3px; padding-left:30px; font-size:14px; font-family:'Helvetica Neue',Arial,Helvetica,sans-serif;
-	background:url("../img/magnify-glass.png") no-repeat 10px 5px #F4F4F4; border:1px solid #797979;
+	background:url("img/magnify-glass.png") no-repeat 10px 5px #F4F4F4; border:1px solid #797979;
 	border-radius:3px 3px 3px 3px; -moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px;
 	-o-border-radius:3px 3px 3px 3px; box-shadow:1px 2px 3px #CDCDCD inset; -moz-box-shadow:1px 2px 3px #CDCDCD inset;
 	-webkit-box-shadow:1px 2px 3px #CDCDCD inset; -o-box-shadow:1px 2px 3px #CDCDCD inset; color:#333; }
@@ -94,8 +94,8 @@ h3 a.wiki.missing,
 h4 a.wiki.missing { color:#83A501; text-decoration:none; }
 
 a.ext-link span.icon { display:none; }
-a.ext-link { background:url('../img/external-link.png') no-repeat right 4px; padding-right:12px; }
-a.ext-link:hover { background-image:url('../img/external-link-grey.png'); }
+a.ext-link { background:url('img/external-link.png') no-repeat right 4px; padding-right:12px; }
+a.ext-link:hover { background-image:url('img/external-link-grey.png'); }
 
 div.wikipage { padding:0; }
 
@@ -117,4 +117,4 @@ div.wiki-toc a:hover { color:#000; }
 #footer { padding:20px 0; }
 #footer p { border:0 !important; line-height:13px; }
 #footer footer.vcard { margin-left:50px; color:#8F8F8F; font-size:12px; display:inline-block; min-height:30px;
-	background:url('../img/cam-logo.gif') no-repeat top right; padding-right:160px; }
+	background:url('img/cam-logo.gif') no-repeat top right; padding-right:160px; }
