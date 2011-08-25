@@ -199,6 +199,9 @@ textarea:focus { background:#FFFDE7; }
 /* trac fullblog plugin */
 #wikipage div.blogflash { background:#FFF; border:0; }
 #wikipage div.blogflash h1 { border:0; margin-bottom:0; padding-bottom:0; }
+#wikipage div.blogflash h1 a, { color:#83A501; }
+#wikipage div.blogflash h1 *:link,
+#wikipage div.blogflash h1 *:visited { color:#83A501; }
 #wikipage div.blogflash p,
 #wikipage div.blogflash ul li,
 #wikipage div.blogflash ol li { line-height:16px; }
