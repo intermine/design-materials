@@ -120,4 +120,6 @@ div.wiki-toc a:hover { color:#000; }
 	background:url('img/cam-logo.gif') no-repeat top right; padding-right:160px; }
 
 /* trac fixes */
-div.wikitoolbar a { cursor:pointer; }
+div.wikitoolbar a { cursor:pointer; } /* pointer cursor on toolbar buttons */
+div.buttons input[type="submit"] { cursor:pointer; } /* pointer cursor on bottom toolbar buttons */
+div.wiki-toc>h4 { display:none; } /* hide the toc title */

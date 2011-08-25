@@ -27,9 +27,9 @@
           toc.css('top', container.offset().top).css('position', 'fixed');
 
           // container make room for toc
-          container.css('padding-right', (v(toc.width()) + v(toc.css('padding-left')) + v(toc.css('padding-right'))) + 'px');
+          container.css('margin-right', (v(toc.width()) + v(toc.css('padding-left')) + v(toc.css('padding-right'))) + 'px');
           // toc position at the right edge of container
-          toc.css('right', v($(document).width()) - v(container.css('padding-right')) - v(container.offset().left) -
+          toc.css('right', v($(document).width()) - v(container.css('margin-right')) - v(container.offset().left) -
             v(container.width()));
 
           // switch off left padding from toc for good measure
