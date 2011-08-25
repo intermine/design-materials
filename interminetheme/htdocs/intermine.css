@@ -26,7 +26,8 @@ blockquote { border-left:3px solid #EEE !important; font-style:italic; padding-l
 
 /* clearing */
 header #metanav:after,
-#nav nav:after { content:" "; display:block; height:0; clear:both; }
+#nav nav:after,
+#content.timeline form#prefs div.buttons:after { content:" "; display:block; height:0; clear:both; }
 
 /* meta nav */
 header #metanav a,
@@ -124,6 +125,26 @@ div.wikitoolbar a { cursor:pointer; } /* pointer cursor on toolbar buttons */
 div.buttons input[type="submit"] { cursor:pointer; } /* pointer cursor on bottom toolbar buttons */
 div.wiki-toc>h4 { display:none; } /* hide the toc title */
 
+/* trac timeline */
+#content.timeline h1,
+#content.timeline h2,
+#content.timeline h3,
+#content.timeline h4 { display:block; }
+#content.timeline form#prefs { float:none; margin:0; padding:4px; display:inline-block; width:100%; border:0;
+	background:#FFF; text-align:center; }
+#content.timeline form#prefs div,
+#content.timeline form#prefs fieldset { display:inline-block; }
+#content.timeline form#prefs fieldset { margin:0 20px; }
+#content.timeline form#prefs fieldset label { display:inline; }
+#content.timeline form#prefs div.buttons,
+#content.timeline form#prefs div.buttons input { margin:0; }
+#content.timeline form#prefs br { display:none; }
+#content.timeline a,
+#content.timeline *:link,
+#content.timeline *:visited { text-decoration:none; }
+#content.timeline dd { margin:0 0 8px 62px; }
+#content.timeline dt em { color:#007DCC; }
+
 /* trac admin fixes */
 #content.admin #tabs { border:0; background:#FFF; margin:0; }
 #content.admin #tabs li { line-height:30px; }
@@ -133,6 +154,9 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.admin #tabs li.active>a { font-weight:bold; }
 #content.admin #tabs a { border-bottom:1px solid #BBB; color:#333; font-size:16px; padding:2px; text-decoration:none; }
 #content.admin #tabs a:hover { color:#000; }
+
+#content.admin>h1 { padding-bottom:0; }
+#content.admin h3 { border:0; }
 
 input[type="text"],
 input.textwidget,
