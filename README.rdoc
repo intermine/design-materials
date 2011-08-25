@@ -2,7 +2,7 @@ A Trac 0.12.2 theme for InterMine homepage
 
 == Requirements
 
-* [http://trac-hacks.org/wiki/ThemeEnginePlugin](ThemeEnginePlugin)
+* {ThemeEnginePlugin}[http://trac-hacks.org/wiki/ThemeEnginePlugin]
 
 == Installation
 
@@ -10,11 +10,11 @@ A Trac 0.12.2 theme for InterMine homepage
 2. copy the resulting .egg file into myproject/plugins
 3. edit trac.ini as follows:
 
-	[components]
-	themeengine.* = enabled
-	interminetheme.* = enabled
+  [components]
+  themeengine.* = enabled
+  interminetheme.* = enabled
 
-	[theme]
-	theme = InterMine
+  [theme]
+  theme = InterMine
 
 4. restart the webapp
