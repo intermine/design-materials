@@ -18,3 +18,12 @@ A Trac 0.12.2 theme for InterMine homepage
   theme = InterMine
 
 4. restart the webapp
+
+== Optional Installation
+=== Blog Plugin
+
+* {FullBlogPlugin}[http://trac-hacks.org/wiki/FullBlogPlugin]
+
+Show latest 3 posts on the homepage:
+
+  [[BlogList(recent=3, max_size=250, format=float)]]

@@ -86,8 +86,7 @@ div.trac-modifiedby a { text-decoration:none; }
 /* main content */
 section { margin:30px 0 20px 0; display:block; }
 
-a.anchor { color:#333 !important; text-decoration:none !important; margin-left:2px; vertical-align:bottom !important; }
-a.anchor:hover { color:#FFF !important; background:#333; }
+a.anchor { color:#DDD !important; text-decoration:none !important; margin-left:2px; vertical-align:bottom !important; }
 h1 a.wiki.missing,
 h2 a.wiki.missing,
 h3 a.wiki.missing,

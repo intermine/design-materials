@@ -87,8 +87,7 @@ div.trac-modifiedby a { text-decoration:none; }
 /* main content */
 section { margin:30px 0 20px 0; display:block; }
 
-a.anchor { color:#333 !important; text-decoration:none !important; margin-left:2px; vertical-align:bottom !important; }
-a.anchor:hover { color:#FFF !important; background:#333; }
+a.anchor { color:#DDD !important; text-decoration:none !important; margin-left:2px; vertical-align:bottom !important; }
 h1 a.wiki.missing,
 h2 a.wiki.missing,
 h3 a.wiki.missing,
@@ -161,6 +160,16 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.report a,
 #content.report *:link,
 #content.report *:visited { text-decoration:none; }
+#content.ticket h2 { border:0; }
+
+/* repo */
+#content.browser h1 { border:0; }
+#content.browser h1 a,
+#content.browser h1 *:link,
+#content.browser h1 *:visited { color:#83A501; padding-left:0; }
+#content.browser h1 a.first,
+#content.browser h1 *:link.first,
+#content.browser h1 *:visited.first { color:#999988; }
 
 /* trac admin */
 #content.admin #tabs { border:0; background:#FFF; margin:0; }
@@ -171,6 +180,7 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.admin #tabs li.active>a { font-weight:bold; }
 #content.admin #tabs a { border-bottom:1px solid #BBB; color:#333; font-size:16px; padding:2px; text-decoration:none; }
 #content.admin #tabs a:hover { color:#000; }
+#content.admin #tabcontent { margin-left:240px; }
 
 #content.admin>h1 { padding-bottom:0; }
 #content.admin h3 { border:0; }
