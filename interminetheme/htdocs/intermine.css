@@ -133,6 +133,7 @@ input.textwidget,
 textarea { box-shadow:1px 2px 3px #F0F0F0 inset; -moz-box-shadow:1px 2px 3px #F0F0F0 inset; border-radius:3px 3px 3px 3px;
 	-webkit-box-shadow:1px 2px 3px #F0F0F0 inset; -o-box-shadow:1px 2px 3px #F0F0F0 inset; -o-border-radius:3px 3px 3px 3px;
 	-moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px; }
+textarea { padding:4px; }
 input[type="text"]:focus,
 input.textwidget:focus,
 textarea:focus { background:#FFFDE7; }
@@ -201,10 +202,17 @@ textarea:focus { background:#FFFDE7; }
 #wikipage div.blogflash p,
 #wikipage div.blogflash ul li,
 #wikipage div.blogflash ol li { line-height:16px; }
-#wikipage div.blogflash ul,
-#wikipage div.blogflash ol { margin:0; }
 #wikipage div.blogflash ul.metainfo li { display:none; }
 #wikipage div.blogflash ul.metainfo li.metadates { display:block; float:none; }
 #wikipage div.blogflash blockquote { margin-left:0; padding:0 !important; border:0 !important; height:8px; }
 #wikipage div.blogflash div.blog-list-title { text-align:left; color:#CF312D; font-weight:bold; margin-bottom:4px;
-	background:url('img/megaphone.png') no-repeat left; padding:6px 0 0 22px; }
+	background:url('img/megaphone.png') no-repeat left; padding:3px 0 0 22px; }
+
+#content.blog #sidebar { font-size:13.6px; }
+#content.blog #sidebar span.metainfo a { text-decoration:none; }
+#content.blog #sidebar p,
+#content.blog #sidebar ul,
+#content.blog #sidebar ol { margin:2px 0; }
+#content.blog div.blog-list-title { display:none; }
+#content.blog h1.blog-title { border:0; margin-bottom:0; padding-bottom:0; }
+#content.blog ul.metainfo li { display:inline; margin-left:10px; }
