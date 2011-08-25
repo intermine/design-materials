@@ -88,6 +88,7 @@ div.trac-modifiedby a { text-decoration:none; }
 section { margin:30px 0 20px 0; display:block; }
 
 a.anchor { color:#DDD !important; text-decoration:none !important; margin-left:2px; vertical-align:bottom !important; }
+a.anchor:hover { background:#FFF; }
 h1 a.wiki.missing,
 h2 a.wiki.missing,
 h3 a.wiki.missing,
@@ -126,6 +127,15 @@ div.wiki-toc a:hover { color:#000; }
 div.wikitoolbar a { cursor:pointer; } /* pointer cursor on toolbar buttons */
 input[type="submit"] { cursor:pointer; } /* pointer cursor submit buttons */
 div.wiki-toc>h4 { display:none; } /* hide the toc title */
+
+input[type="text"],
+input.textwidget,
+textarea { box-shadow:1px 2px 3px #F0F0F0 inset; -moz-box-shadow:1px 2px 3px #F0F0F0 inset; border-radius:3px 3px 3px 3px;
+	-webkit-box-shadow:1px 2px 3px #F0F0F0 inset; -o-box-shadow:1px 2px 3px #F0F0F0 inset; -o-border-radius:3px 3px 3px 3px;
+	-moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px; }
+input[type="text"]:focus,
+input.textwidget:focus,
+textarea:focus { background:#FFFDE7; }
 
 /* trac timeline */
 #content.timeline h1,
@@ -185,11 +195,16 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.admin>h1 { padding-bottom:0; }
 #content.admin h3 { border:0; }
 
-input[type="text"],
-input.textwidget,
-textarea { box-shadow:1px 2px 3px #F0F0F0 inset; -moz-box-shadow:1px 2px 3px #F0F0F0 inset; border-radius:3px 3px 3px 3px;
-	-webkit-box-shadow:1px 2px 3px #F0F0F0 inset; -o-box-shadow:1px 2px 3px #F0F0F0 inset; -o-border-radius:3px 3px 3px 3px;
-	-moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px; }
-input[type="text"]:focus,
-input.textwidget:focus,
-textarea:focus { background:#FFFDE7; }
+/* trac fullblog plugin */
+#wikipage div.blogflash { background:#FFF; border:0; }
+#wikipage div.blogflash h1 { border:0; margin-bottom:0; padding-bottom:0; }
+#wikipage div.blogflash p,
+#wikipage div.blogflash ul li,
+#wikipage div.blogflash ol li { line-height:16px; }
+#wikipage div.blogflash ul,
+#wikipage div.blogflash ol { margin:0; }
+#wikipage div.blogflash ul.metainfo li { display:none; }
+#wikipage div.blogflash ul.metainfo li.metadates { display:block; float:none; }
+#wikipage div.blogflash blockquote { margin-left:0; padding:0 !important; border:0 !important; height:8px; }
+#wikipage div.blogflash div.blog-list-title { text-align:left; color:#CF312D; font-weight:bold; margin-bottom:4px;
+	background:url('img/megaphone.png') no-repeat left; padding:6px 0 0 22px; }
