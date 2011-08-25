@@ -133,3 +133,12 @@ div.wiki-toc>h4 { display:none; } /* hide the toc title */
 #content.admin #tabs li.active>a { font-weight:bold; }
 #content.admin #tabs a { border-bottom:1px solid #BBB; color:#333; font-size:16px; padding:2px; text-decoration:none; }
 #content.admin #tabs a:hover { color:#000; }
+
+input[type="text"],
+input.textwidget,
+textarea { box-shadow:1px 2px 3px #F0F0F0 inset; -moz-box-shadow:1px 2px 3px #F0F0F0 inset; border-radius:3px 3px 3px 3px;
+	-webkit-box-shadow:1px 2px 3px #F0F0F0 inset; -o-box-shadow:1px 2px 3px #F0F0F0 inset; -o-border-radius:3px 3px 3px 3px;
+	-moz-border-radius:3px 3px 3px 3px; -webkit-border-radius:3px 3px 3px 3px; }
+input[type="text"]:focus,
+input.textwidget:focus,
+textarea:focus { background:#FFFDE7; }
