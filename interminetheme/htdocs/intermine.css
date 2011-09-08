@@ -25,7 +25,6 @@ tt { color:#222; font-size:15px; padding:1px 2px; }
 blockquote { border-left:3px solid #EEE !important; font-style:italic; padding-left:25px !important; }
 
 /* clearing */
-header #metanav:after,
 #nav nav:after,
 #content.timeline form#prefs div.buttons:after { content:" "; display:block; height:0; clear:both; }
 
@@ -54,7 +53,7 @@ header #contacts span.email { background:url('img/emilio.png') no-repeat top lef
 #nav { background:#C0C0C0; margin-top:14px; padding:6px 0; }
 #nav nav { clear:both; }
 #nav ul { margin:0; padding:0; float:left; margin-top:3px; }
-#nav ul li { display:inline-block; height:20px; line-height:15px; margin-right:10px; }
+#nav ul li { display:inline-block; height:20px; line-height:15px; margin-right:10px; float:left; }
 #nav ul li a { font-weight:bold; padding:3px 20px; font-size:14px; color:#333; text-decoration:none; }
 #nav ul li a:hover { background:#676767; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
 	-o-border-radius:2px; }
