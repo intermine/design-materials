@@ -40,7 +40,7 @@ header #logo { background:url('img/logo.png') no-repeat top left; display:inline
 header #logo p { height:0; padding:0; margin:0; overflow:hidden; padding-top:54px; width:469px; }
 
 /* contacts */
-header #contacts { float:right; font-size:12px; color:#8F8F8F; margin-top:20px; }
+header #contacts { float:right; font-size:12px; color:#8F8F8F; margin-top:19px; padding:4px 0; }
 header #contacts b { color:#232020; font-weight:normal; }
 header #contacts a { color:#8F8F8F !important; text-decoration:none; }
 header #contacts span { margin-right:12px; }
@@ -48,6 +48,10 @@ header #contacts a,
 header #contacts span { margin-left:4px; }
 header #contacts span.email { background:url('img/emilio.png') no-repeat top left; display:inline-block;
 	width:105px; height:13px; vertical-align:bottom; }
+header #contacts a.mailing-list,
+header #contacts a.mailing-list:hover { background:#F1FCBA url('img/discussion.png') no-repeat 4px 4px;
+	display:inline-block; float:right; color:#83A501 !important; padding:4px 2px 4px 21px; margin-top:-4px; }
+header #contacts a.mailing-list span { margin:0; font-weight:bold; }
 
 /* navigation */
 #nav { background:#C0C0C0; margin-top:14px; padding:6px 0; }
