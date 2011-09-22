@@ -169,7 +169,7 @@ class AddEditHoliday {
                     # convert into objects
                     $startTime = new StartHolidayDate($begin);
                     $endTime = new EndHolidayDate($newHoliday[$i-1]);
-                    
+
                     # finally, save
                     $newAbsence = new Absence(
                         $startTime->toDbDate(),

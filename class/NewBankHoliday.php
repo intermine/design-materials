@@ -33,8 +33,19 @@ class NewBankHoliday {
      * @return void
      */
     static function insert($date, $name) {
-        $res = Db::getConnection()->query("INSERT INTO bankholiday (day, name) ".
+        # add the entry to bankholiday table
+        Db::getConnection()->query("INSERT INTO bankholiday (day, name) ".
                                           "VALUES ('".$date."', '".$name."')");
+
+        # now for each worker, add a holiday to them with the "B" flag on this day
+        $res = Db::getConnection()->query("SELECT userid FROM worker WHERE deleted='N'");
+        while ($row = $res->fetchArray()) {
+            Db::getConnection()->query(sprintf(
+                    "INSERT INTO planner(userid,start,startnoon,stop,stopnoon,".
+                    "nb,type,comment) VALUES ('%s','%s','0','%s','0',".
+                    "'0','B','%s')",
+                    $row[0], $date, $date, $name));
+        }
     }
 
 }
