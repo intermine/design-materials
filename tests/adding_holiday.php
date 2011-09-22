@@ -152,5 +152,4 @@ class TestOfAdding extends UnitTestCase {
             array('start' => '2011-01-04', 'startnoon' => 1, 'stop' => '2011-01-05', 'stopnoon' => 0)
         ));
     }
-
 }
