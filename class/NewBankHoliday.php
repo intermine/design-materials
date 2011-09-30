@@ -35,7 +35,7 @@ class NewBankHoliday {
     static function insert($date, $name) {
         # add the entry to bankholiday table
         Db::getConnection()->query("INSERT INTO bankholiday (day, name) ".
-                                          "VALUES ('".$date."', '".$name."')");
+                                          "VALUES ('".$date."', '".addslashes($name)."')");
 
         # now for each worker, add a holiday to them with the "B" flag on this day
         $res = Db::getConnection()->query("SELECT userid FROM worker WHERE deleted='N'");
