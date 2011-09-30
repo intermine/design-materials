@@ -44,8 +44,9 @@ class NewBankHoliday {
                     "INSERT INTO planner(userid,start,startnoon,stop,stopnoon,".
                     "nb,type,comment) VALUES ('%s','%s','0','%s','0',".
                     "'0','B','%s')",
-                    $row[0], $date, $date, $name));
+                    $row[0], $date, $date, addslashes($name)));
         }
     }
 
 }
+
