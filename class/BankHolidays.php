@@ -99,6 +99,9 @@ class BankHolidays {
                     "'0','B','%s')",
                     $row[0], $date, $date, addslashes($name)));
         }
+
+        // and now update internal
+        $this->holidays[$date] = $name;
     }
 
 }
