@@ -61,6 +61,7 @@ class BankHolidays {
             Messaging::ok(sprintf("Removed bank holiday <strong>%s</strong>", $date));
             // remove from internal
             unset($this->holidays[$date]);
+            header("Location: add_cancel_bank_holiday.php");
         }
     }
 

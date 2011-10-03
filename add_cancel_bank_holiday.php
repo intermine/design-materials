@@ -21,6 +21,17 @@ $planner=new Planner();
 $session->warning=FALSE;
 Page::init(FALSE);
 
+# any messages?
+require_once "class/Messaging.php";
+$messages = Messaging::get();
+if ($messages) {
+    echo '<ul id="messages">';
+    foreach ($messages as $message) {
+        printf("<li class='%s'>%s</li>", $message['type'], $message['text']);
+    }
+    echo '</ul>';
+}
+
 // get the bank holidays
 require_once('class/BankHolidays.php');
 $bh = new BankHolidays();
@@ -28,16 +39,6 @@ $bh = new BankHolidays();
 // on get cancel
 if ($_GET['cancel']) {
     $bh->cancel($_GET['cancel']);
-    # any messages?
-    require_once "class/Messaging.php";
-    $messages = Messaging::get();
-    if ($messages) {
-        echo '<ul id="messages">';
-        foreach ($messages as $message) {
-            printf("<li class='%s'>%s</li>", $message['type'], $message['text']);
-        }
-        echo '</ul>';
-    }
 }
 
 // on post
