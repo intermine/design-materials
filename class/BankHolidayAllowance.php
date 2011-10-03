@@ -79,7 +79,8 @@ class BankHolidayAllowance {
                         "INSERT INTO `allowance` (userid,ayear,allowance) VALUES ('%s',%d,%f)", $userid, $year, $allowance));
                     }
                     Messaging::ok(
-                        sprintf("Allowance for %s in %d set to %s", $this->allowance[$userid]['name'], $year, round($allowance, 1))
+                        sprintf("Allowance for <strong>%s</strong> in %d set to %s", $this->allowance[$userid]['name'],
+                                $year, round($allowance, 1))
                     );
 
                     // internal update

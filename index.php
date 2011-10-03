@@ -20,7 +20,7 @@ if ($session->adminRights)
     echo "<a href=\"adduser.php\">Add a new user</a>";
     echo "<a href=\"deluser.php\">Delete a user</a>";
     echo "<a href=\"swapuser.php\">Connect as...</a>";
-    echo "<a href=\"add_bank_holiday.php\">Add a bank holiday</a>";
+    echo "<a href=\"add_cancel_bank_holiday.php\">Add a bank holiday</a>";
     echo "<a href=\"users_allowance.php\">Users allowance</a>";
 }
 
