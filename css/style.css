@@ -21,6 +21,7 @@
 html { background:url('../img/html-bg.png') 4px 0; padding-bottom:20px; }
 body { font-family:"SansFont",sans-serif; font-size:17px; color:#232323; background:url('../img/page-bg.jpg'); }
 
+header, article { padding-left:15px; }
 a { text-decoration:none; }
 p { line-height:30px; margin:24px 0; }
 h4 { color:#cc0000; font-size:15px; margin-bottom:10px; }
@@ -38,6 +39,10 @@ h2 { font-family:"SerifFont",serif; font-size:26px; letter-spacing:0px; color:#0
 .separator { background:url('../img/divider.png') no-repeat center; display:block; height:16px;
 	margin:35px auto; }
 .right { float:right; }
+
+header:after,
+article#table-example:after { background:url('../img/divider.png') no-repeat center; display:block;
+	height:16px; margin:35px auto; content:""; }
 
 span.purple { font-weight:bold; color:#5f1676; background:#5f1676; background:rgba(95, 22, 118, 0.16); }
 span.rattish { font-weight:bold; color:#20436d; background:#5786b9; background:rgba(87, 134, 185, 0.26); }
@@ -71,6 +76,8 @@ article#table-example .imbedded-table-container { margin:0 !important; }
 article#table-example div.table div.arrow { background:url('../img/leftwards-arrow-red.png') no-repeat bottom left;
 	padding-bottom:60px; width:200px; position:absolute; top:-40px; right:-135px; font-size:14px; color:#cc0000;
 	text-align:center; }
+article#table-example .loading { margin:0 auto; background:url('../img/loading.gif') no-repeat center;
+	width:16px; height:100px; display:block; }
 
 article#table-example .source.red { background:url('../img/octocat-red.png') no-repeat right;
 	padding-right:18px; color:#cc0000; text-decoration:underline; }
