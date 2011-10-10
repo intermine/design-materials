@@ -22,10 +22,9 @@ html { background:url('../img/html-bg.png') 4px 0; padding-bottom:20px; }
 body { font-family:"SansFont",sans-serif; font-size:17px; color:#232323; background:url('../img/page-bg.jpg'); }
 
 a { text-decoration:none; }
-p { line-height:30px; width:640px; margin:24px 0; }
+p { line-height:30px; margin:24px 0; }
 h4 { color:#cc0000; font-size:15px; margin-bottom:10px; }
-h3 { font-family:"SerifFont",serif; font-size:19px; line-height:26px; letter-spacing:0.5px;
-	width:610px; }
+h3 { font-family:"SerifFont",serif; font-size:19px; line-height:26px; letter-spacing:0.5px; }
 	h3:before { content:'“'; }
 	h3:after { content:'”'; }
 	h3 a { color:#021070; text-decoration:underline; }
@@ -58,6 +57,7 @@ header #title { height:75px; width:455px; background:url('../img/logo.png') no-r
 header #title hgroup { overflow:hidden; height:0; }
 
 article#table-example div.table { position:relative; }
+/*
 article#table-example div.table table { font-family:"SerifFont",serif; font-size:16px; margin:0 auto; }
 article#table-example div.table table thead th { background:#464646; color:#fff; border-right:1px solid #d0d0d0;
 	font-weight:bold; padding:6px 8px; text-align:left; font-size:17px; }
@@ -66,8 +66,10 @@ article#table-example div.table table tr td { border-bottom:1px solid #d1d1d1; b
 	background:#efefef; padding:6px 8px; }
 article#table-example div.table table tbody tr:nth-child(even) td { background:#fff; }
 article#table-example div.table table tr td:last-child { border-right:0; }
+*/
+article#table-example .imbedded-table-container { margin:0 !important; }
 article#table-example div.table div.arrow { background:url('../img/leftwards-arrow-red.png') no-repeat bottom left;
-	padding-bottom:60px; width:200px; position:absolute; top:-15px; right:0; font-size:14px; color:#cc0000;
+	padding-bottom:60px; width:200px; position:absolute; top:-40px; right:-135px; font-size:14px; color:#cc0000;
 	text-align:center; }
 
 article#table-example .source.red { background:url('../img/octocat-red.png') no-repeat right;

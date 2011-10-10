@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" title="light" href="http://intermine.org/lib/imbedding/0.2/style/light.css">
 </head>
 <body>
     <div id="documentation">
@@ -52,31 +53,10 @@
                 pages. Like this query executed in <strong>FlyMine</strong>:</p>
                 
                 <div class="table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Quote</th>
-                                <th>Rating</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Terminator</td>
-                                <td>I'll be back</td>
-                                <td>****</td>
-                            </tr>
-                            <tr>
-                                <td>Predator</td>
-                                <td>Get in to the chopaaaa</td>
-                                <td>*****</td>
-                            </tr>
-                        </tbody>
-
-                        <div class="arrow">
-                            Live example,<br /> see <a href="#" class="source red">source code</a>
-                        </div>
-                    </table>
+                    <div id="template-query"></div>
+                    <div class="arrow">
+                        Live example,<br /> see <a href="#" class="source red">source code</a>
+                    </div>
                 </div>
 
                 <p>You can use the API to create mashups from multiple InterMine sites.</p>
@@ -132,5 +112,10 @@
             </div>
         </footer>
     </section>
+
+<script src="http://www.intermine.org/lib/imbedding/0.2/imbedding.js"></script>
+<script src="js/imbedding.js"></script>
+<script>loadTemplate();</script>
+
 </body>
 </html>
