@@ -97,7 +97,7 @@ footer { background:url('../img/html-bg.png') 0 0; color:#c9d8e7; font-size:14px
 	margin-top:40px; }
 footer p { width:auto; margin:0; }
 footer a { font-weight:bold; color:inherit; text-decoration:none; }
-footer div.collaborators { background:url('../img/collaborators.png') no-repeat 0 0; width:662px; height:103px;
+footer div.collaborators { background:url('../img/collaborators.png') no-repeat 1px 0; width:662px; height:103px;
 	margin:0 auto; }
 	footer div.collaborators a { display:block; float:left; height:103px; }
 	footer div.collaborators a.mgi { width:142px; }
