@@ -18,6 +18,7 @@
     font-style: normal;
 }
 
+html { background:url('../img/html-bg.png') 4px 0; padding-bottom:20px; }
 body { font-family:"SansFont",sans-serif; font-size:17px; color:#232323; background:url('../img/page-bg.jpg'); }
 
 a { text-decoration:none; }
@@ -90,8 +91,18 @@ article#api-example span.source a { color:inherit; text-decoration:underline; }
 article#api-example span.source.blue { color:#4490d0; background-image:url('../img/octocat-blue.png'); }
 article#api-example span.source.gold { color:#a58429; background-image:url('../img/octocat-gold.png'); }
 
-footer { background:url('../img/footer-bg.png') repeat-x top left; color:#c9d8e7; font-size:14px;
-	text-align:center; margin-top:40px; padding:20px 0; }
+footer:before { height:20px; content:" "; background:url('../img/footer-bg.png') repeat-x top left;
+	display:block; width:100%; }
+footer { background:url('../img/html-bg.png') 0 0; color:#c9d8e7; font-size:14px; text-align:center;
+	margin-top:40px; }
 footer p { width:auto; margin:0; }
 footer a { font-weight:bold; color:inherit; text-decoration:none; }
+footer div.collaborators { background:url('../img/collaborators.png') no-repeat 0 0; width:662px; height:103px;
+	margin:0 auto; }
+	footer div.collaborators a { display:block; float:left; height:103px; }
+	footer div.collaborators a.mgi { width:142px; }
+	footer div.collaborators a.rgd { width:230px; }
+	footer div.collaborators a.sgd { width:98px; }
+	footer div.collaborators a.wormbase { width:114px; }
+	footer div.collaborators a.zfin { width:72px; }
 footer small { font-size:12px; color:rgba(201, 216, 231, 0.8); margin-top:20px; display:block; }
