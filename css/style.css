@@ -57,7 +57,7 @@ span.highland { font-weight:bold; color:rgba(102, 153, 102, 1); background:rgba(
 #documentation ul li a { color:#ccff99; }
 
 header { background:url('../img/header-bg.jpg') repeat-x top left; padding-top:38px; }
-header #title { height:75px; width:455px; background:url('../img/logo.png') no-repeat top left;
+header #title { height:58px; width:676px; background:url('../img/logo.png') no-repeat top left;
 	margin-bottom:30px; }
 header #title hgroup { overflow:hidden; height:0; }
 
