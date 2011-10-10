@@ -72,9 +72,9 @@ article#table-example div.table table tr td { border-bottom:1px solid #d1d1d1; b
 article#table-example div.table table tbody tr:nth-child(even) td { background:#fff; }
 article#table-example div.table table tr td:last-child { border-right:0; }
 */
-article#table-example .imbedded-table-container { margin:0 !important; }
+article#table-example .imbedded-table-container { margin:0 !important; width:610px; }
 article#table-example div.table div.arrow { background:url('../img/leftwards-arrow-red.png') no-repeat bottom left;
-	padding-bottom:60px; width:200px; position:absolute; top:-40px; right:-135px; font-size:14px; color:#cc0000;
+	padding-bottom:60px; width:200px; position:absolute; top:-30px; right:-20px; font-size:14px; color:#cc0000;
 	text-align:center; }
 article#table-example .loading { margin:0 auto; background:url('../img/loading.gif') no-repeat center;
 	width:16px; height:100px; display:block; }
