@@ -44,11 +44,11 @@ header:after,
 article#table-example:after { background:url('../img/divider.png') no-repeat center; display:block;
 	height:16px; margin:35px auto; content:""; }
 
-span.purple { font-weight:bold; color:rgba(95, 22, 118, 1); background:rgba(95, 22, 118, 0.16); }
-span.rattish { font-weight:bold; color:rgba(32, 67, 109, 1); background:rgba(87, 134, 185, 0.26); }
-span.yeastish { font-weight:bold; color:rgba(171, 152, 87, 1); background:rgba(169, 150, 91, 0.23); }
-span.metabolic { font-weight:bold; color:rgba(252, 78, 0, 1); background:rgba(252, 78, 0, 0.14); }
-span.highland { font-weight:bold; color:rgba(102, 153, 102, 1); background:rgba(204, 238, 128, 0.28); }
+.purple { font-weight:bold; color:rgba(95, 22, 118, 1); background:rgba(95, 22, 118, 0.16); }
+.rattish { font-weight:bold; color:rgba(32, 67, 109, 1); background:rgba(87, 134, 185, 0.26); }
+.yeastish { font-weight:bold; color:rgba(171, 152, 87, 1); background:rgba(169, 150, 91, 0.23); }
+.metabolic { font-weight:bold; color:rgba(252, 78, 0, 1); background:rgba(252, 78, 0, 0.14); }
+.highland { font-weight:bold; color:rgba(102, 153, 102, 1); background:rgba(204, 238, 128, 0.28); }
 
 #documentation { background:#2a2d3e; line-height:28px; color:#fff; height:28px; font-size:14px; }
 #documentation ul { margin-left:12px; }
