@@ -55,7 +55,7 @@ header #contacts a.mailing-list span { margin:0; font-weight:bold; }
 /* navigation */
 #nav { background:#C0C0C0; margin-top:14px; padding:6px 0; }
 #nav nav { clear:both; }
-#nav ul { margin:0; padding:0; float:left; margin-top:3px; }
+#nav ul { margin:0; padding:0; float:left; margin-top:6px; }
 #nav ul li { display:inline-block; height:20px; line-height:15px; margin-right:10px; float:left; }
 #nav ul li a { font-weight:bold; padding:3px 20px; font-size:14px; color:#333; text-decoration:none; }
 #nav ul li a:hover { background:#676767; color:#bed73b; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px;
@@ -118,6 +118,10 @@ div.wiki-toc a:hover { color:#000; }
 
 /* footer */
 #footer { padding:20px 0; }
+#footer a:hover { color:#000; }
 #footer p { border:0 !important; line-height:13px; }
-#footer footer.vcard { margin-left:50px; color:#8F8F8F; font-size:12px; display:inline-block; min-height:30px;
+#footer footer.vcard { margin-left:30px; color:#8F8F8F; font-size:12px; display:inline-block; min-height:30px;
 	background:url('../img/cam-logo.gif') no-repeat top right; padding-right:160px; }
+#footer p.left { margin-left:0; }
+#footer p.right a { vertical-align:middle; display:inline-block; }
+#footer p.right a:hover { background:#FFF; } 
