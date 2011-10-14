@@ -62,6 +62,7 @@ header #title { height:58px; width:676px; background:url('../img/logo.png') no-r
 header #title hgroup { overflow:hidden; height:0; }
 
 article#table-example div.table { position:relative; }
+article#table-example p a { color:#021070; text-decoration:underline; }
 /*
 article#table-example div.table table { font-family:"SerifFont",serif; font-size:16px; margin:0 auto; }
 article#table-example div.table table thead th { background:#464646; color:#fff; border-right:1px solid #d0d0d0;
