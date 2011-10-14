@@ -7,7 +7,7 @@ setup(
     name = 'TracInterMineTheme',
     version = '2.0',
     packages = ['interminetheme'],
-    package_data = { 'interminetheme': ['templates/*.html', 'htdocs/*.css', 'htdocs/img/*.png', 'htdocs/img/*.gif', 'htdocs/img/*.jpg' ] },
+    package_data = { 'interminetheme': ['templates/*.html', 'htdocs/*.css', 'htdocs/favicon.ico', 'htdocs/img/*.png', 'htdocs/img/*.gif', 'htdocs/img/*.jpg' ] },
 
     author = 'Radek Stepan',
     author_email = 'radek@intermine.org',

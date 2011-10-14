@@ -16,6 +16,9 @@ A Trac 0.12.2 theme for InterMine homepage
 
   [theme]
   theme = InterMine
+  
+  [project]
+  icon = theme/favicon.ico
 
 4. restart the webapp
 
