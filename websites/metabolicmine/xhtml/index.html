@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>metabolicMine</title>
+	
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection"/>
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print"/>
+	<!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+    	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
+        
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection"/>
+
+    <script type="text/javascript" src="js/select.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+    <div id="help"><a href="#" title="Need help?">&nbsp;</a></div>
+
+	<div class="container">
+
+		<div id="header">
+			<div id="title" class="span-7">
+                <span><strong>ver 1.0</strong> Data Mining Metabolic Diseases</span>
+				<p>metabolicMine</p>
+			</div>
+			<div class="push-2 span-3 last">
+                <div id="quick-links">
+                    <a href="#">Take a Tour</a>
+                    <span>|</span>
+                    <a href="#">Login</a>
+                </div>
+			</div>
+		</div>
+
+        <div id="menu" class="span-12 last">
+            <ul class="navigation">
+                <li><a href="#"><span>Home</span></a></li>
+                <li><a href="#"><span>Templates</span></a></li>
+                <li><a href="#"><span>Lists</span></a></li>
+                <li class="current"><a href="#"><span>QueryBuilder</span></a></li>
+                <li><a href="#"><span>Data</span></a></li>
+                <li><a href="#"><span><img src="img/person-ico.png" alt="person icon" /> MyMine</span></a></li>
+            </ul>
+            <div id="search-wrap">
+                <span class="search-wrap-right">&nbsp;</span>
+                <form action="#" id="quick-search" >
+                    <div id="select">
+                        Search
+                        <select id="type" name="type" class="select">
+                            <option selected="selected">Identifier</option>
+                            <option>Protein</option>
+                            <option>Gene</option>
+                        </select>
+                    </div>
+                    for
+                    <input class="input" type="text" value="e.g. SCU49845" /><div class="input-right"> </div>
+                    <input class="submit" type="submit" value="go" />
+                </form>
+                &nbsp; <!-- float fix -->
+                <span class="search-wrap-left">&nbsp;</span>
+            </div>
+        </div>
+        <div id="submenu" class="span-12 last">
+            <span class="submenu-orange-right">&nbsp;</span>
+            <span class="submenu-orange-left">&nbsp;</span>
+            <ul class="navigation">
+                <li><a href="#">Lists</a></li>
+                <li class="current"><a href="#">Query History</a></li>
+                <li><a href="#">Saved Queries</a></li>
+                <li><a href="#">Saved Templates</a></li>
+                <li><a href="#">Change Password</a></li>
+            </ul>
+        </div>
+
+        <div id="crumbs" class="span-12 last">
+            <p>
+                <a href="#">metabolicMine</a> <span>►</span>
+                <a href="#">QueryBuilder</a> <span>►</span>
+                <a href="#" class="current">Saved Query</a>
+            </p>
+        </div>
+
+
+        <div id="welcome" class="span-12 last wide-blue">
+            <div class="top"></div>
+            <div class="center span-12 last">
+                <div id="thumb" class="span-4">
+                    <img src="img/thumb-image.png" alt="metabolicMine interface" />
+                </div>
+                <div class="span-8 last">
+                    <a class="close" href="#" title="Close" onclick="$('#welcome').slideUp();return false;">&nbsp;</a>
+                    <h2>First time here?</h2>
+                    <p>Welcome to metabolicMine a place to explore the relation between genes and <u>metabolic diseases</u>. Check out lorem ipsum
+                        dolor sit if you want to do a tour element sit. You can create a <strong>MyMine account</strong> and log in to save
+                        queries and lists permanently.<br />Dolor sit element rex pitus grgalis relation if you lorem.
+                    </p>
+                    <a href="#" class="button blue">Take a tour</a>
+                    <a href="#" class="button gray">Contact team</a>
+                </div>
+            </div>
+            <div class="bottom span-12 last"></div>
+        </div>
+    
+        <div id="search-box" class="span-12 last wide-yellow">
+            <div class="top"></div>
+            <div class="center span-12 last">
+                <div id="magnifier" class="span-2">
+                    <div id="ribbon"></div>
+                    &nbsp;
+                </div>
+                <div class="span-4">
+                    <h3>Search for gene identifiers</h3>
+                    <form action="#" id="search">
+                        <input class="input" type="text" value="e.g. SCU49845" />
+                        <br />
+                        <input class="button orange" type="submit" value="Search" />
+                    </form>
+                </div>
+                <div class="span-6 last">
+                    <p><strong>Search for gene identifiers</strong> in our exhaustive et, you can use lorem ipsum here too.
+                        Vestibulum at purus a odio malesuada thoncus. Ut ut magna lectus. Nulla accumsan purus caplbus mi
+                        venenatis mattis. Carabitur ullamcorper varius sapien id viverra. Quisque feugiat dui dui. Etiam
+                        ultricies metus non dui facilisis vitae egestas lacus porttitor. Sed luctus massa sed nunc aliquam
+                        fermentum. Ut faucibus gravida eros, et dictum tellus dictum a. Cuarbitu</p>
+                </div>
+            </div>
+            <div class="bottom span-12 last"></div>
+        </div>
+
+        <div id="lists" class="span-6 half-green">
+            <div class="top"></div>
+            <div class="center span-6 last">
+                <div class="span-3 text">
+                    <img src="img/list-on-green.jpg" alt="list" />
+                    <h3>Query Lists</h3>
+                    <p><strong>Query</strong>, in our exhaustive et, you can use lorem ipsum here too.
+                            Vestibulum at purus a odio malesuada thoncus. Ut ut magna lectus. Nulla accumsan purus caplbus mi
+                            venenatis mattis.</p>
+                    <a href="#" class="button green">Query lists</a>
+                </div>
+                <div class="last thumb"><img src="img/thumb-1.gif" alt="thumbnail 1" /></div>
+            </div>
+            <div class="bottom span-6 last"></div>
+        </div>
+        <div id="template" class="span-6 last half-violet">
+            <div class="top"></div>
+            <div class="center span-6 last">
+                <div class="span-3 text">
+                    <img src="img/wand-on-violet.jpg" alt="template" />
+                    <h3>Template</h3>
+                    <p><strong>Template-r-us</strong> carabitur ullamcorper varius sapien id viverra. Quisque feugiat dui
+                        dui. Etiam ultricies metus non dui facilisis vitae egestas lacus porttitor. Sed luctus massa sed
+                        nunc aliquam.</p>
+                    <a href="#" class="button violet">Templates</a>
+                </div>
+                <div class="last thumb"><img src="img/thumb-2.gif" alt="thumbnail 2" /></div>
+            </div>
+            <div class="bottom span-6 last"></div>
+        </div>
+
+        <div id="actions" class="span-12 last wide-gray">
+            <a class="more" title="Want to see more?"
+               onclick="if ($('#more-actions').is(':hidden')) $('#more-actions').slideDown(); else $('#more-actions').slideUp();return false;">&nbsp;</a>
+            <div class="top"></div>
+            <div class="center span-12 last">
+                <div class="span-4 search">
+                    <img src="img/search-ico.png" alt="Search" />
+                    <h3>Search for gene identifiers</h3>
+                    <p><strong>Search for gene identifiers</strong> in our exhaustive et, you can use lorem ipsum here too.
+                        Vestibulum at purus a odio malesuada thoncus. Ut ut magna lectus.</p>
+                    <input class="input" type="text" value="e.g. SCU49845" />
+                </div>
+                <div class="span-4 lists">
+                    <img src="img/list-ico.png" alt="Lists" />
+                    <h3>Query lists</h3>
+                    <p><strong>Query</strong>, in our exhaustive et, you can use lorem ipsum here too.
+                        Vestibulum at purus a odio malesuada thoncus. Ut ut magna lectus. Nulla accumsan purus caplbus mi
+                        venenatis mattis.</p>
+                </div>
+                <div class="span-4 last templates">
+                    <img src="img/wand-ico.png" alt="Templates" />
+                    <h3>Work with templates</h3>
+                    <p><strong>Template-r-us</strong> carabitur ullamcorper varius sapien id viverra. Quisque feugiat dui
+                        dui. Etiam ultricies metus non dui facilisis vitae egestas lacus porttitor. Sed luctus massa sed
+                        nunc aliquam.</p>
+                </div>
+                <div class="span-12 last">
+                    <div class="span-4 search">
+                        <input class="button orange-gray" type="submit" value="Search" />
+                    </div>
+                    <div class="span-4 lists">
+                        <a href="#" class="button green-gray">Lists</a>
+                    </div>
+                    <div class="span-4 last templates">
+                        <a href="#" class="button violet-gray">Templates</a>
+                    </div>
+                </div>
+            </div>
+            <div id="more-actions" class="center span-12 last" style="display:none;">
+                <div class="span-4 action-1">
+                    <img src="img/list-ico.png" alt="List" />
+                    <h3>Another action 1</h3>
+                    <p><strong>Call to action</strong> carabitur ullamcorper varius sapien id viverra. Quisque feugiat dui
+                        dui. Etiam ultricies metus non dui facilisis vitae egestas lacus porttitor. Sed luctus massa sed
+                        nunc aliquam.</p>
+                </div>
+                <div class="span-4 action-2">
+                    <img src="img/wand-ico.png" alt="Wand" />
+                    <h3>Another action 2</h3>
+                    <p><strong>Call to action</strong> carabitur ullamcorper varius sapien id viverra. Quisque feugiat dui
+                        dui. Etiam ultricies metus non dui facilisis vitae egestas lacus porttitor. Sed luctus massa sed
+                        nunc aliquam.</p>
+                </div>
+                <div class="span-4 last action-3">
+                    <img src="img/search-ico.png" alt="Search" />
+                    <h3>Another action 2</h3>
+                    <p><strong>Call to action</strong> carabitur ullamcorper varius sapien id viverra. Quisque feugiat dui
+                        dui. Etiam ultricies metus non dui facilisis vitae egestas lacus porttitor. Sed luctus massa sed
+                        nunc aliquam.</p>
+                </div>
+            </div>
+            <div class="bottom span-12 last"></div>
+        </div>
+
+        <div id="api" class="span-4 white">
+            <div class="top"></div>
+            <div class="center span-4 last">
+                <h4>Java<span>&nbsp;&amp;&nbsp;</span>Python API</h4>
+                <img src="img/python-java-ico.gif" alt="python java" />
+                <p>We support programatic access to our data through Application Programming Interface too! Choose from options below:</p>
+                <ul>
+                    <li><a href="#">Java API</a></li>
+                    <li><a href="#">Python API</a></li>
+                </ul>
+            </div>
+            <div class="bottom span-4 last"></div>
+        </div>
+        <div id="rss" class="span-4 white">
+            <div class="top"></div>
+            <div class="center span-4 last">
+                <h4>News<span>&nbsp;&amp;&nbsp;</span>Updates</h4>
+                <table id="articles">
+                    <tr>
+                        <td class="date"><a href="#">27<br /><span>Aug</span></a></td>
+                        <td><a href="#">A new version of metabolicMine!</a><br/>Added support for new templates and impro...</td>
+                    </tr>
+                    <tr>
+                        <td class="date"><a href="#">15<br /><span>Aug</span></a></td>
+                        <td><a href="#">Preparing to launch new version</a><br/>We will be launching soon and need your ...</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="more span-4 last"><a href="#" class="more">&nbsp;</a></div>
+        </div>
+        <div id="testimonials" class="span-4 last blue">
+            <div class="top"></div>
+            <div class="center span-4 last">
+                <h4>Testimonials</h4>
+                <img src="img/stockphoto.jpg" alt="Stock Photo" />
+                <p>It's not how fat you are, it's what you do with it that counts, and that is why we feel that
+                    metabolicMine is a valid addition to the data mining lorem.</p>
+                <q>- E. Novak-Brown, University of Cambridge</q>
+            </div>
+            <div class="bottom span-4 last"></div>
+        </div>
+
+        <div id="footer" class="span-12 last">
+            <div class="span-8">
+                <a href="#">Contact Us</a>
+                <span>|</span>
+                <a href="#">Privacy Policy</a>
+                <span>|</span>
+                <a href="#">Section 508 Statement</a>
+                <br />
+                <a href="#">ModMine</a>
+                <span>|</span>
+                <a href="#">InterMine</a>
+                <span>|</span>
+                <a href="#">FlyMine</a>
+                <span>|</span>
+                <a href="#">MalariaMine</a>
+                <span>|</span>
+                <a href="#">GoldMine</a>
+                <br />
+                &copy; 2010 Department of Genetics, University of Cambridge, Downing Street, Cambridge CB2 3EH, United Kingdom
+            </div>
+            <div class="span-4 last">
+                <img src="img/nih-ico.png" alt="NIH" />
+                <img src="img/genetics-ico.gif" alt="Department of Genetics" />
+                <img src="img/cam-ico.gif" alt="University of Cambridge" />
+            </div>
+        </div>
+
+	</div>
+</body>
+</html>
