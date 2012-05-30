@@ -1,0 +1,324 @@
+<svg xmlns:gliffy="http://www.gliffy.com" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="801" height="390">
+    <rect stroke="#000000" stroke-width="0" fill="#ffffff" x="0" y="0" width="800" height="412" />
+    <g transform="translate(203.0,67.0) rotate(0 65.0 25.0)">
+        <defs>
+            <linearGradient id="g0" x1="50%" y1="-25%" x2="50%" y2="100%">
+                <stop stop-color="white" offset="0%" />
+                <stop stop-color="#d4f8ef" offset="100%" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(4.0,4.0)">
+            <rect width="130.0" height="50.0" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
+        </g>
+        <rect width="130.0" height="50.0" stroke="#00CC99" stroke-width="4" style="fill:url(#g0)" />
+        <g transform="translate(0.0,30.0)">
+            <text x="65.0" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">Web Services</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(402.5,66.0) rotate(0 90.5 25.0)">
+        <defs>
+            <linearGradient id="g1" x1="50%" y1="-25%" x2="50%" y2="100%">
+                <stop stop-color="white" offset="0%" />
+                <stop stop-color="#d4f8ef" offset="100%" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(4.0,4.0)">
+            <rect width="181.0" height="50.0" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
+        </g>
+        <rect width="181.0" height="50.0" stroke="#00CC99" stroke-width="4" style="fill:url(#g1)" />
+        <g transform="translate(0.0,30.0)">
+            <text x="90.5" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">Web Application</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(403.0,81.0)">
+        <line x1="0.0" y1="0.0" x2="-69.50005101260024" y2="0.9928578716085747" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(-70.0,1.0) rotate(359.1815445383114)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+    </g>
+    <g transform="translate(175.0,171.0) rotate(0 65.0 25.0)">
+        <defs>
+            <linearGradient id="g3" x1="50%" y1="-25%" x2="50%" y2="100%">
+                <stop stop-color="white" offset="0%" />
+                <stop stop-color="#cedcf9" offset="100%" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(4.0,4.0)">
+            <rect width="130.0" height="50.0" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
+        </g>
+        <rect width="130.0" height="50.0" stroke="#003399" stroke-width="4" style="fill:url(#g3)" />
+        <g transform="translate(0.0,30.0)">
+            <text x="65.0" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">QueryOptimiser</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(401.5,171.0) rotate(0 92.5 25.0)">
+        <defs>
+            <linearGradient id="g4" x1="50%" y1="-25%" x2="50%" y2="100%">
+                <stop stop-color="white" offset="0%" />
+                <stop stop-color="#cedcf9" offset="100%" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(4.0,4.0)">
+            <rect width="185.0" height="50.0" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
+        </g>
+        <rect width="185.0" height="50.0" stroke="#003399" stroke-width="4" style="fill:url(#g4)" />
+        <g transform="translate(0.0,30.0)">
+            <text x="92.5" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">ObjectStore</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(638.0,171.0) rotate(0 65.0 25.0)">
+        <defs>
+            <linearGradient id="g5" x1="50%" y1="-25%" x2="50%" y2="100%">
+                <stop stop-color="white" offset="0%" />
+                <stop stop-color="#cedcf9" offset="100%" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(4.0,4.0)">
+            <rect width="130.0" height="50.0" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
+        </g>
+        <rect width="130.0" height="50.0" stroke="#003399" stroke-width="4" style="fill:url(#g5)" />
+        <g transform="translate(0.0,22.0)">
+            <text x="65.0" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">Object</tspan>
+            </text>
+            <text x="65.0" style="text-anchor: middle" y="12.8">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">Cache</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(402.5,284.0) rotate(0 91.5 25.0)">
+        <defs>
+            <linearGradient id="g6" x1="50%" y1="-25%" x2="50%" y2="100%">
+                <stop stop-color="white" offset="0%" />
+                <stop stop-color="#fae3e3" offset="100%" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(4.0,4.0)">
+            <rect width="183.0" height="50.0" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
+        </g>
+        <rect width="183.0" height="50.0" stroke="#FF0000" stroke-width="4" style="fill:url(#g6)" />
+        <g transform="translate(0.0,30.0)">
+            <text x="91.5" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-weight="bold">PostgreSQL</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(333.0,102.0)">
+        <line x1="0.0" y1="0.0" x2="69.0" y2="0.0" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(69.5,0.0) rotate(180.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+    </g>
+    <g transform="translate(305.0,196.0)">
+        <line x1="0.5" y1="-6.123233995736766E-17" x2="96.5" y2="0.0" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(0.0,0.0) rotate(0.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+        <g transform="translate(38.25,0.0)">
+            <rect fill="#ffffff" x="-34.0" y="-16.0" width="68.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="-5.0">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">Generated</tspan>
+            </text>
+            <rect fill="#ffffff" x="-34.0" y="0.8000000000000007" width="68.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="11.8">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">SQL</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(494.0,284.0)">
+        <line x1="0.0" y1="0.0" x2="0.0" y2="-62.5" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(0.0,-63.0) rotate(450.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+        <g transform="translate(10.0,-36.5)">
+            <rect fill="#ffffff" x="-24.0" y="-16.0" width="48.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="-5.0">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">JDBC</tspan>
+            </text>
+            <rect fill="#ffffff" x="-24.0" y="0.8000000000000007" width="48.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="11.8">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">results</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(586.0,186.0)">
+        <line x1="0.0" y1="0.0" x2="51.5" y2="0.0" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(52.0,0.0) rotate(180.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+    </g>
+    <g transform="translate(638.0,206.0)">
+        <line x1="0.0" y1="0.0" x2="-51.5" y2="-6.123233995736766E-17" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(-52.0,0.0) rotate(360.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+    </g>
+    <g transform="translate(457.0,116.0)">
+        <line x1="0.0" y1="0.0" x2="-0.29727276784282725" y2="54.50000743785056" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(-0.30000000000001137,55.0) rotate(270.31251933436704)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+        <g transform="translate(-5.150148757011221,27.499851242988782)">
+            <rect fill="#ffffff" x="-20.0" y="-16.0" width="40.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="-5.0">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">Java</tspan>
+            </text>
+            <rect fill="#ffffff" x="-20.0" y="0.8000000000000007" width="40.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="11.8">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">query</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(531.0,171.0)">
+        <line x1="0.0" y1="0.0" x2="-1.28818511807639" y2="-54.50013961092608" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(-1.2999999999999545,-55.0) rotate(448.6459882350983)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+        <g transform="translate(-0.6513961092607614,-22.5)">
+            <rect fill="#ffffff" x="-25.0" y="-16.0" width="50.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="-5.0">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">Java</tspan>
+            </text>
+            <rect fill="#ffffff" x="-25.0" y="0.8000000000000007" width="50.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="11.8">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">objects</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(632.0,234.5) rotate(0 75.0 16.5)">
+        <g transform="translate(0.0,13.5)">
+            <text x="75.0" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">Objects are cached</tspan>
+            </text>
+            <text x="75.0" style="text-anchor: middle" y="12.8">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">by </tspan>
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000" font-style="italic">id</tspan>
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000"> for fast access</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(147.0,260.5) rotate(0 75.0 23.5)">
+        <g transform="translate(0.0,13.5)">
+            <text x="75.0" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">Queries optimised to join</tspan>
+            </text>
+            <text x="75.0" style="text-anchor: middle" y="12.8">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">fewer tables and execute</tspan>
+            </text>
+            <text x="75.0" style="text-anchor: middle" y="27.6">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">faster</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(240.0,221.0)">
+        <line x1="0.0" y1="0.0" x2="0.0" y2="35.5" stroke-dasharray="10, 16" stroke="#000000" stroke-width="1" />
+        <g transform="translate(0.0,36.0) rotate(270.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+    </g>
+    <defs>
+        <linearGradient gradientUnits="userSpaceOnUse" id="SVGIDcylinder_1_" x1="0" x2="80" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" y1="82.8418" y2="82.8418">
+            <stop offset="0" style="stop-color:#808080" />
+            <stop offset="0.7055" style="stop-color:#FFFFFF" />
+            <stop offset="1" style="stop-color:#171717" />
+            <a:midPointStop offset="0" style="stop-color:#808080" />
+            <a:midPointStop offset="0.5" style="stop-color:#808080" />
+            <a:midPointStop offset="0.7055" style="stop-color:#FFFFFF" />
+            <a:midPointStop offset="0.5" style="stop-color:#FFFFFF" />
+            <a:midPointStop offset="1" style="stop-color:#171717" />
+        </linearGradient>
+        <linearGradient gradientUnits="userSpaceOnUse" id="SVGIDcylinder_2_" x1="0" x2="80" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" y1="63.7754" y2="63.7754">
+            <stop offset="0" style="stop-color:#808080" />
+            <stop offset="0.7055" style="stop-color:#FFFFFF" />
+            <stop offset="1" style="stop-color:#171717" />
+            <a:midPointStop offset="0" style="stop-color:#808080" />
+            <a:midPointStop offset="0.5" style="stop-color:#808080" />
+            <a:midPointStop offset="0.7055" style="stop-color:#FFFFFF" />
+            <a:midPointStop offset="0.5" style="stop-color:#FFFFFF" />
+            <a:midPointStop offset="1" style="stop-color:#171717" />
+        </linearGradient>
+        <linearGradient gradientUnits="userSpaceOnUse" id="SVGIDcylinder_3_" x1="0" x2="80" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" y1="42.1904" y2="42.1904">
+            <stop offset="0" style="stop-color:#808080" />
+            <stop offset="0.7055" style="stop-color:#FFFFFF" />
+            <stop offset="1" style="stop-color:#171717" />
+            <a:midPointStop offset="0" style="stop-color:#808080" />
+            <a:midPointStop offset="0.5" style="stop-color:#808080" />
+            <a:midPointStop offset="0.7055" style="stop-color:#FFFFFF" />
+            <a:midPointStop offset="0.5" style="stop-color:#FFFFFF" />
+            <a:midPointStop offset="1" style="stop-color:#171717" />
+        </linearGradient>
+        <symbol id="com.gliffy.newnetwork.business.Cylinder" viewBox="0 0 80 100" preserveAspectRatio="none">
+            <g id="Layer_0">
+                <rect fill="none" height="100" width="80" />
+                <path d="M80,22.54L80,22.54c-0.035-5.795-80.033-5.795-80,0h0L0,74.9c0.034,5.797,4.289,12.984,12.124,17.402   c15.671,8.841,40.681,8.447,56.252-0.393C76.16,87.491,80.032,81.634,80,75.841V22.54z" />
+            </g>
+            <g id="Layer_1">
+                <rect fill="none" height="100" width="80" />
+                <g>
+                    <path d="M68.98,77.395c-15.9,9.011-41.769,9.011-57.772,0C5.298,74.069,1.565,69.975,0,65.685v11.241h0    C0.035,82.83,3.973,88.738,11.81,93.244c15.67,9.008,40.998,9.008,56.567-0.001C76.161,88.738,80.033,82.83,80,76.926V65.818    C78.456,70.062,74.79,74.101,68.98,77.395z" fill="url(#SVGIDcylinder_1_)" />
+                </g>
+                <g>
+                    <path d="M68.98,58.327c-15.9,9.011-41.769,9.011-57.772,0.002C5.298,55.001,1.565,50.908,0,46.617V57.86h0    c0.035,5.903,3.973,11.812,11.809,16.316c15.67,9.01,40.998,9.01,56.567,0C76.161,69.672,80.033,63.764,80,57.86V46.752    C78.456,50.996,74.79,55.034,68.98,58.327z" fill="url(#SVGIDcylinder_2_)" />
+                </g>
+                <g>
+                    <path d="M68.98,39.262c-15.9,9.008-41.769,9.008-57.772,0C5.298,35.934,0,29.531,0.014,22.515L0,38.793h0    c0.035,5.902,3.973,11.812,11.809,16.315c15.67,9.01,40.998,9.01,56.567-0.002C76.161,50.604,80.033,44.695,80,38.793V22.515    C80,22.766,74.79,35.968,68.98,39.262z" fill="url(#SVGIDcylinder_3_)" />
+                </g>
+                <ellipse cx="39.836" cy="23.542" fill="#D0D2D3" rx="39.917" ry="22.49" />
+                <path d="M68.191,7.228c-15.671-9.014-40.999-9.014-56.567,0c-15.569,9.011-15.489,23.619,0.185,32.63   c15.671,9.013,40.999,9.013,56.568-0.001C83.945,30.847,83.864,16.238,68.191,7.228z M65.538,38.228   c-14.012,8.108-36.809,8.108-50.911,0.002C0.522,30.118,0.448,16.968,14.462,8.857c14.011-8.109,36.808-8.109,50.911,0   C79.477,16.968,79.552,30.118,65.538,38.228z" fill="#7F7F7F" />
+            </g>
+        </symbol>
+    </defs>
+    <g transform="translate(162.0,307.0) rotate(0 20.0 25.0)">
+        <use xlink:href="#com.gliffy.newnetwork.business.Cylinder" width="40.0" height="50.0" fill="#000000" />
+        <g></g>
+    </g>
+    <g transform="translate(209.0,308.0) rotate(0 20.0 25.0)">
+        <use xlink:href="#com.gliffy.newnetwork.business.Cylinder" width="40.0" height="50.0" fill="#000000" />
+        <g></g>
+    </g>
+    <g transform="translate(338.4,248.5) rotate(0 27.6 34.5)">
+        <use xlink:href="#com.gliffy.newnetwork.business.Cylinder" width="55.2" height="69.0" fill="#003366" />
+        <g transform="translate(0.0,86.0)">
+            <text x="27.6" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">Master</tspan>
+            </text>
+            <text x="27.6" style="text-anchor: middle" y="12.8">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">tables</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(249.0,331.0)">
+        <line x1="0.0" y1="0.0" x2="88.5" y2="0.0" stroke-dasharray="10, 16" stroke="#000000" stroke-width="1" />
+        <g transform="translate(89.0,0.0) rotate(180.0)">
+            <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
+        </g>
+        <g transform="translate(34.5,0.0)">
+            <rect fill="#ffffff" x="-33.5" y="-16.0" width="67.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="-5.0">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">Optimised</tspan>
+            </text>
+            <rect fill="#ffffff" x="-33.5" y="0.8000000000000007" width="67.0" height="14" />
+            <text x="0.0" style="text-anchor: middle" y="11.8">
+                <tspan font-size="12px" font-family="Arial" fill="#000000">SQL</tspan>
+            </text>
+        </g>
+    </g>
+    <g transform="translate(130.0,359.5) rotate(0 75.0 16.5)">
+        <g transform="translate(0.0,13.5)">
+            <text x="75.0" style="text-anchor: middle" y="-2.0">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">Precomputed</tspan>
+            </text>
+            <text x="75.0" style="text-anchor: middle" y="12.8">
+                <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">tables</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
