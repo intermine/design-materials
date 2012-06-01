@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Table</title>
+    
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <style>
+        svg { shape-rendering:crispEdges; font-family:Arial; fill:#039; }
+        table thead tr th { color:#039; background:#B9C9FE; }
+        table thead tr th:first-child { -webkit-border-top-left-radius:10px; }
+        table thead tr th:last-child { -webkit-border-top-right-radius:10px; }
+        table tr td:first-child { white-space:nowrap; }
+        table tr td:not(:first-child) { text-align:center !important; }
+        table tbody { color:#669; }
+        table tbody tr th { background:rgba(185, 201, 254, 0.65) !important; color:#039; font-weight:normal !important; }
+        table tbody tr:first-child th { border-top:1px solid #FFF !important; }
+        table tbody tr:not(:first-child) th { border-top:15px solid #FFF !important; }
+        table tbody tr td, table tbody tr:first-child th { border-top:1px solid #FFF !important; }
+        table tbody tr td { background:#E8EDFF !important; }
+        /*table tbody tr.odd td { background:#FFF !important; }*/
+        table tbody tr:last-child td:first-child { -webkit-border-bottom-left-radius:10px; }
+        table tbody tr:last-child td:last-child { -webkit-border-bottom-right-radius:10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100">
+                                    <text transform="rotate(270, 12, 0) translate(-80,0)">FlyMine</text>
+                                </svg>
+                            </th>
+                            <th>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100">
+                                    <text transform="rotate(270, 12, 0) translate(-80,0)">modMine</text>
+                                </svg>
+                            </th>
+                            <th>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100">
+                                    <text transform="rotate(270, 12, 0) translate(-80,0)">metabolicMine</text>
+                                </svg>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="4">Genome Annotation</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>sequence</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>genes</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>transcripts</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>exons</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>regulatory regions</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>microarray probes (expression/tiling)</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                        </tr>
+                        <tr class="odd">
+                            <td>Affymetrix probes</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>ESTs</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                        </tr>
+                        <tr class="odd">
+                            <td>insertions / deletions</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="4">Proteins</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>sequence</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>feature locations</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>domain content</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>interactions</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>3D structure</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>microarray experiments</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>in situ hybridisations</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="4">Comparative</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>computed orthologues</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>computed paralogues</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="4">Genetics</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>alleles</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>SNPs</td>
+                            <td></td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>interactions</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>mutant lines</td>
+                            <td></td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>transgenics lines</td>
+                            <td></td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>strains</td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>gene ontology</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>mammalian phenotype</td>
+                            <td></td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="4">Other</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>RNAi screens</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>disease</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr class="odd">
+                            <td>phenotypes</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>anatomy</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
+                        </tr>
+                        <tr class="odd">
+                            <td>pathways</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>publications</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
