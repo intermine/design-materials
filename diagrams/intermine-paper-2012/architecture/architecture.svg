@@ -1,21 +1,21 @@
-<svg xmlns:gliffy="http://www.gliffy.com" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="801" height="400">
+<svg xmlns:gliffy="http://www.gliffy.com" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="801" height="398">
     <rect stroke="#000000" stroke-width="0" fill="#ffffff" x="0" y="0" width="800" height="402" />
-    <g transform="translate(177.5,305.0) rotate(0 59.5 39.0)">
-        <line x1="0.0" y1="0.0" x2="118.7624750499002" y2="0.0" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
-        <line x1="118.7624750499002" y1="0.0" x2="118.7624750499002" y2="77.68924302788844" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
-        <line x1="118.7624750499002" y1="77.68924302788844" x2="0.0" y2="77.68924302788844" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
+    <g transform="translate(191.0,305.0) rotate(0 52.75 39.0)">
+        <line x1="0.0" y1="0.0" x2="105.28942115768463" y2="0.0" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
+        <line x1="105.28942115768463" y1="0.0" x2="105.28942115768463" y2="77.68924302788844" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
+        <line x1="105.28942115768463" y1="77.68924302788844" x2="0.0" y2="77.68924302788844" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
         <line x1="0.0" y1="77.68924302788844" x2="0.0" y2="0.0" style="stroke-dasharray: 8, 3, 2, 3" stroke="#000000" stroke-width="1.0" fill="#ffffff" />
         <g></g>
     </g>
-    <g transform="translate(406.0,77.0)">
-        <line x1="0.0" y1="0.0" x2="-95.09375" y2="-6.123233995736766E-17" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
-        <g transform="translate(-95.59375,0.0) rotate(360.0)">
+    <g transform="translate(405.0,77.0)">
+        <line x1="0.0" y1="0.0" x2="-93.5" y2="-6.123233995736766E-17" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(-94.0,0.0) rotate(360.0)">
             <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
         </g>
     </g>
-    <g transform="translate(303.0,96.0)">
-        <line x1="0.0" y1="0.0" x2="95.5" y2="0.0" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
-        <g transform="translate(96.0,0.0) rotate(180.0)">
+    <g transform="translate(398.875,96.0)">
+        <line x1="-0.5" y1="1.2246467991473532E-16" x2="-95.875" y2="0.0" stroke-dasharray="23, 0" stroke="#000000" stroke-width="1" />
+        <g transform="translate(0.0,0.0) rotate(180.0)">
             <polygon points="2.0,0 8.0,-3.0 8.0,3.0" fill="#000000" stroke="#000000" stroke-width="1.0" />
         </g>
     </g>
@@ -107,7 +107,7 @@
             </text>
         </g>
     </g>
-    <g transform="translate(166.0,261.5) rotate(0 75.0 23.5)">
+    <g transform="translate(168.0,261.5) rotate(0 75.0 23.5)">
         <g transform="translate(0.0,13.5)">
             <text x="75.0" style="text-anchor: middle" y="-2.0">
                 <tspan xml:space="preserve" font-size="12" font-family="Arial" fill="#000000">Queries optimised to join</tspan>
@@ -183,11 +183,11 @@
         <path d="M0,3.84375 Q0,7.6875 14.25,7.6875 Q28.5,7.6875 28.5,3.84375 " stroke="#000000" stroke-width="2" fill="none" />
         <g></g>
     </g>
-    <g transform="translate(429.875,287.5) rotate(0 77.6875 24.5)">
+    <g transform="translate(430.3125,287.5) rotate(0 77.6875 24.5)">
         <g transform="translate(4.0,4.0)">
             <path d="M145.375,0 Q155.375,0 155.375,10 L155.375,39.0 Q155.375,49.0 145.375,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
         </g>
-        <path d="M145.375,0 Q155.375,0 155.375,10 L155.375,39.0 Q155.375,49.0 145.375,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#FF0000" stroke-width="4" fill="#ffffff" />
+        <path d="M145.375,0 Q155.375,0 155.375,10 L155.375,39.0 Q155.375,49.0 145.375,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#5C0075" stroke-width="4" fill="#ffffff" />
         <g transform="translate(0.0,32.5)">
             <text x="77.6875" style="text-anchor: middle" y="-3.0">
                 <tspan xml:space="preserve" font-size="18" font-family="Arial" fill="#000000" font-weight="bold">PostgreSQL</tspan>
@@ -198,7 +198,7 @@
         <g transform="translate(4.0,4.0)">
             <path d="M120.25,0 Q130.25,0 130.25,10 L130.25,39.0 Q130.25,49.0 120.25,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
         </g>
-        <path d="M120.25,0 Q130.25,0 130.25,10 L130.25,39.0 Q130.25,49.0 120.25,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#003399" stroke-width="4" fill="#ffffff" />
+        <path d="M120.25,0 Q130.25,0 130.25,10 L130.25,39.0 Q130.25,49.0 120.25,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#2C70FF" stroke-width="4" fill="#ffffff" />
         <g transform="translate(0.0,21.5)">
             <text x="65.125" style="text-anchor: middle" y="-3.0">
                 <tspan xml:space="preserve" font-size="18" font-family="Arial" fill="#000000" font-weight="bold">Object</tspan>
@@ -212,7 +212,7 @@
         <g transform="translate(4.0,4.0)">
             <path d="M169.375,0 Q179.375,0 179.375,10 L179.375,39.0 Q179.375,49.0 169.375,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
         </g>
-        <path d="M169.375,0 Q179.375,0 179.375,10 L179.375,39.0 Q179.375,49.0 169.375,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#003399" stroke-width="4" fill="#ffffff" />
+        <path d="M169.375,0 Q179.375,0 179.375,10 L179.375,39.0 Q179.375,49.0 169.375,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#2C70FF" stroke-width="4" fill="#ffffff" />
         <g transform="translate(0.0,32.5)">
             <text x="89.6875" style="text-anchor: middle" y="-3.0">
                 <tspan xml:space="preserve" font-size="18" font-family="Arial" fill="#000000" font-weight="bold">ObjectStore</tspan>
@@ -223,7 +223,7 @@
         <g transform="translate(4.0,4.0)">
             <path d="M120.25,0 Q130.25,0 130.25,10 L130.25,39.0 Q130.25,49.0 120.25,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#A8A8A8" stroke-width="0" stroke-opacity=".6" fill-opacity=".6" fill="#A8A8A8" />
         </g>
-        <path d="M120.25,0 Q130.25,0 130.25,10 L130.25,39.0 Q130.25,49.0 120.25,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#003399" stroke-width="4" fill="#ffffff" />
+        <path d="M120.25,0 Q130.25,0 130.25,10 L130.25,39.0 Q130.25,49.0 120.25,49.0 L10,49.0 Q0,49.0 0,39.0 L0,10 Q0,0 10,0 Z" stroke="#2C70FF" stroke-width="4" fill="#ffffff" />
         <g transform="translate(0.0,21.5)">
             <text x="65.125" style="text-anchor: middle" y="-3.0">
                 <tspan xml:space="preserve" font-size="18" font-family="Arial" fill="#000000" font-weight="bold">Query</tspan>
