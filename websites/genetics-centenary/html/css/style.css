@@ -1,0 +1,63 @@
+body { font-family:"Helvetica",Arial,sans-serif; background:url('../img/texture.png'); color:#5e5e5e; line-height:18px; }
+
+* { background-repeat:no-repeat; background-position:top left; }
+
+.wrap { width:1200px; margin:0 auto; }
+
+#overlay { position:absolute; top:0; width:100%; }
+#overlay:after { background:url('../../genetics-centenary-home.png') no-repeat top left; opacity:0; width:1200px; height:1374px; margin:0 auto; display:block; content:""; }
+
+header#top { font-size:19px; text-transform:uppercase; font-weight:700; line-height:40px; color:#FFF; background:#6A1430; }
+header#top nav ul li { display:inline-block; margin-left:60px; }
+header#top nav ul li:not(:last-child) { margin-right:170px; }
+header#top a { color:#FFF; text-decoration:none; }
+
+#logo { background-image:url('../img/title.png'); display:inline-block; margin-bottom:35px; }
+#logo h1 { height:0; overflow:hidden; padding-top:138px; width:546px; }
+#logo:before { content:""; background:url('../img/100-transparent.png') no-repeat top left; display:inline-block; width:281px; height:144px; float:right; margin:0 0 0 15px; }
+
+article#main { background-image:url('../img/peas.jpg'); background-position:top right; padding:30px 60px; width:1080px; }
+
+p.callout { background-color:#83243E; background-image:url('../img/bunnies-on-red.png'); font-size:28px; color:#FFF; font-style:italic;
+    width:450px; padding:20px; line-height:32px; position:relative; }
+p.callout a.register { color:#83243E; }
+p.callout a.register:after { content:""; display:block; background-image:url('../img/register-now.png'); width:268px; height:137px; position:absolute;
+    bottom:-48px; right:-44px; }
+
+h2 { color:#FFF; text-transform:uppercase; display:inline-block; font-size:16px; font-weight:700; padding:8px 14px; }
+h2.brown { background:#442B1E; }
+h2.red { background:#83243E }
+
+section { margin:20px 0; }
+section h3 { font-weight:700; margin-bottom:10px; }
+section p { margin-bottom:20px; }
+
+section.blue { background:#529BAE; color:#FFF; position:relative; line-height:22px; }
+section.blue a { color:#FFF; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.4); }
+
+section#event { margin-top:50px; width:500px; display:inline-block; }
+section#event h2 { margin:0 0 22px -10px; }
+
+section#location { width:485px; height:142px; display:inline-block; padding:20px; margin:230px 0 0 50px; vertical-align:top; }
+section#location p { width:280px; }
+section#location h2 { position:absolute; top:10px; right:120px; z-index:2; }
+section#location ul.images { position:absolute; top:0; right:0; }
+section#location ul.images li { border-left-width:1px; border-style:solid; border-color:#FFF; line-height:0; }
+section#location ul.images li:not(:last-child) { border-bottom-width:1px; }
+section#location:after { content:""; background:url('../img/uk-outline-cambridge.png') no-repeat top left; height:200px; width:200px; display:block;
+    position:absolute; top:-40px; right:65px; }
+
+section#speakers { width:500px; padding:20px; margin-left:-10px; display:inline-block; }
+section#speakers h2 { position:absolute; top:10px; left:0; }
+section#speakers h3 { margin-left:120px; }
+section#speakers p { margin-left:120px; }
+section#speakers:after { content:""; background:url('../img/mike.png') no-repeat top left; height:120px; width:120px; display:block; position:absolute;
+    bottom:5px; left:-10px; }
+
+ul#oldies { width:505px; display:inline-block; font-style:italic; margin:0 0 0 40px; vertical-align:bottom; }
+ul#oldies li { display:inline-block; width:140px; text-align:center; margin-bottom:20px; }
+ul#oldies li:not(:last-child) { margin-right:38px; }
+ul#oldies li:before { content:""; width:140px; height:140px; display:block; margin-bottom:20px; }
+ul#oldies li.will:before { background:url('../img/bateson.jpg') no-repeat top left; }
+ul#oldies li.ron:before { background:url('../img/fisher.jpg') no-repeat top left; }
+ul#oldies li.reggie:before { background:url('../img/punnett.jpg') no-repeat top left; }
