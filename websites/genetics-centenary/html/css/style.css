@@ -27,6 +27,7 @@ p.callout a.register:after { content:""; display:block; background-image:url('..
 h2 { color:#FFF; text-transform:uppercase; display:inline-block; font-size:16px; font-weight:700; padding:8px 14px; }
 h2.brown { background:#442B1E; }
 h2.red { background:#83243E }
+h2.gray { background:#89857C; }
 
 section { margin:20px 0; }
 section h3 { font-weight:700; margin-bottom:10px; }
@@ -61,3 +62,15 @@ ul#oldies li:before { content:""; width:140px; height:140px; display:block; marg
 ul#oldies li.will:before { background:url('../img/bateson.jpg') no-repeat top left; }
 ul#oldies li.ron:before { background:url('../img/fisher.jpg') no-repeat top left; }
 ul#oldies li.reggie:before { background:url('../img/punnett.jpg') no-repeat top left; }
+
+footer#bottom { background:url('../img/white-fadeout.png') repeat-x bottom left; }
+footer#bottom div.wrap { border-top:1px solid #C4C2BD; position:relative; height:185px; width:1080px; }
+footer#bottom h2 { margin:-1px 0 0 -10px; }
+footer#bottom nav { position:absolute; top:20px; right:0; }
+footer#bottom nav ul li { display:inline; margin-left:20px; }
+footer#bottom nav ul li a { text-transform:uppercase; color:#529BAE; text-decoration:none; font-weight:bold; font-size:15px; }
+footer#bottom p { font-size:13px; color:#89857c; line-height:26px; position:absolute; top:60px; right:0; }
+footer#bottom ul#sponsors { margin-top:30px; }
+footer#bottom ul#sponsors li { position:relative; }
+footer#bottom ul#sponsors li.cambridge a:before { content:""; background:url('../img/cam-logo.png') no-repeat top left; width:249px; height:51px;
+    display:inline-block; position:absolute; top:0; left:0; }
