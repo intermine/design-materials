@@ -75,7 +75,7 @@ ul#oldies li.reggie:before { background:url('../img/people/punnett.jpg') no-repe
 section#page { background:#FFF; width:1022px; margin:0 auto; margin-top:34px; padding:10px 30px; }
 section#page h2.green { background-image:url('../img/green-left.png'); width:204px; height:57px; line-height:36px; padding-left:20px; font-size:22px; margin:14px 0 0 -50px; }
 
-div#map iframe { margin:0 auto; width:1082px; height:500px; margin:0 0 -13px -30px; }
+div#map iframe { margin:0 auto; width:1082px; height:500px; margin:8px 0 -13px -30px; }
 
 ul#speakers { margin-top:10px; }
 ul#speakers li { min-height:140px; padding:20px 0 0 180px; margin-bottom:40px; }
