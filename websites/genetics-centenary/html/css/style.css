@@ -6,9 +6,10 @@ body { font-family:"Helvetica",Arial,sans-serif; background:url('../img/texture.
 .wrap { width:1200px; margin:0 auto; }
 
 header#top { font-size:19px; text-transform:uppercase; font-weight:700; line-height:40px; color:#FFF; background:#6A1430; }
-header#top nav ul li { display:inline-block; margin-left:60px; }
-header#top nav ul li:not(:last-child) { margin-right:170px; }
-header#top a { color:#FFF; text-decoration:none; }
+header#top nav ul li { display:inline-block; margin-left:60px; position:relative; }
+.index header#top nav ul li:not(:last-child) { margin-right:265px; }
+.page header#top nav ul li:not(:last-child) { margin-right:262px; }
+header#top a { color:#FFF; text-decoration:none; position:absolute; top:-18px; left:0; z-index:2; line-height:22px; }
 header#top nav ul li a.active { border-bottom:1px solid rgba(255,255,255,0.5); }
 
 #logo { background-image:url('../img/title.png'); display:inline-block; margin-bottom:35px; }
