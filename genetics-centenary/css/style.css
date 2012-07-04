@@ -1,0 +1,108 @@
+html { background:#FFF; }
+body { font-family:"Helvetica",Arial,sans-serif; background:url('../img/texture.png'); color:#5e5e5e; line-height:18px; }
+
+* { background-repeat:no-repeat; background-position:top left; }
+
+.wrap { width:1200px; margin:0 auto; }
+
+header#top { font-size:19px; text-transform:uppercase; font-weight:700; line-height:40px; color:#FFF; background:#6A1430; }
+header#top nav ul li { display:inline-block; margin-left:60px; }
+header#top nav ul li:not(:last-child) { margin-right:170px; }
+header#top a { color:#FFF; text-decoration:none; }
+header#top nav ul li a.active { border-bottom:1px solid rgba(255,255,255,0.5); }
+
+#logo { background-image:url('../img/title.png'); display:inline-block; margin-bottom:35px; }
+#logo h1 { height:0; overflow:hidden; padding-top:138px; width:546px; }
+.index #logo:before { content:""; background:url('../img/100-transparent.png') no-repeat top left; display:inline-block; width:281px; height:144px; float:right;
+    margin:0 0 0 15px; }
+
+.page #logo { margin:30px 0 0 360px; }
+.page #logo:before { content:""; background:url('../img/100-transparent.png') no-repeat top left; display:block; width:281px; height:144px; position:absolute; top:30px;
+    left:58px; }
+.page #logo:after { content:""; background:url('../img/uk-outline-cambridge.png') no-repeat top left; height:200px; width:200px; display:block; position:absolute;
+    top:-23px; right:70px; }
+
+.index article#main { background-image:url('../img/peas.jpg'); background-position:top right; padding:30px 60px; width:1080px; }
+.page article#main { position:relative; min-height:400px; }
+
+p.callout { background-color:#83243E; background-image:url('../img/bunnies-on-red.png'); font-size:28px; color:#FFF; font-style:italic;
+    width:450px; padding:20px; line-height:32px; position:relative; }
+p.callout a.register { color:#83243E; }
+p.callout a.register:after { content:""; display:block; background-image:url('../img/register-now.png'); width:268px; height:137px; position:absolute;
+    bottom:-48px; right:-44px; }
+
+h2 { color:#FFF; text-transform:uppercase; display:inline-block; font-size:16px; font-weight:700; padding:8px 14px; }
+h2.brown { background:#442B1E; }
+h2.red { background:#83243E }
+h2.gray { background:#89857C; }
+.box h2 { padding:8px 14px 5px 14px }
+
+section { margin:20px 0; position:relative; min-height:100px; }
+section h3 { font-weight:700; margin-bottom:10px; }
+section p:not(:last-child) { margin-bottom:20px; }
+section p a { color:#0194C7; }
+
+section.blue { background:#529BAE; color:#FFF; position:relative; line-height:22px; }
+section.blue a { color:#FFF; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.4); }
+
+section#event { margin-top:50px; width:500px; display:inline-block; }
+section#event h2 { margin:0 0 22px -10px; }
+
+section#location { width:485px; height:142px; display:inline-block; padding:20px; margin:230px 0 0 50px; vertical-align:top; }
+section#location p { width:280px; }
+section#location h2 { position:absolute; top:10px; right:120px; z-index:2; }
+section#location ul.images { position:absolute; top:0; right:0; }
+section#location ul.images li { border-left-width:1px; border-style:solid; border-color:#FFF; line-height:0; }
+section#location ul.images li:not(:last-child) { border-bottom-width:1px; }
+section#location:after { content:""; background:url('../img/uk-outline-cambridge.png') no-repeat top left; height:200px; width:200px; display:block;
+    position:absolute; top:-40px; right:65px; }
+
+section#speakers { width:500px; padding:20px; margin-left:-10px; display:inline-block; }
+section#speakers h2 { position:absolute; top:10px; left:0; }
+section#speakers h3 { margin-left:120px; }
+section#speakers p { margin-left:120px; }
+section#speakers:after { content:""; background:url('../img/mike.png') no-repeat top left; height:120px; width:120px; display:block; position:absolute;
+    bottom:5px; left:-10px; }
+
+ul#oldies { width:505px; display:inline-block; font-style:italic; margin:0 0 0 40px; vertical-align:bottom; }
+ul#oldies li { display:inline-block; width:140px; text-align:center; margin-bottom:20px; }
+ul#oldies li:not(:last-child) { margin-right:38px; }
+ul#oldies li:before { content:""; width:140px; height:140px; display:block; margin-bottom:20px; }
+ul#oldies li.will:before { background:url('../img/people/bateson.jpg') no-repeat top left; }
+ul#oldies li.ron:before { background:url('../img/people/fisher.jpg') no-repeat top left; }
+ul#oldies li.reggie:before { background:url('../img/people/punnett.jpg') no-repeat top left; }
+
+section#page { background:#FFF; width:1022px; margin:0 auto; margin-top:34px; padding:10px 30px; }
+section#page h2.green { background-image:url('../img/green-left.png'); width:204px; height:57px; line-height:36px; padding-left:20px; font-size:22px; margin:14px 0 0 -50px; }
+
+div#map iframe { margin:0 auto; width:1082px; height:500px; margin:8px 0 -13px -30px; }
+
+ul#speakers { margin-top:10px; }
+ul#speakers li { min-height:140px; padding:20px 0 0 180px; margin-bottom:40px; }
+
+ul#speakers li.bodmer { background-image:url('../img/people/bodmer.jpg'); }
+ul#speakers li.bradley { background-image:url('../img/people/bradley.jpg'); }
+ul#speakers li.glover { background-image:url('../img/people/glover.jpg'); }
+ul#speakers li.harberd { background-image:url('../img/people/harberd.jpg'); }
+ul#speakers li.heard { background-image:url('../img/people/heard.jpg'); }
+ul#speakers li.marshall { background-image:url('../img/people/marshall.jpg'); }
+ul#speakers li.martienssen { background-image:url('../img/people/martienssen.jpg'); }
+ul#speakers li.johnston { background-image:url('../img/people/johnston.jpg'); }
+
+ul#speakers li h3 { color:#FFF; text-transform:uppercase; background:#529BAE; display:inline-block; padding:8px 14px; margin-left:-14px; }
+ul#speakers li span { text-transform:uppercase; color:#9b937d; font-size:13px; margin-left:20px; }
+ul#speakers li a { color:#0194c7; text-decoration:none; font-size:13px; margin-left:20px; }
+
+footer#bottom { background:url('../img/white-fadeout.png') repeat-x bottom left; }
+footer#bottom div.wrap { border-top:1px solid #C4C2BD; position:relative; height:185px; width:1080px; }
+footer#bottom h2 { margin:-1px 0 0 -10px; }
+footer#bottom nav { position:absolute; top:20px; right:0; }
+footer#bottom nav ul li { display:inline; margin-left:20px; }
+footer#bottom nav ul li a { text-transform:uppercase; color:#529BAE; text-decoration:none; font-weight:bold; font-size:15px; }
+footer#bottom p { font-size:13px; color:#89857c; line-height:26px; position:absolute; top:60px; right:0; }
+footer#bottom ul#sponsors { margin-top:30px; }
+footer#bottom ul#sponsors li { position:relative; }
+footer#bottom ul#sponsors li.cambridge a:before { content:""; background:url('../img/cam-logo.png') no-repeat top left; width:249px; height:51px;
+    display:inline-block; position:absolute; top:0; left:0; }
+
+.page footer#bottom h2 { margin-left:0; }
