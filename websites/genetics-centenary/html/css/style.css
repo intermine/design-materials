@@ -58,11 +58,11 @@ section#location ul.images li:not(:last-child) { border-bottom-width:1px; }
 section#location:after { content:""; background:url('../img/uk-outline-cambridge.png') no-repeat top left; height:200px; width:200px; display:block;
     position:absolute; top:-40px; right:65px; }
 
-section#speakers { width:500px; padding:20px; margin-left:-10px; display:inline-block; }
-section#speakers h2 { position:absolute; top:10px; left:0; }
-section#speakers h3 { margin-left:120px; }
-section#speakers p { margin-left:120px; }
-section#speakers:after { content:""; background:url('../img/mike.png') no-repeat top left; height:120px; width:120px; display:block; position:absolute;
+section#lineup { width:500px; padding:20px; margin-left:-10px; display:inline-block; }
+section#lineup h2 { position:absolute; top:10px; left:0; }
+section#lineup h3 { margin-left:120px; }
+section#lineup p { margin-left:120px; }
+section#lineup:after { content:""; background:url('../img/mike.png') no-repeat top left; height:120px; width:120px; display:block; position:absolute;
     bottom:5px; left:-10px; }
 
 ul#oldies { width:505px; display:inline-block; font-style:italic; margin:0 0 0 40px; vertical-align:bottom; }
