@@ -10,7 +10,7 @@ header#top nav ul li { display:inline-block; margin-left:60px; position:relative
 .index header#top nav ul li:not(:last-child) { margin-right:265px; }
 .page header#top nav ul li:not(:last-child) { margin-right:262px; }
 header#top a { color:#FFF; text-decoration:none; position:absolute; top:-18px; left:0; z-index:2; line-height:22px; }
-header#top nav ul li a.active { border-bottom:1px solid rgba(255,255,255,0.5); }
+header#top nav ul li a.active { border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:#FFF; border-bottom-color:rgba(255,255,255,0.5); }
 
 #logo { background-image:url('../img/title.png'); display:inline-block; margin-bottom:35px; }
 #logo h1 { height:0; overflow:hidden; padding-top:138px; width:546px; }
@@ -44,7 +44,7 @@ section p:not(:last-child) { margin-bottom:20px; }
 section p a { color:#0194C7; }
 
 section.blue { background:#529BAE; color:#FFF; position:relative; line-height:22px; }
-section.blue a { color:#FFF; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.4); }
+section.blue a { color:#FFF; text-decoration:none; border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:#FFF; border-bottom-color:rgba(255,255,255,0.4); }
 
 section#event { margin-top:50px; width:500px; display:inline-block; }
 section#event h2 { margin:0 0 22px -10px; }
@@ -79,7 +79,7 @@ section#page h2.green { background-image:url('../img/green-left.png'); width:204
 div#map iframe { margin:0 auto; width:1082px; height:500px; margin:8px 0 -13px -30px; }
 
 ul#speakers { margin-top:10px; }
-ul#speakers li { min-height:140px; padding:20px 0 0 180px; margin-bottom:40px; }
+ul#speakers li { min-height:140px; padding:20px 0 0 180px; margin-bottom:20px; }
 
 ul#speakers li.bodmer { background-image:url('../img/people/bodmer.jpg'); }
 ul#speakers li.bradley { background-image:url('../img/people/bradley.jpg'); }

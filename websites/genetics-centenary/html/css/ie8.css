@@ -1,9 +1,7 @@
 header#top nav ul li { display:block; float:left; height:36px; margin:0; margin-left:62px; }
 header#top nav ul li a { top:6px; }
-header#top nav ul li a.active { border-bottom:1px solid #FFF; }
 
 h2 { display:inline; }
-section.blue a { border-bottom:1px solid #FFF; }
 
 ul#oldies { display:inline; }
 ul#oldies li { display:block; float:left; }

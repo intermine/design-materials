@@ -1,0 +1,27 @@
+@media screen {
+    /* smaller menu */
+    .index header#top nav ul li:not(:last-child),
+    .page header#top nav ul li:not(:last-child) { margin-right:80px; }
+    /* content narrower and no peas... */
+    .index article#main { width:400px; background:none; }
+    /* narrower wrapper */
+    .wrap, footer#bottom div.wrap { width:510px; }
+    /* no extra logos */
+    .index #logo::after, .page #logo::after, .page #logo::before { display:none; }
+    /* logo adjust */
+    .page #logo { margin:30px 0 0 0; }
+    /* venue, lineup, oldies */
+    section#location,
+    section#lineup,
+    ul#oldies { margin:0; margin-top:40px; }
+    /* speakers */
+    ul#speakers li span,
+    ul#speakers li a { display:block; margin:0; }
+    ul#speakers li p { width:380px; }
+    /* page */
+    section#page { width:550px; }
+    /* map */
+    div#map iframe { width:610px; }
+    /* footer */
+    footer#bottom p { width:200px; }
+}
