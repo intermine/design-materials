@@ -37,9 +37,10 @@ h2.red { background:#83243E }
 h2.gray { background:#89857C; }
 .box h2 { padding:8px 14px 5px 14px }
 
-section { margin:20px 0; }
+section { margin:20px 0; position:relative; min-height:100px; }
 section h3 { font-weight:700; margin-bottom:10px; }
 section p:not(:last-child) { margin-bottom:20px; }
+section p a { color:#0194C7; }
 
 section.blue { background:#529BAE; color:#FFF; position:relative; line-height:22px; }
 section.blue a { color:#FFF; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.4); }
@@ -74,7 +75,9 @@ ul#oldies li.reggie:before { background:url('../img/people/punnett.jpg') no-repe
 section#page { background:#FFF; width:1022px; margin:0 auto; margin-top:34px; padding:10px 30px; }
 section#page h2.green { background-image:url('../img/green-left.png'); width:204px; height:57px; line-height:36px; padding-left:20px; font-size:22px; margin:14px 0 0 -50px; }
 
-ul#speakers { margin-top:16px; }
+div#map iframe { margin:0 auto; width:1082px; height:500px; margin:0 0 -13px -30px; }
+
+ul#speakers { margin-top:10px; }
 ul#speakers li { min-height:140px; padding:20px 0 0 180px; margin-bottom:40px; }
 
 ul#speakers li.bodmer { background-image:url('../img/people/bodmer.jpg'); }
