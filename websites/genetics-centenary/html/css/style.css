@@ -35,10 +35,11 @@ h2 { color:#FFF; text-transform:uppercase; display:inline-block; font-size:16px;
 h2.brown { background:#442B1E; }
 h2.red { background:#83243E }
 h2.gray { background:#89857C; }
+.box h2 { padding:8px 14px 5px 14px }
 
 section { margin:20px 0; }
 section h3 { font-weight:700; margin-bottom:10px; }
-section p { margin-bottom:20px; }
+section p:not(:last-child) { margin-bottom:20px; }
 
 section.blue { background:#529BAE; color:#FFF; position:relative; line-height:22px; }
 section.blue a { color:#FFF; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.4); }
