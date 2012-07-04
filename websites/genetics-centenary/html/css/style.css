@@ -67,20 +67,27 @@ ul#oldies { width:505px; display:inline-block; font-style:italic; margin:0 0 0 4
 ul#oldies li { display:inline-block; width:140px; text-align:center; margin-bottom:20px; }
 ul#oldies li:not(:last-child) { margin-right:38px; }
 ul#oldies li:before { content:""; width:140px; height:140px; display:block; margin-bottom:20px; }
-ul#oldies li.will:before { background:url('../img/bateson.jpg') no-repeat top left; }
-ul#oldies li.ron:before { background:url('../img/fisher.jpg') no-repeat top left; }
-ul#oldies li.reggie:before { background:url('../img/punnett.jpg') no-repeat top left; }
+ul#oldies li.will:before { background:url('../img/people/bateson.jpg') no-repeat top left; }
+ul#oldies li.ron:before { background:url('../img/people/fisher.jpg') no-repeat top left; }
+ul#oldies li.reggie:before { background:url('../img/people/punnett.jpg') no-repeat top left; }
 
 section#page { background:#FFF; width:1022px; margin:0 auto; margin-top:34px; padding:10px 30px; }
 section#page h2.green { background-image:url('../img/green-left.png'); width:204px; height:57px; line-height:36px; padding-left:20px; font-size:22px; margin:14px 0 0 -50px; }
 
 ul#speakers { margin-top:16px; }
-ul#speakers li { min-height:140px; padding:20px 0 0 180px; }
-ul#speakers li:not(:last-child) { margin-bottom:40px; }
-ul#speakers li.bodmer { background-image:url('../img/bodmer.jpg'); }
-ul#speakers li.bradley { background-image:url('../img/bradley.jpg'); }
+ul#speakers li { min-height:140px; padding:20px 0 0 180px; margin-bottom:40px; }
+
+ul#speakers li.bodmer { background-image:url('../img/people/bodmer.jpg'); }
+ul#speakers li.bradley { background-image:url('../img/people/bradley.jpg'); }
+ul#speakers li.glover { background-image:url('../img/people/glover.jpg'); }
+ul#speakers li.harberd { background-image:url('../img/people/harberd.jpg'); }
+ul#speakers li.heard { background-image:url('../img/people/heard.jpg'); }
+ul#speakers li.marshall { background-image:url('../img/people/marshall.jpg'); }
+ul#speakers li.martienssen { background-image:url('../img/people/martienssen.jpg'); }
+ul#speakers li.johnston { background-image:url('../img/people/johnston.jpg'); }
+
 ul#speakers li h3 { color:#FFF; text-transform:uppercase; background:#529BAE; display:inline-block; padding:8px 14px; margin-left:-14px; }
-ul#speakers li span { text-transform:uppercase; color:#9b937d; font-size:13px; margin-left:30px; }
+ul#speakers li span { text-transform:uppercase; color:#9b937d; font-size:13px; margin-left:20px; }
 ul#speakers li a { color:#0194c7; text-decoration:none; font-size:13px; margin-left:20px; }
 
 footer#bottom { background:url('../img/white-fadeout.png') repeat-x bottom left; }
