@@ -1,0 +1,12 @@
+header#top nav ul li { display:block; float:left; height:36px; margin:0; margin-left:62px; }
+header#top nav ul li a { top:6px; }
+
+h2 { display:inline; }
+
+ul#oldies { display:inline; }
+ul#oldies li { display:block; float:left; }
+
+ul#speakers li h3 { display:inline; }
+ul#speakers li span, ul#speakers li a { vertical-align:top; }
+
+div#map iframe { margin-bottom:-10px; }
