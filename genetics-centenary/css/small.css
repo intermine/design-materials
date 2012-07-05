@@ -3,13 +3,23 @@
     .index header#top nav ul li:not(:last-child),
     .page header#top nav ul li:not(:last-child) { margin-right:80px; }
     /* content narrower and no peas... */
-    .index article#main { width:400px; background:none; }
+    .index article#main { width:610px; background:none; }
     /* narrower wrapper */
-    .wrap, footer#bottom div.wrap { width:510px; }
-    /* no extra logos */
+    .wrap { width:660px; }
+    /* clear logos */
     .index #logo::after, .page #logo::after, .page #logo::before { display:none; }
+    /* position centenary logo */
+    .index #logo::before,
+    .page #logo::before { content:""; background:url('../img/100-transparent.png') no-repeat top left; display:block; width:281px; height:144px;
+        position:absolute; top:20px; left:200px; }
+    .index #logo::before { left:230px; }
     /* logo adjust */
-    .page #logo { margin:30px 0 0 0; }
+    .index #logo { margin:160px 0 40px 35px; }
+    .page #logo { margin:190px 0 0 60px; }
+    /* callout */
+    p.callout { margin-left:65px; }
+    /* row */
+    div.row { margin-left:50px; }
     /* venue, lineup, oldies */
     section#location,
     section#lineup,
@@ -23,5 +33,6 @@
     /* map */
     div#map iframe { width:610px; }
     /* footer */
-    footer#bottom p { width:200px; }
+    footer#bottom div.wrap { width:610px; }
+    footer#bottom p { width:300px; }
 }
