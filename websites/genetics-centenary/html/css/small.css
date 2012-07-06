@@ -34,5 +34,5 @@
     div#map iframe { width:610px; }
     /* footer */
     footer#bottom div.wrap { width:610px; }
-    footer#bottom p { width:300px; }
+    footer#bottom p { top:140px; left:0; }
 }

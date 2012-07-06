@@ -105,8 +105,18 @@ footer#bottom nav ul li { display:inline; margin-left:20px; }
 footer#bottom nav ul li a { text-transform:uppercase; color:#529BAE; text-decoration:none; font-weight:bold; font-size:15px; }
 footer#bottom p { font-size:13px; color:#89857c; line-height:26px; position:absolute; top:60px; right:0; }
 footer#bottom ul#sponsors { margin-top:30px; }
-footer#bottom ul#sponsors li { position:relative; }
-footer#bottom ul#sponsors li.cambridge a:before { content:""; background:url('../img/cam-logo.png') no-repeat top left; width:249px; height:51px;
+footer#bottom ul#sponsors a { color:#FFF; text-decoration:none; }
+footer#bottom ul#sponsors li { position:relative; display:block; float:left; }
+footer#bottom ul#sponsors li:not(:last-child) { margin-right:20px; }
+
+footer#bottom ul#sponsors li.cambridge { width:249px; }
+footer#bottom ul#sponsors li.cambridge a:before { content:""; background:url('../img/logos/cambridge.png') no-repeat top left; width:249px; height:51px;
+    display:inline-block; position:absolute; top:0; left:0; }
+footer#bottom ul#sponsors li.zeiss { width:51px; }
+footer#bottom ul#sponsors li.zeiss a:before { content:""; background:url('../img/logos/zeiss.png') no-repeat top left; width:51px; height:50px;
+    display:inline-block; position:absolute; top:0; left:0; }
+footer#bottom ul#sponsors li.thermofischer { width:221px; }
+footer#bottom ul#sponsors li.thermofischer a:before { content:""; background:url('../img/logos/thermofischer.png') no-repeat top left; width:221px; height:50px;
     display:inline-block; position:absolute; top:0; left:0; }
 
 .page footer#bottom h2 { margin-left:0; }
