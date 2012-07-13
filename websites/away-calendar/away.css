@@ -1,0 +1,340 @@
+body
+{
+    font-size: 12pt;
+    color: #000000; 
+    background: #F4EEFF;
+}
+
+/* Boxes */
+table#passwdbox, table#userbox, table#edit-planner
+{
+    width: 300px;
+    border: solid 1px black;
+    font-size: small;
+    background: #CCAAFF;
+    margin: 2em;
+}
+
+table#userbox
+{
+    width: 400px;
+}
+
+table#edit-planner
+{
+    width: 450px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+td.text
+{
+    text-align: left;
+}
+
+td.label
+{
+    text-align: right;
+}
+
+td.submit
+{
+    padding-top: 1em;
+    text-align: center;
+}
+
+tr.coul0
+{
+    background: #FFFFFF;
+    text-align: center;
+}
+
+tr.coul1
+{
+    background: #EEEEEE;
+    text-align: center;
+
+}
+
+tr th
+{
+    border-top: solid 1px black;
+    background: #AABBBF;
+}
+
+/* Misc */
+input, select
+{
+    color: black;
+    background: #F4EEFF;
+    border: solid 1px black;
+}
+
+#warning
+{
+    border: solid 1px red;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: red;
+    padding: 6px;
+}
+
+.denied
+{
+    text-align: center;
+    color: red;
+}
+
+/* Anchors */
+a.planner
+{
+    font-weight: bold;
+    color: black;
+}
+
+a.back
+{
+    background: url(img/back.png) left no-repeat;
+    padding: 17px 2px 1px 36px;
+    height: 34px;
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #506077;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+a.edit
+{
+    color: blue;
+}
+
+a.cancel
+{
+    color: #AA0000;
+}
+
+a#insert
+{
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #506077;
+    text-align: center;
+}
+
+/*---- INDEX ----*/
+div#index
+{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    width: 800px;
+    height: 520px;
+    margin-top: 40px; 
+    margin-left: -400px; 
+    background: url(img/hammock.png) center no-repeat;
+}
+
+div#index a
+{
+    font-family: sans-serif;
+    text-align: center;
+    display: block;
+    padding: 8px;
+    margin: 5px;
+    width: 180px;
+    color: black;
+    border: solid 1px black;
+}
+
+div#index a:hover
+{
+    color: #F4EEFF;
+    background: #CCAAFF;
+    text-decoration: none;
+}
+
+div#menuleft, div#menuright
+{
+    padding-top: 50px;
+}
+
+div#menuleft
+{
+    float: left;
+    padding-left: 150px;
+}
+
+div#menuright
+{
+    float: right;
+    padding-right: 150px;
+}
+
+/*---- planner ----*/
+table#planner
+{
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+#planner td.prev
+{
+    width: 120px;
+}
+
+#planner td.next
+{
+    width: 120px;
+    text-align: right;
+}
+
+#planner td.title
+{
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-size: 23px;
+    text-align: center; 
+}
+
+/*---- form ----*/
+table#form
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-left: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+#form tr td.ghost
+{
+    background: none;
+    border-left: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+#form td.cancel
+{
+    border-right: solid 1px black;
+}
+
+/*---- report ----*/
+table.report
+{
+    border: solid 1px black;
+    border-top: none;
+}
+
+/*---- log ----*/
+table#log
+{
+    border: solid 1px black;
+    text-align: center;
+    margin-bottom: 1em;
+    border-top: none;
+}
+
+p.log_title
+{
+    font-variant: small-caps;
+    font-weight: bolder;
+    font-size: 23px;
+    text-align: center;
+}
+
+#log td.action
+{
+    text-align: left;
+}
+
+/*---- calendar ----*/
+.cpYearNavigation,.cpMonthNavigation
+{
+    background-color:#D0D0D0;
+    text-align:center;
+    text-decoration:none;
+    color:#000000;
+    font-weight:bold;
+}
+.cpDayColumnHeader,.cpYearNavigation,.cpMonthNavigation,.cpCurrentMonthDate,.cpCurrentMonthDateDisabled,.cpOtherMonthDate,.cpOtherMonthDateDisabled,.cpCurrentDate,.cpCurrentDateDisabled,.cpTodayText,.cpTodayTextDisabled,.cpText
+{
+    font-family:arial;
+    font-size:8pt;
+}
+td.cpDayColumnHeader
+{
+    text-align:right;
+    border:solid thin #C0C0C0;
+    border-width:0px 0px 1px 0px;
+}
+.cpCurrentMonthDate, .cpOtherMonthDate, .cpCurrentDate
+{
+    text-align:right;
+    text-decoration:none;
+}
+.cpCurrentMonthDateDisabled, .cpOtherMonthDateDisabled, .cpCurrentDateDisabled
+{
+    color:#D0D0D0;
+    text-align:right;
+    text-decoration:line-through;
+}
+.cpCurrentMonthDate, .cpCurrentDate
+{
+    color:#000000;
+}
+.cpOtherMonthDate
+{
+    color:#A0A0A0;
+}
+td.cpCurrentDate
+{
+    color:white;
+    background-color: #C0C0C0;
+    border-width:1px;
+    border:solid thin #800000;
+}
+td.cpCurrentDateDisabled
+{
+    border-width:1px;
+    border:solid thin #FFAAAA;
+}
+td.cpTodayText, td.cpTodayTextDisabled
+{
+    border:solid thin #C0C0C0;
+    border-width:1px 0px 0px 0px;
+}
+a.cpTodayText, span.cpTodayTextDisabled
+{
+    height:20px;
+}
+a.cpTodayText
+{
+    color:black;
+}
+.cpTodayTextDisabled
+{
+    color:#D0D0D0;
+}
+.cpBorder
+{
+    border:solid thin #808080;
+}
+
+.cpDiv
+{
+     position: absolute;
+     visibility: hidden;
+     background-color: #F4EEFF;
+}

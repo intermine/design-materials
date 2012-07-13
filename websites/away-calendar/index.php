@@ -32,4 +32,3 @@ if ($session->adminRights)
 Page::close();
 
 ?>
-
