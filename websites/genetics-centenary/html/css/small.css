@@ -1,7 +1,8 @@
 @media screen {
     /* smaller menu */
+    header#top nav ul li a { font-size:14px; }
     .index header#top nav ul li:not(:last-child),
-    .page header#top nav ul li:not(:last-child) { margin-right:80px; }
+    .page header#top nav ul li:not(:last-child) { margin-right:35px; }
     /* content narrower and no peas... */
     .index article#main { width:610px; background:none; }
     /* narrower wrapper */
@@ -35,4 +36,6 @@
     /* footer */
     footer#bottom div.wrap { width:610px; }
     footer#bottom p { top:140px; left:0; }
+    footer#bottom nav { top:10px; }
+    footer#bottom nav ul li a { font-size:12px; }
 }

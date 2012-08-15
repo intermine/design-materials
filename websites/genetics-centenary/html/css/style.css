@@ -9,9 +9,10 @@ strong { font-weight:700; }
 
 header#top { font-size:19px; text-transform:uppercase; font-weight:700; line-height:40px; color:#FFF; background:#6A1430; }
 header#top nav ul li { display:inline-block; margin-left:60px; position:relative; min-width:1px; }
-.index header#top nav ul li:not(:last-child) { margin-right:265px; }
-.page header#top nav ul li:not(:last-child) { margin-right:262px; }
-header#top a { color:#FFF; text-decoration:none; position:absolute; top:-18px; left:0; z-index:2; line-height:22px; }
+.index header#top nav ul li:not(:last-child) { margin-right:169px; }
+.page header#top nav ul li:not(:last-child) { margin-right:154px; }
+header#top a { color:#FFF; text-decoration:none; position:absolute; top:-18px; left:0; z-index:2; line-height:22px;
+    white-space:nowrap; }
 header#top nav ul li a.active { border-bottom-width:1px; border-bottom-style:solid; border-bottom-color:#FFF; border-bottom-color:rgba(255,255,255,0.5); }
 
 #logo { background-image:url('../img/title.png'); display:inline-block; margin-bottom:35px; }
@@ -77,6 +78,7 @@ ul#oldies li.reggie:before { background:url('../img/people/punnett.jpg') no-repe
 
 section#page { background:#FFF; width:1022px; margin:0 auto; margin-top:34px; padding:10px 30px; }
 section#page h2.green { background-image:url('../img/green-left.png'); width:204px; height:57px; line-height:36px; padding-left:20px; font-size:22px; margin:14px 0 0 -50px; }
+section#page.additional { padding-bottom:30px; }
 
 div#map iframe { margin:0 auto; width:1082px; height:500px; margin:8px 0 -13px -30px; }
 
@@ -103,7 +105,7 @@ footer#bottom a { color:#529BAE; }
 footer#bottom div.wrap { border-top:1px solid #C4C2BD; position:relative; height:185px; width:1080px; }
 footer#bottom h2 { margin:-1px 0 0 -10px; }
 footer#bottom nav { position:absolute; top:20px; right:0; }
-footer#bottom nav ul li { display:inline; margin-left:20px; }
+footer#bottom nav ul li { display:inline; margin-left:8px; }
 footer#bottom nav ul li a { text-transform:uppercase; color:#529BAE; text-decoration:none; font-weight:bold; font-size:15px; }
 footer#bottom p { font-size:13px; color:#89857c; line-height:26px; position:absolute; top:60px; right:0; }
 footer#bottom ul#sponsors { margin-top:30px; }
