@@ -1,6 +1,3 @@
-header#top nav ul li { display:block; float:left; height:36px; margin:0; margin-left:62px; }
-header#top nav ul li a { top:6px; z-index:5; }
-
 .page #logo::after { display:none; }
 
 h2 { display:inline; }

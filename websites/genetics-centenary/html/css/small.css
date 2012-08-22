@@ -1,8 +1,8 @@
 @media screen {
     /* smaller menu */
-    header#top nav ul li a { font-size:14px; }
-    .index header#top nav ul li:not(:last-child),
-    .page header#top nav ul li:not(:last-child) { margin-right:35px; }
+    header#top table a { font-size:12px; }
+    body.index header#top table { width:542px; }
+    body.page header#top table { width:542px; }
     /* content narrower and no peas... */
     .index article#main { width:610px; background:none; }
     /* narrower wrapper */
