@@ -19,9 +19,7 @@
         table tbody tr:not(:first-child) th { border-top:15px solid #FFF !important; }
         table tbody tr td, table tbody tr:first-child th { border-top:1px solid #FFF !important; }
         table tbody tr td { background:#E8EDFF !important; }
-        /*table tbody tr.odd td { background:#FFF !important; }*/
-        table tbody tr:last-child td:first-child { -webkit-border-bottom-left-radius:10px; }
-        table tbody tr:last-child td:last-child { -webkit-border-bottom-right-radius:10px; }
+	table tbody tr td:first-child { min-width:210px }
     </style>
 </head>
 <body>
@@ -90,18 +88,12 @@
                             <td></td>
                         </tr>
                         <tr class="odd">
-                            <td>Affymetrix probes</td>
-                            <td>&#x2717;</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
                             <td>ESTs</td>
                             <td>&#x2717;</td>
                             <td>&#x2717;</td>
                             <td></td>
                         </tr>
-                        <tr class="odd">
+                        <tr>
                             <td>insertions / deletions</td>
                             <td>&#x2717;</td>
                             <td></td>
@@ -153,23 +145,32 @@
                             <td></td>
                             <td></td>
                         </tr>
-
+                    </tbody>
+                </table>
+	    </div>
+            <div class="span-4">
+                <table class="table table-striped">
+                    <thead>
                         <tr>
-                            <th colspan="4">Comparative</th>
+                            <th></th>
+                            <th>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100">
+                                    <text transform="rotate(270, 12, 0) translate(-80,0)">FlyMine</text>
+                                </svg>
+                            </th>
+                            <th>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100">
+                                    <text transform="rotate(270, 12, 0) translate(-80,0)">modMine</text>
+                                </svg>
+                            </th>
+                            <th>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="100">
+                                    <text transform="rotate(270, 12, 0) translate(-80,0)">metabolicMine</text>
+                                </svg>
+                            </th>
                         </tr>
-                        <tr class="odd">
-                            <td>computed orthologues</td>
-                            <td>&#x2717;</td>
-                            <td>&#x2717;</td>
-                            <td>&#x2717;</td>
-                        </tr>
-                        <tr>
-                            <td>computed paralogues</td>
-                            <td>&#x2717;</td>
-                            <td>&#x2717;</td>
-                            <td></td>
-                        </tr>
-
+                    </thead>
+                    <tbody>
                         <tr>
                             <th colspan="4">Genetics</th>
                         </tr>
@@ -260,6 +261,22 @@
                             <td>&#x2717;</td>
                             <td>&#x2717;</td>
                             <td>&#x2717;</td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="4">Comparative</th>
+                        </tr>
+                        <tr class="odd">
+                            <td>computed orthologues</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                        </tr>
+                        <tr>
+                            <td>computed paralogues</td>
+                            <td>&#x2717;</td>
+                            <td>&#x2717;</td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>

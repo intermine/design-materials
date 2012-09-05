@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/"
+      py:strip="">
+  <?python from genshi.builder import tag ?>
+
+  <div py:def="navigation(category)" id="${category}" class="nav">
+    <ul py:if="chrome.nav[category]">
+      <li py:for="idx, item in  enumerate(chrome.nav[category])"
+          class="${classes(first_last(idx, chrome.nav[category]), active=item.active)}">${item.label}</li>
+    </ul>
+  </div>
+
+  <head py:match="head" py:attrs="select('@*')">
+    ${select('*')} 
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body py:match="body">
+  
+    <script type="text/javascript">
+    //<![CDATA[
+      $(function() {
+        // Google Analytics tracking code
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1566492-7']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        // the container and the fixed/floating element
+        var container = jQuery('#wikipage'),
+            toc       = jQuery('div.wiki-toc');
+
+        // if toc exists and the screen is big enough
+        if (toc.length > 0 && $(window).height() > toc.height()) {
+          // set its position relative to the 'containing' element and set fixed positioning
+          toc.css('top', container.offset().top).css('position', 'fixed');
+
+          // container make room for toc
+          container.css('margin-right', (v(toc.width()) + v(toc.css('padding-left')) + v(toc.css('padding-right'))) + 'px');
+          // toc position at the right edge of container
+          toc.css('right', v($(document).width()) - v(container.css('margin-right')) - v(container.offset().left) -
+            v(container.width()));
+
+          // switch off left padding from toc for good measure
+          toc.css('padding-left', 0);
+
+          // update toc top on scroll
+          var position = v(toc.css('top')),
+              options  = { duration: 0, queue: false };
+          $(window).scroll(function () {
+            if ($(document).scrollTop() < position) {
+              // back to where we were
+              toc.css('top', position - $(document).scrollTop() + 'px');
+            } else {
+              // fix to top
+              toc.css('top', 0);
+            }
+          });
+        }
+        function v(x) {
+            return parseInt(x.toString().replace('px', ''));
+        }
+      });
+    //]]>
+    </script>
+
+      <!-- Header -->
+      <header id="header" class="wrap">
+
+          <!-- Trac login -->
+          ${navigation('metanav')}
+          <div style="clear:both;"></div>
+
+          <!-- Quick contacts -->
+          <div id="contacts" class="vcard">
+            <b>T</b>:<span class="tel">+44 (0)1223 760 262</span>
+            <b>E</b>:<span class="email"></span>
+            <a class="mailing-list" href="${href.wiki('MailingList')}"><span>Developer</span> discussion &amp; help</a>
+          </div>
+
+          <!-- Logo -->
+          <div id="logo">
+            <a href="${href.wiki()}">
+              <p>${project.name}</p>
+            </a>
+          </div>
+
+      </header>
+      
+      <!-- Main menu (tabs, search) -->
+      <div id="nav">
+        <nav id="main" class="wrap" py:with="category = 'mainnav'">
+
+          <!-- Search -->
+          <div id="search-form" py:if="'SEARCH_VIEW' in perm">
+              <form action="${href.search()}" method="get">
+                <input type="text" name="q" size="30" accesskey="f" />
+                <input type="hidden" name="wiki" value="on" />
+                <input type="hidden" name="changeset" value="on" />
+                <input type="hidden" name="ticket" value="on" />
+              </form>
+          </div>
+
+          <!-- Navigation tabs -->
+          <ul py:if="chrome.nav[category]">
+              <li py:for="idx, item in enumerate(chrome.nav[category])"
+                  class="${classes(first_last(idx, chrome.nav[category]), active=item.active)}">
+                <py:choose test="">
+                  <py:when test="item.label.__class__.__name__ == 'Element' and item.label.tag.localname == 'a'">
+                    ${item.label(tag.span('', class_='tab-l'), tag.span('', class_='tab-r'))}
+                  </py:when>
+                  <py:otherwise>
+                    ${item.label}
+                  </py:otherwise>
+                </py:choose>
+              </li>
+          </ul>
+
+        </nav>
+       </div>
+       
+       <!-- Page -->
+       <div id="page" class="wrap">
+         <article>
+         
+           <nav id="strip">
+             
+             <!-- Contextual navigation -->
+             <div id="ctxtnav" class="nav">
+                 <ul>
+                   <li py:for="i, elm in enumerate(chrome.ctxtnav)" class="${i == 0 and 'first ' or None}${i+1 == len(chrome.ctxtnav) and 'last' or None}">$elm</li>
+                 </ul>
+             </div>
+
+            <div id="warning" py:if="req and req.warnings" class="system-message">
+              <py:choose test="len(req.warnings)">
+                <py:when test="1">
+                  <strong>Warning:</strong> ${req.warnings[0]}
+                </py:when>
+                <py:otherwise>
+                  <strong>Warnings:</strong>
+                  <ul><li py:for="w in req.warnings">$w</li></ul>
+                </py:otherwise>
+              </py:choose>
+            </div>
+            
+          </nav>
+
+          <!-- Main content -->
+          <section>
+            ${select('*[@id!="ctxtnav"]|text()')}
+          </section>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer" class="wrap" xml:lang="en">
+        <a target="_blank" id="tracpowered" href="http://trac.edgewall.org/"><img
+          src="${href.chrome('common/trac_logo_mini.png')}" height="30"
+          width="107" alt="Trac Powered"/></a>
+        <p class="left">
+          Powered by <a href="${href.about()}"><strong>Trac ${trac.version}</strong></a><br />
+          By <a target="_blank" href="http://www.edgewall.org/">Edgewall Software</a>.
+        </p>
+        <footer class="vcard">
+            <a target="_blank" href="http://www.cam.ac.uk">
+                <span class="org">InterMine, Systems Biology Centre</span>
+            </a>,
+            <div class="adr">
+                <span class="street-address">Tennis Court Road</span>,
+                <span class="locality">Cambridge</span>
+                <span class="postal-code">CB2 1QR</span>,
+                <span class="country-name">UK</span>
+            </div>
+        </footer>
+        <p class="right">InterMine is funded by: <a target="_blank" href="http://www.wellcome.ac.uk"><img style="margin-top:-5px;" src="${href.chrome('theme/img/wellcome.png')}" alt="Wellcome Trust"/></a></p>
+      </div>
+      
+  </body>
+
+  <xi:include href="site.html"><xi:fallback /></xi:include>
+
+</html>
