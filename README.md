@@ -1,1 +1,1 @@
-A collection of sketches, diagrams, Photoshop files, themes for InterMine
+A collection of paper diagrams, presentations, sketches, Photoshop designs and websites InterMine
