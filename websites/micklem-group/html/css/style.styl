@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700)
+
+gradient(a, b)
+    background: a
+    background: -moz-linear-gradient(top, a 0%, b 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,a), color-stop(100%,b))
+    background: -webkit-linear-gradient(top, a 0%, b 100%)
+    background: -o-linear-gradient(top, a 0%, b 100%)
+    background: -ms-linear-gradient(top, a 0%, b 100%)
+    background: linear-gradient(to bottom, a 0%, b 100%)
+
+#background
+    background: url('../../psd/8d.png') no-repeat top left
+    height: 1151px
+    width: 969px
+    margin:0 auto
+
+#content
+    position: absolute
+    top: 300px
+    left: 0
+    width: 100%
+
+    .row
+        margin: 0 auto
+        width: 970px
+
+header#top
+    color: #FFF
+    border-top: 3px solid #4c7370
+    gradient #639793, #577d7a
+    height: 107px
+
+    h1
+        font-family: "Lato"
+        font-weight: 800
+        font-size: 23px
+        text-transform: uppercase
+        float: left
+        letter-spacing: 1px
+        margin-right: 6px
+
+    h2
+        font-family: "Georgia"
+        font-weight: 200
+        font-size: 24px
+
+        &:before
+            content: "|"
+            display: inline-block
+            font-weight: 800
+            margin-right: 6px
+
+        span
+            font-style: italic
