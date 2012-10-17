@@ -94,11 +94,8 @@ header#top nav a.contact {
   border-radius: 3px;
 }
 #splash {
-  margin: 0 auto;
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin: 20px 0;
   color: #fff;
-  width: 879px;
   padding: 13px;
   font-family: "Lato";
   position: relative;
@@ -181,9 +178,10 @@ article.callout ul li:not(:first-child):before {
   margin: 10px 0 12px 0;
 }
 article.callout ul p {
-  font-size: 11px;
+  font-size: 12px;
   color: #7c7c7c;
   line-height: 20px;
+  margin-top: 6px;
 }
 article.callout.strikemaster h1 {
   background: #9f5e86;
@@ -217,10 +215,26 @@ article.callout.shakespeare h3,
 article.callout.shakespeare a {
   color: #456563;
 }
+#news h1 {
+  background-image: url("../img/birdie.png");
+  background-repeat: no-repeat;
+  background-position: 11px 8px;
+  padding-left: 62px;
+}
 #news h2 {
   float: left;
   margin-right: 6px;
 }
 #news p {
   line-height: 18px;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 70%;
+}
+footer ul li {
+  display: inline-block;
+  margin: 0 14px;
 }
