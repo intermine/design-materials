@@ -102,3 +102,31 @@ header#top nav a.contact {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
+#callout {
+  margin: 0 auto;
+  margin-top: 14px;
+  color: #fff;
+  width: 879px;
+  padding: 13px;
+  font-family: "Lato";
+  position: relative;
+  -webkit-box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
+}
+#callout h1,
+#callout h2 {
+  font-weight: 400;
+  position: absolute;
+  margin: 0;
+  left: 45px;
+}
+#callout h1 {
+  font-size: 26px;
+  letter-spacing: -1px;
+  top: 38px;
+}
+#callout h2 {
+  font-size: 16px;
+  top: 69px;
+}
