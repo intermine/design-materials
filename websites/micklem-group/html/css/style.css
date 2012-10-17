@@ -7,7 +7,7 @@
 }
 #content {
   position: absolute;
-  top: 300px;
+  top: -200px;
   left: 0;
   width: 100%;
 }
@@ -102,7 +102,7 @@ header#top nav a.contact {
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-#callout {
+#splash {
   margin: 0 auto;
   margin-top: 14px;
   color: #fff;
@@ -114,19 +114,84 @@ header#top nav a.contact {
   -moz-box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
   box-shadow: 0 0 3px 3px rgba(0,0,0,0.05);
 }
-#callout h1,
-#callout h2 {
+#splash h1,
+#splash h2 {
   font-weight: 400;
   position: absolute;
   margin: 0;
   left: 45px;
 }
-#callout h1 {
+#splash h1 {
   font-size: 26px;
   letter-spacing: -1px;
   top: 38px;
 }
-#callout h2 {
+#splash h2 {
   font-size: 16px;
   top: 69px;
+}
+#welcome h1 {
+  font-family: "Lato";
+  color: #345b6a;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 8px 0 18px 0;
+}
+#welcome img {
+  float: left;
+  margin-right: 20px;
+}
+#welcome p {
+  color: #656565;
+  font-size: 12px;
+  line-height: 21px;
+}
+#welcome p a {
+  color: #659995;
+  text-decoration: underline;
+}
+article.callout h1 {
+  font-family: "Lato";
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 12px 10px;
+}
+article.callout h2 {
+  font-size: 12px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 18px;
+}
+article.callout h3 {
+  color: #7c7c7c;
+  font-weight: 400;
+  font-size: 13px;
+}
+article.callout a {
+  color: #7d4166;
+  text-decoration: underline;
+}
+article.callout ul {
+  list-style-type: none;
+  margin: 10px;
+}
+article.callout ul li:not(:first-child):before {
+  content: "_________________";
+  display: block;
+  color: #ccc;
+  margin-bottom: 14px;
+}
+article.callout ul p {
+  font-size: 11px;
+  color: #7c7c7c;
+  line-height: 20px;
+  margin: 0;
+}
+article.callout.strikemaster h1 {
+  background: #9f5e86;
+}
+article.callout.strikemaster h2 {
+  color: #9f5e86;
 }
