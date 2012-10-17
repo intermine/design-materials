@@ -21,21 +21,8 @@ shadow(a, b)
     box-shadow: a b;
 
 
-#background
-    background: url('../../psd/8d.png') no-repeat top left
-    height: 1151px
-    width: 969px
-    margin:0 auto
-
-#content
-    position: absolute
-    top: -200px
-    left: 0
-    width: 100%
-
-    .row
-        margin: 0 auto
-        width: 970px
+h1, h2, h3, h4, p
+    margin: 0
 
 header#top
     color: #FFF
@@ -118,6 +105,7 @@ header#top
 #splash
     margin: 0 auto
     margin-top: 14px
+    margin-bottom: 14px
     color: #FFF
     width: 879px
     padding: 13px
@@ -128,7 +116,6 @@ header#top
     h1, h2
         font-weight: 400
         position: absolute
-        margin: 0
         left: 45px
 
     h1
@@ -150,33 +137,36 @@ header#top
 
     img
         float: left
-        margin-right: 20px
+        margin: 0 25px 0 0
 
     p
         color: #656565
-        font-size: 12px
-        line-height: 21px
+        font-size: 13px
+        line-height: 23px
 
         a
             color: #659995
             text-decoration: underline
 
 article.callout
+    margin-bottom: 30px
+
     h1
         font-family: "Lato"
-        margin: 0
         color: #FFF
         font-weight: 400
         font-size: 18px
         padding: 12px 10px
 
-    h2
+    h2, h3
         font-size: 12px
         font-weight: 800
-        margin: 0
         line-height: 18px
 
     h3
+        font-weight: 400
+
+    h4
         color: #7c7c7c
         font-weight: 400
         font-size: 13px
@@ -191,20 +181,48 @@ article.callout
 
         li
             &:not(:first-child):before
-                content: "_________________"
+                content: " "
                 display: block
-                color: #ccc
-                margin-bottom: 14px
+                width: 150px
+                border-bottom: 1px solid #ccc
+                margin: 10px 0 12px 0
 
         p
             font-size: 11px
             color: #7c7c7c
             line-height: 20px
-            margin: 0
 
     &.strikemaster
         h1
             background: #9F5e86
-
-        h2
+        
+        h2, h3, a
             color: #9F5e86
+
+    &.bismark
+        h1
+            background: #407083
+        
+        h2, h3, a
+            color: #345b6a
+
+    &.patina
+        h1
+            background: #659995
+        
+        h2, h3, a
+            color: #456563
+
+    &.shakespeare
+        h1
+            background: #5fb1d2
+        
+        h2, h3, a
+            color: #456563
+
+#news
+    h2
+        float: left
+        margin-right: 6px
+    p
+        line-height: 18px

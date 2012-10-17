@@ -1,19 +1,10 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:400,700");
-#background {
-  background: url("../../psd/8d.png") no-repeat top left;
-  height: 1151px;
-  width: 969px;
-  margin: 0 auto;
-}
-#content {
-  position: absolute;
-  top: -200px;
-  left: 0;
-  width: 100%;
-}
-#content .row {
-  margin: 0 auto;
-  width: 970px;
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 header#top {
   color: #fff;
@@ -105,6 +96,7 @@ header#top nav a.contact {
 #splash {
   margin: 0 auto;
   margin-top: 14px;
+  margin-bottom: 14px;
   color: #fff;
   width: 879px;
   padding: 13px;
@@ -118,7 +110,6 @@ header#top nav a.contact {
 #splash h2 {
   font-weight: 400;
   position: absolute;
-  margin: 0;
   left: 45px;
 }
 #splash h1 {
@@ -139,32 +130,37 @@ header#top nav a.contact {
 }
 #welcome img {
   float: left;
-  margin-right: 20px;
+  margin: 0 25px 0 0;
 }
 #welcome p {
   color: #656565;
-  font-size: 12px;
-  line-height: 21px;
+  font-size: 13px;
+  line-height: 23px;
 }
 #welcome p a {
   color: #659995;
   text-decoration: underline;
 }
+article.callout {
+  margin-bottom: 30px;
+}
 article.callout h1 {
   font-family: "Lato";
-  margin: 0;
   color: #fff;
   font-weight: 400;
   font-size: 18px;
   padding: 12px 10px;
 }
-article.callout h2 {
+article.callout h2,
+article.callout h3 {
   font-size: 12px;
   font-weight: 800;
-  margin: 0;
   line-height: 18px;
 }
 article.callout h3 {
+  font-weight: 400;
+}
+article.callout h4 {
   color: #7c7c7c;
   font-weight: 400;
   font-size: 13px;
@@ -178,20 +174,53 @@ article.callout ul {
   margin: 10px;
 }
 article.callout ul li:not(:first-child):before {
-  content: "_________________";
+  content: " ";
   display: block;
-  color: #ccc;
-  margin-bottom: 14px;
+  width: 150px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0 12px 0;
 }
 article.callout ul p {
   font-size: 11px;
   color: #7c7c7c;
   line-height: 20px;
-  margin: 0;
 }
 article.callout.strikemaster h1 {
   background: #9f5e86;
 }
-article.callout.strikemaster h2 {
+article.callout.strikemaster h2,
+article.callout.strikemaster h3,
+article.callout.strikemaster a {
   color: #9f5e86;
+}
+article.callout.bismark h1 {
+  background: #407083;
+}
+article.callout.bismark h2,
+article.callout.bismark h3,
+article.callout.bismark a {
+  color: #345b6a;
+}
+article.callout.patina h1 {
+  background: #659995;
+}
+article.callout.patina h2,
+article.callout.patina h3,
+article.callout.patina a {
+  color: #456563;
+}
+article.callout.shakespeare h1 {
+  background: #5fb1d2;
+}
+article.callout.shakespeare h2,
+article.callout.shakespeare h3,
+article.callout.shakespeare a {
+  color: #456563;
+}
+#news h2 {
+  float: left;
+  margin-right: 6px;
+}
+#news p {
+  line-height: 18px;
 }
