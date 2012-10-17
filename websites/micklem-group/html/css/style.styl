@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700)
 
+
 gradient(a, b)
     background: a
     background: -moz-linear-gradient(top, a 0%, b 100%)
@@ -8,6 +9,12 @@ gradient(a, b)
     background: -o-linear-gradient(top, a 0%, b 100%)
     background: -ms-linear-gradient(top, a 0%, b 100%)
     background: linear-gradient(to bottom, a 0%, b 100%)
+
+corners(a)
+    -webkit-border-radius: a;
+    -moz-border-radius: a;
+    border-radius: a;
+
 
 #background
     background: url('../../psd/8d.png') no-repeat top left
@@ -29,7 +36,9 @@ header#top
     color: #FFF
     border-top: 3px solid #4c7370
     gradient #639793, #577d7a
-    height: 107px
+
+    h1, h2
+        margin: 20px 0
 
     h1
         font-family: "Lato"
@@ -53,3 +62,50 @@ header#top
 
         span
             font-style: italic
+            margin-right: 2px
+
+    nav
+        background: #334d4b
+        position: relative
+
+        ul
+            list-style-type: none
+            margin: 0 0 0 20px
+
+            li
+                display: inline-block
+                margin: 9px 10px
+                font-family: "Lato"
+                font-size: 16px
+
+                &:not(:last-child):after
+                    content: "|"
+                    display: inline-block
+                    color: #395b69
+                    margin-left: 22px
+
+                &.active
+                    font-weight: 800
+
+                a
+                    color: #FFF
+                    line-height: 25px
+                    height: 25px
+                    display: inline-block
+
+                    &.people
+                        background: url('../img/mini-flags.png') no-repeat top right
+                        padding-right: 46px
+
+        a.contact
+            font-family: "Lato"
+            font-size: 14px
+            font-weight: 800
+            color: #FFF
+            background: #192625
+            text-transform: uppercase
+            position: absolute
+            top: 9px
+            right: 9px
+            padding: 6px 14px
+            corners 3px
