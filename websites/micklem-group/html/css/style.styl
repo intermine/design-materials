@@ -124,13 +124,67 @@ header#top
         font-size: 16px
         top: 69px
 
-#welcome
+aside.sidebar
+    margin-bottom: 30px
+
+    h2
+        font-family: "Lato"
+        color: #FFF
+        font-weight: 400
+        font-size: 18px
+        padding: 12px 10px
+
+        &.bismark
+            background: #407083
+        
+        &.patina
+            background: #659995
+
+        a
+            color: #FFF
+
+    ul
+        list-style-type: none
+        margin: 10px 10px 30px 10px
+
+        li
+            &:not(:first-child):before
+                content: " "
+                display: block
+                width: 150px
+                border-bottom: 1px solid #ccc
+                margin: 10px 0 12px 0
+
+            h3
+                color: #407083
+                font-size: 12px
+
+                a
+                    color: #407083
+                    text-decoration: underline
+
+        p
+            font-style: normal
+            font-size: 12px
+            color: #7c7c7c
+            line-height: 20px
+
+article.main
+    margin-bottom: 30px
+
     h1
         font-family: "Lato"
         color: #345b6a
         font-weight: 400
         font-size: 24px
         margin: 8px 0 18px 0
+
+    h4
+        color: #656565
+        font-weight: 400
+        font-size: 16px
+        line-height: 26px
+        margin-bottom: 10px
 
     img
         float: left
