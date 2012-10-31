@@ -1,0 +1,86 @@
+@import url('http://fonts.googleapis.com/css?family=Droid+Sans:400,800')
+
+#tml
+    margin: 0 auto
+    width: 1200px
+    height: 1730px
+    background: url('../../psd/0.png') no-repeat 0 0
+    opacity: 1
+
+#content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+
+    .inside
+        margin: 0 auto
+
+// --------------------------------------------------------
+
+nav
+    ul
+        list-style-type: none
+
+        li
+            display: inline-block
+
+nav#mini
+    ul li
+        &:not(:last-child)
+            margin-right: 12px
+
+        a
+            color: #BBB
+            font-size: 13px
+            padding: 6px
+            display: block
+
+            &.padlock
+                background: url('../img/padlock.png') no-repeat 0 7px
+                padding-left: 16px
+
+#hero
+    background: url('../img/pattern-1.jpg') repeat 0 0
+
+    h1
+        font-family: Calibri, "Droid Sans"
+        text-transform: uppercase
+        color: #FFF
+        font-weight: 400
+        font-size: 34px
+        line-height: 44px
+
+    nav
+        ul li
+            &:not(:last-child)
+                margin-right: 36px
+
+            a
+                color: #FFF
+                text-transform: uppercase
+                font-size: 14.5px
+                font-weight: 800
+                text-shadow: 1px 1px 1px rgba(0,0,0,.45)
+
+    p.important
+        color: #F2FBC3
+        font-size: 14.5px
+
+    hr
+        height: 20px
+        background: url('../img/divider.png') repeat-x top left
+        border: 0
+
+    .browser
+        background: url('../img/browser.png') no-repeat 0 0
+        width: 391px
+        height: 272px
+        position: relative
+
+        span
+            position: absolute
+            top: 22px
+            left: 76px
+            font-size: 10px
+            color: #999
