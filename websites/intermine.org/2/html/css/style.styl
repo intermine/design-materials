@@ -1,11 +1,10 @@
 @import url('http://fonts.googleapis.com/css?family=Droid+Sans:400,800')
 
-nav
-    ul
-        list-style-type: none
+ul
+    list-style-type: none
 
-        li
-            display: inline-block
+    li
+        display: inline-block
 
 nav#mini
     ul
@@ -79,6 +78,8 @@ nav#mini
         font-size: 14.5px
 
     .links
+        margin: 20px 0 30px 0
+
         &:after
             content: ""
             display: block
@@ -109,12 +110,14 @@ nav#mini
         height: 20px
         background: url('../img/divider.png') repeat-x 0 0
         border: 0
-
+        margin: 15px // reduce the width by the columns padding
+    
     .browser
         background: url('../img/browser.png') no-repeat 0 0
         width: 391px
         height: 272px
         position: relative
+        margin-left: -12px // shift by the width of the left dropshadow
 
         span
             position: absolute
@@ -129,3 +132,28 @@ nav#mini
             left: 12px
             width: 360px
             height: 208px
+
+    ul#clout
+        display: table
+        width: 100%
+
+        li
+            display: table-cell
+
+            span
+                margin: 0 auto
+                display: block
+                text-indent: -9999px
+                white-space: nowrap
+                overflow: hidden
+                background-repeat: no-repeat
+                background-position: 0 0
+                height: 47px
+
+                &.intermod
+                    background-image: url('../img/intermod.png')
+                    width: 156px
+
+                &.cambridge
+                    background-image: url('../img/cambridge.png')
+                    width: 228px

@@ -1,8 +1,8 @@
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans:400,800");
-nav ul {
+ul {
   list-style-type: none;
 }
-nav ul li {
+ul li {
   display: inline-block;
 }
 nav#mini ul {
@@ -72,6 +72,9 @@ nav#mini ul li a.padlock {
   color: #f2fbc3;
   font-size: 14.5px;
 }
+#hero .links {
+  margin: 20px 0 30px 0;
+}
 #hero .links:after {
   content: "";
   display: block;
@@ -102,12 +105,14 @@ nav#mini ul li a.padlock {
   height: 20px;
   background: url("../img/divider.png") repeat-x 0 0;
   border: 0;
+  margin: 15px;
 }
 #hero .browser {
   background: url("../img/browser.png") no-repeat 0 0;
   width: 391px;
   height: 272px;
   position: relative;
+  margin-left: -12px;
 }
 #hero .browser span {
   position: absolute;
@@ -122,4 +127,29 @@ nav#mini ul li a.padlock {
   left: 12px;
   width: 360px;
   height: 208px;
+}
+#hero ul#clout {
+  display: table;
+  width: 100%;
+}
+#hero ul#clout li {
+  display: table-cell;
+}
+#hero ul#clout li span {
+  margin: 0 auto;
+  display: block;
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 47px;
+}
+#hero ul#clout li span.intermod {
+  background-image: url("../img/intermod.png");
+  width: 156px;
+}
+#hero ul#clout li span.cambridge {
+  background-image: url("../img/cambridge.png");
+  width: 228px;
 }
