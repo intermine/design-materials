@@ -1,25 +1,12 @@
 @import url("http://fonts.googleapis.com/css?family=Droid+Sans:400,800");
-#tml {
-  margin: 0 auto;
-  width: 1200px;
-  height: 1730px;
-  background: url("../../psd/0.png") no-repeat 0 0;
-  opacity: 1;
-}
-#content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-#content .inside {
-  margin: 0 auto;
-}
 nav ul {
   list-style-type: none;
 }
 nav ul li {
   display: inline-block;
+}
+nav#mini ul {
+  margin: 3px 0;
 }
 nav#mini ul li:not(:last-child) {
   margin-right: 12px;
@@ -36,6 +23,26 @@ nav#mini ul li a.padlock {
 }
 #hero {
   background: url("../img/pattern-1.jpg") repeat 0 0;
+  border: 1px solid #596a02;
+  border-width: 1px 0;
+}
+#hero:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.05)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.05) 100%);
+}
+#hero #logo {
+  background: url("../img/logo.png") no-repeat 0 0;
+  width: 321px;
+  height: 42px;
+  margin: 40px 0;
 }
 #hero h1 {
   font-family: Calibri, "Droid Sans";
@@ -45,23 +52,55 @@ nav#mini ul li a.padlock {
   font-size: 34px;
   line-height: 44px;
 }
-#hero nav ul li:not(:last-child) {
-  margin-right: 36px;
+#hero nav#main ul {
+  height: 42px;
+  line-height: 42px;
+  margin: 40px 0;
 }
-#hero nav ul li a {
+#hero nav#main ul li:not(:last-child) {
+  margin-right: 24px;
+}
+#hero nav#main ul li a {
   color: #fff;
   text-transform: uppercase;
   font-size: 14.5px;
   font-weight: 800;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.45);
+  padding: 6px;
 }
 #hero p.important {
   color: #f2fbc3;
   font-size: 14.5px;
 }
+#hero .links:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#hero .links a.git {
+  background: url("../img/download.png") no-repeat 0 0;
+  width: 184px;
+  height: 68px;
+  display: block;
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#hero .links a.started {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  font-size: 17px;
+  background: url("../img/play.png") no-repeat 0 0;
+  padding-left: 40px;
+  height: 32px;
+  line-height: 32px;
+  margin: 16px 0 16px 40px;
+}
 #hero hr {
   height: 20px;
-  background: url("../img/divider.png") repeat-x top left;
+  background: url("../img/divider.png") repeat-x 0 0;
   border: 0;
 }
 #hero .browser {
@@ -76,4 +115,11 @@ nav#mini ul li a.padlock {
   left: 76px;
   font-size: 10px;
   color: #999;
+}
+#hero .browser img {
+  position: absolute;
+  top: 43px;
+  left: 12px;
+  width: 360px;
+  height: 208px;
 }
