@@ -137,14 +137,27 @@ nav#mini ul li a.padlock {
   width: 360px;
   height: 208px;
 }
-#hero ul#clout {
+#hero #clout a.more {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 70px;
+  margin-bottom: -10px;
+  padding: 6px 2px;
+  background: rgba(255,255,255,0.15);
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  color: #fff;
+}
+#hero #clout ul {
   display: table;
   width: 100%;
 }
-#hero ul#clout li {
+#hero #clout ul li {
   display: table-cell;
 }
-#hero ul#clout li a {
+#hero #clout ul li a {
   margin: 0 auto;
   display: block;
   text-indent: -9999px;
@@ -154,27 +167,27 @@ nav#mini ul li a.padlock {
   background-position: 0 0;
   height: 47px;
 }
-#hero ul#clout li a.intermod {
+#hero #clout ul li a.intermod {
   background-image: url("../img/clout/intermod.png");
   width: 156px;
 }
-#hero ul#clout li a.cambridge {
+#hero #clout ul li a.cambridge {
   background-image: url("../img/clout/cambridge.png");
   width: 228px;
 }
-#hero ul#clout li a.flymine {
+#hero #clout ul li a.flymine {
   background-image: url("../img/clout/flymine.png");
   width: 172px;
 }
-#hero ul#clout li a.yeastmine {
+#hero #clout ul li a.yeastmine {
   background-image: url("../img/clout/yeastmine.png");
   width: 248px;
 }
-#hero ul#clout li a.ratmine {
+#hero #clout ul li a.ratmine {
   background-image: url("../img/clout/ratmine.png");
   width: 158px;
 }
-#hero ul#clout li a.metabolicmine {
+#hero #clout ul li a.metabolicmine {
   background-image: url("../img/clout/metabolicmine.png");
   width: 225px;
 }
@@ -263,7 +276,7 @@ article.gray a.more {
   text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
 }
 .quote {
-  margin: 30px 0;
+  margin: 0 0 30px 0;
 }
 .quote p {
   color: #827e7f;
@@ -295,6 +308,10 @@ article.gray a.more {
   content: '”';
   right: 0;
 }
+.quote a {
+  color: #6b7f01;
+  border-bottom: 1px solid #6b7f01;
+}
 #dirt {
   background: url("../img/pattern-2.jpg") repeat 0 0;
   border-bottom: 1px solid #353a37;
@@ -309,7 +326,32 @@ footer p {
   font-size: 13px;
   text-align: right;
 }
+footer li {
+  font-size: 13px;
+}
 footer img {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   display: block;
+}
+footer article#publications {
+  margin: 0;
+}
+footer article#publications h1 {
+  font-family: Calibri, "Droid Sans";
+  text-transform: uppercase;
+  color: #3a4676;
+  font-weight: 400;
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+footer article#publications ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+footer article#publications ul li a {
+  color: #5162a6;
+}
+footer article#publications ul li span {
+  display: block;
+  color: #909dcd;
+  font-size: 11px;
 }

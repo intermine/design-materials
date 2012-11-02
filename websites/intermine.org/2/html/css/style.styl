@@ -159,46 +159,58 @@ nav#mini
             width: 360px
             height: 208px
 
-    ul#clout
-        display: table
-        width: 100%
+    #clout
+        a.more
+            text-align: center
+            margin: 0 auto
+            display: block
+            width: 70px
+            margin-bottom: -10px
+            padding: 6px 2px
+            background: rgba(255,255,255,0.15)
+            corners(4px 4px 0 0)
+            color: #FFF
 
-        li
-            display: table-cell
+        ul
+            display: table
+            width: 100%
 
-            a
-                margin: 0 auto
-                display: block
-                text-indent: -9999px
-                white-space: nowrap
-                overflow: hidden
-                background-repeat: no-repeat
-                background-position: 0 0
-                height: 47px
+            li
+                display: table-cell
 
-                &.intermod
-                    background-image: url('../img/clout/intermod.png')
-                    width: 156px
+                a
+                    margin: 0 auto
+                    display: block
+                    text-indent: -9999px
+                    white-space: nowrap
+                    overflow: hidden
+                    background-repeat: no-repeat
+                    background-position: 0 0
+                    height: 47px
 
-                &.cambridge
-                    background-image: url('../img/clout/cambridge.png')
-                    width: 228px
+                    &.intermod
+                        background-image: url('../img/clout/intermod.png')
+                        width: 156px
 
-                &.flymine
-                    background-image: url('../img/clout/flymine.png')
-                    width: 172px
+                    &.cambridge
+                        background-image: url('../img/clout/cambridge.png')
+                        width: 228px
 
-                &.yeastmine
-                    background-image: url('../img/clout/yeastmine.png')
-                    width: 248px
+                    &.flymine
+                        background-image: url('../img/clout/flymine.png')
+                        width: 172px
 
-                &.ratmine
-                    background-image: url('../img/clout/ratmine.png')
-                    width: 158px
+                    &.yeastmine
+                        background-image: url('../img/clout/yeastmine.png')
+                        width: 248px
 
-                &.metabolicmine
-                    background-image: url('../img/clout/metabolicmine.png')
-                    width: 225px
+                    &.ratmine
+                        background-image: url('../img/clout/ratmine.png')
+                        width: 158px
+
+                    &.metabolicmine
+                        background-image: url('../img/clout/metabolicmine.png')
+                        width: 225px
 
 article
     margin: 30px 0
@@ -268,7 +280,7 @@ article
 
 
 .quote
-    margin: 30px 0
+    margin: 0 0 30px 0
 
     p
         color: #827E7F
@@ -299,6 +311,10 @@ article
             content: '”'
             right: 0
 
+    a
+        color: #6B7F01
+        border-bottom: 1px solid #6B7F01
+
 #dirt
     background: url('../img/pattern-2.jpg') repeat 0 0
     border-bottom: 1px solid #353A37
@@ -313,6 +329,33 @@ footer
         font-size: 13px
         text-align: right
 
+    li
+        font-size: 13px
+
     img
-        margin: 0 0 10px 0
+        margin: 0 0 20px 0
         display: block
+
+    article#publications
+        margin: 0
+
+        h1
+            font-family: Calibri, "Droid Sans"
+            text-transform: uppercase
+            color: #3A4676
+            font-weight: 400
+            font-size: 21px
+            margin-bottom: 15px
+
+        ul
+            li
+                &:not(:last-child)
+                    margin-bottom: 15px
+
+                a
+                    color: #5162A6
+
+                span
+                    display: block
+                    color: #909DCD
+                    font-size: 11px
