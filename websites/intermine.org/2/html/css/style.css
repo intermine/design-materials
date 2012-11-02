@@ -144,7 +144,7 @@ nav#mini ul li a.padlock {
 #hero ul#clout li {
   display: table-cell;
 }
-#hero ul#clout li span {
+#hero ul#clout li a {
   margin: 0 auto;
   display: block;
   text-indent: -9999px;
@@ -154,13 +154,29 @@ nav#mini ul li a.padlock {
   background-position: 0 0;
   height: 47px;
 }
-#hero ul#clout li span.intermod {
-  background-image: url("../img/intermod.png");
+#hero ul#clout li a.intermod {
+  background-image: url("../img/clout/intermod.png");
   width: 156px;
 }
-#hero ul#clout li span.cambridge {
-  background-image: url("../img/cambridge.png");
+#hero ul#clout li a.cambridge {
+  background-image: url("../img/clout/cambridge.png");
   width: 228px;
+}
+#hero ul#clout li a.flymine {
+  background-image: url("../img/clout/flymine.png");
+  width: 172px;
+}
+#hero ul#clout li a.yeastmine {
+  background-image: url("../img/clout/yeastmine.png");
+  width: 248px;
+}
+#hero ul#clout li a.ratmine {
+  background-image: url("../img/clout/ratmine.png");
+  width: 158px;
+}
+#hero ul#clout li a.metabolicmine {
+  background-image: url("../img/clout/metabolicmine.png");
+  width: 225px;
 }
 article {
   margin: 30px 0;
@@ -291,15 +307,9 @@ footer {
 footer p {
   margin: 0;
   font-size: 13px;
+  text-align: right;
 }
-footer p strong {
-  font-family: Calibri, "Droid Sans";
-  font-size: 18px;
-}
-footer p span {
-  font-family: "Times New Roman", serif;
-  font-style: italic;
-  font-size: 20px;
-  margin-right: 1px;
-  font-weight: 400;
+footer img {
+  margin: 0 0 10px 0;
+  display: block;
 }
