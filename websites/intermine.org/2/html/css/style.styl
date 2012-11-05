@@ -159,7 +159,7 @@ nav#mini
             width: 360px
             height: 208px
 
-    #clout
+    #klout
         a.more
             text-align: center
             margin: 0 auto
@@ -167,9 +167,14 @@ nav#mini
             width: 70px
             margin-bottom: -10px
             padding: 6px 2px
-            background: rgba(255,255,255,0.15)
+            background: rgba(255,255,255,0.2)
             corners(4px 4px 0 0)
             color: #FFF
+            cursor: pointer
+
+            &:hover
+                background: rgba(255,255,255,0.3)
+                color: #6B8000
 
         ul
             display: table
@@ -189,28 +194,73 @@ nav#mini
                     height: 47px
 
                     &.intermod
-                        background-image: url('../img/clout/intermod.png')
+                        background-image: url('../img/klout/intermod.png')
                         width: 156px
 
                     &.cambridge
-                        background-image: url('../img/clout/cambridge.png')
+                        background-image: url('../img/klout/cambridge.png')
                         width: 228px
 
                     &.flymine
-                        background-image: url('../img/clout/flymine.png')
+                        background-image: url('../img/klout/flymine.png')
                         width: 172px
 
                     &.yeastmine
-                        background-image: url('../img/clout/yeastmine.png')
+                        background-image: url('../img/klout/yeastmine.png')
                         width: 248px
 
                     &.ratmine
-                        background-image: url('../img/clout/ratmine.png')
+                        background-image: url('../img/klout/ratmine.png')
                         width: 158px
 
                     &.metabolicmine
-                        background-image: url('../img/clout/metabolicmine.png')
+                        background-image: url('../img/klout/metabolicmine.png')
                         width: 225px
+
+                    &.galaxy
+                        background-image: url('../img/klout/galaxy.png')
+                        background-position: 0 4px
+                        width: 140px
+
+                    &.jax
+                        background-image: url('../img/klout/jax.png')
+                        width: 127px
+
+                    &.oicr
+                        background-image: url('../img/klout/oicr.png')
+                        width: 64px
+
+                    &.mrc
+                        background-image: url('../img/klout/mrc.png')
+                        width: 106px
+
+                    &.stanford
+                        background-image: url('../img/klout/stanford.png')
+                        width: 247px
+                    
+                    &.wisconsin
+                        background-image: url('../img/klout/wisconsin.png')
+                        width: 59px
+
+                    &.nibio
+                        background-image: url('../img/klout/nibio.jpg')
+                        width: 125px
+
+                    &.gmod
+                        background-image: url('../img/klout/gmod.png')
+                        width: 64px
+
+                    &.go
+                        background-image: url('../img/klout/go.png')
+                        width: 70px
+
+                    &.kaust
+                        background-image: url('../img/klout/kaust.png')
+                        width: 91px
+
+                    &.oregon
+                        background-image: url('../img/klout/oregon.png')
+                        width: 80px
 
 article
     margin: 30px 0
@@ -240,6 +290,10 @@ article
                 color: #999
                 font-size: 15px
                 text-shadow: 1px 1px 0px #FFF
+
+        ul li
+            color: #827E7F
+            display: block
 
     &.gray
         h1

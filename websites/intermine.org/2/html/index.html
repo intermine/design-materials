@@ -6,6 +6,16 @@
 
     <link rel="stylesheet" href="css/foundation3.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script>
+        $(function() {
+            var a = ($('#klout a.more')).click(function() {
+                a.remove();
+                $("#klout ul").slideDown(200);
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="row">
@@ -29,10 +39,10 @@
             <div class="seven columns">
                 <nav id="main" class="right">
                     <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Download</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="http://intermine.org/wiki/InterMineOverview">Features</a></li>
+                        <li><a href="http://intermine.org/wiki/WikiStart">Documentation</a></li>
+                        <li><a href="http://intermine.org/wiki/Git">Download</a></li>
+                        <li><a href="http://intermine.org/wiki/ContactUs">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -46,16 +56,16 @@
                 </div>
             </div>
             <div class="seven columns">
-                <h1>Open source data warehouse system for biological data integration</h1>
-                <p class="important">InterMine is a data warehouse system built for the integration
-                    and analysis of complex biological data. Developed by the Micklem lab at the
-                    University of Cambridge, InterMine enables the creation of biological databases
-                    accessed by sophisticated web query tools. Parsers are provided for integrating data
-                    from many common biological data sources and formats, and there is a framework for
-                    adding your own data. InterMine includes an attractive, user-friendly web interface
-                    that works 'out of the box' and can be easily customised for your specific needs, as
-                    well as a powerful, scriptable web-service API to allow programmatic access to your
-                    data.</p>
+                <h1>Biological data warehouse</h1>
+                <p class="important">InterMine is an open source data warehouse build specifically for
+                    the integration and analysis of complex biological data. Developed by the Micklem
+                    lab at the University of Cambridge, InterMine enables the creation of biological
+                    databases accessed by sophisticated web query tools. Parsers are provided for
+                    integrating data from many common biological data sources and formats, and there is
+                    a framework for adding your own data. InterMine includes an attractive, user-friendly
+                    web interface that works 'out of the box' and can be easily customised for your
+                    specific needs, as well as a powerful, scriptable web-service API to allow
+                    programmatic access to your data.</p>
 
                 <div class="links">
                     <a class="git left" target="_blank" href="https://github.com/intermine/intermine">git
@@ -66,14 +76,25 @@
             
             <hr />
 
-            <div id="clout" class="twelve columns">
+            <div id="klout" class="twelve columns">
                 <ul>
-                    <li><a target="_blank" href="http://www.flymine.org/" class="flymine">FlyMine</a></li>
-                    <li><a target="_blank" href="http://yeastmine.yeastgenome.org/yeastmine/begin.do" class="yeastmine">YeastMine</a></li>
-                    <li><a target="_blank" href="http://ratmine.mcw.edu/ratmine/begin.do" class="ratmine">RatMine</a></li>
-                    <li><a target="_blank" href="http://www.metabolicmine.org/beta/begin.do" class="metabolicmine">metabolicMine</a></li>
+                    <li><a target="_blank" href="" class="cambridge">University of Cambridge</a></li>
+                    <li><a target="_blank" href="" class="jax">s</a></li>
+                    <li><a target="_blank" href="" class="oicr">s</a></li>
+                    <li><a target="_blank" href="" class="wisconsin">s</a></li>
+                    <li><a target="_blank" href="" class="galaxy">Galaxy</a></li>
+                    <li><a target="_blank" href="" class="mrc">s</a></li>
+                    <li><a target="_blank" href="" class="nibio">s</a></li>
                 </ul>
-                <a class="more" href="#">More</a>
+                <a class="more">More</a>
+                <ul style="display:none">
+                    <li><a target="_blank" href="" class="gmod">a</a></li>
+                    <li><a target="_blank" href="" class="go">a</a></li>
+                    <li><a target="_blank" href="" class="kaust">a</a></li>
+                    <li><a target="_blank" href="" class="oregon">a</a></li>
+                    <li><a target="_blank" href="" class="stanford">a</a></li>
+                    <li><a target="_blank" href="" class="intermod">a</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -86,7 +107,6 @@
                 loading. A sophisticated identifier resolution system updates all identifiers to the most
                 current version using a priority system, and multiple post-processing checks ensure the
                 consistency of the data integration.</p>
-            <a href="#" class="more right">Learn More</a>
         </article>
 
         <article class="white four columns">
@@ -96,25 +116,26 @@
                 method is constructed around the use of precomputed tables, meaning that the data schema
                 does not need to be denormalized to optimise query speed. A user's query workflow can also
                 be automated using InterMine web services.</p>
-            <a href="#" class="more right">Learn More</a>
         </article>
 
         <article class="white four columns">
-            <h1>Pre-constructed web application</h1>
-            <p>The InterMine web application presents a graphical interface suitable for both first time
-                and advanced users. Information can be retrieved for individual objects such as genes,
-                analysis can be performed on lists of genes to run a range of analytics on it, and queries
-                can be constructed using a query builder, or run from our collection of template queries.
-                Users also have a private myMine workspace, where the results of their queries are
-                stored.</p>
+            <h1>Existing mines</h1>
+            <p>A number of different data warehouses powered by InterMine already exist. These include:</p>
+            <ul>
+                <li><a target="_blank" href="http://www.flymine.org/">FlyMine</a> - <em>Drosophila</em> genomics</li>
+                <li><a target="_blank" href="http://intermine.modencode.org/">modMine</a> - fly and worm modENCODE data</li>
+                <li><a target="_blank" href="http://ratmine.mcw.edu/ratmine/begin.do">RatMine</a> at RGD</li>
+                <li><a target="_blank" href="http://yeastmine.yeastgenome.org/yeastmine/begin.do">YeastMine</a> at SGD</li>
+                <li><a target="_blank" href="http://www.metabolicmine.org/beta/begin.do">metabolicMine</a> - human, mouse and rat</li>
+                <li><a target="_blank" href="http://targetmine.nibio.go.jp/">TargetMine</a> - drug target discovery</li>
+            </ul>
         </article>
 
         <article class="quote twelve columns">
             <blockquote cite="https://twitter.com/intermineorg">Share your lists with other users from
                 myMine, GoogleDocs style! Now in testing phase at http://beta.flymine.org - let us know
                 what you think.</blockquote>
-            <p>Follow us on out <a target="_blank" href="#">InterMine twitter feed</a> or check out our
-                <a target="_blank" href="#">InterMine blog</a>.</p>
+            <p>Follow us on the <a target="_blank" href="https://twitter.com/intermineorg/">InterMine twitter feed</a>.</p>
         </article>
     </div>
 
@@ -122,36 +143,39 @@
         <div class="row">
             <article class="gray four columns">
                 <h1>Getting started</h1>
-                <span class="sub">November 17, 2112 by Julie</span>
+                <span class="sub">Yesterday by Julie</span>
                 <img src="img/circular/code.png" />
-                <p>Setting up your own InterMine instance is easy. Check out our <a href="#">step-by-step
-                    guide</a> to creating your own Mine, loading and processing datasets, and deploying the
-                    web app to query the data. You can also try out an existing InterMine instance on the
-                    Amazon cloud.</p>
-                <a target="_blank" href="#" class="more right">Amazon cloud</a>
+                <p>Setting up your own InterMine instance is easy. Check out our
+                    <a href="http://intermine.org/wiki/GettingStarted">step-by-step guide</a> to creating
+                    your own Mine, loading and processing datasets, and using the web app to query &amp;
+                    export the data. You can also try out an existing InterMine instance on the Amazon
+                    cloud.</p>
             </article>
 
             <article class="gray four columns">
-                <h1>Using the web application</h1>
-                <span class="sub">Yesterday by Daniela</span>
+                <h1>Using the web app</h1>
+                <span class="sub">Two weeks ago by Sergio</span>
                 <img src="img/circular/countryside.png" />
-                <p>To try out the InterMine features for yourself, check out <a href="#">FlyMine</a>, or
-                    any of our other InterMine instances. The main features include report pages and list
-                    analysis, including a number of summary graphs, as well as the sophisticated query
-                    system. To get an overview of the features, you can take a tour.</p>
-                <a href="#" class="more right">Take a tour</a>
+                <p>To try out the InterMine features for yourself, check out
+                    <a href="http://www.flymine.org/">FlyMine</a>, or any of our other InterMine instances.
+                    The main features include report pages and list analysis, including a number of summary
+                    graphs, as well as the sophisticated query system. To get an overview of the features,
+                    you can take a tour.</p>
             </article>
 
             <article class="gray four columns">
                 <h1>Using web services</h1>
-                <span class="sub">Two weeks ago by Radek</span>
+                <span class="sub">October 1, 2012 by Alex</span>
                 <img src="img/circular/bridge.png" />
                 <p>The InterMine web services expose our complete API, and can be used for automating
                     workflows, as well as enabling the development of external applications. While any
                     language that can parse HTTP can be used, we provide client libraries in 5 programming
-                    languages - <a target="_blank" href="#">Python</a>, <a target="_blank" href="#">Perl</a>,
-                    <a target="_blank" href="#">Java</a>, <a target="_blank" href="#">JavaScript</a> and
-                    <a target="_blank" href="#">Ruby</a>.</p>
+                    languages -
+                    <a href="http://intermine.org/wiki/PythonClient">Python</a>,
+                    <a href="http://intermine.org/wiki/PerlClient">Perl</a>,
+                    <a href="http://intermine.org/wiki/JavaClient">Java</a>,
+                    <a target="_blank" href="https://github.com/alexkalderimis/imjs">JavaScript</a> and
+                    <a target="_blank" href="http://rubygems.org/gems/intermine">Ruby</a>.</p>
             </article>
         </div>
     </div>
@@ -166,25 +190,22 @@
                         flexible data warehouse system for the integration and analysis of heterogeneous
                         biological data</a>
                         <span>Smith RN, Aleksic J, Butano D, Carr A, Contrino S, Hu F, Lyne M, Lyne R,
-                            Kalderimis A, Rutherford K, Stepan R, Sullivan J, Wakeling M, Watkins X,
+                            Kalderimis A, Rutherford K, Stepan R, Sullivan J, Wakeling M, Watkins X, and
                             Micklem G
                         </span>
                     </li>
                     <li><a target="_blank" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3308152/">
                         YeastMine - an integrated data warehouse for Saccharomyces cerevisiae data as a
                         multipurpose tool-kit</a>
-                        <span>Rama Balakrishnan, Julie Park, Kalpana Karra, Benjamin C. Hitz,
-                            Gail Binkley, Eurie L. Hong, Julie Sullivan, Gos Micklem, and J. Michael
-                            Cherry
+                        <span>Balakrishnan R, Park J, Karra K, Hitz BC, Binkley G, Hong EL, Sullivan J,
+                            Micklem G, and Michael JC
                         </span>
                     </li>
                     <li><a target="_blank" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3245176/">
                         modMine: flexible access to modENCODE data</a>
-                        <span>Sergio Contrino, Richard N. Smith, Daniela Butano, Adrian Carr, Fengyuan Hu,
-                            Rachel Lyne, Kim Rutherford, Alex Kalderimis, Julie Sullivan, Seth Carbon,
-                            Ellen T. Kephart, Paul Lloyd, E. O. Stinson, Nicole L. Washington, Marc D.
-                            Perry, Peter Ruzanov, Zheng Zha, Suzanna E. Lewis, Lincoln D. Stein, and Gos
-                            Micklem
+                        <span>Contrino S, Smith RN, Butano D, Carr A, Hu F, Lyne R, Rutherford K,
+                            Kalderimis A, Sullivan J, Carbon S, Kephart ET, Lloyd P, Stinson EO, Washington NL,
+                            Perry MD, Ruzanov P, Zha Z, Lewis SE, Stein LD, and Micklem G
                         </span>
                     </li>
                 </ul>

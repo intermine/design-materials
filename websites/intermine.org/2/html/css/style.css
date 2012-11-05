@@ -137,27 +137,32 @@ nav#mini ul li a.padlock {
   width: 360px;
   height: 208px;
 }
-#hero #clout a.more {
+#hero #klout a.more {
   text-align: center;
   margin: 0 auto;
   display: block;
   width: 70px;
   margin-bottom: -10px;
   padding: 6px 2px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
   color: #fff;
+  cursor: pointer;
 }
-#hero #clout ul {
+#hero #klout a.more:hover {
+  background: rgba(255,255,255,0.3);
+  color: #6b8000;
+}
+#hero #klout ul {
   display: table;
   width: 100%;
 }
-#hero #clout ul li {
+#hero #klout ul li {
   display: table-cell;
 }
-#hero #clout ul li a {
+#hero #klout ul li a {
   margin: 0 auto;
   display: block;
   text-indent: -9999px;
@@ -167,29 +172,74 @@ nav#mini ul li a.padlock {
   background-position: 0 0;
   height: 47px;
 }
-#hero #clout ul li a.intermod {
-  background-image: url("../img/clout/intermod.png");
+#hero #klout ul li a.intermod {
+  background-image: url("../img/klout/intermod.png");
   width: 156px;
 }
-#hero #clout ul li a.cambridge {
-  background-image: url("../img/clout/cambridge.png");
+#hero #klout ul li a.cambridge {
+  background-image: url("../img/klout/cambridge.png");
   width: 228px;
 }
-#hero #clout ul li a.flymine {
-  background-image: url("../img/clout/flymine.png");
+#hero #klout ul li a.flymine {
+  background-image: url("../img/klout/flymine.png");
   width: 172px;
 }
-#hero #clout ul li a.yeastmine {
-  background-image: url("../img/clout/yeastmine.png");
+#hero #klout ul li a.yeastmine {
+  background-image: url("../img/klout/yeastmine.png");
   width: 248px;
 }
-#hero #clout ul li a.ratmine {
-  background-image: url("../img/clout/ratmine.png");
+#hero #klout ul li a.ratmine {
+  background-image: url("../img/klout/ratmine.png");
   width: 158px;
 }
-#hero #clout ul li a.metabolicmine {
-  background-image: url("../img/clout/metabolicmine.png");
+#hero #klout ul li a.metabolicmine {
+  background-image: url("../img/klout/metabolicmine.png");
   width: 225px;
+}
+#hero #klout ul li a.galaxy {
+  background-image: url("../img/klout/galaxy.png");
+  background-position: 0 4px;
+  width: 140px;
+}
+#hero #klout ul li a.jax {
+  background-image: url("../img/klout/jax.png");
+  width: 127px;
+}
+#hero #klout ul li a.oicr {
+  background-image: url("../img/klout/oicr.png");
+  width: 64px;
+}
+#hero #klout ul li a.mrc {
+  background-image: url("../img/klout/mrc.png");
+  width: 106px;
+}
+#hero #klout ul li a.stanford {
+  background-image: url("../img/klout/stanford.png");
+  width: 247px;
+}
+#hero #klout ul li a.wisconsin {
+  background-image: url("../img/klout/wisconsin.png");
+  width: 59px;
+}
+#hero #klout ul li a.nibio {
+  background-image: url("../img/klout/nibio.jpg");
+  width: 125px;
+}
+#hero #klout ul li a.gmod {
+  background-image: url("../img/klout/gmod.png");
+  width: 64px;
+}
+#hero #klout ul li a.go {
+  background-image: url("../img/klout/go.png");
+  width: 70px;
+}
+#hero #klout ul li a.kaust {
+  background-image: url("../img/klout/kaust.png");
+  width: 91px;
+}
+#hero #klout ul li a.oregon {
+  background-image: url("../img/klout/oregon.png");
+  width: 80px;
 }
 article {
   margin: 30px 0;
@@ -228,6 +278,10 @@ article.white a.more {
   color: #999;
   font-size: 15px;
   text-shadow: 1px 1px 0px #fff;
+}
+article.white ul li {
+  color: #827e7f;
+  display: block;
 }
 article.gray h1 {
   font-family: Calibri, "Droid Sans";
