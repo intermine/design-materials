@@ -28,7 +28,7 @@ nav#mini ul li a.padlock {
   padding-left: 16px;
 }
 #hero {
-  background: url("../img/pattern-1.jpg") repeat 0 0;
+  background: #829b02 url("../img/pattern-1.jpg") repeat 0 0;
   border: 1px solid #596a02;
   border-width: 1px 0;
   margin-bottom: 10px;
@@ -156,11 +156,10 @@ nav#mini ul li a.padlock {
   color: #6b8000;
 }
 #hero #klout ul {
-  display: table;
-  width: 100%;
+  text-align: center;
 }
 #hero #klout ul li {
-  display: table-cell;
+  margin: 0 10px 12px 10px;
 }
 #hero #klout ul li a {
   margin: 0 auto;

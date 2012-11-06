@@ -9,10 +9,69 @@
 
     <script src="js/jquery-1.8.2.min.js"></script>
     <script>
+        // Preload klout images.
+        (function() {
+            preloads = [ 'cambridge.png', 'galaxy.png', 'jax.png', 'oicr.png', 'mrc.png', 'stanford.png', 'wisconsin.png', 'nibio.jpg',
+                'gmod.png', 'go.png', 'kaust.png', 'oregon.png' ];
+            var tempImg = [];
+
+            for(var x = 0; x < preloads.length; x++) {
+                tempImg[x] = new Image();
+                tempImg[x].src = 'img/klout/' + preloads[x];
+            }
+        })();
+
         $(function() {
+            // Klout peeps.
+            var peeps = [
+                [ 'cambridge', 'University of Cambridge, Department of Genetics, Systems Biology Centre', 'http://www.sysbiol.cam.ac.uk/' ],
+                [ 'jax', 'The Jackson Laboratory, Mouse Genome Informatics', 'http://www.informatics.jax.org/' ],
+                [ 'oicr', 'Ontario Institute for Cancer Research', 'http://oicr.on.ca/' ],
+                [ 'wisconsin', 'Medical College of Wisconsin', 'http://bbc.mcw.edu/' ],
+                [ 'galaxy', 'Galaxy Project', 'http://galaxyproject.org/' ],
+                [ 'mrc', 'Medical Research Council, Mitochondrial Biology Unit', 'http://www.mrc-mbu.cam.ac.uk/faculty-and-research/mitominer' ],
+                [ 'nibio', 'National Institute of Biomedical Innovation, Mizuguchi Laboratory', 'http://mizuguchilab.org/' ],
+                [ 'gmod', 'GMOD, the Generic Model Organism Database project', 'http://gmod.org/wiki/Main_Page' ],
+                [ 'go', 'Gene Ontology', 'http://www.geneontology.org/' ],
+                [ 'kaust', 'King Abdullah University of Science and Technology', 'http://www.kaust.edu.sa/' ],
+                [ 'oregon', 'University of Oregon', 'https://www.uoregon.edu/' ],
+                [ 'stanford', 'Stanford University, Department of Genetics', 'http://genetics.stanford.edu/' ]
+            ];
+
+            // Seed klout randomly.
+            (function(arr) {
+                var i = arr.length;
+                if ( i == 0 ) return false;
+                while ( --i ) {
+                    var j = Math.floor( Math.random() * ( i + 1 ) );
+                    var tempi = arr[i];
+                    var tempj = arr[j];
+                    arr[i] = tempj;
+                    arr[j] = tempi;
+                }
+                return peeps;
+            })(peeps);
+
+            $(peeps).each(function(i, el) {
+                var li;
+                $('#klout ul').append(
+                    li = $('<li/>').append($('<a/>', {
+                        'class': el[0],
+                        'text': el[1],
+                        'href': el[2],
+                        'target': '_blank'
+                    }))
+                );
+                // Hide elements on the second+ row.
+                if (li.position().top !== 0) {
+                    li.hide();
+                }
+            });
+
+            // Onclick klout more.
             var a = ($('#klout a.more')).click(function() {
                 a.remove();
-                $("#klout ul").slideDown(200);
+                $("#klout ul li").show();
             });
         });
     </script>
@@ -77,24 +136,8 @@
             <hr />
 
             <div id="klout" class="twelve columns">
-                <ul>
-                    <li><a target="_blank" href="" class="cambridge">University of Cambridge</a></li>
-                    <li><a target="_blank" href="" class="jax">s</a></li>
-                    <li><a target="_blank" href="" class="oicr">s</a></li>
-                    <li><a target="_blank" href="" class="wisconsin">s</a></li>
-                    <li><a target="_blank" href="" class="galaxy">Galaxy</a></li>
-                    <li><a target="_blank" href="" class="mrc">s</a></li>
-                    <li><a target="_blank" href="" class="nibio">s</a></li>
-                </ul>
+                <ul></ul>
                 <a class="more">More</a>
-                <ul style="display:none">
-                    <li><a target="_blank" href="" class="gmod">a</a></li>
-                    <li><a target="_blank" href="" class="go">a</a></li>
-                    <li><a target="_blank" href="" class="kaust">a</a></li>
-                    <li><a target="_blank" href="" class="oregon">a</a></li>
-                    <li><a target="_blank" href="" class="stanford">a</a></li>
-                    <li><a target="_blank" href="" class="intermod">a</a></li>
-                </ul>
             </div>
         </div>
     </div>
