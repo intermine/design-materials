@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Syntax — InterMine 1.1 documentation</title>
+        
+        <link rel="stylesheet" href="css/theme.css" type="text/css" />
+        
+        <link rel="stylesheet" href="css/fonts.css" type="text/css" />
+        
+        <link rel="stylesheet" href="css/pygments.css" type="text/css" />
+        <link rel="stylesheet" href="css/solarized-dark.css" type="text/css" />
+    </head>
+    <body>
+        <div class="related">
+            <h3>Navigation</h3>
+            <ul>
+                <li class="right" style="margin-right: 10px">
+                    <a href="http://aragorn:8000/genindex.html" title="General Index" accesskey="I">index</a>
+                </li>
+                <li class="right">
+                    <a href="http://aragorn:8000/about/privacy-policy.html" title="Privacy policy" accesskey="P">previous</a> |
+                </li>
+                <li><a href="http://aragorn:8000/index.html">InterMine 1.1 documentation</a> »</li>
+            </ul>
+        </div>
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+                <h3><a href="http://aragorn:8000/index.html">Table Of Contents</a></h3>
+                <ul>
+                    <li>
+                        <a class="reference internal" href="http://aragorn:8000/rst.html#">Syntax</a>
+                        <ul>
+                            <li><a class="reference internal" href="http://aragorn:8000/rst.html#enumerated-lists">Enumerated lists</a></li>
+                            <li><a class="reference internal" href="http://aragorn:8000/rst.html#definition-lists">Definition lists</a></li>
+                            <li><a class="reference internal" href="http://aragorn:8000/rst.html#source-code">Source Code</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Previous topic</h4>
+                <p class="topless"><a href="http://aragorn:8000/about/privacy-policy.html" title="previous chapter">Privacy policy</a></p>
+                <h3>This Page</h3>
+                <ul class="this-page-menu">
+                    <li><a href="http://aragorn:8000/_sources/rst.txt" rel="nofollow">Show Source</a></li>
+                </ul>
+                <div id="searchbox" style="">
+                    <h3>Quick search</h3>
+                    <form class="search" action="http://aragorn:8000/search.html" method="get">
+                        <input type="text" name="q" />
+                        <input type="submit" value="Go" />
+                        <input type="hidden" name="check_keywords" value="yes" />
+                        <input type="hidden" name="area" value="default" />
+                    </form>
+                    <p class="searchtip" style="font-size: 90%">
+                        Enter search terms or a module, class or function name.
+                    </p>
+                </div>
+                <script type="text/javascript">$('#searchbox').show(0);</script>
+            </div>
+        </div>
+        <div class="document">
+            <div class="documentwrapper">
+                <div class="bodywrapper">
+                    <div class="body">
+                        <div class="section" id="syntax">
+                            <h1>Syntax<a class="headerlink" href="http://aragorn:8000/rst.html#syntax" title="Permalink to this headline">¶</a></h1>
+                            <div class="section" id="enumerated-lists">
+                                <h2>Enumerated lists<a class="headerlink" href="http://aragorn:8000/rst.html#enumerated-lists" title="Permalink to this headline">¶</a></h2>
+                                <ol class="arabic simple" start="3">
+                                    <li>This is the first item</li>
+                                    <li>This is the second item</li>
+                                    <li>Enumerators are arabic numbers,  single letters, or roman numerals</li>
+                                    <li>List items should be sequentially numbered, but need not start at 1 (although not all formatters will honour the first index).</li>
+                                    <li>This item is auto-enumerated</li>
+                                </ol>
+                            </div>
+                            <div class="section" id="definition-lists">
+                                <h2>Definition lists<a class="headerlink" href="http://aragorn:8000/rst.html#definition-lists" title="Permalink to this headline">¶</a></h2>
+                                <dl class="docutils">
+                                    <dt>what</dt>
+                                    <dd>Definition lists associate a term with a definition.</dd>
+                                    <dt>how</dt>
+                                    <dd>The term is a one-line phrase, and the definition is one or more paragraphs or body elements, indented relative to the term. Blank lines are not allowed between term and definition.</dd>
+                                </dl>
+                            </div>
+                            <div class="section" id="source-code">
+                                <h2>Source Code<a class="headerlink" href="http://aragorn:8000/rst.html#source-code" title="Permalink to this headline">¶</a></h2>
+                                <p>This is a normal text paragraph. The next paragraph is a code sample</p>
+                                <div class="highlight-javascript">
+                                    <div class="highlight">
+                                        <pre><span class="cm">/* Type here! */</span>
+
+<span class="nx">Widget</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">hide</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">element</span>
+            <span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">});</span>
+    <span class="p">},</span>
+    <span class="nx">show</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">element</span>
+            <span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="nx">opacity</span><span class="o">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nx">top</span><span class="o">:</span> <span class="mi">0</span><span class="p">});</span>
+    <span class="p">},</span>
+    <span class="nx">element</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">".widget"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre>
+                                    </div>
+                                </div>
+                                <p>This is a normal text paragraph again followed by some CoffeeScript.</p>
+                                <div class="highlight-coffeescript">
+                                    <div class="highlight">
+                                        <pre><span class="c1"># Type here!</span>
+<span class="nv">Scope::find = </span><span class="nf">(name, options) -&gt;</span>
+    <span class="k">return</span> <span class="kc">true</span> <span class="k">if</span> <span class="nx">@check</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span>
+    <span class="nx">@add</span> <span class="nx">name</span><span class="p">,</span> <span class="s">"var"</span>
+    <span class="kc">false</span>
+</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearer"></div>
+        </div>
+        <div class="related">
+            <h3>Navigation</h3>
+            <ul>
+                <li class="right" style="margin-right: 10px">
+                    <a href="http://aragorn:8000/genindex.html" title="General Index">index</a>
+                </li>
+                <li class="right">
+                    <a href="http://aragorn:8000/about/privacy-policy.html" title="Privacy policy">previous</a> |
+                </li>
+                <li><a href="http://aragorn:8000/index.html">InterMine 1.1 documentation</a> »</li>
+            </ul>
+        </div>
+        <div class="footer">
+            © Copyright 2012, University of Cambridge.
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.Theme by <a href="http://github.com/vkvn">vkvn</a>
+        </div>
+    </body>
+    <style type="text/css"></style>
+</html>
