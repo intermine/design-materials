@@ -1,42 +1,66 @@
+// functions.
+gradient(a, b)
+    background: a
+    background: -moz-linear-gradient(top, a 0%, b 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,a), color-stop(100%,b))
+    background: -webkit-linear-gradient(top, a 0%, b 100%)
+    background: -o-linear-gradient(top, a 0%, b 100%)
+    background: -ms-linear-gradient(top, a 0%, b 100%)
+    background: linear-gradient(to bottom, a 0%, b 100%)
+
+corners(a)
+    -webkit-border-radius: a
+    -moz-border-radius: a
+    border-radius: a
+
+// Sphinx layout.
 @import url("basic.css")
 
+// Fonts.
+@import url('http://fonts.googleapis.com/css?family=Droid+Sans:400,800')
+@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro:400')
+
+html
+    background: url('../img/pattern-2.jpg') repeat 0 0
+
 body
-    font-family: 'Open Sans', sans-serif
-    font-size: 14px
+    font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, 'Lucida Grande', sans-serif
+    font-size: 15px
     line-height: 150%
     text-align: center
-    color: #002b36
+    color: #595455
     padding: 0
-    margin: 0px 80px 0px 80px
-    min-width: 740px   
-    -moz-box-shadow: 0px 0px 10px #93a1a1
-    -webkit-box-shadow: 0px 0px 10px #93a1a1
-    box-shadow: 0px 0px 10px #93a1a1
-    background: url("../img/subtle_dots.png") repeat
+    //margin: 0px 80px 0px 80px
+    margin: 0
+    min-width: 740px
+    //-moz-box-shadow: 0px 0px 10px #93a1a1
+    //-webkit-box-shadow: 0px 0px 10px #93a1a1
+    //box-shadow: 0px 0px 10px #93a1a1
 
 div.document
-    background-color: #fcfcfc
     text-align: left
-    background-repeat: repeat-x
+    background: #FFF
 
 div.bodywrapper
     margin: 0 240px 0 0
-    border-right: 1px dotted #eee8d5
 
 div.body
     background-color: white
     margin: 0
-    padding: 0.5em 20px 20px 20px
+    padding: 0 60px 20px 20px
 
 div.related
     font-size: 1em
-    background: #002b36
-    color: #839496
+    background: #829B02 url('../img/pattern-1.jpg') repeat 0 0
+    color: #FFF
     padding: 5px 0px
+    border-bottom: 1px solid #596A02
 
     ul
         height: 2em
         margin: 2px
+        background: url('../img/logo.png') no-repeat 20px 4px
+        padding-left: 50px
 
         li
             margin: 0
@@ -44,18 +68,21 @@ div.related
             height: 2em
             float: left
 
+            &.right a
+                color: #f2fbc3
+
             a
                 margin: 0
                 padding: 2px 5px
                 line-height: 2em
                 text-decoration: none
-                color: #839496
+                color: #FFF
 
-                &:hover
-                    background-color: #073642
-                    -webkit-border-radius: 2px
-                    -moz-border-radius: 2px
-                    border-radius: 2px
+                // &:hover
+                //     background-color: rgba(0,0,0,0.15)
+                //     -webkit-border-radius: 2px
+                //     -moz-border-radius: 2px
+                //     border-radius: 2px
 
         &.right
             float: right
@@ -73,17 +100,22 @@ div.sphinxsidebar
     text-align: left
 
     h3, h4
-        margin: 1em 0 0.5em 0
-        font-size: 1em
-        padding: 0.7em
-        background-color: #eeeff1
+        font-size: 18px
+        margin: 10px 0
 
-    h3 a
-        color: #2E3436
+        &:first-child
+            margin-top: 36px
+
+        &:not(:first-child)
+            margin-top: 26px
+
+    h3 a, h4 a
+        text-decoration: none
+        color: #073642
 
     ul
         padding-left: 1.5em
-        margin-top: 7px
+        margin: 0
         padding: 0
         line-height: 150%
         color: #586e75
@@ -91,12 +123,36 @@ div.sphinxsidebar
         ul
             margin-left: 20px
 
-    input
-        border: 1px solid #eee8d5
+    p.topless
+        margin: 0
 
+    #searchbox
+        margin-top: 30px
+
+        p
+            display: none
+
+        input
+            border: 1px solid #E0DDDD
+            font-size: 12px
+            padding: 4px
+            corners 3px
+
+            &[type="text"]
+                width: 150px
+
+            &[type="submit"]
+                gradient #f9f9f9, #f6f6f6
+                shadow 0px 1px 2px 0px, rgba(0,0,0,.1)
+                padding: 4px 10px
+                color: #999
+                text-shadow: 1px 1px 0px #FFF
+                cursor: pointer
+                width: auto
 
 div.footer
-    background-color: #93a1a1
+    background: url('../img/pattern-2.jpg') repeat 0 0
+    //border-top: 1px solid #353A37
     color: #eee
     padding: 3px 8px 3px 0
     clear: both
@@ -111,27 +167,23 @@ p
     margin: 0.8em 0 0.5em 0
 
 div.body a, div.sphinxsidebarwrapper a
-    color: #268bd2
-    text-decoration: none
-
-div.body a:hover, div.sphinxsidebarwrapper a:hover
-    border-bottom: 1px solid #268bd2
+    color: #6b7f01
 
 h1, h2, h3, h4, h5, h6
-    font-family: "Open Sans", sans-serif
+    font-family: Calibri, "Droid Sans"
     font-weight: 300
 
 h1
     margin: 0
     padding: 0.7em 0 0.3em 0
-    line-height: 1.2em
-    color: #002b36
-    text-shadow: #eee 0.1em 0.1em 0.1em
+    line-height: 44px
+    color: #231F20
+    font-size: 34px
 
 h2
     margin: 1.3em 0 0.2em 0
     padding: 0 0 10px 0
-    color: #073642
+    color: #595455
     border-bottom: 1px solid #eee
 
 h3
@@ -142,14 +194,20 @@ h3, h4, h5, h6
     color: #073642
     border-bottom: 1px dotted #eee
 
-div.body h1 a, div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a
-    color: #657B83!important
+dt
+    font-weight: bold
+
+div.body h1 a
+    color: #231F20 !important
+
+div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a
+    color: #595455 !important
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor
     display: none
     margin: 0 0 0 0.3em
     padding: 0 0.2em 0 0.2em
-    color: #aaa!important
+    color: #AAA !important
 
 h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor,
 h5:hover a.anchor, h6:hover a.anchor
@@ -161,15 +219,15 @@ h5 a.anchor:hover, h6 a.anchor:hover
     background-color: #eee
 
 a.headerlink
-    color: #c60f0f!important
+    color: #c60f0f !important
     font-size: 1em
     margin-left: 6px
     padding: 0 4px 0 4px
-    text-decoration: none!important
+    text-decoration: none !important
 
     &:hover
         background-color: #ccc
-        color: white!important
+        color: white !important
 
 cite, code, tt
     font-family: 'Source Code Pro', monospace

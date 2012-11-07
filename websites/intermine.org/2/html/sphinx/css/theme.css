@@ -1,41 +1,43 @@
 @import url("basic.css");
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans:400,800");
+@import url("http://fonts.googleapis.com/css?family=Source+Code+Pro:400");
+html {
+  background: url("../img/pattern-2.jpg") repeat 0 0;
+}
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: 15px;
   line-height: 150%;
   text-align: center;
-  color: #002b36;
+  color: #595455;
   padding: 0;
-  margin: 0px 80px 0px 80px;
+  margin: 0;
   min-width: 740px;
-  -moz-box-shadow: 0px 0px 10px #93a1a1;
-  -webkit-box-shadow: 0px 0px 10px #93a1a1;
-  box-shadow: 0px 0px 10px #93a1a1;
-  background: url("../img/subtle_dots.png") repeat;
 }
 div.document {
-  background-color: #fcfcfc;
   text-align: left;
-  background-repeat: repeat-x;
+  background: #fff;
 }
 div.bodywrapper {
   margin: 0 240px 0 0;
-  border-right: 1px dotted #eee8d5;
 }
 div.body {
   background-color: #fff;
   margin: 0;
-  padding: 0.5em 20px 20px 20px;
+  padding: 0 60px 20px 20px;
 }
 div.related {
   font-size: 1em;
-  background: #002b36;
-  color: #839496;
+  background: #829b02 url("../img/pattern-1.jpg") repeat 0 0;
+  color: #fff;
   padding: 5px 0px;
+  border-bottom: 1px solid #596a02;
 }
 div.related ul {
   height: 2em;
   margin: 2px;
+  background: url("../img/logo.png") no-repeat 20px 4px;
+  padding-left: 50px;
 }
 div.related ul li {
   margin: 0;
@@ -43,18 +45,15 @@ div.related ul li {
   height: 2em;
   float: left;
 }
+div.related ul li.right a {
+  color: #f2fbc3;
+}
 div.related ul li a {
   margin: 0;
   padding: 2px 5px;
   line-height: 2em;
   text-decoration: none;
-  color: #839496;
-}
-div.related ul li a:hover {
-  background-color: #073642;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  color: #fff;
 }
 div.related ul.right {
   float: right;
@@ -73,17 +72,25 @@ div.sphinxsidebar {
 }
 div.sphinxsidebar h3,
 div.sphinxsidebar h4 {
-  margin: 1em 0 0.5em 0;
-  font-size: 1em;
-  padding: 0.7em;
-  background-color: #eeeff1;
+  font-size: 18px;
+  margin: 10px 0;
 }
-div.sphinxsidebar h3 a {
-  color: #2e3436;
+div.sphinxsidebar h3:first-child,
+div.sphinxsidebar h4:first-child {
+  margin-top: 36px;
+}
+div.sphinxsidebar h3:not(:first-child),
+div.sphinxsidebar h4:not(:first-child) {
+  margin-top: 26px;
+}
+div.sphinxsidebar h3 a,
+div.sphinxsidebar h4 a {
+  text-decoration: none;
+  color: #073642;
 }
 div.sphinxsidebar ul {
   padding-left: 1.5em;
-  margin-top: 7px;
+  margin: 0;
   padding: 0;
   line-height: 150%;
   color: #586e75;
@@ -91,11 +98,43 @@ div.sphinxsidebar ul {
 div.sphinxsidebar ul ul {
   margin-left: 20px;
 }
-div.sphinxsidebar input {
-  border: 1px solid #eee8d5;
+div.sphinxsidebar p.topless {
+  margin: 0;
+}
+div.sphinxsidebar #searchbox {
+  margin-top: 30px;
+}
+div.sphinxsidebar #searchbox p {
+  display: none;
+}
+div.sphinxsidebar #searchbox input {
+  border: 1px solid #e0dddd;
+  font-size: 12px;
+  padding: 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+div.sphinxsidebar #searchbox input[type="text"] {
+  width: 150px;
+}
+div.sphinxsidebar #searchbox input[type="submit"] {
+  background: #f9f9f9;
+  background: -moz-linear-gradient(top, #f9f9f9 0%, #f6f6f6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #f6f6f6));
+  background: -webkit-linear-gradient(top, #f9f9f9 0%, #f6f6f6 100%);
+  background: -o-linear-gradient(top, #f9f9f9 0%, #f6f6f6 100%);
+  background: -ms-linear-gradient(top, #f9f9f9 0%, #f6f6f6 100%);
+  background: linear-gradient(to bottom, #f9f9f9 0%, #f6f6f6 100%);
+  shadow: 0px 1px 2px 0px, rgba(0,0,0,0.1);
+  padding: 4px 10px;
+  color: #999;
+  text-shadow: 1px 1px 0px #fff;
+  cursor: pointer;
+  width: auto;
 }
 div.footer {
-  background-color: #93a1a1;
+  background: url("../img/pattern-2.jpg") repeat 0 0;
   color: #eee;
   padding: 3px 8px 3px 0;
   clear: both;
@@ -111,12 +150,7 @@ p {
 }
 div.body a,
 div.sphinxsidebarwrapper a {
-  color: #268bd2;
-  text-decoration: none;
-}
-div.body a:hover,
-div.sphinxsidebarwrapper a:hover {
-  border-bottom: 1px solid #268bd2;
+  color: #6b7f01;
 }
 h1,
 h2,
@@ -124,20 +158,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Open Sans", sans-serif;
+  font-family: Calibri, "Droid Sans";
   font-weight: 300;
 }
 h1 {
   margin: 0;
   padding: 0.7em 0 0.3em 0;
-  line-height: 1.2em;
-  color: #002b36;
-  text-shadow: #eee 0.1em 0.1em 0.1em;
+  line-height: 44px;
+  color: #231f20;
+  font-size: 34px;
 }
 h2 {
   margin: 1.3em 0 0.2em 0;
   padding: 0 0 10px 0;
-  color: #073642;
+  color: #595455;
   border-bottom: 1px solid #eee;
 }
 h3 {
@@ -151,13 +185,18 @@ h6 {
   color: #073642;
   border-bottom: 1px dotted #eee;
 }
-div.body h1 a,
+dt {
+  font-weight: bold;
+}
+div.body h1 a {
+  color: #231f20 !important;
+}
 div.body h2 a,
 div.body h3 a,
 div.body h4 a,
 div.body h5 a,
 div.body h6 a {
-  color: #657b83 !important;
+  color: #595455 !important;
 }
 h1 a.anchor,
 h2 a.anchor,
