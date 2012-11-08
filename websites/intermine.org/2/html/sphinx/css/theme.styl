@@ -47,6 +47,28 @@ body
     //-webkit-box-shadow: 0px 0px 10px #93a1a1
     //box-shadow: 0px 0px 10px #93a1a1
 
+a em
+    font-style: normal
+
+form
+    input
+        border: 1px solid #E0DDDD !important
+        font-size: 12px !important
+        padding: 4px
+        corners 3px
+
+        &[type="text"]
+            width: 150px !important
+
+        &[type="submit"]
+            gradient #f9f9f9, #f6f6f6
+            shadow 0px 1px 2px 0px, rgba(0,0,0,.1)
+            padding: 4px 10px
+            color: #999
+            text-shadow: 1px 1px 0px #FFF
+            cursor: pointer
+            width: auto !important
+
 div.document
     text-align: left
     background: #FFF
@@ -142,24 +164,6 @@ div.sphinxsidebar
         p
             display: none
 
-        input
-            border: 1px solid #E0DDDD
-            font-size: 12px
-            padding: 4px
-            corners 3px
-
-            &[type="text"]
-                width: 150px
-
-            &[type="submit"]
-                gradient #f9f9f9, #f6f6f6
-                shadow 0px 1px 2px 0px, rgba(0,0,0,.1)
-                padding: 4px 10px
-                color: #999
-                text-shadow: 1px 1px 0px #FFF
-                cursor: pointer
-                width: auto
-
 div.footer
     background: url('../img/pattern-2.jpg') repeat 0 0
     //border-top: 1px solid #353A37
@@ -212,6 +216,9 @@ div.body h1 a
 
 div.body h2 a, div.body h3 a, div.body h4 a, div.body h5 a, div.body h6 a
     color: #595455 !important
+
+div.body h3 a
+    color: #073642 !important
 
 h1 a.anchor, h2 a.anchor, h3 a.anchor, h4 a.anchor, h5 a.anchor, h6 a.anchor
     display: none
