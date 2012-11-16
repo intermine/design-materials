@@ -81,16 +81,45 @@ div.body
     margin: 0
     padding: 0 60px 20px 20px
 
+    // literals
+    tt.docutils.literal
+        border-bottom: 1px solid #ddd
+
+    // code blocks
     div.highlight
         margin: 1em 2px
+        border: 1px solid #eee
 
+        pre
+            margin: 0 0.5em
+
+    // figures
+    div.figure
+        background: #F7F7F7
+        box-shadow: 0px 8px 6px -8px #93a1a1
+        position: relative
+        padding: 37px 0 5px 0
+
+        p.caption
+            position: absolute
+            top: 0
+            display: block
+            width: 99%
+            background: #bb8844
+            color: #FFF
+            font-weight: 800
+            font-size: 14px
+            margin: 0
+            padding: 0.2em 0 0.2em 1%
+            text-align: left
+
+    // tables
     table.docutils:not(.footnote)
         margin: 1em 2px
 
         thead
             th
                 padding: 6px 10px
-                text-align: center
         
         tbody
             tr

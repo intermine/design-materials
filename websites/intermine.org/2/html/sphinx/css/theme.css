@@ -65,15 +65,40 @@ div.body {
   margin: 0;
   padding: 0 60px 20px 20px;
 }
+div.body tt.docutils.literal {
+  border-bottom: 1px solid #ddd;
+}
 div.body div.highlight {
   margin: 1em 2px;
+  border: 1px solid #eee;
+}
+div.body div.highlight pre {
+  margin: 0 0.5em;
+}
+div.body div.figure {
+  background: #f7f7f7;
+  box-shadow: 0px 8px 6px -8px #93a1a1;
+  position: relative;
+  padding: 37px 0 5px 0;
+}
+div.body div.figure p.caption {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 99%;
+  background: #b84;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  margin: 0;
+  padding: 0.2em 0 0.2em 1%;
+  text-align: left;
 }
 div.body table.docutils:not(.footnote) {
   margin: 1em 2px;
 }
 div.body table.docutils:not(.footnote) thead th {
   padding: 6px 10px;
-  text-align: center;
 }
 div.body table.docutils:not(.footnote) tbody tr td {
   padding: 4px 10px;
