@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Actor)
+
+$minsk = #312E77
+
+html
+    background: url('../img/tml.png') no-repeat 120px 200px
+    min-height: 1000px
+
+body
+    background: #EEE
+    font-family: Arial
+
+a
+    color: $minsk
+
+    &:hover
+        color: darken($minsk, 20%)
+
+ul
+    list-style-type: none
+
+    li
+        display: inline-block
+
+header#top
+    background: #2D2F6C
+
+    #wrap.row
+        background: url('../img/highlight.jpg') no-repeat top left
+        height: 182px
+
+    a
+        color: #FFF
+
+    #logo
+        background: url('../img/logo.png') no-repeat top left
+        width: 455px
+        height: 67px
+        margin: 40px 0
+
+        p
+            height: 0
+            overflow: hidden
+
+    ul#quick
+        text-align: right
+
+        li
+            &:not(:last-child)::after
+                content: '|'
+                color: #FFF
+                display: inline-block
+
+            a
+                font-size: 11px
+                display: inline-block
+                padding: 0 5px 0 3px
+
+    ul#main
+        display: block
+        background: rgba(255,255,255,0.05)
+        -webkit-border-radius: 8px 8px 0px 0px;
+        border-radius: 8px 8px 0px 0px;
+
+        li
+            a
+                display: block
+                font-size: 12px
+                font-weight: bold
+                text-transform: uppercase
+                padding: 6px 20px
+                text-shadow: 1px 1px 0px #000;
+
+                span
+                    font-size: 15px

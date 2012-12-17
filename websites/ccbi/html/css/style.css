@@ -1,0 +1,71 @@
+@import url("http://fonts.googleapis.com/css?family=Actor");
+html {
+  background: url("../img/tml.png") no-repeat 120px 200px;
+  min-height: 1000px;
+}
+body {
+  background: #eee;
+  font-family: Arial;
+}
+a {
+  color: #312e77;
+}
+a:hover {
+  color: #27255f;
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  display: inline-block;
+}
+header#top {
+  background: #2d2f6c;
+}
+header#top #wrap.row {
+  background: url("../img/highlight.jpg") no-repeat top left;
+  height: 182px;
+}
+header#top a {
+  color: #fff;
+}
+header#top #logo {
+  background: url("../img/logo.png") no-repeat top left;
+  width: 455px;
+  height: 67px;
+  margin: 40px 0;
+}
+header#top #logo p {
+  height: 0;
+  overflow: hidden;
+}
+header#top ul#quick {
+  text-align: right;
+}
+header#top ul#quick li:not(:last-child)::after {
+  content: '|';
+  color: #fff;
+  display: inline-block;
+}
+header#top ul#quick li a {
+  font-size: 11px;
+  display: inline-block;
+  padding: 0 5px 0 3px;
+}
+header#top ul#main {
+  display: block;
+  background: rgba(255,255,255,0.05);
+  -webkit-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
+}
+header#top ul#main li a {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  text-shadow: 1px 1px 0px #000;
+}
+header#top ul#main li a span {
+  font-size: 15px;
+}
