@@ -1,10 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Actor");
 html {
-  background: url("../img/tml.png") no-repeat 120px 200px;
+  background: #eee url("../img/tml.png") no-repeat 120px 500px;
   min-height: 1000px;
-}
-body {
-  background: #eee;
   font-family: Arial;
 }
 a {
@@ -22,7 +19,7 @@ ul li {
 header#top {
   background: #2d2f6c;
 }
-header#top #wrap.row {
+header#top .row.wrap {
   background: url("../img/highlight.jpg") no-repeat top left;
   height: 182px;
 }
@@ -68,4 +65,38 @@ header#top ul#main li a {
 }
 header#top ul#main li a span {
   font-size: 15px;
+}
+#content {
+  background: #eee;
+}
+#content .row.wrap {
+  background: #fff;
+  padding: 20px 0;
+}
+#content #side ul {
+  margin: 0;
+  border-top: 1px solid #d5d5d5;
+}
+#content #side ul li {
+  display: block;
+}
+#content #side ul li a {
+  font-size: 12px;
+  color: #666;
+  padding: 2px 0 2px 15px;
+  background: url("../img/arrow.png") no-repeat 4px 9px;
+  border-bottom: 1px solid #d5d5d5;
+  display: block;
+  width: 100%;
+}
+#content #side ul li a:hover,
+#content #side ul li a.active {
+  background-color: #f8f6f8;
+}
+#content #side ul li ul {
+  border: 0;
+}
+#content #side ul li ul li a {
+  background: none;
+  padding-left: 30px;
 }

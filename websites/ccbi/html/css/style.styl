@@ -3,11 +3,8 @@
 $minsk = #312E77
 
 html
-    background: url('../img/tml.png') no-repeat 120px 200px
+    background: #EEE url('../img/tml.png') no-repeat 120px 500px
     min-height: 1000px
-
-body
-    background: #EEE
     font-family: Arial
 
 a
@@ -25,7 +22,7 @@ ul
 header#top
     background: #2D2F6C
 
-    #wrap.row
+    .row.wrap
         background: url('../img/highlight.jpg') no-repeat top left
         height: 182px
 
@@ -73,3 +70,38 @@ header#top
 
                 span
                     font-size: 15px
+
+#content
+    background: #EEE
+
+    .row.wrap
+        background: #FFF
+        padding: 20px 0
+
+    #side
+        ul
+            margin: 0
+            border-top: 1px solid #D5D5D5
+
+            li
+                display: block
+
+                a
+                    font-size: 12px
+                    color: #666
+                    padding: 2px 0 2px 15px
+                    background: url('../img/arrow.png') no-repeat 4px 9px
+                    border-bottom: 1px solid #D5D5D5
+                    display: block
+                    width: 100%
+
+                    &:hover, &.active
+                        background-color: #F8F6F8
+
+                ul
+                    border: 0
+
+                    li                        
+                        a
+                            background: none
+                            padding-left: 30px
