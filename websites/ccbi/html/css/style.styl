@@ -1,9 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Actor)
+@import url(http://fonts.googleapis.com/css?family=Gafata)
 
 $minsk = #312E77
 
-html
-    background: #EEE url('../img/tml.png') no-repeat 120px 500px
+body
+    font-family: Gafata !important
+    background: #EEE
     min-height: 1000px
     font-family: Arial
 
@@ -23,6 +25,8 @@ h1, h2
 
 header#top
     background: #2E2F6F
+    position: relative
+    z-index: 2
 
     .row.wrap
         background: url('../img/highlight.jpg') no-repeat top left
@@ -51,23 +55,25 @@ header#top
                 display: inline-block
 
             a
-                font-size: 11px
+                font-size: 12px
                 display: inline-block
-                padding: 0 5px 0 3px
+                padding: 0 8px 0 3px
 
     ul#main
+        font-family: Actor
         display: block
         background: rgba(255,255,255,0.05)
-        -webkit-border-radius: 8px 8px 0px 0px;
         border-radius: 8px 8px 0px 0px;
 
         li
+            margin: 0 14px
+
             a
                 display: block
-                font-size: 12px
+                font-size: 13px
                 font-weight: bold
                 text-transform: uppercase
-                padding: 6px 20px
+                padding: 6px
                 text-shadow: 1px 1px 0px #000;
 
                 span
@@ -79,6 +85,7 @@ header#top
     .row.wrap
         background: #FFF
         padding: 30px 0
+        box-shadow:  0px 0px 25px 0px rgba(0, 0, 0, .05)
 
     #side
         ul
@@ -89,9 +96,9 @@ header#top
                 display: block
 
                 a
-                    font-size: 12px
+                    font-size: 13px
                     color: #666
-                    padding: 2px 0 2px 15px
+                    padding: 3px 0 3px 15px
                     background: url('../img/arrow.png') no-repeat 4px 9px
                     border-bottom: 1px solid #D5D5D5
                     display: block
@@ -110,6 +117,8 @@ header#top
 
     .splash
         position: relative
+        height: 133px
+        margin-bottom: 30px
 
         img
             position: absolute
@@ -135,6 +144,22 @@ header#top
         color: $minsk
         font-size: 21px
 
+    #page
+        p
+            font-size: 14px
+            text-align: justify
+
+        a
+            color: $minsk
+            text-decoration: underline
+
+        ul
+            margin-left: 20px
+
+            li
+                background: url('../img/arrow.png') no-repeat 4px 9px
+                padding-left: 17px
+
     ul#talks
         border-top: 1px solid #D5D5D5
 
@@ -154,32 +179,32 @@ header#top
                     text-transform: uppercase
                     display: block
                     width: 25px
-                    font-size: 11px
-                    line-height: 11px
+                    font-size: 12px
+                    line-height: 12px
 
                 .name
-                    margin-bottom: 2px
+                    margin-bottom: 1px
 
                 .day
-                    font-size: 28px
-                    line-height: 22px
+                    font-size: 32px
+                    line-height: 24px
                     letter-spacing: -4px
                     width: 26px
                     text-align: center
                     margin-right: 6px
 
                 .title
-                    font-size: 12px
-                    line-height: 12px
+                    font-size: 13px
+                    line-height: 13px
                     width: 163px
             
             .speaker
                 color: #977D5C
                 margin: 4px 0
-                font-size: 12px
+                font-size: 13px
                 line-height: 16px
 
             .venue
                 color: #666
-                font-size: 12px
-                line-height: 12px
+                font-size: 13px
+                line-height: 13px

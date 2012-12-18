@@ -1,6 +1,8 @@
 @import url("http://fonts.googleapis.com/css?family=Actor");
-html {
-  background: #eee url("../img/tml.png") no-repeat 120px 500px;
+@import url("http://fonts.googleapis.com/css?family=Gafata");
+body {
+  font-family: Gafata !important;
+  background: #eee;
   min-height: 1000px;
   font-family: Arial;
 }
@@ -21,6 +23,8 @@ h2 {
 }
 header#top {
   background: #2e2f6f;
+  position: relative;
+  z-index: 2;
 }
 header#top .row.wrap {
   background: url("../img/highlight.jpg") no-repeat top left;
@@ -48,22 +52,25 @@ header#top ul#quick li:not(:last-child)::after {
   display: inline-block;
 }
 header#top ul#quick li a {
-  font-size: 11px;
+  font-size: 12px;
   display: inline-block;
-  padding: 0 5px 0 3px;
+  padding: 0 8px 0 3px;
 }
 header#top ul#main {
+  font-family: Actor;
   display: block;
   background: rgba(255,255,255,0.05);
-  -webkit-border-radius: 8px 8px 0px 0px;
   border-radius: 8px 8px 0px 0px;
+}
+header#top ul#main li {
+  margin: 0 14px;
 }
 header#top ul#main li a {
   display: block;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 6px 20px;
+  padding: 6px;
   text-shadow: 1px 1px 0px #000;
 }
 header#top ul#main li a span {
@@ -75,6 +82,7 @@ header#top ul#main li a span {
 #content .row.wrap {
   background: #fff;
   padding: 30px 0;
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.05);
 }
 #content #side ul {
   margin: 0;
@@ -84,9 +92,9 @@ header#top ul#main li a span {
   display: block;
 }
 #content #side ul li a {
-  font-size: 12px;
+  font-size: 13px;
   color: #666;
-  padding: 2px 0 2px 15px;
+  padding: 3px 0 3px 15px;
   background: url("../img/arrow.png") no-repeat 4px 9px;
   border-bottom: 1px solid #d5d5d5;
   display: block;
@@ -105,6 +113,8 @@ header#top ul#main li a span {
 }
 #content .splash {
   position: relative;
+  height: 133px;
+  margin-bottom: 30px;
 }
 #content .splash img {
   position: absolute;
@@ -130,6 +140,21 @@ header#top ul#main li a span {
   color: #312e77;
   font-size: 21px;
 }
+#content #page p {
+  font-size: 14px;
+  text-align: justify;
+}
+#content #page a {
+  color: #312e77;
+  text-decoration: underline;
+}
+#content #page ul {
+  margin-left: 20px;
+}
+#content #page ul li {
+  background: url("../img/arrow.png") no-repeat 4px 9px;
+  padding-left: 17px;
+}
 #content ul#talks {
   border-top: 1px solid #d5d5d5;
 }
@@ -150,33 +175,33 @@ header#top ul#main li a span {
   text-transform: uppercase;
   display: block;
   width: 25px;
-  font-size: 11px;
-  line-height: 11px;
+  font-size: 12px;
+  line-height: 12px;
 }
 #content ul#talks li .head .name {
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 #content ul#talks li .head .day {
-  font-size: 28px;
-  line-height: 22px;
+  font-size: 32px;
+  line-height: 24px;
   letter-spacing: -4px;
   width: 26px;
   text-align: center;
   margin-right: 6px;
 }
 #content ul#talks li .head .title {
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 13px;
+  line-height: 13px;
   width: 163px;
 }
 #content ul#talks li .speaker {
   color: #977d5c;
   margin: 4px 0;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 16px;
 }
 #content ul#talks li .venue {
   color: #666;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 13px;
+  line-height: 13px;
 }
