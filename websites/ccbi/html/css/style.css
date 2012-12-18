@@ -7,17 +7,20 @@ html {
 a {
   color: #312e77;
 }
-a:hover {
-  color: #27255f;
-}
 ul {
   list-style-type: none;
 }
 ul li {
   display: inline-block;
 }
+h1,
+h2 {
+  font-family: Actor;
+  font-weight: 400;
+  margin-top: 0;
+}
 header#top {
-  background: #2d2f6c;
+  background: #2e2f6f;
 }
 header#top .row.wrap {
   background: url("../img/highlight.jpg") no-repeat top left;
@@ -112,8 +115,6 @@ header#top ul#main li a span {
   top: 34px;
   left: 12px;
   color: #dcdcd4;
-  font-family: Actor;
-  font-weight: 400;
   font-size: 36px;
   width: 160px;
   line-height: 32px;
@@ -124,4 +125,58 @@ header#top ul#main li a span {
   color: #fff;
   font-size: 28px;
   display: block;
+}
+#content h2 {
+  color: #312e77;
+  font-size: 21px;
+}
+#content ul#talks {
+  border-top: 1px solid #d5d5d5;
+}
+#content ul#talks li {
+  border-bottom: 1px solid #d5d5d5;
+  padding: 13px 0;
+}
+#content ul#talks li .head {
+  color: #312e77;
+}
+#content ul#talks li .head:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#content ul#talks li .head .name,
+#content ul#talks li .head .month {
+  text-transform: uppercase;
+  display: block;
+  width: 25px;
+  font-size: 11px;
+  line-height: 11px;
+}
+#content ul#talks li .head .name {
+  margin-bottom: 2px;
+}
+#content ul#talks li .head .day {
+  font-size: 28px;
+  line-height: 22px;
+  letter-spacing: -4px;
+  width: 26px;
+  text-align: center;
+  margin-right: 6px;
+}
+#content ul#talks li .head .title {
+  font-size: 12px;
+  line-height: 12px;
+  width: 163px;
+}
+#content ul#talks li .speaker {
+  color: #977d5c;
+  margin: 4px 0;
+  font-size: 12px;
+  line-height: 16px;
+}
+#content ul#talks li .venue {
+  color: #666;
+  font-size: 12px;
+  line-height: 12px;
 }

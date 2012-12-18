@@ -10,17 +10,19 @@ html
 a
     color: $minsk
 
-    &:hover
-        color: darken($minsk, 20%)
-
 ul
     list-style-type: none
 
     li
         display: inline-block
 
+h1, h2
+    font-family: Actor
+    font-weight: 400
+    margin-top: 0
+
 header#top
-    background: #2D2F6C
+    background: #2E2F6F
 
     .row.wrap
         background: url('../img/highlight.jpg') no-repeat top left
@@ -118,8 +120,6 @@ header#top
             top: 34px
             left: 12px
             color: #DCDCD4
-            font-family: Actor
-            font-weight: 400
             font-size: 36px
             width: 160px
             line-height: 32px
@@ -130,3 +130,56 @@ header#top
                 color: #FFF
                 font-size: 28px
                 display: block
+
+    h2
+        color: $minsk
+        font-size: 21px
+
+    ul#talks
+        border-top: 1px solid #D5D5D5
+
+        li
+            border-bottom: 1px solid #D5D5D5
+            padding: 13px 0
+
+            .head
+                color: $minsk
+
+                &:after
+                    content: ""
+                    clear: both
+                    display: block
+
+                .name, .month
+                    text-transform: uppercase
+                    display: block
+                    width: 25px
+                    font-size: 11px
+                    line-height: 11px
+
+                .name
+                    margin-bottom: 2px
+
+                .day
+                    font-size: 28px
+                    line-height: 22px
+                    letter-spacing: -4px
+                    width: 26px
+                    text-align: center
+                    margin-right: 6px
+
+                .title
+                    font-size: 12px
+                    line-height: 12px
+                    width: 163px
+            
+            .speaker
+                color: #977D5C
+                margin: 4px 0
+                font-size: 12px
+                line-height: 16px
+
+            .venue
+                color: #666
+                font-size: 12px
+                line-height: 12px
