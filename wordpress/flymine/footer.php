@@ -26,6 +26,9 @@
             <a href="http://ratmine.mcw.edu/ratmine">RatMine</a>
       </p>
       <p>
+          FlyMine is funded through a grant from the <a href="http://www.genome.gov" target="_new" title="U.S. NIH/NHGRI">U.S. NIH/NHGRI</a>.
+      </p>
+      <p>
           &copy; 2010 Department of Genetics, University of Cambridge, Downing Street, Cambridge CB2 3EH, United Kingdom
       </p>
       <p>
