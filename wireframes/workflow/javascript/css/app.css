@@ -1,0 +1,138 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700");
+body,
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: Lato;
+}
+.row {
+  width: auto;
+}
+#wrapper {
+  width: 100%;
+  min-width: 1000px;
+  min-height: 100%;
+}
+header#top {
+  width: 100%;
+}
+header#top .inner {
+  margin: 0 auto;
+  padding: 10px;
+}
+header#top h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: normal;
+  display: inline-block;
+}
+header#top .account {
+  margin-top: 4px;
+}
+header#top .account span {
+  display: inline-block;
+  margin: 0 4px;
+  font-size: 8px;
+  height: 5px;
+  margin-bottom: 4px;
+}
+section#middle {
+  width: 100%;
+  padding: 0 0 100px;
+  height: 100%;
+  position: relative;
+}
+section#middle:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+section#middle aside#sidebar {
+  float: left;
+  width: 250px;
+  margin-left: -100%;
+  position: relative;
+}
+section#middle aside#sidebar .wrap {
+  height: 100%;
+  position: relative;
+  padding: 10px 0;
+}
+section#middle aside#sidebar ul {
+  list-style-type: none;
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+section#middle aside#sidebar ul li {
+  margin: 10px 0;
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+}
+section#middle #widget {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  min-height: 100%;
+}
+section#middle #widget h1 {
+  font-size: 22px;
+}
+section#middle #widget .wrap {
+  padding: 0 0 0 250px;
+}
+section#middle #widget .half {
+  float: left;
+  width: 50%;
+}
+footer#bottom {
+  width: 250px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+footer#bottom p {
+  font-style: italic;
+  padding: 0px 10px;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+footer#bottom ul {
+  list-style-type: none;
+  margin: 0 0 0 10px;
+}
+footer#bottom ul li {
+  background-repeat: no-repeat;
+  background-position: 0 3px;
+}
+footer#bottom ul li a {
+  margin-left: 25px;
+}
+footer#bottom #history {
+  margin-top: 20px;
+  padding: 20px 10px;
+}
+.button {
+  display: inline-block;
+  padding: 6px 30px;
+  text-decoration: none;
+  position: relative;
+  line-height: 1;
+}
+.button:active {
+  top: 1px;
+}
