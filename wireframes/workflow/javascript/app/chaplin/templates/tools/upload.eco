@@ -1,7 +1,7 @@
 <div class="wrap">
     <div class="row">
         <div class="twelve columns">
-            <h1>Upload a List</h1>
+            <h1>Upload a List - Step #1</h1>
             <p>Select the type of list to create and either enter in a list
                 of identifiers or upload identifiers from a file. A search will
                 be performed for all the identifiers in your list.</p>
@@ -21,6 +21,6 @@
         </div>
     </form>
     <div class="row twelve columns">
-        <a class="button" href="#">Upload a list</span></a>
+        <a id="submit" class="button">Upload a list</span></a>
     </div>
 </div>

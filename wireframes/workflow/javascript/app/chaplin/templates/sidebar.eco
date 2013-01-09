@@ -1,7 +1,7 @@
 <div class="wrap">
     <ul>
-        <li><a href="#">Global search</a></li>
-        <li><a href="#">View a public list</a></li>
-        <li><a href="#">Compare lists</a></li>
+        <li><a href="/tool/upload-list">Upload List</a></li>
+        <li><a href="/tool/compare-lists">Compare Lists</a></li>
+        <li><a href="/tool/saved-workflow">Use a Saved Workflow</a></li>
     </ul>
 </div>

@@ -2,9 +2,9 @@ Chaplin = require 'chaplin'
 
 module.exports = class SidebarView extends Chaplin.View
 
-    container:       '#workflow'
-    containerMethod: 'html'
-    autoRender:      true
+    'container':       '#workflow'
+    'containerMethod': 'html'
+    'autoRender':      true
 
     getTemplateFunction: -> require 'chaplin/templates/workflow'
 
@@ -15,9 +15,13 @@ module.exports = class SidebarView extends Chaplin.View
         $(@el).hide().css('width', $(window).width() - $('footer#bottom').outerWidth())
 
         # Listen to messages, we show them.
-        Chaplin.mediator.subscribe 'workflow', (action) =>
+        Chaplin.mediator.subscribe 'workflow', (action, tool) =>
             switch action
+                # Toggle the view.
                 when 'toggle'
                     $(@el).toggle()
+                # Add a tool.
+                when 'add'
+                    @collection.create tool
 
         @

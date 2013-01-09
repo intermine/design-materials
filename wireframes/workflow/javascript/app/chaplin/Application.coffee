@@ -21,14 +21,14 @@ module.exports = class FluxMine
             new LandingView()
         else
             # Get the tool name.
-            tool = ( ( p[0].toUpperCase() + p[1...] ) for p in path.split('/').pop().split('-') ).join('')
+            tool = ( ( p[0].toUpperCase() + p[1...] if p ) for p in path.split('/').pop().split('-') ).join('')
             assert tool in [ 'UploadList' ], "Unknown tool `#{tool}`"
 
             # Create the main app view.
             new AppView()
 
-            # Init the workflow.
-            new WorkflowView 'collection': new Workflow()
+            # Init the workflow view.
+            new WorkflowView 'collection': window.Workflow
 
             # A specific tool, show the sidebar.
             new SidebarView()
