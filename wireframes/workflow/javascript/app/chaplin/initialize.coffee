@@ -8,10 +8,7 @@ class AssertException
 # Set the assertion on the window object.
 @.assert = (exp, message) -> throw new AssertException(message) unless exp
 
-Tableur = require 'chaplin/Application'
-Spreadsheets = require 'chaplin/models/Spreadsheets'
+FluxMine = require 'chaplin/Application'
 
 $ ->
-    $.getJSON '/api/docs', (data) ->
-        window.Spreadsheets = new Spreadsheets data
-        window.App = new Tableur()
+    window.App = new FluxMine()

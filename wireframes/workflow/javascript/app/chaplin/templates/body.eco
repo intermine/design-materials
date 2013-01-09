@@ -1,13 +1,59 @@
-<header>
-    <h1><span>tableur</span><%= @active.nice %></h1> <a id="execute" title="Execute"></a>
-    <nav>
-        <ul>
-            <% for doc in @docs: %>
-                <li><a <% if doc.name is @active.name: %>class="active"<% end %> data-name="<%= doc.name %>" href="/doc/<%= doc.name %>"><%= doc.nice %></a></li>
-            <% end %>
-        </ul>
-    </nav>
-</header>
-<div id="main">
-    <p>Loading document &hellip;</p>
+<div id="wrapper">
+    <header id="top">
+        <div class="inner">
+            <div class="account right">
+                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>
+            </div>
+            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>
+        </div>
+    </header>
+
+    <section id="middle">
+        <div id="widget">
+            <div class="wrap">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h1>Upload a List</h1>
+                        <p>Select the type of list to create and either enter in a list
+                            of identifiers or upload identifiers from a file. A search will
+                            be performed for all the identifiers in your list.</p>
+                    </div>
+                </div>
+                <form class="row custom">
+                    <div class="six columns">
+                        <label>List of identifiers</label>
+                        <textarea></textarea>
+                    </div>
+                    <div class="six columns">
+                        <label>Identifier type</label>
+                        <select class="three">
+                            <option>Genes</option>
+                            <option>Proteins</option>
+                        </select>
+                    </div>
+                </form>
+                <div class="row twelve columns">
+                    <a class="button" href="#">Upload a list</span></a>
+                </div>
+            </div>
+        </div>
+
+        <aside id="sidebar">
+            <div class="wrap">
+                <ul>
+                    <li><a href="#">Global search</a></li>
+                    <li><a href="#">View a public list</a></li>
+                    <li><a href="#">Compare lists</a></li>
+                </ul>
+            </div>
+        </aside>
+    </section>
 </div>
+
+<footer id="bottom">
+    <div class="wrap">
+        <div id="history">
+            <a class="button" href="#">Show workflow view</a>
+        </div>
+    </div>
+</footer>
