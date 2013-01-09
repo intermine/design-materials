@@ -6,7 +6,7 @@ module.exports = class AppView extends Chaplin.View
     containerMethod: 'html'
     autoRender:      true
 
-    getTemplateFunction: -> require 'chaplin/templates/body'
+    getTemplateFunction: -> require 'chaplin/templates/app'
 
     afterRender: ->
         super

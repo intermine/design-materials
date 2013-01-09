@@ -31,7 +31,7 @@ li {
 .row {
   width: auto;
 }
-#wrapper {
+div#wrapper {
   width: 100%;
   min-width: 1000px;
   min-height: 100%;
@@ -73,6 +73,15 @@ section#middle:after {
   visibility: hidden;
   height: 0;
 }
+section#middle div#landing {
+  width: 1000px;
+}
+section#middle div#landing h2 {
+  font-size: 20px;
+}
+section#middle div#landing ul {
+  list-style-type: none;
+}
 section#middle aside#sidebar {
   float: left;
   width: 250px;
@@ -90,37 +99,48 @@ section#middle aside#sidebar ul {
   padding: 0;
 }
 section#middle aside#sidebar ul li {
-  margin: 10px 0;
   background-repeat: no-repeat;
   background-position: 0 3px;
 }
-section#middle #widget {
+section#middle div#widget {
   width: 100%;
   float: left;
   overflow: hidden;
   min-height: 100%;
 }
-section#middle #widget h1 {
+section#middle div#widget h1 {
   font-size: 22px;
 }
-section#middle #widget .wrap {
+section#middle div#widget .wrap {
   padding: 0 0 0 250px;
 }
-section#middle #widget .half {
+section#middle div#widget .half {
   float: left;
   width: 50%;
 }
-#workflow {
+div#workflow {
   position: absolute;
   bottom: 0;
   left: 250px;
   height: 50%;
+  background: #f6fafb;
 }
-footer#bottom {
-  width: 250px;
+div#workflow h1 {
+  font-size: 22px;
+}
+footer {
   position: fixed;
   bottom: 0;
   left: 0;
+}
+footer#wide {
+  width: 100%;
+}
+footer#wide p {
+  text-align: center;
+}
+footer#bottom {
+  width: 250px;
 }
 footer#bottom p {
   font-style: italic;
@@ -139,7 +159,7 @@ footer#bottom ul li {
 footer#bottom ul li a {
   margin-left: 25px;
 }
-footer#bottom #history {
+footer#bottom div#history {
   margin-top: 20px;
   padding: 20px 10px;
 }

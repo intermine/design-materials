@@ -1,1 +1,6 @@
-<p>Workflow goes here</p>
+<div class="row">
+    <div class="twelve columns">
+        <h1>Workflow</h1>
+        <p>The workflow boxes will be populated here as you work with this app.</p>
+    </div>
+</div>

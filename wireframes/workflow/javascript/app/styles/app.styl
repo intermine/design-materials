@@ -25,7 +25,7 @@ body, h1, h2, h3, h4, p, li
 .row
     width: auto
 
-#wrapper
+div#wrapper
     width: 100%
     min-width: 1000px
     min-height: 100%
@@ -67,6 +67,15 @@ section#middle
         visibility: hidden
         height: 0
 
+    div#landing
+        width: 1000px
+
+        h2
+            font-size: 20px
+
+        ul
+            list-style-type: none
+
     aside#sidebar
         float: left
         width: 250px
@@ -84,11 +93,10 @@ section#middle
             padding: 0
 
             li
-                margin: 10px 0
                 background-repeat: no-repeat
                 background-position: 0 3px
 
-    #widget
+    div#widget
         width: 100%
         float: left
         overflow: hidden
@@ -104,38 +112,50 @@ section#middle
             float: left
             width: 50%
 
-#workflow
+div#workflow
     position: absolute
     bottom: 0
     left: 250px // width of the sidebar
     height: 50% // take up half the screen
+    background: #F6FAFB
 
-footer#bottom
-    width: 250px
+    h1
+        font-size: 22px
+
+footer
     position: fixed
     bottom: 0
     left: 0
 
-    p
-        font-style: italic
-        padding: 0px 10px
-        margin: 0 0 10px 0
-        line-height: 1.3
+    &#wide
+        width: 100%
 
-    ul
-        list-style-type: none
-        margin: 0 0 0 10px
+        p
+            text-align: center
 
-        li
-            background-repeat: no-repeat
-            background-position: 0 3px
+    &#bottom
+        width: 250px
 
-            a
-                margin-left: 25px  
+        p
+            font-style: italic
+            padding: 0px 10px
+            margin: 0 0 10px 0
+            line-height: 1.3
 
-    #history
-        margin-top: 20px
-        padding: 20px 10px
+        ul
+            list-style-type: none
+            margin: 0 0 0 10px
+
+            li
+                background-repeat: no-repeat
+                background-position: 0 3px
+
+                a
+                    margin-left: 25px  
+
+        div#history
+            margin-top: 20px
+            padding: 20px 10px
 
 .button
     display: inline-block

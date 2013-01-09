@@ -75,9 +75,11 @@
 })();
 
 window.require.define({"chaplin/Application": function(exports, require, module) {
-  var AppView, Chaplin, FluxMine, SidebarView, Tool, ToolView, WorkflowView;
+  var AppView, Chaplin, FluxMine, LandingView, SidebarView, Tool, ToolView, Workflow, WorkflowView;
 
   Chaplin = require('chaplin');
+
+  LandingView = require('chaplin/views/Landing');
 
   AppView = require('chaplin/views/App');
 
@@ -87,20 +89,40 @@ window.require.define({"chaplin/Application": function(exports, require, module)
 
   WorkflowView = require('chaplin/views/Workflow');
 
+  Workflow = require('chaplin/models/Workflow');
+
   Tool = require('chaplin/models/Tool');
 
   module.exports = FluxMine = (function() {
 
     function FluxMine() {
-      var app, sidebar, tool, workflow;
-      app = new AppView();
-      workflow = new WorkflowView();
-      sidebar = new SidebarView();
-      tool = new ToolView({
-        'model': new Tool({
-          'name': 'Upload'
-        })
-      });
+      var p, path, tool;
+      path = window.location.pathname;
+      if (path === '/') {
+        new LandingView();
+      } else {
+        tool = ((function() {
+          var _i, _len, _ref, _results;
+          _ref = path.split('/').pop().split('-');
+          _results = [];
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            p = _ref[_i];
+            _results.push(p[0].toUpperCase() + p.slice(1));
+          }
+          return _results;
+        })()).join('');
+        assert(tool === 'UploadList', "Unknown tool `" + tool + "`");
+        new AppView();
+        new WorkflowView({
+          'collection': new Workflow()
+        });
+        new SidebarView();
+        new ToolView({
+          'model': new Tool({
+            'name': tool
+          })
+        });
+      }
     }
 
     return FluxMine;
@@ -161,7 +183,28 @@ window.require.define({"chaplin/models/Tool": function(exports, require, module)
   
 }});
 
-window.require.define({"chaplin/templates/body": function(exports, require, module) {
+window.require.define({"chaplin/models/Workflow": function(exports, require, module) {
+  var Chaplin, Workflow,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = Workflow = (function(_super) {
+
+    __extends(Workflow, _super);
+
+    function Workflow() {
+      return Workflow.__super__.constructor.apply(this, arguments);
+    }
+
+    return Workflow;
+
+  })(Chaplin.Collection);
+  
+}});
+
+window.require.define({"chaplin/templates/app": function(exports, require, module) {
   module.exports = function (__obj) {
     if (!__obj) __obj = {};
     var __out = [], __capture = function(callback) {
@@ -203,6 +246,57 @@ window.require.define({"chaplin/templates/body": function(exports, require, modu
       (function() {
       
         __out.push('<div id="wrapper">\n    <header id="top">\n        <div class="inner">\n            <div class="account right">\n                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>\n            </div>\n            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>\n        </div>\n    </header>\n\n    <section id="middle">\n        <div id="widget"></div>\n        <aside id="sidebar"></aside>\n    </section>\n</div>\n\n<div id="workflow"></div>\n\n<footer id="bottom">\n    <div class="wrap">\n        <div id="history">\n            <a class="button" data-action="workflow-toggle">Show workflow view</a>\n        </div>\n    </div>\n</footer>');
+      
+      }).call(this);
+      
+    }).call(__obj);
+    __obj.safe = __objSafe, __obj.escape = __escape;
+    return __out.join('');
+  }
+}});
+
+window.require.define({"chaplin/templates/landing": function(exports, require, module) {
+  module.exports = function (__obj) {
+    if (!__obj) __obj = {};
+    var __out = [], __capture = function(callback) {
+      var out = __out, result;
+      __out = [];
+      callback.call(this);
+      result = __out.join('');
+      __out = out;
+      return __safe(result);
+    }, __sanitize = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else if (typeof value !== 'undefined' && value != null) {
+        return __escape(value);
+      } else {
+        return '';
+      }
+    }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
+    __safe = __obj.safe = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else {
+        if (!(typeof value !== 'undefined' && value != null)) value = '';
+        var result = new String(value);
+        result.ecoSafe = true;
+        return result;
+      }
+    };
+    if (!__escape) {
+      __escape = __obj.escape = function(value) {
+        return ('' + value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      };
+    }
+    (function() {
+      (function() {
+      
+        __out.push('<div id="wrapper">\n    <header id="top">\n        <div class="inner">\n            <div class="account right">\n                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>\n            </div>\n            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>\n        </div>\n    </header>\n\n    <section id="middle">\n        <div id="landing" class="container row">\n            <div class="four columns">\n                <h2>Popular Tools</h2>\n                <ul>\n                    <li><a href="/tool/upload-list">Upload List</a></li>\n                    <li><a href="/tool/compare-lists">Compare Lists</a></li>\n                    <li><a href="/tool/saved-workflow">Use a Saved Workflow</a></li>\n                </ul>\n            </div>\n            <div class="four columns">\n                <h2>Popular Workflows</h2>\n                <ul>\n                    <li>Lorem ipsum dolor</li>\n                    <li>Sed ut perspiciatis</li>\n                    <li>At vero eos et accusamus</li>\n                </ul>\n            </div>\n            <div class="four columns">\n                <h2>Help</h2>\n                <ul>\n                    <li>Et iusto odio dignissimos</li>\n                    <li>Ducimus qui blanditiis</li>\n                    <li>Praesentium voluptatum deleniti</li>\n                </ul>\n            </div>\n        </div>\n    </section>\n</div>\n\n<footer id="wide">\n    <p>&copy; 2000-2013 InterMine, University of Cambridge</p>\n</footer>');
       
       }).call(this);
       
@@ -355,7 +449,7 @@ window.require.define({"chaplin/templates/workflow": function(exports, require, 
     (function() {
       (function() {
       
-        __out.push('<p>Workflow goes here</p>');
+        __out.push('<div class="row">\n    <div class="twelve columns">\n        <h1>Workflow</h1>\n        <p>The workflow boxes will be populated here as you work with this app.</p>\n    </div>\n</div>');
       
       }).call(this);
       
@@ -387,7 +481,7 @@ window.require.define({"chaplin/views/App": function(exports, require, module) {
     AppView.prototype.autoRender = true;
 
     AppView.prototype.getTemplateFunction = function() {
-      return require('chaplin/templates/body');
+      return require('chaplin/templates/app');
     };
 
     AppView.prototype.afterRender = function() {
@@ -404,6 +498,37 @@ window.require.define({"chaplin/views/App": function(exports, require, module) {
     };
 
     return AppView;
+
+  })(Chaplin.View);
+  
+}});
+
+window.require.define({"chaplin/views/Landing": function(exports, require, module) {
+  var Chaplin, LandingView,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = LandingView = (function(_super) {
+
+    __extends(LandingView, _super);
+
+    function LandingView() {
+      return LandingView.__super__.constructor.apply(this, arguments);
+    }
+
+    LandingView.prototype.container = 'body';
+
+    LandingView.prototype.containerMethod = 'html';
+
+    LandingView.prototype.autoRender = true;
+
+    LandingView.prototype.getTemplateFunction = function() {
+      return require('chaplin/templates/landing');
+    };
+
+    return LandingView;
 
   })(Chaplin.View);
   
@@ -514,32 +639,32 @@ window.require.define({"chaplin/views/Workflow": function(exports, require, modu
   
 }});
 
-window.require.define({"chaplin/views/tools/UploadTool": function(exports, require, module) {
-  var Chaplin, UploadToolView,
+window.require.define({"chaplin/views/tools/UploadListTool": function(exports, require, module) {
+  var Chaplin, UploadListToolView,
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   Chaplin = require('chaplin');
 
-  module.exports = UploadToolView = (function(_super) {
+  module.exports = UploadListToolView = (function(_super) {
 
-    __extends(UploadToolView, _super);
+    __extends(UploadListToolView, _super);
 
-    function UploadToolView() {
-      return UploadToolView.__super__.constructor.apply(this, arguments);
+    function UploadListToolView() {
+      return UploadListToolView.__super__.constructor.apply(this, arguments);
     }
 
-    UploadToolView.prototype.container = 'div#widget';
+    UploadListToolView.prototype.container = 'div#widget';
 
-    UploadToolView.prototype.containerMethod = 'html';
+    UploadListToolView.prototype.containerMethod = 'html';
 
-    UploadToolView.prototype.autoRender = true;
+    UploadListToolView.prototype.autoRender = true;
 
-    UploadToolView.prototype.getTemplateFunction = function() {
+    UploadListToolView.prototype.getTemplateFunction = function() {
       return require('chaplin/templates/tools/upload');
     };
 
-    return UploadToolView;
+    return UploadListToolView;
 
   })(Chaplin.View);
   
