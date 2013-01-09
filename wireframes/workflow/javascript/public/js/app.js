@@ -75,17 +75,29 @@
 })();
 
 window.require.define({"chaplin/Application": function(exports, require, module) {
-  var AppView, Chaplin, FluxMine;
+  var AppView, Chaplin, FluxMine, SidebarView, Tool, ToolView;
 
   Chaplin = require('chaplin');
 
   AppView = require('chaplin/views/App');
 
+  SidebarView = require('chaplin/views/Sidebar');
+
+  ToolView = require('chaplin/views/Tool');
+
+  Tool = require('chaplin/models/Tool');
+
   module.exports = FluxMine = (function() {
 
     function FluxMine() {
-      var app;
+      var app, sidebar, tool;
       app = new AppView();
+      sidebar = new SidebarView();
+      tool = new ToolView({
+        'model': new Tool({
+          'name': 'Upload'
+        })
+      });
     }
 
     return FluxMine;
@@ -122,6 +134,27 @@ window.require.define({"chaplin/initialize": function(exports, require, module) 
   $(function() {
     return window.App = new FluxMine();
   });
+  
+}});
+
+window.require.define({"chaplin/models/Tool": function(exports, require, module) {
+  var Chaplin, Tool,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = Tool = (function(_super) {
+
+    __extends(Tool, _super);
+
+    function Tool() {
+      return Tool.__super__.constructor.apply(this, arguments);
+    }
+
+    return Tool;
+
+  })(Chaplin.Model);
   
 }});
 
@@ -166,7 +199,109 @@ window.require.define({"chaplin/templates/body": function(exports, require, modu
     (function() {
       (function() {
       
-        __out.push('<div id="wrapper">\n    <header id="top">\n        <div class="inner">\n            <div class="account right">\n                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>\n            </div>\n            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>\n        </div>\n    </header>\n\n    <section id="middle">\n        <div id="widget">\n            <div class="wrap">\n                <div class="row">\n                    <div class="twelve columns">\n                        <h1>Upload a List</h1>\n                        <p>Select the type of list to create and either enter in a list\n                            of identifiers or upload identifiers from a file. A search will\n                            be performed for all the identifiers in your list.</p>\n                    </div>\n                </div>\n                <form class="row custom">\n                    <div class="six columns">\n                        <label>List of identifiers</label>\n                        <textarea></textarea>\n                    </div>\n                    <div class="six columns">\n                        <label>Identifier type</label>\n                        <select class="three">\n                            <option>Genes</option>\n                            <option>Proteins</option>\n                        </select>\n                    </div>\n                </form>\n                <div class="row twelve columns">\n                    <a class="button" href="#">Upload a list</span></a>\n                </div>\n            </div>\n        </div>\n\n        <aside id="sidebar">\n            <div class="wrap">\n                <ul>\n                    <li><a href="#">Global search</a></li>\n                    <li><a href="#">View a public list</a></li>\n                    <li><a href="#">Compare lists</a></li>\n                </ul>\n            </div>\n        </aside>\n    </section>\n</div>\n\n<footer id="bottom">\n    <div class="wrap">\n        <div id="history">\n            <a class="button" href="#">Show workflow view</a>\n        </div>\n    </div>\n</footer>');
+        __out.push('<div id="wrapper">\n    <header id="top">\n        <div class="inner">\n            <div class="account right">\n                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>\n            </div>\n            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>\n        </div>\n    </header>\n\n    <section id="middle">\n        <div id="widget"></div>\n\n        <aside id="sidebar"></aside>\n    </section>\n</div>\n\n<footer id="bottom">\n    <div class="wrap">\n        <div id="history">\n            <a class="button" href="#">Show workflow view</a>\n        </div>\n    </div>\n</footer>');
+      
+      }).call(this);
+      
+    }).call(__obj);
+    __obj.safe = __objSafe, __obj.escape = __escape;
+    return __out.join('');
+  }
+}});
+
+window.require.define({"chaplin/templates/sidebar": function(exports, require, module) {
+  module.exports = function (__obj) {
+    if (!__obj) __obj = {};
+    var __out = [], __capture = function(callback) {
+      var out = __out, result;
+      __out = [];
+      callback.call(this);
+      result = __out.join('');
+      __out = out;
+      return __safe(result);
+    }, __sanitize = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else if (typeof value !== 'undefined' && value != null) {
+        return __escape(value);
+      } else {
+        return '';
+      }
+    }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
+    __safe = __obj.safe = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else {
+        if (!(typeof value !== 'undefined' && value != null)) value = '';
+        var result = new String(value);
+        result.ecoSafe = true;
+        return result;
+      }
+    };
+    if (!__escape) {
+      __escape = __obj.escape = function(value) {
+        return ('' + value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      };
+    }
+    (function() {
+      (function() {
+      
+        __out.push('<div class="wrap">\n    <ul>\n        <li><a href="#">Global search</a></li>\n        <li><a href="#">View a public list</a></li>\n        <li><a href="#">Compare lists</a></li>\n    </ul>\n</div>');
+      
+      }).call(this);
+      
+    }).call(__obj);
+    __obj.safe = __objSafe, __obj.escape = __escape;
+    return __out.join('');
+  }
+}});
+
+window.require.define({"chaplin/templates/tools/upload": function(exports, require, module) {
+  module.exports = function (__obj) {
+    if (!__obj) __obj = {};
+    var __out = [], __capture = function(callback) {
+      var out = __out, result;
+      __out = [];
+      callback.call(this);
+      result = __out.join('');
+      __out = out;
+      return __safe(result);
+    }, __sanitize = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else if (typeof value !== 'undefined' && value != null) {
+        return __escape(value);
+      } else {
+        return '';
+      }
+    }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
+    __safe = __obj.safe = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else {
+        if (!(typeof value !== 'undefined' && value != null)) value = '';
+        var result = new String(value);
+        result.ecoSafe = true;
+        return result;
+      }
+    };
+    if (!__escape) {
+      __escape = __obj.escape = function(value) {
+        return ('' + value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      };
+    }
+    (function() {
+      (function() {
+      
+        __out.push('<div class="wrap">\n    <div class="row">\n        <div class="twelve columns">\n            <h1>Upload a List</h1>\n            <p>Select the type of list to create and either enter in a list\n                of identifiers or upload identifiers from a file. A search will\n                be performed for all the identifiers in your list.</p>\n        </div>\n    </div>\n    <form class="row custom">\n        <div class="six columns">\n            <label>List of identifiers</label>\n            <textarea></textarea>\n        </div>\n        <div class="six columns">\n            <label>Identifier type</label>\n            <select class="three">\n                <option>Genes</option>\n                <option>Proteins</option>\n            </select>\n        </div>\n    </form>\n    <div class="row twelve columns">\n        <a class="button" href="#">Upload a list</span></a>\n    </div>\n</div>');
       
       }).call(this);
       
@@ -202,6 +337,98 @@ window.require.define({"chaplin/views/App": function(exports, require, module) {
     };
 
     return AppView;
+
+  })(Chaplin.View);
+  
+}});
+
+window.require.define({"chaplin/views/Sidebar": function(exports, require, module) {
+  var Chaplin, SidebarView,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = SidebarView = (function(_super) {
+
+    __extends(SidebarView, _super);
+
+    function SidebarView() {
+      return SidebarView.__super__.constructor.apply(this, arguments);
+    }
+
+    SidebarView.prototype.container = 'aside#sidebar';
+
+    SidebarView.prototype.containerMethod = 'html';
+
+    SidebarView.prototype.autoRender = true;
+
+    SidebarView.prototype.getTemplateFunction = function() {
+      return require('chaplin/templates/sidebar');
+    };
+
+    return SidebarView;
+
+  })(Chaplin.View);
+  
+}});
+
+window.require.define({"chaplin/views/Tool": function(exports, require, module) {
+  var Chaplin, ToolView,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = ToolView = (function(_super) {
+
+    __extends(ToolView, _super);
+
+    function ToolView() {
+      return ToolView.__super__.constructor.apply(this, arguments);
+    }
+
+    ToolView.prototype.initialize = function() {
+      var ToolClass, tool;
+      ToolClass = require("chaplin/views/tools/" + (this.model.get('name')) + "Tool");
+      tool = new ToolClass({
+        'model': this.model
+      });
+      return this;
+    };
+
+    return ToolView;
+
+  })(Chaplin.View);
+  
+}});
+
+window.require.define({"chaplin/views/tools/UploadTool": function(exports, require, module) {
+  var Chaplin, UploadToolView,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = UploadToolView = (function(_super) {
+
+    __extends(UploadToolView, _super);
+
+    function UploadToolView() {
+      return UploadToolView.__super__.constructor.apply(this, arguments);
+    }
+
+    UploadToolView.prototype.container = 'div#widget';
+
+    UploadToolView.prototype.containerMethod = 'html';
+
+    UploadToolView.prototype.autoRender = true;
+
+    UploadToolView.prototype.getTemplateFunction = function() {
+      return require('chaplin/templates/tools/upload');
+    };
+
+    return UploadToolView;
 
   })(Chaplin.View);
   

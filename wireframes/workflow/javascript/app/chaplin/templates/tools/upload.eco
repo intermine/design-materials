@@ -1,0 +1,26 @@
+<div class="wrap">
+    <div class="row">
+        <div class="twelve columns">
+            <h1>Upload a List</h1>
+            <p>Select the type of list to create and either enter in a list
+                of identifiers or upload identifiers from a file. A search will
+                be performed for all the identifiers in your list.</p>
+        </div>
+    </div>
+    <form class="row custom">
+        <div class="six columns">
+            <label>List of identifiers</label>
+            <textarea></textarea>
+        </div>
+        <div class="six columns">
+            <label>Identifier type</label>
+            <select class="three">
+                <option>Genes</option>
+                <option>Proteins</option>
+            </select>
+        </div>
+    </form>
+    <div class="row twelve columns">
+        <a class="button" href="#">Upload a list</span></a>
+    </div>
+</div>
