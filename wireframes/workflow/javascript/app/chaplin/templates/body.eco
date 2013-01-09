@@ -10,15 +10,16 @@
 
     <section id="middle">
         <div id="widget"></div>
-
         <aside id="sidebar"></aside>
     </section>
 </div>
 
+<div id="workflow"></div>
+
 <footer id="bottom">
     <div class="wrap">
         <div id="history">
-            <a class="button" href="#">Show workflow view</a>
+            <a class="button" data-action="workflow-toggle">Show workflow view</a>
         </div>
     </div>
 </footer>

@@ -75,7 +75,7 @@
 })();
 
 window.require.define({"chaplin/Application": function(exports, require, module) {
-  var AppView, Chaplin, FluxMine, SidebarView, Tool, ToolView;
+  var AppView, Chaplin, FluxMine, SidebarView, Tool, ToolView, WorkflowView;
 
   Chaplin = require('chaplin');
 
@@ -85,13 +85,16 @@ window.require.define({"chaplin/Application": function(exports, require, module)
 
   ToolView = require('chaplin/views/Tool');
 
+  WorkflowView = require('chaplin/views/Workflow');
+
   Tool = require('chaplin/models/Tool');
 
   module.exports = FluxMine = (function() {
 
     function FluxMine() {
-      var app, sidebar, tool;
+      var app, sidebar, tool, workflow;
       app = new AppView();
+      workflow = new WorkflowView();
       sidebar = new SidebarView();
       tool = new ToolView({
         'model': new Tool({
@@ -199,7 +202,7 @@ window.require.define({"chaplin/templates/body": function(exports, require, modu
     (function() {
       (function() {
       
-        __out.push('<div id="wrapper">\n    <header id="top">\n        <div class="inner">\n            <div class="account right">\n                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>\n            </div>\n            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>\n        </div>\n    </header>\n\n    <section id="middle">\n        <div id="widget"></div>\n\n        <aside id="sidebar"></aside>\n    </section>\n</div>\n\n<footer id="bottom">\n    <div class="wrap">\n        <div id="history">\n            <a class="button" href="#">Show workflow view</a>\n        </div>\n    </div>\n</footer>');
+        __out.push('<div id="wrapper">\n    <header id="top">\n        <div class="inner">\n            <div class="account right">\n                Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>\n            </div>\n            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>\n        </div>\n    </header>\n\n    <section id="middle">\n        <div id="widget"></div>\n        <aside id="sidebar"></aside>\n    </section>\n</div>\n\n<div id="workflow"></div>\n\n<footer id="bottom">\n    <div class="wrap">\n        <div id="history">\n            <a class="button" data-action="workflow-toggle">Show workflow view</a>\n        </div>\n    </div>\n</footer>');
       
       }).call(this);
       
@@ -311,6 +314,57 @@ window.require.define({"chaplin/templates/tools/upload": function(exports, requi
   }
 }});
 
+window.require.define({"chaplin/templates/workflow": function(exports, require, module) {
+  module.exports = function (__obj) {
+    if (!__obj) __obj = {};
+    var __out = [], __capture = function(callback) {
+      var out = __out, result;
+      __out = [];
+      callback.call(this);
+      result = __out.join('');
+      __out = out;
+      return __safe(result);
+    }, __sanitize = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else if (typeof value !== 'undefined' && value != null) {
+        return __escape(value);
+      } else {
+        return '';
+      }
+    }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
+    __safe = __obj.safe = function(value) {
+      if (value && value.ecoSafe) {
+        return value;
+      } else {
+        if (!(typeof value !== 'undefined' && value != null)) value = '';
+        var result = new String(value);
+        result.ecoSafe = true;
+        return result;
+      }
+    };
+    if (!__escape) {
+      __escape = __obj.escape = function(value) {
+        return ('' + value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      };
+    }
+    (function() {
+      (function() {
+      
+        __out.push('<p>Workflow goes here</p>');
+      
+      }).call(this);
+      
+    }).call(__obj);
+    __obj.safe = __objSafe, __obj.escape = __escape;
+    return __out.join('');
+  }
+}});
+
 window.require.define({"chaplin/views/App": function(exports, require, module) {
   var AppView, Chaplin,
     __hasProp = {}.hasOwnProperty,
@@ -334,6 +388,19 @@ window.require.define({"chaplin/views/App": function(exports, require, module) {
 
     AppView.prototype.getTemplateFunction = function() {
       return require('chaplin/templates/body');
+    };
+
+    AppView.prototype.afterRender = function() {
+      AppView.__super__.afterRender.apply(this, arguments);
+      this.delegate('click', '.button[data-action="workflow-toggle"]', this.workflowToggle);
+      return this;
+    };
+
+    AppView.prototype.workflowToggle = function(e) {
+      var btn;
+      btn = $(e.target);
+      btn.text(btn.text().slice(0, 4) === 'Show' ? 'Hide workflow view' : 'Show workflow view');
+      return Chaplin.mediator.publish('workflow', 'toggle');
     };
 
     return AppView;
@@ -398,6 +465,50 @@ window.require.define({"chaplin/views/Tool": function(exports, require, module) 
     };
 
     return ToolView;
+
+  })(Chaplin.View);
+  
+}});
+
+window.require.define({"chaplin/views/Workflow": function(exports, require, module) {
+  var Chaplin, SidebarView,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  Chaplin = require('chaplin');
+
+  module.exports = SidebarView = (function(_super) {
+
+    __extends(SidebarView, _super);
+
+    function SidebarView() {
+      return SidebarView.__super__.constructor.apply(this, arguments);
+    }
+
+    SidebarView.prototype.container = '#workflow';
+
+    SidebarView.prototype.containerMethod = 'html';
+
+    SidebarView.prototype.autoRender = true;
+
+    SidebarView.prototype.getTemplateFunction = function() {
+      return require('chaplin/templates/workflow');
+    };
+
+    SidebarView.prototype.afterRender = function() {
+      var _this = this;
+      SidebarView.__super__.afterRender.apply(this, arguments);
+      $(this.el).hide().css('width', $(window).width() - $('footer#bottom').outerWidth());
+      Chaplin.mediator.subscribe('workflow', function(action) {
+        switch (action) {
+          case 'toggle':
+            return $(_this.el).toggle();
+        }
+      });
+      return this;
+    };
+
+    return SidebarView;
 
   })(Chaplin.View);
   
