@@ -1,0 +1,13 @@
+<header>
+    <h1><span>tableur</span><%= @active.nice %></h1> <a id="execute" title="Execute"></a>
+    <nav>
+        <ul>
+            <% for doc in @docs: %>
+                <li><a <% if doc.name is @active.name: %>class="active"<% end %> data-name="<%= doc.name %>" href="/doc/<%= doc.name %>"><%= doc.nice %></a></li>
+            <% end %>
+        </ul>
+    </nav>
+</header>
+<div id="main">
+    <p>Loading document &hellip;</p>
+</div>
