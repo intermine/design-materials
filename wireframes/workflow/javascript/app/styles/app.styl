@@ -126,14 +126,31 @@ div#workflow
         display: block
         float: left
         margin: 10px 20px
+        position: relative
 
         em
             float: right
             font-size: 11px
 
+        .circle
+            position: absolute
+            border-radius: 20px
+            border: solid 10px #cef2fb
+            width: 20px
+            height: 20px
+
+            &.input
+                top: 68px
+                left: -10px
+                border-color: #F6FAFB
+
+            &.output
+                top: 68px
+                right: -10px
+
         .box
             background: #CEF2FB
-            padding: 10px
+            padding: 10px 20px
             margin-top: 10px
 
             .head

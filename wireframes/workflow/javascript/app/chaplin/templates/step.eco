@@ -1,4 +1,4 @@
-<em>added <%= moment(new Date(@created)).fromNow() %></em> <%= @order %>.
+<em><%= moment(new Date(@created)).fromNow() %></em> <%= @order %>.
 <div class="box">
     <div class="head">
         <h3><%= @name %></h3>
@@ -8,4 +8,6 @@
         <a class="tiny success button" data-action="step-run">Run</a>
         <a class="tiny alert button" data-action="step-remove">Remove</a>
     </div>
+    <div class="input circle"></div>
+    <div class="output circle"></div>
 </div>
