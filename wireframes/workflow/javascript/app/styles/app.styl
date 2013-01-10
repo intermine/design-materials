@@ -132,21 +132,38 @@ div#workflow
             float: right
             font-size: 11px
 
-        .circle
+        .io
             position: absolute
-            border-radius: 20px
-            border: solid 10px #cef2fb
-            width: 20px
-            height: 20px
+
+            span
+                text-align: right
+                font-size: 11px
 
             &.input
-                top: 68px
-                left: -10px
-                border-color: #F6FAFB
+                top: 50px
+                left: -25px
+
+                .circle
+                    right: -15px
+                    border-color: #F6FAFB
 
             &.output
-                top: 68px
-                right: -10px
+                top: 50px
+                right: -25px
+                cursor: pointer
+
+                .circle
+                    left: -15px
+
+            .relative
+                position: relative
+
+                .circle
+                    border-radius: 20px
+                    border: solid 10px #CEF2FB
+                    width: 20px
+                    height: 20px
+                    position: absolute
 
         .box
             background: #CEF2FB

@@ -8,6 +8,21 @@
         <a class="tiny success button" data-action="step-run">Run</a>
         <a class="tiny alert button" data-action="step-remove">Remove</a>
     </div>
-    <div class="input circle"></div>
-    <div class="output circle"></div>
+
+    <% if @io.input: %>
+        <div class="io input" title="Input">
+            <span><%= @io.input %></span>
+            <div class="relative">
+                <div class="circle"></div>
+            </div>
+        </div>
+    <% end %>
+    <% if @io.output: %>
+        <div class="io output" title="Output">
+            <span><%= @io.output %></span>
+            <div class="relative">
+                <div class="circle"></div>
+            </div>
+        </div>
+    <% end %>
 </div>

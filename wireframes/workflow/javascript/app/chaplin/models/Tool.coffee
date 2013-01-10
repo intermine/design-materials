@@ -8,7 +8,10 @@ module.exports = class Tool extends Chaplin.Model
         # Timestamp of creation date.
         @set 'created', Date.now() if @isNew()
 
-        # Description for workflow steps.
-        @set 'description', do =>
-            switch @get 'name'
-                when 'UploadList' then 'Produces a list.'
+        # Logic for different types of tools.
+        switch @get 'name'
+            when 'UploadList'
+                @set 'description', 'Produces a list.'
+                @set 'io',
+                    'output': 'List'
+
