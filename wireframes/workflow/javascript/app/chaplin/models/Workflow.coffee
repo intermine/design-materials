@@ -6,30 +6,39 @@ module.exports = class Workflow extends Chaplin.Collection
 
     'model': Tool
 
-    'localStorage': new Backbone.LocalStorage 'Workflow'
+    'comparator': 'order'
 
     initialize: ->
         super
 
-        # Re-init all Models saved in localStorage.
-        for obj in @localStorage.findAll()
-            @push new Tool obj
+        # Get the localStorage data.
+        @store = new window.LocalStorage 'Workflow'
+        for record in @store.records
+            @push new Tool record
 
         @
 
-    create: (model) ->
-        # Save in localStorage.
-        super
-
-        # Save on us too.
-        @push model
-
-    remove: (model) ->
-        # Destroy on us.
-        super
-
-        # Remove in localStorage.
-        @localStorage.destroy model
-
     # Reset the workflow.
-    reset: -> @each (model) => @localStorage.destroy model
+    reset: ->
+        @store.reset()
+
+        # Destroy locally.
+        super
+
+    # Move a tool in its position in the workflow.
+    move: (itemIndex, nextIndex) ->
+        item = @at itemIndex
+        # Popush at the very end.
+        unless nextIndex
+            # Every following item will have an order reduced by 1.
+            for i in [ (itemIndex + 1) ... @length ]
+                console.log i
+                model = @at i
+                model.set 'order', model.get('order') - 1
+            # And finally ours is at the end.
+            item.set 'order', @length - 1
+        else
+            console.log 'nay'
+
+        # Sort the collection as we have updated the `order` attr.
+        @sort()

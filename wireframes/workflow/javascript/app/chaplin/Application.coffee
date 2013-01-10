@@ -25,7 +25,7 @@ module.exports = class FluxMine
         else
             # Get the tool name.
             tool = ( ( p[0].toUpperCase() + p[1...] if p ) for p in path.split('/').pop().split('-') ).join('')
-            assert tool in [ 'UploadList' ], "Unknown tool `#{tool}`"
+            assert tool in [ 'UploadList', 'CompareLists' ], "Unknown tool `#{tool}`"
 
             # Create the main app view.
             new AppView()

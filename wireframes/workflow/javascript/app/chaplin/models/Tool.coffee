@@ -14,4 +14,8 @@ module.exports = class Tool extends Chaplin.Model
                 @set 'description', 'Produces a list.'
                 @set 'io',
                     'output': 'List'
-
+            
+            when 'CompareLists'
+                @set 'description', 'Compares <em>n</em> lists.'
+                @set 'io',
+                    'input': 'Lists'

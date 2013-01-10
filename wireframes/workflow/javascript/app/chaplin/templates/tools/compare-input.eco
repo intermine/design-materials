@@ -1,0 +1,11 @@
+<div class="wrap">
+    <div class="row">
+        <div class="twelve columns">
+            <h1>Compare Lists - Step #1</h1>
+            <p>Use the workflow tool to specify the lists you want to compare.</p>
+        </div>
+    </div>
+    <div class="row twelve columns">
+        <a id="submit" class="button">Compare lists</span></a>
+    </div>
+</div>

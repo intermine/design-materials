@@ -1,8 +1,8 @@
-<em><%= moment(new Date(@created)).fromNow() %></em> <%= @order %>.
+<em class="ago"><%= moment(new Date(@created)).fromNow() %></em> <%= @order + 1 %>.
 <div class="box">
     <div class="head">
         <h3><%= @name %></h3>
-        <p><%= @description %></p>
+        <p><%- @description %></p>
     </div>
     <div class="body">
         <a class="tiny success button" data-action="step-run">Run</a>

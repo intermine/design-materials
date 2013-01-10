@@ -8,7 +8,7 @@ exports.config =
                 before: [
                     'vendor/js/jquery-1.7.2.js',
                     'vendor/js/underscore-1.3.3.js',
-                    'vendor/js/backbone-0.9.2.js'
+                    'vendor/js/backbone-0.9.9.js'
                 ]
 
         stylesheets:

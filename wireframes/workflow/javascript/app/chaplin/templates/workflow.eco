@@ -2,6 +2,6 @@
     <div class="twelve columns">
         <h1>Workflow</h1>
         <p class="message">The workflow boxes will be populated here as you work with this app.</p>
-        <div id="steps"></div>
+        <ul id="steps"></ul>
     </div>
 </div>

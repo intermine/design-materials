@@ -1,6 +1,6 @@
 Chaplin = require 'chaplin'
 
-module.exports = class UploadListToolView extends Chaplin.View
+module.exports = class CompareListsToolView extends Chaplin.View
 
     container:       'div#widget'
     containerMethod: 'html'
@@ -11,8 +11,8 @@ module.exports = class UploadListToolView extends Chaplin.View
 
     getTemplateFunction: ->
         switch @step
-            when 1 then require 'chaplin/templates/tools/upload-input'
-            when 2 then require 'chaplin/templates/tools/upload-done'
+            when 1 then require 'chaplin/templates/tools/compare-input'
+            when 2 then require 'chaplin/templates/tools/compare-done'
 
     afterRender: ->
         super

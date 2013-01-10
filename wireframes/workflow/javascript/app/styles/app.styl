@@ -122,41 +122,44 @@ div#workflow
     h1
         font-size: 22px
 
-    .step
-        display: block
-        float: left
-        margin: 10px 20px
-        position: relative
+    ul#steps
+        li.step
+            display: inline-block
+            margin: 10px 40px
+            position: relative
 
-        em
-            float: right
-            font-size: 11px
+            // when dragging
+            &.ui-sortable-helper
 
-        .io
-            position: absolute
-
-            span
-                text-align: right
+            em.ago
+                float: right
                 font-size: 11px
 
-            &.input
-                top: 50px
-                left: -25px
+            .io
+                position: absolute
 
-                .circle
-                    right: -15px
-                    border-color: #F6FAFB
+                span
+                    text-align: right
+                    font-size: 11px
 
-            &.output
-                top: 50px
-                right: -25px
-                cursor: pointer
+                &.input
+                    top: 50px
+                    left: -25px
 
-                .circle
-                    left: -15px
+                    .circle
+                        right: -15px
+                        border-color: #F6FAFB
 
-            .relative
-                position: relative
+                &.output
+                    top: 50px
+                    right: -25px
+                    cursor: pointer
+
+                    .circle
+                        left: -15px
+
+                .relative
+                    position: relative
 
                 .circle
                     border-radius: 20px
@@ -165,17 +168,17 @@ div#workflow
                     height: 20px
                     position: absolute
 
-        .box
-            background: #CEF2FB
-            padding: 10px 20px
-            margin-top: 10px
+            .box
+                background: #CEF2FB
+                padding: 10px 20px
+                margin-top: 10px
 
-            .head
-                margin-bottom: 10px
+                .head
+                    margin-bottom: 10px
 
-            h3
-                font-size: 16px
-                margin: 0
+                h3
+                    font-size: 16px
+                    margin: 0
 
 footer
     position: fixed

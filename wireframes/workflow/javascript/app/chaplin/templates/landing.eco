@@ -15,7 +15,7 @@
                 <ul>
                     <li><a href="/tool/upload-list">Upload List</a></li>
                     <li><a href="/tool/compare-lists">Compare Lists</a></li>
-                    <li><a href="/tool/saved-workflow">Use a Saved Workflow</a></li>
+                    <li>Use a Saved Workflow</li>
                 </ul>
             </div>
             <div class="four columns">
