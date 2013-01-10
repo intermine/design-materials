@@ -31,3 +31,5 @@ module.exports = class SidebarView extends Chaplin.View
 
     # Update the View rendering the Tools that have been used in the current session.
     updateView: ->
+        @collection.each (tool) ->
+            console.log tool

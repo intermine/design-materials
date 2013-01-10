@@ -19,6 +19,9 @@ module.exports = class FluxMine
         if path is '/'
             # Create the landing page view.
             new LandingView()
+
+            # Reset the workflow history.
+            window.Workflow.reset()
         else
             # Get the tool name.
             tool = ( ( p[0].toUpperCase() + p[1...] if p ) for p in path.split('/').pop().split('-') ).join('')

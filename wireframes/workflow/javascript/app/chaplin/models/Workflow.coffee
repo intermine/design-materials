@@ -23,3 +23,6 @@ module.exports = class Workflow extends Chaplin.Collection
 
         # Save on us too.
         @push model
+
+    # reset the workflow.
+    reset: -> @each (model) => @localStorage.destroy model
