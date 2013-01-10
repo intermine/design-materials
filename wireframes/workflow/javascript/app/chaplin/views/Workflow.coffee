@@ -31,6 +31,10 @@ module.exports = class SidebarView extends Chaplin.View
                 when 'add'
                     @collection.create tool
                     @updateView()
+                # Remove a tool.
+                when 'remove'
+                    @collection.remove tool
+                    @updateView()
 
         # Call initial view update.
         @updateView()

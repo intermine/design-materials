@@ -2,9 +2,10 @@
 <div class="box">
     <div class="head">
         <h3><%= @name %></h3>
+        <p><%= @description %></p>
     </div>
     <div class="body">
-        <a class="tiny success button" attr-action="step-run">Run</a>
-        <a class="tiny alert button" attr-action="step-remove">Remove</a>
+        <a class="tiny success button" data-action="step-run">Run</a>
+        <a class="tiny alert button" data-action="step-remove">Remove</a>
     </div>
 </div>

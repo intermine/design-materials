@@ -15,4 +15,8 @@ module.exports = class StepView extends Chaplin.View
 
         $(@el).attr 'class', 'step'
 
+        # Events on buttons.
+        @delegate 'click', '.button[data-action="step-remove"]', ->
+            Chaplin.mediator.publish 'workflow', 'remove', @model
+
         @
