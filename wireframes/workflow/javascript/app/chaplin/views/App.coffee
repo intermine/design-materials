@@ -13,6 +13,13 @@ module.exports = class AppView extends Chaplin.View
 
         @delegate 'click', '.button[data-action="workflow-toggle"]', @workflowToggle
 
+        # Listen to whole app messages.
+        Chaplin.mediator.subscribe 'app', (action, model) =>
+            switch action
+                # View a tool in a given state.
+                when 'view'
+                    console.log model
+
         @
 
     workflowToggle: (e) ->

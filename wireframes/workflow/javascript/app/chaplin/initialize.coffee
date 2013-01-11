@@ -72,3 +72,4 @@ $ ->
     window.Workflow = new Workflow()
     # Start the app.
     window.App = new FluxMine()
+    window.App.initialize()

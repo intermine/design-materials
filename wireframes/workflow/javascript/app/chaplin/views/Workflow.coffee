@@ -13,6 +13,12 @@ module.exports = class SidebarView extends Chaplin.View
 
     getTemplateFunction: -> require 'chaplin/templates/workflow'
 
+    dispose: ->
+        # Stop listening to these.
+        Chaplin.mediator.unsubscribe 'workflow'
+
+        super
+
     afterRender: ->
         super
 
@@ -22,7 +28,10 @@ module.exports = class SidebarView extends Chaplin.View
         steps = $(@el).find('#steps')
 
         # Set the height of the steps based on the height of the viewport.
-        steps.css 'height', ($(window).height() / 2) - 52
+        do height = -> steps.css 'height', ($(window).height() / 2) - 52
+
+        # On window resize, update height again.
+        $(window).resize height
 
         # Make the workflow grid sortable.
         steps.sortable
@@ -77,3 +86,14 @@ module.exports = class SidebarView extends Chaplin.View
         @collection.each (model) =>
             @views.push step = new StepView 'model': model
             steps.append step.el
+
+        # Make the workflow I/O droppable/draggable.
+        steps.find('.step .io.output').draggable
+            'helper': 'clone'
+        steps.find('.step .io.input').droppable
+            'hoverClass': 'over'
+            'drop': (event, ui) =>
+                # Get the source and target.
+                a = $(ui.draggable).closest('.step').attr('data-id')
+                b = $(event.target).closest('.step').attr('data-id')
+                console.log a, b

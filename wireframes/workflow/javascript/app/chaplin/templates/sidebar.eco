@@ -1,6 +1,6 @@
 <div class="wrap">
     <ul>
-        <li><a href="/tool/upload-list">Upload List</a></li>
-        <li><a href="/tool/compare-lists">Compare Lists</a></li>
+        <li><a data-tool="UploadList" href="/tool/upload-list">Upload List</a></li>
+        <li><a data-tool="CompareLists" href="/tool/compare-lists">Compare Lists</a></li>
     </ul>
 </div>

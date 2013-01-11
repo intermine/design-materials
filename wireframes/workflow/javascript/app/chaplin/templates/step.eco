@@ -6,6 +6,7 @@
     </div>
     <div class="body">
         <a class="tiny success button" data-action="step-run">Run</a>
+        <a class="tiny button" data-action="step-view">View</a>
         <a class="tiny alert button" data-action="step-remove">Remove</a>
     </div>
 
