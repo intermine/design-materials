@@ -28,9 +28,9 @@ module.exports = class SidebarView extends Chaplin.View
                 next = item.next()
                 # Move it in the Collection.
                 if next.length is 0
-                    @collection.move item.attr('data-order')
+                    @collection.move item.attr('data-id')
                 else
-                    @collection.move item.attr('data-order'), next.attr('data-order')
+                    @collection.move item.attr('data-id'), next.attr('data-id')
                 # Update view.
                 @updateView()
 
@@ -47,7 +47,7 @@ module.exports = class SidebarView extends Chaplin.View
                     # Update the tool's order (push on stack).
                     tool.set 'order', @collection.length
                     # Save on Collection.
-                    @collection.push tool
+                    @collection.add tool
                     @updateView()
                 # Remove a tool.
                 when 'remove'

@@ -17,17 +17,44 @@ class window.LocalStorage
     # Name of the store.
     constructor: (@name) ->
         item = window.localStorage.getItem @name
-        @records = (item and item.split(',')) or []
+        @keys = (item and item.split(',')) or []
 
     # Destroy all entries.
     reset: ->
-        # New Array.
-        @records = []
+        # Remove the object.
+        ( window.localStorage.removeItem(@name + '-' + key) for key in @keys )
+        # Remove keys.
+        @keys = []
         # Save new state.
         @save()
 
-    # Save the local `@records` into localStorage.
-    save: -> window.localStorage.setItem @name, @records.join(',')
+    # Add a Model.
+    add: (model) ->
+        # Need to generate an id?
+        unless model.id
+            model.id = guid()
+            model.set model.idAttribute, model.id
+
+        # Add to storage.
+        window.localStorage.setItem @name + '-' + model.id, JSON.stringify model
+        # Save the key.
+        key = model.id.toString()
+        @keys.push key unless key in @keys
+        @save()
+
+    # Save the local `@keys` into localStorage.
+    save: -> window.localStorage.setItem @name, @keys.join(',')
+
+    # Remove the model.
+    remove: (model) ->
+        # Object.
+        window.localStorage.removeItem @name + '-' + model.id
+        # Keys.
+        @keys.splice @keys.indexOf(model.id), 1
+        @save()
+
+    # Return all items.
+    findAll: -> ( JSON.parse(window.localStorage.getItem(@name + '-' + key)) for key in @keys )
 
     # Generate four random hex digits.
     S4 = -> (((1 + Math.random()) * 0x10000) | 0).toString(16).substring 1
