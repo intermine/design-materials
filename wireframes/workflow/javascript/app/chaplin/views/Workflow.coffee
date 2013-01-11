@@ -17,10 +17,15 @@ module.exports = class SidebarView extends Chaplin.View
         super
 
         # Hide by default and set width to how much space we have on screen.
-        $(@el).hide().css('width', $(window).width() - $('footer#bottom').outerWidth())
+        $(@el).css('width', $(window).width() - $('footer#bottom').outerWidth())
+
+        steps = $(@el).find('#steps')
+
+        # Set the height of the steps based on the height of the viewport.
+        steps.css 'height', ($(window).height() / 2) - 52
 
         # Make the workflow grid sortable.
-        $(@el).find('#steps').sortable
+        steps.sortable
             'stop': (event, ui) =>
                 # Get the element that has just moved.
                 item = $(ui.item)
@@ -41,7 +46,7 @@ module.exports = class SidebarView extends Chaplin.View
                 # Toggle the view.
                 when 'toggle'
                     # if $(@el).is(':hidden') then @updateView()
-                    $(@el).toggle()
+                    $(@el).parent().toggle()
                 # Add a tool.
                 when 'add'
                     # Update the tool's order (push on stack).

@@ -118,11 +118,16 @@ div#workflow
     left: 250px // width of the sidebar
     height: 50% // take up half the screen
     background: #F6FAFB
+    display: none
 
     h1
         font-size: 22px
 
     ul#steps
+        overflow-x: scroll
+        margin: 0
+        padding: 0
+
         li.step
             display: inline-block
             margin: 10px 40px
