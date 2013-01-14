@@ -2,20 +2,20 @@ Chaplin = require 'chaplin'
 
 StepView = require 'chaplin/views/Step'
 
-module.exports = class SidebarView extends Chaplin.View
+module.exports = class HistoryView extends Chaplin.View
 
-    'container':       '#workflow'
+    'container':       '#history'
     'containerMethod': 'html'
     'autoRender':      true
 
     # Store all step Views here to garbage dump.
     views: []
 
-    getTemplateFunction: -> require 'chaplin/templates/workflow'
+    getTemplateFunction: -> require 'chaplin/templates/history'
 
     dispose: ->
         # Stop listening to these.
-        Chaplin.mediator.unsubscribe 'workflow'
+        Chaplin.mediator.unsubscribe 'history'
 
         super
 
@@ -28,28 +28,28 @@ module.exports = class SidebarView extends Chaplin.View
         steps = $(@el).find('#steps')
 
         # Set the height of the steps based on the height of the viewport.
-        do height = -> steps.css 'height', ($(window).height() / 2) - 52
+        do height = -> steps.css 'height', ($(window).height() / 2) - 91
 
         # On window resize, update height again.
         $(window).resize height
 
-        # Make the workflow grid sortable.
-        steps.sortable
-            'stop': (event, ui) =>
-                # Get the element that has just moved.
-                item = $(ui.item)
-                # What is the item to the left of me (to determine new position).
-                next = item.next()
-                # Move it in the Collection.
-                if next.length is 0
-                    @collection.move item.attr('data-id')
-                else
-                    @collection.move item.attr('data-id'), next.attr('data-id')
-                # Update view.
-                @updateView()
+        # Make the history grid sortable.
+        # steps.sortable
+        #     'stop': (event, ui) =>
+        #         # Get the element that has just moved.
+        #         item = $(ui.item)
+        #         # What is the item to the left of me (to determine new position).
+        #         next = item.next()
+        #         # Move it in the Collection.
+        #         if next.length is 0
+        #             @collection.move item.attr('data-id')
+        #         else
+        #             @collection.move item.attr('data-id'), next.attr('data-id')
+        #         # Update view.
+        #         @updateView()
 
         # Listen to messages.
-        Chaplin.mediator.subscribe 'workflow', (action, tool) =>
+        Chaplin.mediator.subscribe 'history', (action, tool) =>
             # Which action?
             switch action
                 # Toggle the view.
@@ -87,13 +87,13 @@ module.exports = class SidebarView extends Chaplin.View
             @views.push step = new StepView 'model': model
             steps.append step.el
 
-        # Make the workflow I/O droppable/draggable.
-        steps.find('.step .io.output').draggable
-            'helper': 'clone'
-        steps.find('.step .io.input').droppable
-            'hoverClass': 'over'
-            'drop': (event, ui) =>
-                # Get the source and target.
-                a = $(ui.draggable).closest('.step').attr('data-id')
-                b = $(event.target).closest('.step').attr('data-id')
-                console.log a, b
+        # Make the history I/O droppable/draggable.
+        # steps.find('.step .io.output').draggable
+        #     'helper': 'clone'
+        # steps.find('.step .io.input').droppable
+        #     'hoverClass': 'over'
+        #     'drop': (event, ui) =>
+        #         # Get the source and target.
+        #         a = $(ui.draggable).closest('.step').attr('data-id')
+        #         b = $(event.target).closest('.step').attr('data-id')
+        #         console.log a, b

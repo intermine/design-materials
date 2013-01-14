@@ -2,7 +2,7 @@ Chaplin = require 'chaplin'
 
 Tool = require 'chaplin/models/Tool'
 
-module.exports = class Workflow extends Chaplin.Collection
+module.exports = class History extends Chaplin.Collection
 
     'model': Tool
 
@@ -10,7 +10,7 @@ module.exports = class Workflow extends Chaplin.Collection
         super
 
         # Get the localStorage data.
-        @store = new window.LocalStorage 'Workflow'
+        @store = new window.LocalStorage 'History'
         for record in @store.findAll()
             # Add it only in memory, we already have it in localStorage.
             @add new Tool record, false
@@ -20,7 +20,7 @@ module.exports = class Workflow extends Chaplin.Collection
     # Sort on order.
     comparator: (item) ->  item.get('order')
 
-    # Reset the workflow.
+    # Reset the history.
     reset: ->
         # In localStorage.
         @store.reset()
@@ -52,7 +52,7 @@ module.exports = class Workflow extends Chaplin.Collection
         # Locally.
         super
 
-    # Move a tool in its position in the workflow.
+    # Move a tool in its position in the history.
     move: (a, b) ->
         assert a, 'The `id` of the element needs to be provided'
 

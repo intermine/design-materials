@@ -4,7 +4,7 @@
             <div class="account right">
                 Monsieur Tout-le-Monde <span>&#8226;</span> <a href="#">Logout</a>
             </div>
-            <h1><strong>Flux:Mine</strong> - a workflow functionality prototype</h1>
+            <h1><strong>Flux:Mine</strong></h1>
         </div>
     </header>
 
@@ -14,12 +14,10 @@
     </section>
 </div>
 
-<div id="workflow"></div>
+<div id="history"></div>
 
 <footer id="bottom">
     <div class="wrap">
-        <div id="history">
-            <a class="button" data-action="workflow-toggle">Show workflow view</a>
-        </div>
+        <a class="button" data-action="history-toggle">Show history</a>
     </div>
 </footer>

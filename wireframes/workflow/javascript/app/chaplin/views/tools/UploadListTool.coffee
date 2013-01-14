@@ -23,8 +23,8 @@ module.exports = class UploadListToolView extends Chaplin.View
 
     # Submit list upload, ask for next step.
     submit: ->
-        # Create a step in workflow by emitting a message.
-        Chaplin.mediator.publish 'workflow', 'add', @model
+        # Create a step in a history by emitting a message.
+        Chaplin.mediator.publish 'history', 'add', @model
 
         # Change the step and re-render.
         @step += 1

@@ -5,25 +5,6 @@
         <p><%- @description %></p>
     </div>
     <div class="body">
-        <a class="tiny success button" data-action="step-run">Run</a>
-        <a class="tiny button" data-action="step-view">View</a>
         <a class="tiny alert button" data-action="step-remove">Remove</a>
     </div>
-
-    <% if @io.input: %>
-        <div class="io input" title="Input">
-            <span><%= @io.input %></span>
-            <div class="relative">
-                <div class="circle"></div>
-            </div>
-        </div>
-    <% end %>
-    <% if @io.output: %>
-        <div class="io output" title="Output">
-            <span><%= @io.output %></span>
-            <div class="relative">
-                <div class="circle"></div>
-            </div>
-        </div>
-    <% end %>
 </div>

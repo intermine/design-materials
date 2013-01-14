@@ -4,9 +4,9 @@ LandingView = require 'chaplin/views/Landing'
 AppView = require 'chaplin/views/App'
 SidebarView = require 'chaplin/views/Sidebar'
 ToolView = require 'chaplin/views/Tool'
-WorkflowView = require 'chaplin/views/Workflow'
+HistoryView = require 'chaplin/views/History'
 
-Workflow = require 'chaplin/models/Workflow'
+History = require 'chaplin/models/History'
 Tool = require 'chaplin/models/Tool'
 
 module.exports = class FluxController extends Chaplin.Controller
@@ -26,8 +26,8 @@ module.exports = class FluxController extends Chaplin.Controller
         # Create the landing page view.
         new LandingView()
 
-        # Reset the workflow history.
-        window.Workflow.reset()
+        # Reset the history.
+        window.History.reset()
 
     # A specific tool to show.
     tool: (opts) ->
@@ -38,8 +38,8 @@ module.exports = class FluxController extends Chaplin.Controller
         # Create the main app view.
         new AppView()
 
-        # Init the workflow view.
-        @views.push new WorkflowView 'collection': window.Workflow
+        # Init the history view.
+        @views.push new HistoryView 'collection': window.History
 
         # A specific tool, show the sidebar.
         new SidebarView()

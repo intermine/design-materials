@@ -65,11 +65,11 @@ class window.LocalStorage
 # -----------------------------------------------------------
 
 FluxMine = require 'chaplin/Application'
-Workflow = require 'chaplin/models/Workflow'
+History = require 'chaplin/models/History'
 
 $ ->
-    # Init the workflow.
-    window.Workflow = new Workflow()
+    # Init the history.
+    window.History = new History()
     # Start the app.
     window.App = new FluxMine()
     window.App.initialize()

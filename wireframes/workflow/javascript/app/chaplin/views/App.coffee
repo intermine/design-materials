@@ -11,24 +11,17 @@ module.exports = class AppView extends Chaplin.View
     afterRender: ->
         super
 
-        @delegate 'click', '.button[data-action="workflow-toggle"]', @workflowToggle
-
-        # Listen to whole app messages.
-        Chaplin.mediator.subscribe 'app', (action, model) =>
-            switch action
-                # View a tool in a given state.
-                when 'view'
-                    console.log model
+        @delegate 'click', '.button[data-action="history-toggle"]', @historyToggle
 
         @
 
-    workflowToggle: (e) ->
+    historyToggle: (e) ->
         # Change the button text.
         btn = $(e.target)
         btn.text(
-            if btn.text()[0...4] is 'Show' then 'Hide workflow view'
-            else 'Show workflow view'
+            if btn.text()[0...4] is 'Show' then 'Hide history'
+            else 'Show history'
         )
         
-        # Send a message (to WorkflowView).
-        Chaplin.mediator.publish 'workflow', 'toggle'
+        # Send a message (to HistoryView).
+        Chaplin.mediator.publish 'history', 'toggle'
