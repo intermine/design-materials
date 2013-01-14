@@ -1,6 +1,11 @@
 <div class="wrap">
+    <h3>Data Loaders</h3>
     <ul>
         <li><a data-tool="UploadList" href="/tool/upload-list">Upload List</a></li>
+    </ul>
+
+    <h3>Tools</h3>
+    <ul>
         <li><a data-tool="CompareLists" href="/tool/compare-lists">Compare Lists</a></li>
     </ul>
 </div>

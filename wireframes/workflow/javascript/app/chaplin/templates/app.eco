@@ -9,8 +9,12 @@
     </header>
 
     <section id="middle">
+        <!-- new tools -->
+        <aside id="left"></aside>
+        <!-- the tool -->
         <div id="widget"></div>
-        <aside id="sidebar"></aside>
+        <!-- from here -->
+        <aside id="right"></aside>
     </section>
 </div>
 

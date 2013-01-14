@@ -1,10 +1,12 @@
 <div class="wrap">
-    <div class="row">
-        <div class="twelve columns">
-            <h1>Compare Lists - Step #1</h1>
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h1>Compare Lists - Step #1</h1>
+            </div>
         </div>
-    </div>
-    <div class="row twelve columns">
-        <a id="submit" class="button">Compare lists</span></a>
+        <div class="row twelve columns">
+            <a id="submit" class="button">Compare lists</span></a>
+        </div>
     </div>
 </div>

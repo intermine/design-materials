@@ -2,7 +2,7 @@ Chaplin = require 'chaplin'
 
 LandingView = require 'chaplin/views/Landing'
 AppView = require 'chaplin/views/App'
-SidebarView = require 'chaplin/views/Sidebar'
+LeftSidebarView = require 'chaplin/views/LeftSidebar'
 ToolView = require 'chaplin/views/Tool'
 HistoryView = require 'chaplin/views/History'
 
@@ -42,7 +42,7 @@ module.exports = class FluxController extends Chaplin.Controller
         @views.push new HistoryView 'collection': window.History
 
         # A specific tool, show the sidebar.
-        new SidebarView()
+        new LeftSidebarView()
 
         # ...and the actual tool.
         new ToolView 'model': new Tool('name': tool)

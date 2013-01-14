@@ -19,6 +19,9 @@ body
     background: transparent
     -webkit-font-smoothing: antialiased
 
+    > div
+        height: 100%
+
 body, h1, h2, h3, h4, p, li
     font-family: Lato
 
@@ -76,20 +79,32 @@ section#middle
         ul
             list-style-type: none
 
-    aside#sidebar
-        float: left
+    aside
+        position: absolute
+        top: 0
         width: 250px
-        margin-left: -100%
-        position: relative
+
+        &#left
+            left: 0
+
+        &#right
+            right: 0
 
         .wrap
             height: 100%
             position: relative
             padding: 10px 0
 
+        a
+            cursor: pointer
+
+        h3
+            font-size: 16px
+            margin: 10px
+
         ul
             list-style-type: none
-            margin: 0 0 0 10px
+            margin: 0 10px
             padding: 0
 
             li
@@ -106,7 +121,10 @@ section#middle
             font-size: 22px
 
         .wrap
-            padding: 0 0 0 250px
+            padding: 0 0 0 250px // no space for right sidebar
+
+        .wrap.sidebar
+            padding: 0 250px // make space for both sidebars
 
         .half
             float: left
@@ -117,21 +135,21 @@ div#history
     bottom: 0
     left: 250px // width of the sidebar
     height: 50% // take up half the screen
-    background: #F6FAFB
     display: none
 
     h1
         font-size: 22px
 
     ul#steps
-        overflow-x: scroll
+        overflow-x: hidden
         margin: 0
         padding: 0
 
         li.step
             display: inline-block
-            margin: 10px 40px
+            margin: 5px 20px
             position: relative
+            width: 146px
 
             &.orange .box
                 background: #FDDDA0
@@ -190,11 +208,11 @@ div#history
                 padding: 10px 20px
                 margin-top: 10px
 
-                .head
-                    margin-bottom: 10px
-
                 h3
                     font-size: 16px
+                    margin: 0
+
+                p
                     margin: 0
 
 footer
