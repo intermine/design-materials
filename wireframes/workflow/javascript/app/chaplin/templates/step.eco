@@ -1,5 +1,0 @@
-<em class="ago"></em> <%= @order + 1 %>.
-<div class="box">
-    <h3><%= @name %></h3>
-    <p><%- @description %></p>
-</div>
