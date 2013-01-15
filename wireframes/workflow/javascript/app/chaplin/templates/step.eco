@@ -1,4 +1,4 @@
-<em class="ago"><%= moment(new Date(@created)).fromNow() %></em> <%= @order + 1 %>.
+<em class="ago"></em> <%= @order + 1 %>.
 <div class="box">
     <h3><%= @name %></h3>
     <p><%- @description %></p>
