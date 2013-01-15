@@ -8,4 +8,9 @@
     <ul>
         <li><a data-tool="CompareLists" href="/tool/compare-lists">Compare Lists</a></li>
     </ul>
+
+    <h3>Steps</h3>
+    <ul>
+        <li><a data-tool="UseSteps" href="/tool/use-steps">Use Saved Steps</a></li>
+    </ul>
 </div>

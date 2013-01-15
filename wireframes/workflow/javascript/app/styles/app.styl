@@ -117,8 +117,18 @@ section#middle
         overflow: hidden
         min-height: 100%
 
+        ul.list, ol.list
+            a
+                cursor: pointer
+
+        ul.list
+            list-style-type: none
+
         h1
             font-size: 22px
+
+        h2
+            font-size: 18px
 
         .wrap
             padding: 0 0 0 250px // no space for right sidebar
@@ -136,9 +146,18 @@ div#history
     left: 250px // width of the sidebar
     height: 50% // take up half the screen
     display: none
+    background: rgba(0,0,0,0.025)
 
-    h1
-        font-size: 22px
+    > div, > div .row, > div .row .columns
+        height: 100%
+
+    div.head
+        
+        h1
+            font-size: 22px
+        
+        a.button
+            float: right
 
     ul#steps
         overflow-x: hidden
@@ -149,7 +168,7 @@ div#history
             display: inline-block
             margin: 5px 20px
             position: relative
-            width: 146px
+            width: 170px
 
             &.orange .box
                 background: #FDDDA0
@@ -162,6 +181,10 @@ div#history
 
                 // .io.output .circle
                 //     border-color: #BBE19C
+
+            &.dark .box
+                background: #000
+                color: #FFF
 
             em.ago
                 float: right

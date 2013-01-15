@@ -16,6 +16,9 @@ module.exports = class FluxController extends Chaplin.Controller
     # Clean these up.
     views: []
 
+    # Whitelist of tools we can use.
+    tools: [ 'UploadList', 'CompareLists', 'UseSteps' ]
+
     initialize: ->
         ( view.dispose() for view in @views )
 
@@ -33,7 +36,7 @@ module.exports = class FluxController extends Chaplin.Controller
     tool: (opts) ->
         # Get the tool name.
         tool = ( ( p[0].toUpperCase() + p[1...] if p ) for p in opts.name.split('-') ).join('')
-        assert tool in [ 'UploadList', 'CompareLists' ], "Unknown tool `#{tool}`"
+        assert tool in @tools, "Unknown tool `#{tool}`"
 
         # Create the main app view.
         new AppView()

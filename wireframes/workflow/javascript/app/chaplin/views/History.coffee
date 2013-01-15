@@ -28,7 +28,7 @@ module.exports = class HistoryView extends Chaplin.View
         steps = $(@el).find('#steps')
 
         # Set the height of the steps based on the height of the viewport.
-        do height = -> steps.css 'height', ($(window).height() / 2) - 91
+        do height = -> steps.css 'height', ($(window).height() / 2) - 80
 
         # On window resize, update height again.
         $(window).resize height

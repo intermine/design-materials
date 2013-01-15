@@ -17,3 +17,7 @@ module.exports = class Tool extends Chaplin.Model
             when 'CompareLists'
                 @set 'description', 'Compares <em>n</em> lists.'
                 @set 'type', 'orange'
+
+            when 'UseSteps'
+                @set 'description', 'Saved Steps.'
+                @set 'type', 'dark'
