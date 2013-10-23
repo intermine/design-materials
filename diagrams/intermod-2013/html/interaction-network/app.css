@@ -1,0 +1,18 @@
+.link {
+    stroke: #999;
+    stroke-opacity: .6;
+    cursor: pointer;
+}
+
+.link.active {
+    stroke: #ff7f0e;
+    stroke-opacity: 1;
+}
+
+.label {
+    fill: #000;
+    stroke-width: 0;
+    font-family: "Arial";
+    font-size: 15px;
+    font-weight: bold;
+}
