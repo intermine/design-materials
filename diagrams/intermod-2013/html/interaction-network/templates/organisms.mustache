@@ -1,0 +1,10 @@
+<h2>Supporting Organisms</h2>
+<h3>{{ source.name }} - {{ target.name }}</h3>
+<table>
+{{ #organisms }}
+    <tr>
+        <td>{{ organism }}</td>
+        <td><span class="circle" {{ #supported }}style="background:#000"{{ /supported }}></span></td>
+    </tr>
+{{ /organisms }}
+</table>

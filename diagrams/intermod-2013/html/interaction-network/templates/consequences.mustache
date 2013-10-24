@@ -1,1 +1,11 @@
-{{ title }} spends {{ calc }}
+<h2>Mouse Mutation</h2>
+<h3>{{ name }}</h3>
+<table>
+{{ #consequences }}
+    <tr>
+        <td><span class="circle" style="background:{{ color }}"></span></td>
+        <td>{{ name }}</td>
+        <td>{{ count }}</td>
+    </tr>
+{{ /consequences }}
+</table>

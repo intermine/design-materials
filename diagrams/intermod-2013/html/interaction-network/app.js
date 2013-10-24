@@ -1,6 +1,40 @@
 var app = function() {
+
+    // Gene names.
+    var genes = [ 'GPS2', 'NCOR1', 'NCOR2', 'TBC1XR1', 'ANKRO11' ];
+
+    // Organisms.
+    var organisms = [
+        'mouse',
+        'rat',
+        'human',
+        'fly',
+        'nematode',
+        'mosquito'
+    ];
+
+    // The consequences in their order.
+    var consequences = [
+        'splice site',
+        'nonsense',
+        'frame shift',
+        'non conservative missense',
+        'conservative missense',
+        'synonymous'
+    ];
+
+    // Colors.
+    var colors = [
+        '#B30000',
+        '#FC4E2A',
+        '#FEB24C',
+        '#3F007D',
+        '#4EB3D3',
+        '#238443'
+    ];
+
     // Load the templates.
-    var templates = [ 'app', 'consequences' ];
+    var templates = [ 'app', 'consequences', 'organisms' ];
     return async.map(templates, function(name, cb) {
         d3.xhr('templates/' + name + '.mustache', function(err, res) {
             cb(err, res.responseText);
@@ -14,18 +48,6 @@ var app = function() {
         });
         templates = temp;
 
-        // Gene names.
-        var genes = [ 'GPS2', 'NCOR1', 'NCOR2', 'TBC1XR1', 'ANKRO11' ];
-
-        // The consequences in their order.
-        var consequences = [
-            'splice site mutant/variant',
-            'stop codon/gained',
-            'frame shift',
-            'non conservative/missense',
-            'conservative substitution'
-        ];
-
         // Render the body.
         d3.select('body').html(templates.app);
 
@@ -36,8 +58,8 @@ var app = function() {
             width = 1000,//-50 + (w.innerWidth || e.clientWidth || g.clientWidth),
             height = 500;//-50 + (w.innerHeight|| e.clientHeight|| g.clientHeight);
 
-        // Use a set of 10 colors.
-        var color = d3.scale.category10();
+        // Create a scale of colors for consequences.
+        // var color = d3.scale.ordinal().range(colorbrewer.YlOrRd[consequences.length].reverse());
 
         var svg = d3.select("#graph").append("svg")
             .attr("width", width)
@@ -59,20 +81,24 @@ var app = function() {
                     temp = [],
                     len = consequences.length;
                 for (i = 0; i < len; i++) {
-                    // Not all.
-                    if (Math.floor(Math.random() * 3) == 0) continue;
                     // Add the consequence.
                     temp.push({
                         'name': consequences[i],
-                        'count': Math.floor(Math.random() * (max - min + 1)) + min
+                        'count': (function() {
+                            // Zero.
+                            if (Math.floor(Math.random() * 3) == 0) return 0;
+                            // Random count.
+                            return Math.floor(Math.random() * (max - min + 1)) + min
+                        })(),
+                        'color': colors[i]
                     });
                 }
                 return temp
             })(15, 30) });
         });
 
+        // Init the links.
         (function(min, max) {
-            // Init the links.
             var i,
                 len = genes.length;
             for (i = 0; i < len; i++) {
@@ -81,41 +107,29 @@ var app = function() {
                     // Not all to all.
                     if (Math.floor(Math.random() * 3) == 0) continue;
                     // Save into links.
-                    var rand = Math.floor(Math.random() * (max - min + 1)) + min;
-                    json.links.push({ 'source': i, 'target': j, 'strength': rand });
+                    json.links.push({
+                        'source': i,
+                        'target': j,
+                        'strength': Math.floor(Math.random() * (max - min + 1)) + min,
+                        // Add the organisms.
+                        'organisms': _.clone(organisms).map(function(organism) {
+                            return {
+                                'organism': organism,
+                                'supported': Math.floor(Math.random() * 3) == 1
+                            };
+                        })
+                    });
                 }
             }
-        })(3, 7);
+        })(1, 8);
+
+        //console.log(JSON.stringify(json, null, 2));
 
         // Init force layout.
         force
             .nodes(json.nodes)
             .links(json.links)
             .start();
-
-        // Onclick link event.
-        var onLink = (function() {
-            // A currently active link.
-            var active = null;
-
-            return function() {
-                var self = d3.select(this);
-
-                // Are we clicking on the same link?
-                if (active && self.node() == active.node()) {
-                    active.classed("active", false);
-                    active = null;
-                } else {
-                    // Deselect the currently selected one?
-                    if (active) {
-                        active.classed("active", false);
-                    }
-                    // Select "this" one.
-                    active = self;
-                    active.classed("active", true);
-                }
-            };
-        })();
 
         // The links.
         var link = svg.selectAll(".link")
@@ -126,33 +140,34 @@ var app = function() {
                 return d.strength;
             })
             // Events.
-            .on("click", onLink);
+            .on("click", (function() {
+                // A currently active link.
+                var active = null;
 
-        // Onclick node event.
-        var onNode = (function() {
-            // A currently active node.
-            var active = null;
+                return function(d) {
+                    var self = d3.select(this);
 
-            return function() {
-                var self = d3.select(this);
+                    // Are we clicking on the same link?
+                    if (active && self.node() == active.node()) {
+                        active.classed("active", false);
+                        active = null;
+                        // Hide it.
+                        d3.select('#organisms').style('display', 'none');
+                    } else {
+                        // Deselect the currently selected one?
+                        if (active) active.classed("active", false);
+                        
+                        // Select "this" one.
+                        active = self;
+                        active.classed("active", true);
 
-                // Are we clicking on the same node?
-                if (active && self.node() == active.node()) {
-                    active = null;
-                    // Hide popup.
-                } else {
-                    // Select "this" one.
-                    active = self;
-                    // Onclick show consequences.
-                    d3.select('#consequences').html(
-                        Mustache.render(templates.consequences, {
-                            'title': 'Radek',
-                            'calc': '$500'
-                        })
-                    ).style('display', 'block');
-                }
-            };
-        })();
+                        // Render the template.
+                        d3.select('#organisms').html(
+                            Mustache.render(templates.organisms, d)
+                        ).style('display', 'block');
+                    }
+                };
+            })());
 
         // The nodes.
         var node = svg.selectAll("g.node")
@@ -161,7 +176,15 @@ var app = function() {
             .enter().append("svg:g")
             .attr("class", "node")
             // Events.
-            .on("click", onNode)
+            .on("mouseover", function(d) {
+                // Onclick show consequences.
+                d3.select('#consequences').html(
+                    Mustache.render(templates.consequences, d)
+                ).style('display', 'block');
+            })
+            .on("mouseout", function() {
+                d3.select('#consequences').style('display', 'none');
+            })
             .call(force.drag);
 
         // Add the circles.
@@ -169,12 +192,22 @@ var app = function() {
             ringR =  3; // ring radius
         node.forEach(function(list) {
             list.forEach(function(g, i) {
-                var temp = json.nodes[i].consequences,
-                    len = temp.length;
-                temp.reverse().forEach(function(consequence, j) {
+                var i,
+                    j = 0,
+                    // Clone and reverse; starting from the outside.
+                    arr = _.clone(json.nodes[i].consequences).reverse(),
+                    // All the zero-count.
+                    len = arr.length - _.filter(arr, { 'count': 0 }).length;
+
+                // Loop it.
+                arr.forEach(function(consequence) {
+                    if (!consequence.count) return;
+                    // Add it.
                     d3.select(g).append('circle')
                         .attr("r", innerR + ((len - j) * ringR))
-                        .attr("fill", color(j))
+                        .attr("fill", consequence.color)
+                    // This one was included.
+                    j++;
                 });
             });
         });

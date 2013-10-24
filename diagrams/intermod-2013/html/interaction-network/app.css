@@ -53,12 +53,54 @@ body {
     cursor: pointer;
 }
 
-#consequences {
+#graph .circle {
+    fill: #FFF;
+}
+
+#organisms, #consequences {
     position: absolute;
     top: 0;
-    right: 0;
     border: 1px solid grey;
     padding: 10px;
     display: none;
     margin: 20px;
+}
+
+#organisms {
+    left: 0;
+}
+
+#consequences {
+    right: 0;
+}
+
+h1 {
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+h2, h3 {
+    margin: 0 0 10px 0;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+table {
+    width: 100%;
+}
+
+table td:not(:last-child) {
+    padding-right: 10px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border:1px solid #000;
 }
