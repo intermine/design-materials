@@ -10,6 +10,11 @@ var consequences = [
     'conservative substitution'
 ];
 
+// Mustache templates.
+var templates = {
+    'consequences': '{{title}} spends {{calc}}'
+};
+
 var w = window,
     d = document,
     e = d.documentElement,
@@ -76,7 +81,7 @@ force
 
 // Onclick link event.
 var onLink = (function() {
-    // A currently active node.
+    // A currently active link.
     var active = null;
 
     return function() {
@@ -96,7 +101,7 @@ var onLink = (function() {
             active.classed("active", true);
         }
     };
-})()
+})();
 
 // The links.
 var link = svg.selectAll(".link")
@@ -109,12 +114,40 @@ var link = svg.selectAll(".link")
     // Events.
     .on("click", onLink);
 
+// Onclick node event.
+var onNode = (function() {
+    // A currently active node.
+    var active = null;
+
+    return function() {
+        var self = d3.select(this);
+
+        // Are we clicking on the same node?
+        if (active && self.node() == active.node()) {
+            active = null;
+            // Hide popup.
+        } else {
+            // Select "this" one.
+            active = self;
+            // Onclick show consequences.
+            return d3.select('#consequences').html(
+                Mustache.render(templates.consequences, {
+                    'title': 'Radek',
+                    'calc': '$500'
+                })
+            );
+        }
+    };
+})();
+
 // The nodes.
 var node = svg.selectAll("g.node")
     .data(json.nodes)
     // Wrapping element.
     .enter().append("svg:g")
     .attr("class", "node")
+    // Events.
+    .on("click", onNode)
     .call(force.drag);
 
 // Add the circles.
