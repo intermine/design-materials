@@ -17,6 +17,7 @@ var w = window,
     width = -50 + (w.innerWidth || e.clientWidth || g.clientWidth),
     height = -50 + (w.innerHeight|| e.clientHeight|| g.clientHeight);
 
+// Use a set of 10 colors.
 var color = d3.scale.category10();
 
 var svg = d3.select("body").append("svg")
@@ -65,9 +66,7 @@ genes.forEach(function(item) {
             json.links.push({ 'source': i, 'target': j, 'strength': rand });
         }
     }
-})(3, 8);
-
-console.log(JSON.stringify(json, null, 2));
+})(3, 7);
 
 // Init force layout.
 force
@@ -118,10 +117,24 @@ var node = svg.selectAll("g.node")
     .attr("class", "node")
     .call(force.drag);
 
-// Add a circle.
+// Add the circles.
+var innerR = 3, // inner radius.
+    ringR =  3; // ring radius
+node.forEach(function(list) {
+    list.forEach(function(g, i) {
+        var temp = json.nodes[i].consequences,
+            len = temp.length;
+        temp.reverse().forEach(function(consequence, j) {
+            d3.select(g).append('circle')
+                .attr("r", innerR + ((len - j) * ringR))
+                .attr("fill", color(j))
+        });
+    });
+});
+
 node.append('circle')
     .attr("class", "circle")
-    .attr("r", 10)
+    .attr("r", innerR)
 
 // Add labels.
 node.append("svg:text")
@@ -129,7 +142,7 @@ node.append("svg:text")
     .text(function(d) {
         return d.name;
     })
-    .attr("x", 10);
+    .attr("x", 20);
 
 // Draw the links.
 force.on("tick", function() {
