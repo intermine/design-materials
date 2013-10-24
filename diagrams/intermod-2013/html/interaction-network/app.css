@@ -57,21 +57,49 @@ body {
     fill: #FFF;
 }
 
-#organisms, #consequences {
+.box {
     position: absolute;
-    top: 0;
-    border: 1px solid grey;
+    border: 1px solid #999;
     padding: 10px;
     display: none;
     margin: 20px;
 }
 
 #organisms {
+    top: 0;
     left: 0;
 }
 
 #consequences {
+    top: 0;
     right: 0;
+}
+
+#consequences table td:not(:last-child) {
+    padding-right: 10px;
+}
+
+#legend {
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 300px;
+}
+
+#heatmap {
+    bottom: 0;
+    right: 0;
+    display: block;
+}
+
+#heatmap table td {
+    border: 1px solid #FFF;
+}
+
+#heatmap table th {
+    text-align: left;
+    font-weight: normal;
+    padding-right: 5px;
 }
 
 h1 {
@@ -81,6 +109,10 @@ h1 {
 
 h2, h3 {
     margin: 0 0 10px 0;
+}
+
+p {
+    margin: 0;
 }
 
 svg {
@@ -93,14 +125,22 @@ table {
     width: 100%;
 }
 
-table td:not(:last-child) {
-    padding-right: 10px;
-}
-
 .circle {
     border-radius: 50%;
     width: 8px;
     height: 8px;
     display: inline-block;
     border:1px solid #000;
+}
+
+.square {
+    background: rgba(153,153,153,0.25);
+    width: 5px;
+    display: inline-block;
+    height: 100%;
+    color: #FFF;
+}
+
+.square.full {
+    background: #000;
 }

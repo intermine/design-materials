@@ -1,0 +1,21 @@
+<h2>Individuals</h2>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            {{ #population }}
+                <th><span class="square" style="background:{{ color }}"></span></th>
+            {{ /population }}
+        </tr>
+    </thead>
+    <tbody>
+        {{ #individuals }}
+            <tr>
+                <th>{{ gene }}</th>
+                {{ #expressions }}
+                    <td><span class="square{{ #expressed }} full{{ /expressed }}"></span></td>
+                {{ /expressions }}
+            </tr>
+        {{ /individuals }}
+    </tbody>
+</table>

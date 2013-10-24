@@ -34,7 +34,7 @@ var app = function() {
     ];
 
     // Load the templates.
-    var templates = [ 'app', 'consequences', 'organisms' ];
+    var templates = [ 'app', 'consequences', 'heatmap', 'organisms' ];
     return async.map(templates, function(name, cb) {
         d3.xhr('templates/' + name + '.mustache', function(err, res) {
             cb(err, res.responseText);
@@ -51,6 +51,38 @@ var app = function() {
         // Render the body.
         d3.select('body').html(templates.app);
 
+        // Render the heatmap.
+        d3.select('#heatmap').html(
+            Mustache.render(templates.heatmap, {
+                // Population head.
+                'population': (function() {
+                    var arr = [],
+                        i,
+                        clr = d3.scale.category10();
+                    for (i = 0; i < 10; i++) {
+                        arr.push({ 'i': i + 1, 'color': clr(i) });
+                    }
+                    return arr;
+                })(),
+                // Random population data.
+                'individuals': (function() {
+                    var i,
+                        iArr = [],
+                        len = genes.length;
+                    for (i = 0; i < len; i++) {
+                        var j,
+                            jArr = [];
+                        for (j = 0; j < 10; j++) {
+                            jArr.push({ 'expressed': Math.floor(Math.random() * 5) == 0 });
+                        }
+                        iArr.push({ 'gene': genes[i], 'expressions': jArr });
+                    }
+                    return iArr;
+                })()
+            })
+        );
+
+        // Size of a graph.
         var w = window,
             d = document,
             e = d.documentElement,
