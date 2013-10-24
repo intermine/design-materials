@@ -42,7 +42,7 @@ genes.forEach(function(item) {
             json.links.push({ 'source': i, 'target': j, 'strength': rand });
         }
     }
-})(1, 10);
+})(3, 8);
 
 // Find a node by its name.
 var find = _.memoize(function(name) {
@@ -55,6 +55,30 @@ force
     .links(json.links)
     .start();
 
+// Onclick link event.
+var onLink = (function() {
+    // A currently active node.
+    var active = null;
+
+    return function() {
+        var self = d3.select(this);
+
+        // Are we clicking on the same link?
+        if (active && self.node() == active.node()) {
+            active.classed("active", false);
+            active = null;
+        } else {
+            // Deselect the currently selected one?
+            if (active) {
+                active.classed("active", false);
+            }
+            // Select "this" one.
+            active = self;
+            active.classed("active", true);
+        }
+    };
+})()
+
 // The links.
 var link = svg.selectAll(".link")
     .data(json.links)
@@ -64,14 +88,7 @@ var link = svg.selectAll(".link")
         return d.strength;
     })
     // Events.
-    .on("click", (function() {
-        var active = false;
-
-        return function() {
-            active = !active;
-            d3.select(this).classed("active", active);
-        };
-    })());
+    .on("click", onLink);
 
 // The nodes.
 var node = svg.selectAll("g.node")
