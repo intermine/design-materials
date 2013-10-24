@@ -1,6 +1,15 @@
 // Gene names.
 var genes = [ 'GPS2', 'NCOR1', 'NCOR2', 'TBC1XR1', 'ANKRO11' ];
 
+// The consequences in their order.
+var consequences = [
+    'splice site mutant/variant',
+    'stop codon/gained',
+    'frame shift',
+    'non conservative/missense',
+    'conservative substitution'
+];
+
 var w = window,
     d = document,
     e = d.documentElement,
@@ -25,12 +34,26 @@ var json = { 'nodes': [], 'links': [] };
 
 // Init the nodes.
 genes.forEach(function(item) {
-    json.nodes.push({ 'name': item });
+    json.nodes.push({ 'name': item, 'consequences': (function(min, max) {
+        var i,
+            temp = [],
+            len = consequences.length;
+        for (i = 0; i < len; i++) {
+            // Not all.
+            if (Math.floor(Math.random() * 3) == 0) continue;
+            // Add the consequence.
+            temp.push({
+                'name': consequences[i],
+                'count': Math.floor(Math.random() * (max - min + 1)) + min
+            });
+        }
+        return temp
+    })(15, 30) });
 });
 
 (function(min, max) {
     // Init the links.
-    var i = 0,
+    var i,
         len = genes.length;
     for (i = 0; i < len; i++) {
         var j;
@@ -44,10 +67,7 @@ genes.forEach(function(item) {
     }
 })(3, 8);
 
-// Find a node by its name.
-var find = _.memoize(function(name) {
-    return _.find(json.nodes, { 'name': name });
-});
+console.log(JSON.stringify(json, null, 2));
 
 // Init force layout.
 force
