@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Source Sans Pro'), local('SourceSansPro-Regular'),
+    url('vendor/fonts/SourceSansPro-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'),
+    url('vendor/fonts/SourceSansPro-Semibold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+    url('vendor/fonts/SourceSansPro-Bold.woff') format('woff');
+}
+
 body {
     width: 1000px;
     height: 500px;
@@ -5,6 +27,7 @@ body {
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
+    font-family: "Source Sans Pro";
 }
 
 #graph .link {
@@ -21,7 +44,7 @@ body {
 #graph .label {
     fill: #000;
     stroke-width: 0;
-    font-family: "Arial";
+    font-family: "Source Sans Pro";
     font-size: 15px;
     font-weight: bold;
 }
