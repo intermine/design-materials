@@ -1,15 +1,24 @@
-.link {
+body {
+    width: 1000px;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+#graph .link {
     stroke: #999;
     stroke-opacity: .6;
     cursor: pointer;
 }
 
-.link.active {
+#graph .link.active {
     stroke: #000;
     stroke-opacity: 1;
 }
 
-.label {
+#graph .label {
     fill: #000;
     stroke-width: 0;
     font-family: "Arial";
@@ -17,6 +26,16 @@
     font-weight: bold;
 }
 
-.node {
+#graph .node {
     cursor: pointer;
+}
+
+#consequences {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid grey;
+    padding: 10px;
+    display: none;
+    margin: 20px;
 }
