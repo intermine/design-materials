@@ -63,11 +63,44 @@ body {
     padding: 10px;
     display: none;
     margin: 20px;
+    width: 250px;
 }
 
 #organisms {
     top: 0;
     left: 0;
+}
+
+#organisms .tree {
+    height: 200px;
+}
+
+#organisms .name {
+  font-size: 12px;
+}
+
+#organisms circle {
+    opacity: 0;
+}
+
+#organisms circle.supported {
+    opacity: 1;
+}
+
+#organisms circle.unsupported {
+    opacity: 1;
+    fill: rgba(153,153,153,0.5);
+}
+
+#organisms .about {
+  fill: #777;
+  font-size: smaller;
+}
+
+#organisms .link {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
 
 #consequences {
@@ -83,7 +116,14 @@ body {
     bottom: 0;
     left: 0;
     display: block;
-    width: 300px;
+    font-family: Arial;
+}
+
+#legend p span {
+    background: #000;
+    color: #FFF;
+    padding: 2px 4px;
+    margin-right: 5px;
 }
 
 #heatmap {
@@ -94,9 +134,17 @@ body {
 
 #heatmap table td {
     border: 1px solid #FFF;
+    text-align: center;
 }
 
-#heatmap table th {
+#heatmap table thead th {
+    text-align: center;
+    font-weight: normal;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+#heatmap table tbody th {
     text-align: left;
     font-weight: normal;
     padding-right: 5px;
@@ -109,6 +157,14 @@ h1 {
 
 h2, h3 {
     margin: 0 0 10px 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
 }
 
 p {
@@ -135,7 +191,7 @@ table {
 
 .square {
     background: rgba(153,153,153,0.25);
-    width: 5px;
+    width: 10px;
     display: inline-block;
     height: 100%;
     color: #FFF;

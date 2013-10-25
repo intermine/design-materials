@@ -1,0 +1,54 @@
+{
+    "name": "alien",
+    "show": false,
+    "children": [
+        {
+            "name": "rat/mouse/human/zebrafish/worm dad",
+            "show": false,
+            "children": [
+                {
+                    "name": "rat/mouse/human/zebrafish dad",
+                    "show": false,
+                    "children": [
+                        {
+                            "name": "rat/mouse/human dad",
+                            "show": false,
+                            "children": [
+                                {
+                                    "name": "human",
+                                    "show": true
+                                },
+                                {
+                                    "name": "rat/mouse dad",
+                                    "show": false,
+                                    "children": [
+                                        {
+                                            "name": "rat",
+                                            "show": true
+                                        },
+                                        {
+                                            "name": "mouse",
+                                            "show": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "zebrafish",
+                            "show": true
+                        }
+                    ]
+                },
+                {
+                    "name": "fly",
+                    "show": true
+                }
+            ]
+        },
+        {
+            "name": "yeast",
+            "show": true
+        }
+    ]
+}
