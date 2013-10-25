@@ -41,6 +41,17 @@ body {
     stroke-opacity: 1;
 }
 
+#graph .link.fake {
+    stroke-opacity: 0;
+}
+
+#graph .link.active.fake {
+    stroke: #000;
+    stroke-opacity: 1;
+    stroke-dasharray: 0,2 1;
+    cursor: default;
+}
+
 #graph .label {
     fill: #000;
     stroke-width: 0;
@@ -53,8 +64,8 @@ body {
     cursor: pointer;
 }
 
-#graph .circle {
-    fill: #FFF;
+#graph g.fake * {
+    opacity: 0;
 }
 
 .box {
@@ -64,6 +75,7 @@ body {
     display: none;
     margin: 20px;
     width: 250px;
+    background: #FFF;
 }
 
 #organisms {

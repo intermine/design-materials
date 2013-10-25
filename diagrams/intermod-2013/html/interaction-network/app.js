@@ -69,7 +69,7 @@ var app = function() {
                         })
                     }
                 
-                })(14)
+                })(14) // amount of individuals
             )
         );
 
@@ -147,6 +147,28 @@ var app = function() {
             }
         })(1, 8);
 
+        // Add fake nodes to have links from (all) boxes.
+        var i;
+        for (i = 0; i < 4; i++) {
+            json.nodes.push([
+                { 'fixed': true, 'x': 100, 'y': 100 },
+                { 'fixed': true, 'x': 100, 'y': 400 },
+                { 'fixed': true, 'x': 900, 'y': 100 },
+                { 'fixed': true, 'x': 900, 'y': 400 }
+            ][i]);
+
+            var j,
+                len = json.nodes.length - (i * 1) - 1;
+            for (j = 0; j < len; j++) {
+                json.links.push({
+                    'source': j,
+                    'target': json.nodes.length - 1,
+                    'strength': 1,
+                    'fake': true
+                });
+            }
+        }
+
         //console.log(JSON.stringify(json, null, 2));
 
         // Init force layout.
@@ -159,9 +181,14 @@ var app = function() {
         var link = svgN.selectAll(".link")
             .data(json.links)
             .enter().append("line")
-            .attr("class", "link")
+            .attr("class", function(d) {
+                return (d.fake) ? "fake link" : "link";
+            })
+            .attr("data-connection", function(d) {
+                return d.source.index + '-' + d.target.index;
+            })
             .style("stroke-width", function(d) {
-                return d.strength;
+                return (d.fake) ? 3 : d.strength;
             })
             // Events.
             .on("click", (function() {
@@ -169,21 +196,38 @@ var app = function() {
                 var active = null;
 
                 return function(dR) {
-                    var self = d3.select(this);
+                    if (dR.fake) return;
+
+                    var self = d3.select(this),
+                        hide = function() {
+                            active.classed("active", false);
+
+                            // Hide the box.
+                            d3.select('#organisms').style('display', 'none');
+
+                            // Hide the connectors.
+                            svgN.selectAll('line.active').classed('active', false);
+                        };
 
                     // Are we clicking on the same link?
                     if (active && self.node() == active.node()) {
-                        active.classed("active", false);
+                        hide();
                         active = null;
-                        // Hide it.
-                        d3.select('#organisms').style('display', 'none');
                     } else {
                         // Deselect the currently selected one?
-                        if (active) active.classed("active", false);
+                        if (active) hide();
                         
                         // Select "this" one.
                         active = self;
                         active.classed("active", true);
+
+                        // Show the connectors to the box.
+                        [ dR.source.index, dR.target.index ].forEach(function(from) {
+                            var to = json.nodes[json.nodes.length - 4].index;
+
+                            svgN.select('line.fake.link[data-connection="' +
+                            from + '-' + to + '"]').classed('active', true);
+                        });
 
                         // Render the template.
                         d3.select('#organisms').html(
@@ -256,16 +300,34 @@ var app = function() {
             .data(json.nodes)
             // Wrapping element.
             .enter().append("svg:g")
-            .attr("class", "node")
+            .attr("class", function(d) {
+                return (d.fixed) ? "fake" : "node";
+            })
             // Events.
             .on("mouseover", function(d) {
+                if (d.fixed) return;
+                
                 // Onclick show consequences.
                 d3.select('#consequences').html(
                     Mustache.render(templates.consequences, d)
                 ).style('display', 'block');
+
+                // Show the connector to the box.
+                var from = d.index,
+                    to = json.nodes[json.nodes.length - 2].index;
+
+                svgN.select('line.fake.link[data-connection="' +
+                    from + '-' + to + '"]').classed('active', true);
             })
-            .on("mouseout", function() {
+            .on("mouseout", function(d) {
                 d3.select('#consequences').style('display', 'none');
+
+                // Hide the connector to the box.
+                var from = d.index,
+                    to = json.nodes[json.nodes.length - 2].index;
+
+                svgN.select('line.fake.link[data-connection="' +
+                    from + '-' + to + '"]').classed('active', false);
             })
             .call(force.drag);
 
@@ -274,6 +336,11 @@ var app = function() {
             ringR =  3; // ring radius
         node.forEach(function(list) {
             list.forEach(function(g, i) {
+                // Skip fake fixed nodes.
+                if (json.nodes[i].fixed) {
+                    return d3.select(g).append('circle').attr("r", 0)
+                }
+
                 var i,
                     j = 0,
                     // Clone and reverse; starting from the outside.
