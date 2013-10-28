@@ -83,11 +83,8 @@ var app = function() {
             d = document,
             e = d.documentElement,
             g = d.getElementsByTagName('body')[0],
-            width = 1000,//-50 + (w.innerWidth || e.clientWidth || g.clientWidth),
-            height = 500;//-50 + (w.innerHeight|| e.clientHeight|| g.clientHeight);
-
-        // Create a scale of colors for consequences.
-        // var color = d3.scale.ordinal().range(colorbrewer.YlOrRd[consequences.length].reverse());
+            width = 1000,
+            height = 500;
 
         var svgN = d3.select("#graph").append("svg")
             .attr("width", width)
@@ -103,26 +100,13 @@ var app = function() {
         var json = { 'nodes': [], 'links': [] };
 
         // Init the nodes.
-        data.genes.forEach(function(item) {
+        _.forEach(data.genes, function(item) {
             json.nodes.push({ 'name': item, 'consequences': (function(min, max) {
-                var i,
-                    temp = [],
-                    len = data.consequences.length;
-                for (i = 0; i < len; i++) {
-                    // Add the consequence.
-                    temp.push({
-                        'name': data.consequences[i],
-                        'count': (function() {
-                            // Zero.
-                            if (Math.floor(Math.random() * 3) == 0) return 0;
-                            // Random count boosting the first four.
-                            var boost = (i < 4) ? 20 : 0;
-                            return Math.floor(Math.random() * (max + boost - min + 1)) + min
-                        })(),
-                        'color': data.colors[i]
-                    });
-                }
-                return temp
+                return _.cloneDeep(data.consequences).map(function(consequence, i) {
+                    consequence.present = (Math.random() < 0.5);
+                    consequence.color = data.colors[i];
+                    return consequence;
+                });
             })(15, 30) });
         });
 
@@ -141,12 +125,18 @@ var app = function() {
                         'target': j,
                         'strength': Math.floor(Math.random() * (max - min + 1)) + min,
                         // Add the organisms.
-                        'organisms': _.clone(data.organisms).map(function(organism) {
-                            return {
-                                'organism': organism,
-                                'supported': Math.floor(Math.random() * 3) == 1
-                            };
-                        })
+                        'organisms': (function() {
+                            // How far will the conservation reach?
+                            var conservation = Math.floor(Math.random() * data.organisms.length);
+                            // Make sure we are present in human.
+                            var conservation = (conservation) ? conservation : 1;
+                            // Make the array.
+                            return _.clone(data.organisms).map(function(organism, i) {
+                                organism = { 'organism': organism };
+                                organism.supported = (i <= conservation);
+                                return organism;
+                            });
+                        })()
                     });
                 }
             }
@@ -342,11 +332,11 @@ var app = function() {
                     // Clone and reverse; starting from the outside.
                     arr = json.nodes[i].consequences,
                     // All the zero-count.
-                    len = arr.length - _.filter(arr, { 'count': 0 }).length;
+                    len = _.filter(arr, { 'present': true }).length;
 
                 // Loop it.
                 arr.forEach(function(consequence) {
-                    if (!consequence.count) return;
+                    if (!consequence.present) return;
                     // Add it.
                     d3.select(g).append('circle')
                         .attr("r", innerR + ((len - j) * ringR))

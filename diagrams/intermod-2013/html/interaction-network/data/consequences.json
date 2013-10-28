@@ -1,8 +1,21 @@
 [
-    "nonsense",
-    "splice site",
-    "frame shift",
-    "non conservative missense",
-    "conservative missense",
-    "synonymous"
+    {
+        "name": "nonsense",
+        "count": 20
+    }, {
+        "name": "splice site",
+        "count": 18
+    }, {
+        "name": "frame shift",
+        "count": 14
+    }, {
+        "name": "non conservative missense",
+        "count": 7
+    }, {
+        "name": "conservative missense",
+        "count": 3
+    }, {
+        "name": "synonymous",
+        "count": 2
+    }
 ]
