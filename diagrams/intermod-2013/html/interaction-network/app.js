@@ -56,12 +56,17 @@ var app = function() {
                         'individuals': (function() {
                             var i,
                                 iArr = [],
-                                len = data.genes.length;
+                                len = data.genes.length,
+                                fn = d3.scale.linear().domain([ 0, len - 1 ]).range([ 0, size - 1 ]);
                             for (i = 0; i < len; i++) {
                                 var j,
-                                    jArr = [];
+                                    jArr = [],
+                                    middle = fn(i);
                                 for (j = 0; j < size; j++) {
-                                    jArr.push({ 'expressed': Math.floor(Math.random() * 5) == 0 });
+                                    // Boost the centre or noise?
+                                    chance = (middle >= j - 1 && middle <= j + 1) ? 1 : 8;
+                                    // Push it.
+                                    jArr.push({ 'expressed': Math.floor(Math.random() * chance) == 0 });
                                 }
                                 iArr.push({ 'gene': data.genes[i], 'expressions': jArr });
                             }
@@ -148,6 +153,7 @@ var app = function() {
         })(1, 8);
 
         // Add fake nodes to have links from (all) boxes.
+        // Will keep the chart in a nice webby centre.
         var i;
         for (i = 0; i < 4; i++) {
             json.nodes.push([
