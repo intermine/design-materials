@@ -1,7 +1,7 @@
 body {
     width: 1000px;
     height: 500px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
@@ -54,7 +54,7 @@ body {
 }
 
 #organisms .tree {
-    height: 200px;
+    height: 165px;
 }
 
 #organisms .name {

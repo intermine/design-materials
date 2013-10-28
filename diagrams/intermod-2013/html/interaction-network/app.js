@@ -55,22 +55,38 @@ var app = function() {
                         // Random population data.
                         'individuals': (function() {
                             var i,
-                                iArr = [],
-                                len = data.genes.length,
-                                fn = d3.scale.linear().domain([ 0, len - 1 ]).range([ 0, size - 1 ]);
-                            for (i = 0; i < len; i++) {
-                                var j,
-                                    jArr = [],
-                                    middle = fn(i);
-                                for (j = 0; j < size; j++) {
-                                    // Boost the centre or noise?
-                                    chance = (middle >= j - 1 && middle <= j + 1) ? 1 : 8;
-                                    // Push it.
-                                    jArr.push({ 'expressed': Math.floor(Math.random() * chance) == 0 });
+                                result = null,
+                                len    = data.genes.length,
+                                found  = false,
+                                total  = null;
+                            // Find a nice "line" through.
+                            while (!found) {
+                                result = [];
+                                total  = 0;
+                                // For all genes.
+                                for (i = 0; i < len; i++) {
+                                    // Have between 1 - 4 subjects expressed in each gene.
+                                    var bound = Math.floor(Math.random() * (6 - 2)) + 1,
+                                        gene = [];
+                                    // For all the population.
+                                    for (j = 0; j < size; j++) {
+                                        // Is this gene expressed in this subject?
+                                        var expressed;
+                                        // Increase the total then.
+                                        if (expressed = (j >= total && !!bound)) {
+                                            total += 1;
+                                            bound -= 1;
+                                        }
+                                        gene.push({ 'expressed': expressed });
+                                    }       
+                                    // Save it.
+                                    result.push({ 'gene': data.genes[i], 'expressions': gene });
                                 }
-                                iArr.push({ 'gene': data.genes[i], 'expressions': jArr });
+                                // Nicely filled in and no expressions left?
+                                if (total == size && !bound) found = true;
                             }
-                            return iArr;
+
+                            return result;
                         })
                     }
                 
@@ -101,13 +117,16 @@ var app = function() {
 
         // Init the nodes.
         _.forEach(data.genes, function(item) {
-            json.nodes.push({ 'name': item, 'consequences': (function(min, max) {
-                return _.cloneDeep(data.consequences).map(function(consequence, i) {
-                    consequence.present = (Math.random() < 0.5);
-                    consequence.color = data.colors[i];
-                    return consequence;
-                });
-            })(15, 30) });
+            json.nodes.push({
+                'name': item,
+                'consequences': _.cloneDeep(data.consequences).map(
+                    function(consequence, i) {
+                        consequence.present = Math.random() < 0.5;
+                        consequence.color = data.colors[i];
+                        return consequence;
+                    }
+                )
+            });
         });
 
         // Init the links.
@@ -223,7 +242,7 @@ var app = function() {
                         (function() {
 
                             var width = 270,
-                                height = 290,
+                                height = 250,
                                 top = 70,
                                 left = 10,
                                 text = 80;
@@ -262,13 +281,12 @@ var app = function() {
                                 return (d.show) ? (
                                     _.find(dR.organisms, { 'organism': d.name }).supported ? 'supported' : 'unsupported'
                                 ) : '';
-                            });
+                            })
+                            .attr("transform", "translate(5,1)");
 
                             node.append("text")
-                            .attr("dx", function(d) {
-                                return d.children ? -8 : 8;
-                            })
-                            .attr("dy", 3)
+                            .attr("dx", 13)
+                            .attr("dy", 6)
                             .attr("text-anchor", function(d) {
                                 return d.children ? "end" : "start";
                             })
