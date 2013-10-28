@@ -3,52 +3,58 @@
     "show": false,
     "children": [
         {
-            "name": "rat/mouse/human/zebrafish/worm dad",
+            "name": "rat/mouse/human/zebrafish/worm/yeast dad",
             "show": false,
             "children": [
                 {
-                    "name": "rat/mouse/human/zebrafish dad",
+                    "name": "rat/mouse/human/zebrafish/worm dad",
                     "show": false,
                     "children": [
                         {
-                            "name": "rat/mouse/human dad",
+                            "name": "rat/mouse/human/zebrafish dad",
                             "show": false,
                             "children": [
                                 {
-                                    "name": "human",
-                                    "show": true
-                                },
-                                {
-                                    "name": "rat/mouse dad",
+                                    "name": "rat/mouse/human dad",
                                     "show": false,
                                     "children": [
                                         {
-                                            "name": "rat",
+                                            "name": "human",
                                             "show": true
                                         },
                                         {
-                                            "name": "mouse",
-                                            "show": true
+                                            "name": "rat/mouse dad",
+                                            "show": false,
+                                            "children": [
+                                                {
+                                                    "name": "rat",
+                                                    "show": true
+                                                },
+                                                {
+                                                    "name": "mouse",
+                                                    "show": true
+                                                }
+                                            ]
                                         }
                                     ]
+                                },
+                                {
+                                    "name": "zebrafish",
+                                    "show": true
                                 }
                             ]
                         },
                         {
-                            "name": "zebrafish",
+                            "name": "fly",
                             "show": true
                         }
                     ]
                 },
                 {
-                    "name": "fly",
+                    "name": "yeast",
                     "show": true
                 }
             ]
-        },
-        {
-            "name": "yeast",
-            "show": true
         }
     ]
 }

@@ -69,7 +69,7 @@ var app = function() {
                         })
                     }
                 
-                })(14) // amount of individuals
+                })(13) // amount of individuals
             )
         );
 
@@ -226,58 +226,59 @@ var app = function() {
                         // Append the phylogenic tree.
                         (function() {
 
-                            var tree = d3.layout.tree()
-                                .separation(function(a, b) {
-                                    return a.parent === b.parent ? 1 : .5;
-                                })
-                                .children(function(d) {
-                                    return d.children;
-                                })
-                                .size([ 200, 200 ]);
+                            var width = 270,
+                                height = 290,
+                                top = 70,
+                                left = 10,
+                                text = 80;
+
+                            var cluster = d3.layout.cluster()
+                                .size([ height - top, width - left - text ]);
 
                             var svgT = d3.select("#organisms .tree").append("svg")
-                                .attr("width", 270)
-                                .attr("height", 290)
+                                .attr("width", width)
+                                .attr("height", height)
                                 .append("g")
-                                .attr("transform", "translate(10,90)");
+                                .attr("transform", "translate(" + left + "," + top + ")");
 
-                            var nodes = tree.nodes(data.phylogeny);
+                            var nodes = cluster.nodes(data.phylogeny);
 
-                            var link = svgT.selectAll(".link")
-                                .data(tree.links(nodes))
-                                .enter().append("path")
-                                .attr("class", "link")
-                                .attr("d", function(d, i) {
-                                    return "M" + d.source.y + "," + d.source.x
-                                         + "H" + d.target.y + "V" + d.target.x
-                                         + (d.target.children ? "" : "h" + (210 - d.source.y));
-                                });
+                            var link = svgT.selectAll("path.link")
+                            .data(cluster.links(nodes))
+                            .enter().append("path")
+                            .attr("class", "link")
+                            .attr("d", function(d, i) {
+                                return "M" + d.source.y + "," + d.source.x
+                                + "V" + d.target.x + "H" + d.target.y;
+                            });
 
-                            var node = svgT.selectAll(".node")
-                                .data(nodes)
-                                .enter().append("g")
-                                .attr("class", "node")
-                                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+                            var node = svgT.selectAll("g.node")
+                            .data(nodes)
+                            .enter().append("g")
+                            .attr("class", "node")
+                            .attr("transform", function(d) {
+                                return "translate(" + d.y + "," + d.x + ")";
+                            });
 
-                            // Only show some names.
+                            node.append("circle")
+                            .attr("r", 4.5)
+                            .attr("class", function(d) {
+                                return (d.show) ? (
+                                    _.find(dR.organisms, { 'organism': d.name }).supported ? 'supported' : 'unsupported'
+                                ) : '';
+                            });
+
                             node.append("text")
-                                .attr("class", "name")
-                                .attr("x", 18)
-                                .attr("y", -6)
-                                .text(function(d) {
-                                    return (d.show) ? d.name : '';
-                                });
-
-                            // Show some circles.
-                            node.append('circle')
-                                .attr("cx", 10)
-                                .attr("cy", -10)
-                                .attr("r", 5)
-                                .attr("class", function(d) {
-                                    return (d.show) ? (
-                                        _.find(dR.organisms, { 'organism': d.name }).supported ? 'supported' : 'unsupported'
-                                    ) : '';
-                                });
+                            .attr("dx", function(d) {
+                                return d.children ? -8 : 8;
+                            })
+                            .attr("dy", 3)
+                            .attr("text-anchor", function(d) {
+                                return d.children ? "end" : "start";
+                            })
+                            .text(function(d) {
+                                return (d.show) ? d.name : '';
+                            });
 
                         })();
                     }
