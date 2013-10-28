@@ -117,20 +117,6 @@ body {
     padding-right: 10px;
 }
 
-#legend {
-    bottom: 0;
-    left: 0;
-    display: block;
-    font-family: Arial;
-}
-
-#legend p span {
-    background: #000;
-    color: #FFF;
-    padding: 2px 4px;
-    margin-right: 5px;
-}
-
 #heatmap {
     bottom: 0;
     right: 0;
