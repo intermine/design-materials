@@ -204,9 +204,6 @@ var app = function() {
 
                             // Hide the box.
                             d3.select('#organisms').style('display', 'none');
-
-                            // Hide the connectors.
-                            svgN.selectAll('line.active').classed('active', false);
                         };
 
                     // Are we clicking on the same link?
@@ -220,14 +217,6 @@ var app = function() {
                         // Select "this" one.
                         active = self;
                         active.classed("active", true);
-
-                        // Show the connectors to the box.
-                        [ dR.source.index, dR.target.index ].forEach(function(from) {
-                            var to = json.nodes[json.nodes.length - 4].index;
-
-                            svgN.select('line.fake.link[data-connection="' +
-                            from + '-' + to + '"]').classed('active', true);
-                        });
 
                         // Render the template.
                         d3.select('#organisms').html(
@@ -261,7 +250,7 @@ var app = function() {
                                 .attr("d", function(d, i) {
                                     return "M" + d.source.y + "," + d.source.x
                                          + "H" + d.target.y + "V" + d.target.x
-                                         + (d.target.children ? "" : "h" + 10);
+                                         + (d.target.children ? "" : "h" + (210 - d.source.y));
                                 });
 
                             var node = svgT.selectAll(".node")

@@ -45,13 +45,6 @@ body {
     stroke-opacity: 0;
 }
 
-#graph .link.active.fake {
-    stroke: #000;
-    stroke-opacity: 1;
-    stroke-dasharray: 0,2 1;
-    cursor: default;
-}
-
 #graph .label {
     fill: #000;
     stroke-width: 0;
