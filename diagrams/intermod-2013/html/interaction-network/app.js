@@ -184,8 +184,6 @@ var app = function() {
             }
         }
 
-        //console.log(JSON.stringify(json, null, 2));
-
         // Init force layout.
         force
             .nodes(json.nodes)
@@ -282,7 +280,7 @@ var app = function() {
                                     _.find(dR.organisms, { 'organism': d.name }).supported ? 'supported' : 'unsupported'
                                 ) : '';
                             })
-                            .attr("transform", "translate(5,1)");
+                            .attr("transform", "translate(3,0)");
 
                             node.append("text")
                             .attr("dx", 13)

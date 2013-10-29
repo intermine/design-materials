@@ -76,6 +76,7 @@ body {
 
 #organisms .link {
     fill: none;
+    stroke-width: 3;
     stroke: #CCC;
     shape-rendering: crispEdges;
 }
