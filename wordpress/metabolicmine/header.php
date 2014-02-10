@@ -7,6 +7,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="author" content="" />
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon.ico" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, print" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
@@ -20,7 +21,7 @@
 <a name="top"></a>
 <div id="nf_page">
 
-	<!-- Begin the side bar. -->
+  <!-- Begin the side bar. -->
   <div id="nf_pagesidebar">
     <div id="nf_pagesidebarcontainer">
       <?php include(TEMPLATEPATH.'/searchform.php'); ?>
@@ -33,11 +34,11 @@
   <a href="<?php echo get_settings('home'); ?>/">
     <div id="title">
         <span><?php bloginfo('description'); ?></span>
-		<p><?php bloginfo('name'); ?></p>
-	</div>
+    <p><?php bloginfo('name'); ?></p>
+  </div>
   </a>
 
-	<!-- Begin the main (content) column. -->
+  <!-- Begin the main (content) column. -->
   <div id="nf_pagecontentcolumn">
 
     <div id="content">
