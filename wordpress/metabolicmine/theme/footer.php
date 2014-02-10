@@ -9,11 +9,11 @@
       -->
 
       <a href="http://www.wellcome.ac.uk/" title="Wellcome Trust">
-        <img src="/wp-content/themes/metabolic/images/wellcome-logo.gif" alt="Wellcome Trust" />
+        <img src="/wp-content/themes/metabolicmine/images/wellcome-logo.gif" alt="Wellcome Trust" />
       </a>
       &nbsp;&nbsp;
       <a href="http://www.cam.ac.uk/" title="University of Cambridge">
-        <img src="/wp-content/themes/metabolic/images/cambridge-logo.gif" alt="Cambridge University" />
+        <img src="/wp-content/themes/metabolicmine/images/cambridge-logo.gif" alt="Cambridge University" />
       </a>
 
       <p>
